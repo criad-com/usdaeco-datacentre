@@ -1,0 +1,123 @@
+{
+  "generatorDesignRevision": "9891ca1d0811d6ed160631c88513611f836a2ed8",
+  "generatorImplementationRevision": "d0be5d6b3f2e3ef278871315f9109167de867abf",
+  "sources": {
+    "core": {
+      "revision": "0350a2fbc41deb2432dee336645b5350f69754d8",
+      "plugins": {
+        "plugInfo.json": {
+          "sha256": "7e752ab0cefbd168aef8042133009428a16c1a9c7e3dfdbf6921fb0ab4d98e1f",
+          "bytes": 8633
+        },
+        "generatedSchema.usda": {
+          "sha256": "d1c19403ee59d873e2b3e451aef2023377fdd942d052cd3054b10eb276c4de98",
+          "bytes": 25645
+        }
+      },
+      "archiveCopy": 1
+    },
+    "cctv": {
+      "revision": "f6b8b7a3785a6f2d6402a40822728a91250c15e0",
+      "trackedChanges": false,
+      "plugins": {
+        "plugInfo.json": {
+          "sha256": "297d4f4b3be8e64df051212dc0be7a37280bc779556c36a7dfd093cf164297a9",
+          "bytes": 5726
+        },
+        "generatedSchema.usda": {
+          "sha256": "180db462bbda40f3ac14e3bdf53daa3c639f3fdf83a43df7095bd854da9fe1b8",
+          "bytes": 12337
+        }
+      }
+    },
+    "sync": {
+      "revision": "2cb242df97a089ff9d16fc547b8d12d797028960",
+      "trackedChanges": false,
+      "plugins": {
+        "plugInfo.json": {
+          "sha256": "5abac2f0e707cb6ab51430473a60b0f97024b636e9a45168e692717bd19af78f",
+          "bytes": 1456
+        },
+        "generatedSchema.usda": {
+          "sha256": "c7c0952d857f4b182fbe5a66e5bb3c45d807bc56a85bc93427a6ffae108c0442",
+          "bytes": 2128
+        }
+      }
+    },
+    "toolchain": {
+      "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919",
+      "trackedChanges": false
+    }
+  },
+  "inputs": {
+    "plan": {
+      "sha256": "fe56d5ff2652eb6f3bac9a30cca3cae7dcb955e03215bfcafe183767ae76620d",
+      "bytes": 285768
+    },
+    "nativeExport": {
+      "sha256": "af4fa94e073001bd0ebe17d5ea290d3019e44345e02ed66ae24e48000be6373a",
+      "bytes": 26824956
+    },
+    "generatorIfc": {
+      "sha256": "0a52dae2d72c1fd026d0289737ef6a0fe39a48b0c599418b9ab2f90c84a2a245",
+      "bytes": 11590319
+    },
+    "cameraPhase": {
+      "sha256": "1aff42f334fda7122324fd4e9d9d7695a1ba7c591dd7746391c2dc11a5534fe5",
+      "bytes": 10397
+    },
+    "launcher": {
+      "sha256": "712d396bd436626a4c6e8eba5bf8ce97bde13847e887da95199fdd66fc5a45fc",
+      "bytes": 1493
+    }
+  },
+  "coreLayers": {
+    "core.semantics.usda": {
+      "sha256": "f69c658eec0d462d82e0795028a12dcc9744fef8f7c7ad7e3b9df884f724df3b",
+      "bytes": 8722901
+    },
+    "core.usda": {
+      "sha256": "e8e9083bc4519a335b736a0ea32cdca282490a2ca74c0ec952b3a114e34e3236",
+      "bytes": 555
+    },
+    "core.geometry.usdc": {
+      "sha256": "6f07cb4ff348855e535a2b807eaa645f3ead79bd8c3a408dce24563038f6a35d",
+      "bytes": 1145611
+    }
+  },
+  "runner": {
+    "releasedSha256": "a6df3f078fb2abfc981dbeb55a788bfdab3309d12dd1ea0fc311f1311bd2e5ae",
+    "changedAssertions": 0
+  },
+  "nativeScripts": {
+    "30_operations.cs": {
+      "sha256": "99726fe3db2bb8c00cf8c8a72009ee4623acc645b8582394056cf55a961c4a8d",
+      "bytes": 12604
+    },
+    "10_failures.cs": {
+      "sha256": "b7fb332e66ce49cd62a8fe235becc2cad5e38e3f9f673a340d9bd8bb55842006",
+      "bytes": 3700
+    },
+    "25_cameras.cs": {
+      "sha256": "5e8ef5d02fb911cc03539e2b526b7411d0d979f9d4e72ea9455ec6fc0f51c4ca",
+      "bytes": 17338
+    },
+    "00_context.cs": {
+      "sha256": "aceffde7283d555752a195fbe14c167d2e2bf38db85d2be9ca88304a9ef5c80b",
+      "bytes": 8606
+    },
+    "20_readback.cs": {
+      "sha256": "fe729a46a000b4a8876e1c2b66d5dd59d2677f138fb0020498423e9604b0f8c3",
+      "bytes": 12359
+    },
+    "40_request.cs": {
+      "sha256": "1aeb1bd73f00f30283a849d8532ec0701f5c9253279339cd86710798d13a8f57",
+      "bytes": 12452
+    }
+  },
+  "retainedRun": ".work/w14/live/run-5j5u99zm",
+  "liveReceipt": {
+    "sha256": "d3a4075d3c225199bbc3041596e641c9ff6bfed37c38bbdebd0868e12f7f5cac",
+    "bytes": 3622147
+  }
+}

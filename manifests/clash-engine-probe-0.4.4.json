@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "band_decides": true,
+      "id": "pipe.clash.hard",
+      "methods": [
+        "aeco:body:tolerance",
+        "measured planar facets; assumes orthogonal planar source, excludes unknown curvature"
+      ],
+      "signed_distance": -0.07500000298023224,
+      "uncertainty": 0.00022009999999999998
+    },
+    {
+      "band_decides": false,
+      "id": "pipe.clash.near",
+      "methods": [
+        "aeco:body:tolerance",
+        "measured planar facets; assumes orthogonal planar source, excludes unknown curvature"
+      ],
+      "signed_distance": 0.005000114440917969,
+      "uncertainty": 0.0057582
+    },
+    {
+      "band_decides": false,
+      "id": "pipe.clash.tangent",
+      "methods": [
+        "aeco:body:tolerance",
+        "measured planar facets; assumes orthogonal planar source, excludes unknown curvature"
+      ],
+      "signed_distance": -0.0010635405778884888,
+      "uncertainty": 0.0010636
+    }
+  ],
+  "publication_sha256": "a760940a286c42471a6b6db86c8b696a7077242c45275dce5b29898d6d87776d",
+  "publication_shape_comparison": {
+    "baseline": "v0.4.3",
+    "changed_meshes": [
+      "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Corridor_ceiling_void/pipe_clash_near/Geom",
+      "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Corridor_ceiling_void/pipe_clash_tangent/Geom"
+    ],
+    "fields": [
+      "points",
+      "faceVertexCounts",
+      "faceVertexIndices",
+      "extent"
+    ],
+    "meshes": 3015,
+    "unchanged_meshes": 3013
+  },
+  "ref": "v0.1.0",
+  "repo": "usdaeco-clash",
+  "revision": "ec1f1ee34954d8ea404e197a949fc8c185011ec3"
+}

@@ -1,0 +1,115 @@
+# spec class -> ordered candidate Revit family names (best-effort guesses for
+# the stock metric template + MEP library). Every entry is OPTIONAL: the C#
+# (40_equipment.csx) tries each candidate against loaded symbols, then the
+# RVT 2027 library on disk, and falls back to a DirectShape box/cylinder of the
+# planned size -- so wrong guesses are safe, they just cost a lookup.
+#
+# PARSER CONTRACT (40_equipment.csx reads this file from AECO_REVIT_WORKDIR / families.yaml,
+# uploaded by driver.py): block style ONLY --
+#   cls:
+#     - Family Name
+# No inline [a, b] lists, no '#' inside names, no nesting.
+
+utility_intake:         # no candidates: always DirectShape
+
+rmu:
+  - Utility Switchboard
+  - Circuit Breaker Switchboard
+  - Ring Main Unit
+  - M_Switchboard
+msb:
+  - Circuit Breaker Switchboard
+  - Metering Switchboard
+  - M_Switchboard
+  - Switchboard
+uob:
+  - Circuit Breaker Switchboard
+  - M_Distribution Board
+  - Distribution Board
+  - M_Switchboard
+hdb:
+  - Distribution Board SP&N
+  - M_Distribution Board
+  - Distribution Board
+pdu:
+  - Power Distribution Unit
+  - PDU
+  - M_Switchboard
+mcc:
+  - Distribution Board TP&N
+  - Motor Control Center
+  - M_Motor Control Center
+  - M_Switchboard
+transformer:
+  - Dry Type Transformer - 400Y230 - NEMA Type 1
+  - Transformer Switchboard
+  - M_Transformer - Dry Type
+  - Transformer - Dry Type
+  - M_Transformer
+generator:
+  - Diesel Emergency Power Generator
+  - M_Generator
+  - Generator - Diesel
+  - Diesel Generator
+ups:
+  - M_UPS
+  - Uninterruptible Power Supply
+  - UPS
+battery:
+  - M_Battery Rack
+  - Battery Cabinet
+  - Battery Rack
+
+fuel_tank:
+  - Propane Tank
+  - M_Storage Tank
+  - Fuel Tank
+  - Storage Tank - Horizontal
+dry_cooler:
+  - Cooling Tower - Closed Circuit - Counterflow - 133-378 kW
+  - M_Dry Cooler
+  - Dry Cooler
+  - M_Cooling Tower
+chiller:
+  - Absorption Chiller - Classic - 394-1635 kW
+  - M_Chiller - Air Cooled
+  - Chiller - Air Cooled - Scroll
+  - M_Chiller
+pump:
+  - M_Pump - End Suction
+  - Pump - End Suction
+  - M_Inline Pump
+buffer_tank:
+  - M_WaterTank
+  - M_Expansion Tank
+  - Buffer Tank
+  - M_Storage Tank
+dosing:
+  - Chemical Dosing Skid
+  - Dosing
+heat_exchanger:
+  - Heat Exchanger - Shell and Tube
+  - M_Heat Exchanger - Plate
+  - Plate Heat Exchanger
+  - M_Heat Exchanger
+cdu:
+  - Coolant Distribution Unit
+  - CDU
+crah:
+  - Computer Room Air Handler
+  - CRAH
+  - M_Air Handling Unit
+ahu:
+  - Air Handling Unit - Vertical Packaged - DX - 44-88 kW
+  - M_Air Handling Unit - Horizontal
+  - M_Air Handling Unit
+
+rack:                   # racks are DirectShape in v1 (160 of them)
+carrier_rack:
+  - M_Communication Cabinet
+  - Communication Cabinet
+
+# Security devices: hosted families (ceiling/wall) fail or land at level z=0
+# when placed unhosted -> DirectShape boxes at the true plan position instead.
+ava:                    # no candidates: always DirectShape
+iris:                   # no candidates: always DirectShape

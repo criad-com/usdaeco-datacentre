@@ -1,0 +1,209 @@
+{
+  "version": "0.4.6",
+  "train": "aeco-0.7.0",
+  "baseline": {
+    "ref": "v0.4.5",
+    "revision": "0b18702612ff2c268b18e3da0f3c7b62393320bb"
+  },
+  "gate": {
+    "total": 203,
+    "passed": 161,
+    "failed": 0,
+    "informational": 38,
+    "not_run": 4
+  },
+  "gate_receipt": "artifacts/generator-0.4.6.json",
+  "pytest": {
+    "passed": 196,
+    "failed": 0,
+    "testpaths": [
+      "tests"
+    ]
+  },
+  "structure": {
+    "toolchain": "v0.3.5",
+    "total": 28,
+    "failed": 0
+  },
+  "direct_pins": [
+    {
+      "input": "toolchain",
+      "repo": "usdaeco-toolchain",
+      "ref": "v0.3.5",
+      "revision": "af7528f7cd27b38afb1bbb2db465f40cf83ca5c9",
+      "runtime_sha256": "99c92da01d92384fccd250561eef3efcdd2e32c8a27028c5a95e4f349db63372",
+      "checkout_and_archive_verified": true,
+      "train_match": true
+    },
+    {
+      "input": "revit",
+      "repo": "usdaeco-revit",
+      "ref": "v0.1.2",
+      "revision": "67ca38f29d294268f542a9f07ef3802a31edede0",
+      "runtime_sha256": "8c924593af12b34c00b03736c184325b49cb60b80e9fd292b88c3855df1a139b",
+      "checkout_and_archive_verified": true,
+      "train_match": true
+    },
+    {
+      "input": "validation_core",
+      "repo": "usdaeco-core",
+      "ref": "v0.9.2",
+      "revision": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "runtime_sha256": "5a1a9a58d793d7fad87bb7bd26551f7eff8e1bfe8c37f2ab136037623c8a164d",
+      "checkout_and_archive_verified": true,
+      "train_match": true
+    },
+    {
+      "input": "sync",
+      "repo": "usdaeco-sync",
+      "ref": "v0.5.2",
+      "revision": "1ed6e5d50425811c5c85326630819bc1f04a1a15",
+      "runtime_sha256": "fb8c635f0a3aed06ae77567989e7a464d1c5f5eb8cd5705088cb9f4ef6693bef",
+      "checkout_and_archive_verified": true,
+      "train_match": true
+    }
+  ],
+  "source_mode": "Frozen tag checkouts; runtime hashes and revisions verified.",
+  "fixtures": {
+    "ifc": {
+      "repo": "usdaeco-ifc",
+      "ref": "v0.1.0",
+      "revision": "43935df9e059b724f8d1ae3d0ea324dbae7efd29",
+      "purpose": "Generation fixture for the byte-identical published USD under dist/."
+    },
+    "core": {
+      "repo": "usdaeco-core",
+      "ref": "v0.8.4",
+      "revision": "c818a1533bcfe36be47845252388a1c732ec69c0",
+      "purpose": "Generation fixture paired with converter v0.1.0; validation uses the direct validation_core pin."
+    },
+    "revit_recorded": {
+      "repo": "usdaeco-revit",
+      "ref": "v0.1.0",
+      "revision": "49da593728d4829bef7fe8c491f45b8b97d1d11e",
+      "purpose": "Historical transport for artifacts/revit-0.4.2.json; native execution is not repeated by the offline gate."
+    },
+    "toolchain_recorded": {
+      "repo": "usdaeco-toolchain",
+      "ref": "v0.3.2",
+      "revision": "362c3a392b37a5d27d876b2e55a3d00d0af798b5",
+      "purpose": "Historical overview and publication receipts through v0.4.5; active freshness uses the direct toolchain pin."
+    }
+  },
+  "flake_inputs": {
+    "direct_urls_verified": 4,
+    "generation_github_attributes_verified": 2,
+    "method": "Evaluated input attributes agree with direct and fixture pins."
+  },
+  "publication": {
+    "dist_files": 31,
+    "byte_identical_to_baseline": 31,
+    "usd_layers": 15,
+    "manifests": 5,
+    "independent_scratch_publications": 10,
+    "source_manifest_and_camera_changes": 0,
+    "republished_files": 0,
+    "changed_receipts": [
+      "manifests/vanilla.json"
+    ],
+    "toolchain_records_refreshed": 5
+  },
+  "renders": {
+    "base": {
+      "stage_and_camera_identical": true,
+      "committed_png_sha256": "1ce1ae9861dacad56bfe45d49aa36ade4de1835db280b583833d972be76a619a",
+      "fresh_png_sha256": "d062a80ccdc2f55b3c6122a417b4139ff805248b8c6827c53b4f3f1e27be7600",
+      "committed_bytes": 144319,
+      "fresh_bytes": 144399,
+      "image_republished": false,
+      "reason": "S28 compares source and camera, not sampled PNG bytes; dist/ remains frozen."
+    },
+    "clash": {
+      "stage_and_camera_identical": true,
+      "committed_png_sha256": "4ec3ed434cc02fee3c10a06412cbccb0bb6c147840e6aa8c8db5e657362dda55",
+      "fresh_png_sha256": "a615ff102cb50f40a53cbae5e298d2c08ecc3d2e7a31301b4f73618f3207988d",
+      "committed_bytes": 144689,
+      "fresh_bytes": 143739,
+      "image_republished": false,
+      "reason": "S28 compares source and camera, not sampled PNG bytes; dist/ remains frozen."
+    },
+    "floors": {
+      "stage_and_camera_identical": true,
+      "committed_png_sha256": "b1d23e113205fc117d9f180a3a3f50d495948431266da797dee73476cc16a15a",
+      "fresh_png_sha256": "76d9186f08d75d68b3a23f7916c309a688d0b4ee6a48f114b7c0bfe48aa664ea",
+      "committed_bytes": 145777,
+      "fresh_bytes": 145770,
+      "image_republished": false,
+      "reason": "S28 compares source and camera, not sampled PNG bytes; dist/ remains frozen."
+    },
+    "iris": {
+      "stage_and_camera_identical": true,
+      "committed_png_sha256": "27107bc04a0a84e113b4572233347510881a784e0b02678f7e46842e726e1d13",
+      "fresh_png_sha256": "04d9ebc3d6ac4bde62a49f2fca29343992e42257030b83a0c09300aaf99782de",
+      "committed_bytes": 144242,
+      "fresh_bytes": 143929,
+      "image_republished": false,
+      "reason": "S28 compares source and camera, not sampled PNG bytes; dist/ remains frozen."
+    },
+    "pod": {
+      "stage_and_camera_identical": true,
+      "committed_png_sha256": "905398308ea5405068850594222c0dc77c42da83fbc773bb81a26084bcadf9bf",
+      "fresh_png_sha256": "680d84126d84a7936cc23eb53bbeeb75ad01821aa21f338b1e099cedc597e4f1",
+      "committed_bytes": 144340,
+      "fresh_bytes": 144230,
+      "image_republished": false,
+      "reason": "S28 compares source and camera, not sampled PNG bytes; dist/ remains frozen."
+    }
+  },
+  "validation": {
+    "core_ref": "v0.9.2",
+    "registry_callbacks": 8,
+    "stages": 5,
+    "errors": 0,
+    "existing_proxy_warnings_per_stage": 2,
+    "ifc_files_validated": 42
+  },
+  "native_not_run": [
+    {
+      "name": "native Revit floors",
+      "reason": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "native Revit pod",
+      "reason": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "native Revit clash",
+      "reason": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "native Revit iris",
+      "reason": "Base only; further native family work required, including pods and ceilings"
+    }
+  ],
+  "native_base": "Historical v0.1.0 receipt audited; native execution not repeated.",
+  "nix": {
+    "release": "0.4.6",
+    "attempts": 1,
+    "status": "daemon-unavailable",
+    "mode": "offline, direct source overrides, outbound connections denied, no lockfile written",
+    "reason": "network-disabled sandbox denied connection to the Nix daemon socket",
+    "packaging": "not-proven",
+    "input_attributes_evaluated": true
+  },
+  "archive_sweep": {
+    "shared_scanner_limit": "ArchiveNotInspected for compressed history; text members inspected separately with shared patterns.",
+    "archives": [
+      {
+        "path": "docs/history/acceptance-through-0.4.0.tar.gz",
+        "text_members": 24
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.1.tar.gz",
+        "text_members": 2
+      }
+    ],
+    "text_members": 26,
+    "findings": []
+  }
+}

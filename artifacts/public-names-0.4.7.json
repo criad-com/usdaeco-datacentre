@@ -1,0 +1,38 @@
+{
+  "version": "0.4.7",
+  "baseline_revision": "d789e40fba81e5213caf9c54d1233b77b8e1fa20",
+  "public_reference_hits": 0,
+  "archives_checked": 2,
+  "published_files_unchanged": 31,
+  "camera_files_unchanged": 5,
+  "non_toolchain_direct_pins_unchanged": 3,
+  "fixture_pins_unchanged": 4,
+  "vanilla_toolchain_records_refreshed": 5,
+  "gate": {
+    "total": 203,
+    "failed": 0,
+    "passed": 161,
+    "informational": 38,
+    "not_run": 4,
+    "receipt": "artifacts/generator-0.4.7.json"
+  },
+  "pytest": {
+    "passed": 197,
+    "failed": 0
+  },
+  "structure": {
+    "rules": 29,
+    "failed": 0,
+    "not_applicable": 22,
+    "toolchain": "v0.3.8"
+  },
+  "nix": {
+    "release": "0.4.7",
+    "attempts": 1,
+    "status": "input-unavailable",
+    "mode": "offline, direct source overrides, outbound IP connections denied, no lockfile written",
+    "reason": "uncached nested toolchain/aeco-toolchain input could not resolve",
+    "input": "github:criad-com/aeco-toolchain?ref=e190680d3f94eb76e06abe77574fda1308af2c85",
+    "packaging": "not-proven"
+  }
+}

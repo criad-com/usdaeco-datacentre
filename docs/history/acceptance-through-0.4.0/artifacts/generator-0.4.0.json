@@ -1,0 +1,280 @@
+{
+  "deterministic_variants": [
+    "base",
+    "clash",
+    "floors",
+    "iris",
+    "pod"
+  ],
+  "gate": {
+    "failed": 0,
+    "informational": 29,
+    "passed": 103,
+    "total": 132
+  },
+  "ifc_files_validated": 42,
+  "nix": {
+    "attempts": 1,
+    "reason": "No flake; template migration is deferred.",
+    "status": "NOT PROVEN"
+  },
+  "programme_findings": {
+    "A": {
+      "AccessAfterEnclosure": 4,
+      "EnclosureBeforeInspection": 2,
+      "WorkspaceOccupied": 1
+    },
+    "B": {}
+  },
+  "pytest_passed": 150,
+  "structure_lint": {
+    "reason": "Installed toolchain v0.1.0 has no structure subcommand.",
+    "status": "NOT RUN"
+  },
+  "variants": {
+    "base": {
+      "counts": {
+        "activities_per_programme": {},
+        "cameras": 45,
+        "ceilings": 0,
+        "columns": 80,
+        "doors": 41,
+        "fitout_by_class": {},
+        "fix_counts": {},
+        "mep_by_class": {
+          "IfcAlarm": 12,
+          "IfcAudioVisualAppliance": 45,
+          "IfcCableCarrierFitting": 165,
+          "IfcCableCarrierSegment": 336,
+          "IfcCableFitting": 401,
+          "IfcCableSegment": 797,
+          "IfcChiller": 2,
+          "IfcCoolingTower": 4,
+          "IfcElectricDistributionBoard": 26,
+          "IfcElectricFlowStorageDevice": 16,
+          "IfcElectricGenerator": 2,
+          "IfcHeatExchanger": 1,
+          "IfcPipeFitting": 238,
+          "IfcPipeSegment": 476,
+          "IfcPump": 6,
+          "IfcSensor": 11,
+          "IfcTank": 3,
+          "IfcTransformer": 2,
+          "IfcUnitaryEquipment": 12
+        },
+        "pods": 0,
+        "readers": 11,
+        "rooms": 30,
+        "spaces": 33,
+        "storeys": 2,
+        "temporary": 0,
+        "voids": 0,
+        "walls": 92
+      },
+      "manifest_sha256": "cfc89c9f7506231a75b18aa437547b37b21c7fb220ededb4032bd222398d4aad"
+    },
+    "clash": {
+      "counts": {
+        "activities_per_programme": {
+          "A": 10,
+          "B": 10
+        },
+        "cameras": 45,
+        "ceilings": 2,
+        "columns": 80,
+        "doors": 41,
+        "fitout_by_class": {
+          "IfcAirTerminal": 4,
+          "IfcCableCarrierSegment": 3,
+          "IfcCovering": 2,
+          "IfcElementAssembly": 2,
+          "IfcLightFixture": 6,
+          "IfcPipeSegment": 6,
+          "IfcSanitaryTerminal": 2,
+          "IfcUnitaryEquipment": 1
+        },
+        "fix_counts": {
+          "first": 6,
+          "second": 10,
+          "third": 3
+        },
+        "mep_by_class": {
+          "IfcAirTerminal": 4,
+          "IfcAlarm": 12,
+          "IfcAudioVisualAppliance": 45,
+          "IfcCableCarrierFitting": 165,
+          "IfcCableCarrierSegment": 339,
+          "IfcCableFitting": 401,
+          "IfcCableSegment": 797,
+          "IfcChiller": 2,
+          "IfcCoolingTower": 4,
+          "IfcElectricDistributionBoard": 26,
+          "IfcElectricFlowStorageDevice": 16,
+          "IfcElectricGenerator": 2,
+          "IfcHeatExchanger": 1,
+          "IfcLightFixture": 6,
+          "IfcPipeFitting": 238,
+          "IfcPipeSegment": 482,
+          "IfcPump": 6,
+          "IfcSanitaryTerminal": 2,
+          "IfcSensor": 11,
+          "IfcTank": 3,
+          "IfcTransformer": 2,
+          "IfcUnitaryEquipment": 13
+        },
+        "pods": 2,
+        "readers": 11,
+        "rooms": 30,
+        "spaces": 35,
+        "storeys": 2,
+        "temporary": 1,
+        "voids": 2,
+        "walls": 92
+      },
+      "manifest_sha256": "d3c14dc7449022b99b84deb10a0469c3bff229e65cea23a653744b7d96d9d20d"
+    },
+    "floors": {
+      "counts": {
+        "activities_per_programme": {},
+        "cameras": 47,
+        "ceilings": 0,
+        "columns": 80,
+        "doors": 47,
+        "fitout_by_class": {},
+        "fix_counts": {},
+        "mep_by_class": {
+          "IfcAlarm": 12,
+          "IfcAudioVisualAppliance": 47,
+          "IfcCableCarrierFitting": 165,
+          "IfcCableCarrierSegment": 336,
+          "IfcCableFitting": 401,
+          "IfcCableSegment": 797,
+          "IfcChiller": 2,
+          "IfcCoolingTower": 4,
+          "IfcElectricDistributionBoard": 26,
+          "IfcElectricFlowStorageDevice": 16,
+          "IfcElectricGenerator": 2,
+          "IfcHeatExchanger": 1,
+          "IfcPipeFitting": 238,
+          "IfcPipeSegment": 476,
+          "IfcPump": 6,
+          "IfcSensor": 11,
+          "IfcTank": 3,
+          "IfcTransformer": 2,
+          "IfcUnitaryEquipment": 12
+        },
+        "pods": 0,
+        "readers": 11,
+        "rooms": 36,
+        "spaces": 39,
+        "storeys": 3,
+        "temporary": 0,
+        "voids": 0,
+        "walls": 112
+      },
+      "manifest_sha256": "12feb4d3ce73c1715789d1a4ca0e817d885fe39d4c4acb42d88bc940bd559925"
+    },
+    "iris": {
+      "counts": {
+        "activities_per_programme": {},
+        "cameras": 45,
+        "ceilings": 0,
+        "columns": 80,
+        "doors": 41,
+        "fitout_by_class": {},
+        "fix_counts": {},
+        "mep_by_class": {
+          "IfcAlarm": 12,
+          "IfcAudioVisualAppliance": 45,
+          "IfcCableCarrierFitting": 165,
+          "IfcCableCarrierSegment": 336,
+          "IfcCableFitting": 401,
+          "IfcCableSegment": 797,
+          "IfcChiller": 2,
+          "IfcCoolingTower": 4,
+          "IfcElectricDistributionBoard": 26,
+          "IfcElectricFlowStorageDevice": 16,
+          "IfcElectricGenerator": 2,
+          "IfcHeatExchanger": 1,
+          "IfcPipeFitting": 238,
+          "IfcPipeSegment": 476,
+          "IfcPump": 6,
+          "IfcSensor": 11,
+          "IfcTank": 3,
+          "IfcTransformer": 2,
+          "IfcUnitaryEquipment": 12
+        },
+        "pods": 0,
+        "readers": 11,
+        "rooms": 30,
+        "spaces": 33,
+        "storeys": 2,
+        "temporary": 0,
+        "voids": 0,
+        "walls": 92
+      },
+      "manifest_sha256": "9f0980730b5459bca0dafbb709a4048d5a84b763a45c9bc9427ef962d5836fa3"
+    },
+    "pod": {
+      "counts": {
+        "activities_per_programme": {
+          "A": 10,
+          "B": 10
+        },
+        "cameras": 45,
+        "ceilings": 2,
+        "columns": 80,
+        "doors": 41,
+        "fitout_by_class": {
+          "IfcAirTerminal": 4,
+          "IfcCableCarrierSegment": 3,
+          "IfcCovering": 2,
+          "IfcElementAssembly": 2,
+          "IfcLightFixture": 6,
+          "IfcPipeSegment": 3,
+          "IfcSanitaryTerminal": 2,
+          "IfcUnitaryEquipment": 1
+        },
+        "fix_counts": {
+          "first": 6,
+          "second": 10,
+          "third": 3
+        },
+        "mep_by_class": {
+          "IfcAirTerminal": 4,
+          "IfcAlarm": 12,
+          "IfcAudioVisualAppliance": 45,
+          "IfcCableCarrierFitting": 165,
+          "IfcCableCarrierSegment": 339,
+          "IfcCableFitting": 401,
+          "IfcCableSegment": 797,
+          "IfcChiller": 2,
+          "IfcCoolingTower": 4,
+          "IfcElectricDistributionBoard": 26,
+          "IfcElectricFlowStorageDevice": 16,
+          "IfcElectricGenerator": 2,
+          "IfcHeatExchanger": 1,
+          "IfcLightFixture": 6,
+          "IfcPipeFitting": 238,
+          "IfcPipeSegment": 479,
+          "IfcPump": 6,
+          "IfcSanitaryTerminal": 2,
+          "IfcSensor": 11,
+          "IfcTank": 3,
+          "IfcTransformer": 2,
+          "IfcUnitaryEquipment": 13
+        },
+        "pods": 2,
+        "readers": 11,
+        "rooms": 30,
+        "spaces": 35,
+        "storeys": 2,
+        "temporary": 1,
+        "voids": 2,
+        "walls": 92
+      },
+      "manifest_sha256": "943a6d3148805b95565b0415f3168eec423d331a09bfd4716f9a36ee65a02734"
+    }
+  },
+  "version": "0.4.0"
+}

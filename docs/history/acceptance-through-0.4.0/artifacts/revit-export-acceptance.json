@@ -1,0 +1,257 @@
+{
+  "generatorVersion": [
+    0,
+    3,
+    1
+  ],
+  "coreVersion": [
+    0,
+    8,
+    1
+  ],
+  "cctvVersion": [
+    0,
+    4,
+    2
+  ],
+  "syncReleaseTag": [
+    0,
+    4,
+    2
+  ],
+  "syncPackageVersion": [
+    0,
+    4,
+    1
+  ],
+  "measuredDate": [
+    2026,
+    9,
+    11
+  ],
+  "authoring": {
+    "first": {
+      "created": 16,
+      "updated": 29,
+      "batches": 9
+    },
+    "repeat": {
+      "created": 0,
+      "updated": 45,
+      "batches": 9
+    },
+    "nativeCameras": 45,
+    "uniqueNativeBindings": 45,
+    "retainedBindings": 29,
+    "newStatusNew": 16,
+    "roomsUnchanged": 1,
+    "rooms": 30,
+    "foregroundUnchanged": 1,
+    "statusNew": 1840,
+    "warningsBefore": 464,
+    "warningsAfter": 466,
+    "nativeTypes": {
+      "DC bullet_4mp_outdoor": 11,
+      "DC dome_5mp": 31,
+      "DC ptz_4k": 3
+    }
+  },
+  "commonStatusProducts": 1514,
+  "allProducts": 3639,
+  "physicalElements": 1514,
+  "physicalStatusNew": 1514,
+  "missingCommonStatus": {
+    "IfcOpeningElement": 40,
+    "IfcDistributionPort": 2048,
+    "IfcBuildingStorey": 3,
+    "IfcBuilding": 1,
+    "IfcSite": 1,
+    "IfcSpace": 30
+  },
+  "noCommonTemplate": {
+    "IfcGrid": 2
+  },
+  "exportClasses": {
+    "IfcAudioVisualAppliance": {
+      "total": 45,
+      "status": 45
+    },
+    "IfcWall": {
+      "total": 92,
+      "status": 92
+    },
+    "IfcDoor": {
+      "total": 41,
+      "status": 41
+    },
+    "IfcColumn": {
+      "total": 80,
+      "status": 80
+    },
+    "IfcSpace": {
+      "total": 30,
+      "status": 0
+    },
+    "IfcBuildingElementProxy": {
+      "total": 318,
+      "status": 318
+    },
+    "IfcCableCarrierSegment": {
+      "total": 681,
+      "status": 681
+    },
+    "IfcPipeSegment": {
+      "total": 248,
+      "status": 248
+    },
+    "IfcDistributionPort": {
+      "total": 2048,
+      "status": 0
+    },
+    "IfcSite": {
+      "total": 1,
+      "status": 0
+    },
+    "IfcBuilding": {
+      "total": 1,
+      "status": 0
+    },
+    "IfcBuildingStorey": {
+      "total": 3,
+      "status": 0
+    }
+  },
+  "roomsWithInternalStatus": 30,
+  "levelsWithInternalStatus": 3,
+  "core": {
+    "elapsedSeconds": 9.445407707709819,
+    "elements": 1514,
+    "elementPhases": 1514,
+    "spaces": 30,
+    "spacePhases": 0,
+    "compositionErrors": 0,
+    "importer": {
+      "cameras": 45,
+      "sensors": 45,
+      "presets": 7,
+      "types": 23,
+      "propsBlocked": 1150,
+      "subInstancesFolded": 1,
+      "unmatched": 48
+    },
+    "cameraGuidAgreements": 45,
+    "elementPhaseValues": {
+      "proposed": 1514
+    }
+  },
+  "parity": {
+    "categories": [
+      {
+        "category": "racks",
+        "planned": 160,
+        "joined": 160,
+        "max_position_delta_m": 7.944109290391274e-15
+      },
+      {
+        "category": "equipment",
+        "planned": 109,
+        "joined": 109,
+        "max_position_delta_m": 0.14000000000000057
+      },
+      {
+        "category": "doors",
+        "planned": 41,
+        "joined": 41,
+        "max_position_delta_m": 0.04956309110620069
+      },
+      {
+        "category": "walls",
+        "planned": 92,
+        "joined": 92,
+        "max_position_delta_m": 0.125
+      },
+      {
+        "category": "columns",
+        "planned": 80,
+        "joined": 80,
+        "max_position_delta_m": 0.0
+      },
+      {
+        "category": "cameras",
+        "planned": 45,
+        "joined": 45,
+        "max_position_delta_m": 7.105427357601002e-15
+      }
+    ],
+    "joined": 527,
+    "planned": 527,
+    "cameras": 45,
+    "spaces": 30,
+    "doors": 41,
+    "failures": []
+  },
+  "cameraErrors": {
+    "position": {
+      "compared": 45,
+      "maximum": 7.105427357601002e-15,
+      "tolerance": 0.001
+    },
+    "pan": {
+      "compared": 45,
+      "maximum": 1.4210854715202004e-13,
+      "tolerance": 1e-06
+    },
+    "tilt": {
+      "compared": 45,
+      "maximum": 2.842170943040401e-14,
+      "tolerance": 1e-06
+    },
+    "focal": {
+      "compared": 45,
+      "maximum": 0.0,
+      "tolerance": 1e-06
+    }
+  },
+  "nix": {
+    "attempts": 1,
+    "passed": 0,
+    "flakePresent": 0
+  },
+  "vanilla": {
+    "stages": 3,
+    "compositionErrors": 0,
+    "familyPlugins": 0,
+    "fallbacks": [
+      9,
+      9,
+      9
+    ],
+    "worldTransformsCompared": [
+      5142,
+      5185,
+      5306
+    ]
+  },
+  "offline": {
+    "total": 56,
+    "passed": 48,
+    "failed": 0,
+    "informational": 8,
+    "pytest": 64
+  },
+  "liveSeed": {
+    "cameraGuidAgreements": 45,
+    "nativeBindings": 45,
+    "nativeObservations": 49
+  },
+  "afterLive": {
+    "nativeCameras": 45,
+    "camerasUnchanged": 45,
+    "roomsUnchanged": 30,
+    "foregroundUnchanged": 1,
+    "statusNew": 1840,
+    "warnings": 466,
+    "guidAgreements": 45,
+    "uniqueMarks": 45
+  }
+}

@@ -1,0 +1,111 @@
+# demo-datacentre-01 room schedule. Axis-aligned rectangles per storey; the wall solver in
+# dcbuild.layout derives every wall segment (deduplicated between neighbouring
+# rooms) and cuts door openings from the schedule below.
+#
+# type drives the IfcSpace typing + wall construction of the room boundary:
+#   hall / electrical / battery / plant / mmr / fire / water  -> fire walls
+#   corridor / loading / office / noc / meeting / lobby / stair / kitchen / wc -> internal
+# height = nominal clear height of the space.
+
+spaces:
+  # -- Technical block, L00. North band (y 18..36): halls + access corridors.
+  - {id: sp.corr.w,   name: "Corridor West",     type: corridor, storey: lvl.l0, x: 0,  y: 18, w: 4,  d: 18, height: 6.0}
+  - {id: sp.hall.a,   name: "Data Hall A",       type: hall,     storey: lvl.l0, x: 4,  y: 18, w: 30, d: 18, height: 6.0}
+  - {id: sp.corr.c,   name: "Corridor Centre",   type: corridor, storey: lvl.l0, x: 34, y: 18, w: 4,  d: 18, height: 6.0}
+  - {id: sp.hall.b,   name: "Data Hall B",       type: hall,     storey: lvl.l0, x: 38, y: 18, w: 30, d: 18, height: 6.0}
+  - {id: sp.corr.e,   name: "Corridor East",     type: corridor, storey: lvl.l0, x: 68, y: 18, w: 4,  d: 18, height: 6.0}
+
+  # -- Spine corridor (y 15..18) across the full block.
+  - {id: sp.corr.spine, name: "Corridor Spine",  type: corridor, storey: lvl.l0, x: 0,  y: 15, w: 72, d: 3,  height: 6.0}
+
+  # -- South band (y 0..15): electrical A | corridor | MMR/fire | plant | MMR/water | loading | electrical B.
+  - {id: sp.elec.a,   name: "Electrical Room A", type: electrical, storey: lvl.l0, x: 0,  y: 6, w: 12, d: 9, height: 6.0}
+  - {id: sp.batt.a,   name: "Battery Room A",    type: battery,    storey: lvl.l0, x: 0,  y: 0, w: 12, d: 6, height: 6.0}
+  - {id: sp.corr.s,   name: "Corridor South",    type: corridor,   storey: lvl.l0, x: 12, y: 0, w: 6,  d: 15, height: 6.0}
+  - {id: sp.mmr.1,    name: "Meet-Me Room 1",    type: mmr,        storey: lvl.l0, x: 18, y: 6, w: 6,  d: 9, height: 6.0}
+  - {id: sp.fire,     name: "Fire Suppression",  type: fire,       storey: lvl.l0, x: 18, y: 0, w: 6,  d: 6, height: 6.0}
+  - {id: sp.plant,    name: "Cooling Plant Room", type: plant,     storey: lvl.l0, x: 24, y: 0, w: 24, d: 15, height: 6.0}
+  - {id: sp.mmr.2,    name: "Meet-Me Room 2",    type: mmr,        storey: lvl.l0, x: 48, y: 6, w: 6,  d: 9, height: 6.0}
+  - {id: sp.water,    name: "Water Treatment",   type: water,      storey: lvl.l0, x: 48, y: 0, w: 6,  d: 6, height: 6.0}
+  - {id: sp.loading,  name: "Loading & Storage", type: loading,    storey: lvl.l0, x: 54, y: 0, w: 6,  d: 15, height: 6.0}
+  - {id: sp.elec.b,   name: "Electrical Room B", type: electrical, storey: lvl.l0, x: 60, y: 6, w: 12, d: 9, height: 6.0}
+  - {id: sp.batt.b,   name: "Battery Room B",    type: battery,    storey: lvl.l0, x: 60, y: 0, w: 12, d: 6, height: 6.0}
+
+  # -- Office wing, L00 (x 12..30, y -12..0).
+  - {id: sp.lobby,    name: "Entrance Lobby",    type: lobby,    storey: lvl.l0, x: 12, y: -12, w: 6, d: 9, height: 3.75}
+  - {id: sp.stair.0,  name: "Stair L00",         type: stair,    storey: lvl.l0, x: 12, y: -3,  w: 3, d: 3, height: 3.75}
+  - {id: sp.ocorr.0,  name: "Office Corridor L00", type: corridor, storey: lvl.l0, x: 15, y: -3, w: 3, d: 3, height: 3.75}
+  - {id: sp.security, name: "Security Office",   type: office,   storey: lvl.l0, x: 18, y: -12, w: 4, d: 6, height: 3.75}
+  - {id: sp.meeting,  name: "Meeting Room",      type: meeting,  storey: lvl.l0, x: 22, y: -12, w: 8, d: 6, height: 3.75}
+  - {id: sp.noc,      name: "Network Operations Centre", type: noc, storey: lvl.l0, x: 18, y: -6, w: 8, d: 6, height: 3.75}
+  - {id: sp.comms,    name: "Office Comms Room", type: mmr,      storey: lvl.l0, x: 26, y: -6, w: 4, d: 6, height: 3.75}
+
+  # -- Office wing, L01 (same footprint).
+  - {id: sp.office,   name: "Open Office",       type: office,   storey: lvl.l1, x: 12, y: -12, w: 10, d: 9, height: 3.0}
+  - {id: sp.stair.1,  name: "Stair L01",         type: stair,    storey: lvl.l1, x: 12, y: -3,  w: 3, d: 3, height: 3.0}
+  - {id: sp.ocorr.1,  name: "Office Corridor L01", type: corridor, storey: lvl.l1, x: 15, y: -3, w: 15, d: 3, height: 3.0}
+  - {id: sp.meeting.1, name: "Meeting Room L01", type: meeting,  storey: lvl.l1, x: 22, y: -12, w: 4, d: 9, height: 3.0}
+  - {id: sp.kitchen,  name: "Kitchen & Break",   type: kitchen,  storey: lvl.l1, x: 26, y: -8,  w: 4, d: 5, height: 3.0}
+  - {id: sp.wc,       name: "WC",                type: wc,       storey: lvl.l1, x: 26, y: -12, w: 4, d: 4, height: 3.0}
+
+# Doors: between two spaces (or a space and EXT). `at` is a point on the shared
+# wall line; the wall solver locates the wall segment containing it.
+# kind: single (0.9), double (1.8), roller (3.0) unless width overrides.
+doors:
+  # External
+  - {id: door.main,      between: [sp.lobby, EXT],       at: [15.0, -12.0], kind: double, name: "Main Entrance"}
+  - {id: door.dock,      between: [sp.loading, EXT],     at: [57.0, 0.0],   kind: roller, name: "Loading Dock"}
+  - {id: door.gen.a,     between: [sp.elec.a, EXT],      at: [0.0, 10.5],   kind: double, name: "Electrical A Yard Access"}
+  - {id: door.gen.b,     between: [sp.elec.b, EXT],      at: [72.0, 10.5],  kind: double, name: "Electrical B Yard Access"}
+  - {id: door.plant.ext, between: [sp.plant, EXT],       at: [40.0, 0.0],   kind: double, name: "Plant Yard Access"}
+
+  # Halls
+  - {id: door.hall.a.s,  between: [sp.corr.spine, sp.hall.a], at: [8.0, 18.0],  kind: double}
+  - {id: door.hall.a.w,  between: [sp.corr.w, sp.hall.a],     at: [4.0, 27.0],  kind: double}
+  - {id: door.hall.a.e,  between: [sp.corr.c, sp.hall.a],     at: [34.0, 27.0], kind: double}
+  - {id: door.hall.b.s,  between: [sp.corr.spine, sp.hall.b], at: [45.0, 18.0], kind: double}
+  - {id: door.hall.b.w,  between: [sp.corr.c, sp.hall.b],     at: [38.0, 27.0], kind: double}
+  - {id: door.hall.b.e,  between: [sp.corr.e, sp.hall.b],     at: [68.0, 27.0], kind: double}
+
+  # Corridor network
+  - {id: door.corr.w,    between: [sp.corr.spine, sp.corr.w], at: [2.0, 18.0],  kind: double}
+  - {id: door.corr.c,    between: [sp.corr.spine, sp.corr.c], at: [35.0, 18.0], kind: single}
+  - {id: door.corr.e,    between: [sp.corr.spine, sp.corr.e], at: [70.0, 18.0], kind: double}
+  - {id: door.corr.s,    between: [sp.corr.spine, sp.corr.s], at: [15.0, 15.0], kind: double}
+
+  # Technical rooms off the spine / south corridor
+  - {id: door.elec.a,    between: [sp.corr.spine, sp.elec.a],  at: [9.0, 15.0],  kind: double}
+  - {id: door.elec.a.s,  between: [sp.corr.s, sp.elec.a],      at: [12.0, 10.0], kind: single}
+  - {id: door.batt.a,    between: [sp.corr.s, sp.batt.a],      at: [12.0, 3.0],  kind: single}
+  - {id: door.batt.a.i,  between: [sp.elec.a, sp.batt.a],      at: [6.0, 6.0],   kind: single}
+  - {id: door.mmr.1,     between: [sp.corr.s, sp.mmr.1],       at: [18.0, 10.0], kind: single}
+  - {id: door.fire,      between: [sp.corr.s, sp.fire],        at: [18.0, 3.0],  kind: single}
+  - {id: door.plant,     between: [sp.corr.spine, sp.plant],   at: [39.0, 15.0], kind: double}
+  - {id: door.plant.fire, between: [sp.plant, sp.fire],        at: [24.0, 3.0],  kind: single}
+  - {id: door.mmr.2,     between: [sp.corr.spine, sp.mmr.2],   at: [51.0, 15.0], kind: single}
+  - {id: door.water,     between: [sp.loading, sp.water],      at: [54.0, 3.0],  kind: single}
+  - {id: door.loading,   between: [sp.corr.spine, sp.loading], at: [57.0, 15.0], kind: double}
+  - {id: door.elec.b,    between: [sp.corr.spine, sp.elec.b],  at: [69.0, 15.0], kind: double}
+  - {id: door.batt.b.i,  between: [sp.elec.b, sp.batt.b],      at: [66.0, 6.0],  kind: single}
+
+  # Office wing L00
+  - {id: door.office.link, between: [sp.corr.s, sp.ocorr.0],   at: [16.5, 0.0],  kind: double, name: "Office Link"}
+  - {id: door.lobby.corr,  between: [sp.lobby, sp.ocorr.0],    at: [16.5, -3.0], kind: double}
+  - {id: door.stair.0,     between: [sp.lobby, sp.stair.0],    at: [13.5, -3.0], kind: single}
+  - {id: door.security,    between: [sp.lobby, sp.security],   at: [18.0, -8.0], kind: single}
+  - {id: door.noc,         between: [sp.noc, sp.ocorr.0],      at: [18.0, -1.5], kind: single}
+  - {id: door.noc.comms,   between: [sp.noc, sp.comms],        at: [26.0, -3.0], kind: single}
+  - {id: door.meeting,     between: [sp.security, sp.meeting], at: [22.0, -9.0], kind: single}
+  - {id: door.noc.meeting, between: [sp.noc, sp.meeting],      at: [24.0, -6.0], kind: single}
+
+  # Office wing L01
+  - {id: door.stair.1,     between: [sp.stair.1, sp.ocorr.1],  at: [15.0, -1.5], kind: single}
+  - {id: door.office.1,    between: [sp.office, sp.ocorr.1],   at: [17.0, -3.0], kind: double}
+  - {id: door.meeting.1,   between: [sp.meeting.1, sp.ocorr.1], at: [24.0, -3.0], kind: single}
+  - {id: door.kitchen,     between: [sp.kitchen, sp.ocorr.1],  at: [28.0, -3.0], kind: single}
+  - {id: door.wc,          between: [sp.wc, sp.kitchen],       at: [28.0, -8.0], kind: single}
+
+door_kinds:
+  single: {width: 0.9, height: 2.1}
+  double: {width: 1.8, height: 2.1}
+  roller: {width: 3.5, height: 4.0}

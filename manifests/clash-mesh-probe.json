@@ -1,0 +1,10 @@
+{
+  "angular_deflection": 0.5,
+  "case": "pipe.clash.tangent",
+  "conclusion": "Default tessellation does not reproduce the requested false penetration.",
+  "linear_deflection": 0.001,
+  "method": "minimum tessellated pipe vertex coordinate minus planar wall face",
+  "minimum_signed_gap": 0.0,
+  "units": "metres",
+  "vertices": 52
+}

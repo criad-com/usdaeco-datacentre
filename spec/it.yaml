@@ -1,0 +1,71 @@
+# demo-datacentre-01 IT fit-out: rack layout per hall, meet-me rooms, data containment and
+# physical security. Rack instances, busway runs, tray comb runs, TCS manifolds
+# and their port-level connections are all GENERATED from these patterns by
+# dcbuild.layout — the ids are deterministic:
+#   rack.{hall}.r{row}.{nn}     e.g. rack.a.r1.07, rack.b.r4.20
+#   it.bw.{side}.{hall}{row}    busway run        e.g. it.bw.a.a1
+#   it.tray.{hall}.r{row}       data tray comb    e.g. it.tray.a.r2
+#   clg.man.{hall}.r{row}.{s|r} TCS manifolds     e.g. clg.man.a.r1.s
+
+rack_types:
+  standard:
+    width: 0.6
+    depth: 1.2
+    height: 2.2
+    units: 52
+
+halls:
+  - id: hall.a
+    space: sp.hall.a
+    cooling: dlc                # direct liquid cooling -> TCS manifolds + hoses
+    rows: 4
+    racks_per_row: 20
+    rack_type: standard
+    rack_kw: 25
+    rack_pitch: 0.6             # racks butted side-by-side along the row
+    first_row_y: 21.5
+    row_pitch: 3.6
+    # Rack row centred in the hall x-range, then clamped to these margins:
+    row_x_margin: 4.0           # min clearance from hall side walls to first/last rack
+
+  - id: hall.b
+    space: sp.hall.b
+    cooling: air                # CRAH perimeter cooling, hot-aisle containment
+    rows: 4
+    racks_per_row: 20
+    rack_type: standard
+    rack_kw: 10
+    rack_pitch: 0.6
+    first_row_y: 21.5
+    row_pitch: 3.6
+    row_x_margin: 4.0
+
+meet_me_rooms:
+  - id: mmr.1
+    space: sp.mmr.1
+    serves: hall.a
+    racks: 4                    # carrier racks along the room's west wall
+    rack_type: standard
+  - id: mmr.2
+    space: sp.mmr.2
+    serves: hall.b
+    racks: 4
+    rack_type: standard
+
+containment:
+  tray_z: 2.9                   # per-row data tray height
+  tray_size: [0.45, 0.10]
+  dropper_size: [0.15, 0.05]
+  spine_tray_size: [0.6, 0.1]
+  # Hall trays collect to a spine at the hall's south wall, cross the spine
+  # corridor and drop into the serving MMR:
+  routes:
+    hall.a: {spine_x: 8.0, corridor_y: 16.5, mmr_entry: [21.0, 10.5]}
+    hall.b: {spine_x: 42.0, corridor_y: 16.5, mmr_entry: [51.0, 10.5]}
+
+office_it:
+  # Structured cabling from the office comms room; modelled as a single tray
+  # run L00 comms room -> office corridor ceiling.
+  comms_space: sp.comms
+  tray_z: 3.2
+

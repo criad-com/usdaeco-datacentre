@@ -1,0 +1,334 @@
+{
+  "checks": [
+    {
+      "name": "resolve CLI",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "resolve CLI elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 0.3011143337935209,
+      "detail": "0.301 s (measurement only)"
+    },
+    {
+      "name": "G0 CLI",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 CLI elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 0.3378080418333411,
+      "detail": "0.338 s (measurement only)"
+    },
+    {
+      "name": "IFC build CLI",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "IFC build CLI elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.672850084025413,
+      "detail": "14.673 s (measurement only)"
+    },
+    {
+      "name": "G1 schema/express and semantics",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G1 schema/express and semantics elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 42.93090208387002,
+      "detail": "42.931 s (measurement only)"
+    },
+    {
+      "name": "G0 power_2n",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 capacity",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 mech_n_plus_1",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 mech_diversity",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 circulation",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 door_columns",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 camera_rules",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "door face plane optics before occlusion",
+      "status": "PASS",
+      "ok": true,
+      "detail": "11/11; max 2.945658 m; min 343.741953 px/m"
+    },
+    {
+      "name": "door mounts independent of clear height",
+      "status": "PASS",
+      "ok": true,
+      "detail": "11 at 3.0 m"
+    },
+    {
+      "name": "camera design group census",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{'ext': 5, 'door': 11, 'corr': 18, 'yard': 8, 'lobby': 3}"
+    },
+    {
+      "name": "yard fixed IR provision",
+      "status": "PASS",
+      "ok": true,
+      "detail": "6 fixed bullets, IR 40 m; geometric coverage is a separate study"
+    },
+    {
+      "name": "lobby fixed provision",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2 fixed domes plus supplementary PTZ"
+    },
+    {
+      "name": "recorder camera allowance",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45"
+    },
+    {
+      "name": "pinned semantic and identity manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "769 resolved identities"
+    },
+    {
+      "name": "camera/head/type census",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45 cameras / 45 heads / 3 types"
+    },
+    {
+      "name": "41 doors, 12 alarms, 11 readers",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "door/column clearance",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 intersections; minimum 0.350 m"
+    },
+    {
+      "name": "combined/federated camera identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45"
+    },
+    {
+      "name": "both IFC camera contract tiers",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Status on every applicable product",
+      "status": "PASS",
+      "ok": true,
+      "detail": "9244/9244; 1 no-template exception"
+    },
+    {
+      "name": "Status exceptions are counted grids",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "second independent resolve",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "second independent resolve elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 0.3072250406257808,
+      "detail": "0.307 s (measurement only)"
+    },
+    {
+      "name": "second independent IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "second independent IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.348113582935184,
+      "detail": "14.348 s (measurement only)"
+    },
+    {
+      "name": "canonical plan determinism",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "target manifest determinism",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-arch",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-cooling",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-electrical",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-it",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-security",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-site",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-structure",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Revit camera payload contract",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45 valid GUIDs, native levels, finite drivers and complete JSON payloads"
+    },
+    {
+      "name": "Revit positive target density per type",
+      "status": "PASS",
+      "ok": true,
+      "detail": "3/3 types"
+    },
+    {
+      "name": "Revit finite user-radius inputs",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45 cameras"
+    },
+    {
+      "name": "Revit Status payload",
+      "status": "PASS",
+      "ok": true,
+      "detail": "NEW on every authored product category"
+    },
+    {
+      "name": "Revit room and identity payload",
+      "status": "PASS",
+      "ok": true,
+      "detail": "30 interior rooms; camera GUIDs agree with the generator"
+    },
+    {
+      "name": "Revit local dry run",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Revit local dry run elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 0.1875956249423325,
+      "detail": "0.188 s (measurement only)"
+    },
+    {
+      "name": "pytest",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pytest elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 6.324983791448176,
+      "detail": "6.325 s (measurement only)"
+    },
+    {
+      "name": "repository sanitization",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 hits"
+    }
+  ],
+  "failed": 0,
+  "passed": 45,
+  "informational": 8,
+  "total": 53
+}

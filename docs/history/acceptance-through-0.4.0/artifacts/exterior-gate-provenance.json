@@ -1,0 +1,80 @@
+{
+  "adaptations": [
+    "Pin the clean candidate branch and exact revision in dependency and Nix input metadata; compute its lock NAR hash from the committed Git archive. No Nix build is claimed.",
+    "Require the historical native evidence revision to be an ancestor of the candidate; retain its original tag, generator version and artifact hash check. No live pass is claimed."
+  ],
+  "candidateRunnerSha256": "219436d69ca77f43af45a524716b6570a9a4c4a62ae1d2af260044080c57cd66",
+  "completedFullRuns": 1,
+  "dependencies": {
+    "optional_repositories": {
+      "cctv-exec": {
+        "base_tag": "v0.1.1",
+        "revision": "6d992da6af563d3534c484638fbfb462a09cf34a"
+      }
+    },
+    "repositories": {
+      "buildup": {
+        "base_tag": "v0.1.2",
+        "revision": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"
+      },
+      "cctv": {
+        "base_tag": "v0.4.4",
+        "revision": "f6b8b7a3785a6f2d6402a40822728a91250c15e0"
+      },
+      "core": {
+        "base_tag": "v0.8.2",
+        "revision": "0350a2fbc41deb2432dee336645b5350f69754d8"
+      },
+      "datacentre": {
+        "base_tag": "wp/W12",
+        "revision": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84"
+      },
+      "pipe": {
+        "base_tag": "v0.1.2",
+        "revision": "f48a764dacc99c4467b426f3c1bb691c5c783952"
+      },
+      "sync": {
+        "base_tag": "v0.4.3",
+        "revision": "2cb242df97a089ff9d16fc547b8d12d797028960"
+      },
+      "toolchain": {
+        "base_tag": "v0.1.0",
+        "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919"
+      },
+      "wall": {
+        "base_tag": "v0.1.2",
+        "revision": "09b2993e11d07b96a2492e75c49448153524c8b2"
+      }
+    },
+    "runtime": {
+      "blender": "5.1.2",
+      "bonsai": "0.8.5",
+      "ifcopenshell": "0.8.5",
+      "usd-core": "26.8"
+    }
+  },
+  "finalCheckRepairs": [
+    "After the full run, synchronize the candidate Nix pin and lock metadata with the generator input revision.",
+    "Restore the expected core sibling link for the owned scenarios documentation layout.",
+    "Repeat only the final regression tests, links and sanitization: 3 checks, 0 failed."
+  ],
+  "generatorRevision": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84",
+  "initialFullRunFailures": 2,
+  "launchDeviation": "Initial launch stopped after Sync registered two physical copies of the core plugin. The completed run uses an aggregate pointing to its own disposable source closure.",
+  "libraryEvidence": "The family runner audits and reuses passing unchanged library rows. Sync, generator, family scenarios and datacentre rows run afresh.",
+  "nix": {
+    "attempts": 1,
+    "command": "nix flake check --offline",
+    "reason": "This repository and its parents have no flake.nix.",
+    "status": "NOT PROVEN"
+  },
+  "originalRunnerSha256": "9b879e93f35a9328e51083607350029190f22e73e30b1ead99f2f067a922a898",
+  "scenariosRevision": "577f3ec75c18d454954baea2d832e8e87f30636e",
+  "unchangedScheduleFunctions": [
+    "door_points",
+    "grid_points",
+    "spatial_tiles",
+    "author_schedule",
+    "run_schedule"
+  ]
+}

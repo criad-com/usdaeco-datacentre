@@ -1,0 +1,98 @@
+{
+  "added": [],
+  "baselineRevision": "f20f80af0c62f4d7d23029ea3e37aad9b832b58d",
+  "changes": {
+    "sec.cam.ext.dock": {
+      "after": {
+        "device_rotation": 0.0,
+        "focal_length": 7.5,
+        "global_id": "0svgg_gKPJJQJmGoTB7pPR",
+        "id": "sec.cam.ext.dock",
+        "mount": "pole",
+        "pan": 90.0,
+        "phase": "NEW",
+        "pos": [
+          49.375,
+          -18.25,
+          8.0
+        ],
+        "presets": {},
+        "range": 40.0,
+        "roll": 0.0,
+        "scenario": "door",
+        "space": "sp.yard.hr",
+        "system": "sys.sec",
+        "target_density": 250.0,
+        "targets": [
+          "door.dock",
+          "door.plant.ext"
+        ],
+        "tilt": 20.435531437994403,
+        "tour": [],
+        "type": "bullet_4mp_outdoor"
+      },
+      "before": {
+        "device_rotation": 0.0,
+        "focal_length": 3.7,
+        "global_id": "0svgg_gKPJJQJmGoTB7pPR",
+        "id": "sec.cam.ext.dock",
+        "mount": "wall",
+        "pan": 90.0,
+        "phase": "NEW",
+        "pos": [
+          57.0,
+          -1.7,
+          3.5
+        ],
+        "presets": {},
+        "range": 40.0,
+        "roll": 0.0,
+        "scenario": "door",
+        "space": "sp.yard.hr",
+        "system": "sys.sec",
+        "target_density": 250.0,
+        "targets": [
+          "door.dock"
+        ],
+        "tilt": 55.0,
+        "tour": [],
+        "type": "bullet_4mp_outdoor"
+      }
+    }
+  },
+  "externalPrimaryOptics": {
+    "sec.cam.ext.dock": {
+      "inside": true,
+      "maxDistance": 21.746853220638613,
+      "minDensity": 126.71297015364935,
+      "passed": true
+    },
+    "sec.cam.ext.gen.a": {
+      "inside": true,
+      "maxDistance": 3.6445164288283847,
+      "minDensity": 309.4374593517215,
+      "passed": true
+    },
+    "sec.cam.ext.gen.b": {
+      "inside": true,
+      "maxDistance": 3.6445164288283833,
+      "minDensity": 309.4374593517216,
+      "passed": true
+    },
+    "sec.cam.ext.main": {
+      "inside": true,
+      "maxDistance": 3.6445164288283842,
+      "minDensity": 309.43745935172154,
+      "passed": true
+    },
+    "sec.cam.ext.plant.ext": {
+      "inside": true,
+      "maxDistance": 3.6445164288283842,
+      "minDensity": 309.43745935172154,
+      "passed": true
+    }
+  },
+  "removed": [],
+  "retainedGuids": 45,
+  "unchangedCameras": 44
+}

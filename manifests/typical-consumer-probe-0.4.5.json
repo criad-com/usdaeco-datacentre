@@ -1,0 +1,178 @@
+{
+  "consumer": {
+    "ref": "v0.1.0",
+    "repo": "usdaeco-typical",
+    "revision": "2c3b3809488075b73868345c0b58ac16ae65b903"
+  },
+  "diff": {
+    "changes": [
+      {
+        "classification": "IfcWall.PARTITIONING",
+        "declared": false,
+        "distance": 3.1999999999999993,
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_016",
+        "kind": "changed",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_016",
+        "reason": ""
+      },
+      {
+        "classification": "IfcDoor.DOOR",
+        "declared": false,
+        "distance": null,
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Additional_Meeting_Access",
+        "kind": "extra",
+        "prototype": null,
+        "reason": ""
+      }
+    ],
+    "declared_deviations": 0,
+    "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office",
+    "matches": [
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2_1",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2_2",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Stair_L01/Office_Stair",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Stair_L01/Office_Stair"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/door_kitchen_2",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/door_kitchen"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/door_meeting_1_2",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/door_meeting_1"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/door_office_1_2",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/door_office_1"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/door_stair_1_2",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/door_stair_1"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/door_wc_2",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/door_wc"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/slab_l2_office",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/slab_l1_office"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_001",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_001"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_002",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_002"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_003",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_003"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_004",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_004"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_005",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_005"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_006",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_006"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_007",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_007"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_008",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_008"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_009",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_009"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_h_010",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_010"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_011",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_011"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_012",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_012"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_013",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_013"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_014",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_014"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_015",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_015"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_017",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_017"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_018",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_018"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_019",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_019"
+      },
+      {
+        "instance": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_016",
+        "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_v_016"
+      }
+    ],
+    "offset": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.0,
+        1.0
+      ]
+    ],
+    "prototype": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office"
+  },
+  "net_partition_length_delta_m": 3.200000000000003,
+  "partition_length_m": {
+    "lvl.l1": 43.0,
+    "lvl.l2": 46.2
+  },
+  "source": "dist/floors/dc.usda"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "usdaeco-datacentre",
+  "version": "0.4.8",
+  "kind": "data",
+  "tier": "data",
+  "requires": {
+    "usdaeco-revit": ">=0.1,<0.2"
+  },
+  "licence": "MIT"
+}

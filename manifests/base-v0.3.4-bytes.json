@@ -1,0 +1,16 @@
+{
+  "ifc_normalization": "FILE_NAME timestamp and originating_system version stamp only",
+  "ifc_sha256": {
+    "demo-datacentre-01-arch.ifc": "2bd67edfe9494a6f410cc25b84d16b399d774b112db0c143eb5f02b6beb51e55",
+    "demo-datacentre-01-cooling.ifc": "e154496ccadaa3385856b878681745abe889ec8f2f198a903393eea8db94292a",
+    "demo-datacentre-01-electrical.ifc": "3fcae0ec9918203085263b257154b9a51b3bee67d2895967a752f3cf4cad35c2",
+    "demo-datacentre-01-it.ifc": "55b8c417bd1520b95004a840457d50ad679e3a6a65700d70bbe1ac7534cc2ce6",
+    "demo-datacentre-01-security.ifc": "4a4c4d177a4177a329402c1d6e29a5ef0ad49565ecb577d9ace712c0e7624a6a",
+    "demo-datacentre-01-site.ifc": "b4f96763e15281855b781ba571fbdbcc472d407f83e51d73db5d34d0ce0554bb",
+    "demo-datacentre-01-structure.ifc": "b305ae36ca50548bcdd03c320bbf5e7e24cf7aac2e9cbbd139e0d573fac72501",
+    "demo-datacentre-01.ifc": "f3bdc6416b764c42c9866e614f99597d269143bf816b6f975fe71725cde439fe"
+  },
+  "plan_sha256": "fe56d5ff2652eb6f3bac9a30cca3cae7dcb955e03215bfcafe183767ae76620d",
+  "release": "v0.3.4",
+  "targets_sha256": "e6e8db761d68989392d6d24264988616e351fca4bf5c91bc2e546e703593113b"
+}

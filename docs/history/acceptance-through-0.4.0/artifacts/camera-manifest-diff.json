@@ -1,0 +1,190 @@
+{
+  "added": {
+    "sec.cam.corr.corr.c.2": "0f3YmDobLLqB7IeSJZgsbH",
+    "sec.cam.corr.corr.e.2": "0gT6CdPqjMofQmZSR3vWoo",
+    "sec.cam.corr.corr.s.2": "1gbayQuHvOTgciChlgt9Y2",
+    "sec.cam.corr.corr.spine.5": "3K1TlIdFnMzQCWrt_XOO0Y",
+    "sec.cam.corr.corr.spine.6": "0LUjKOIr1L9O$g8Ci$2mGS",
+    "sec.cam.corr.corr.w.2": "37P4gFUGDMyv9HG1iEaZ7O",
+    "sec.cam.corr.ocorr.0.2": "3ntdHRB2rKI9CF5DjFBysc",
+    "sec.cam.corr.ocorr.1.2": "1SKMhKLxLV$fHepnJaBfhW",
+    "sec.cam.lobby.fixed.1": "0DNAZ9iD9UgOsKnW9gsLJ3",
+    "sec.cam.lobby.fixed.2": "0gBTR7V7rIKOi4imijfawV",
+    "sec.cam.yard.gen.a.fixed.1": "2c0Nbu8lvIWvQfm0AlCn30",
+    "sec.cam.yard.gen.a.fixed.2": "3uyAzIoDnKSBOmGA_v0tzw",
+    "sec.cam.yard.gen.b.fixed.1": "0MWCIe$lrTkP6mg2QfHJp7",
+    "sec.cam.yard.gen.b.fixed.2": "2QSy$Kpq9HnxkLv815aMaC",
+    "sec.cam.yard.hr.fixed.1": "2dwirlZ01O2vbxSYzj05OR",
+    "sec.cam.yard.hr.fixed.2": "027AScu5nUg8KyeWqVLnui"
+  },
+  "after": 45,
+  "before": 29,
+  "guidChanges": [],
+  "removed": [],
+  "retained": 29,
+  "unchangedRecords": [
+    "sec.cam.lobby",
+    "sec.cam.yard.a",
+    "sec.cam.yard.b"
+  ],
+  "updatedRecords": {
+    "sec.cam.corr.corr.c.1": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.e.1": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.s.1": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.spine.1": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.spine.2": [
+      "focal_length",
+      "mount",
+      "pan",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.spine.3": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.spine.4": [
+      "focal_length",
+      "mount",
+      "pan",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.corr.w.1": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.ocorr.0.1": [
+      "mount",
+      "pan",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.corr.ocorr.1.1": [
+      "focal_length",
+      "mount",
+      "pos",
+      "range",
+      "tilt"
+    ],
+    "sec.cam.door.elec.a": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.elec.b": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.hall.a.e": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.hall.a.s": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.hall.a.w": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.hall.b.e": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.hall.b.s": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.hall.b.w": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.mmr.1": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.mmr.2": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.door.office.link": [
+      "mount",
+      "pan",
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.ext.dock": [
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.ext.gen.a": [
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.ext.gen.b": [
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.ext.main": [
+      "pos",
+      "tilt"
+    ],
+    "sec.cam.ext.plant.ext": [
+      "pos",
+      "tilt"
+    ]
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "base": {
+    "bytes": 144319,
+    "camera": "manifests/cameras/base.usda",
+    "camera_sha256": "7773f1193fc7e75fd86e3d3aca32033dcf83072f2835851ea5e5c57f347f7d4b",
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 33,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "normalized_sha256": "31a435f4e9c3cbd22a4dbdf491c242d3d04d7bb1ebe8ecb022259fadb84bf9d7",
+    "path": "dist/base/vanilla.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "1ce1ae9861dacad56bfe45d49aa36ade4de1835db280b583833d972be76a619a",
+    "sources": {
+      "code": {
+        "src/dcbuild/render.py": "c3f67a1983d7d815779add481788cd55dd74a1d50940c17bb6df9f563c03663d",
+        "src/dcbuild/vanilla.py": "dc8717c73902cfba2c6bbaefd6ead50e8e62abb4ac6ccac4ee9bf908747692e4"
+      },
+      "publication": {
+        "dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+        "dc.manifest.json": "2e9970f0def8657bb88a9a8b769de7266d1543e5132eacf0d56141c73faf158c",
+        "dc.semantics.usdc": "1d9e6753da91b62fa95f553102f435c56a5ff93d63c2cec4f01d512dd8f1d3cd",
+        "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+      },
+      "toolchain": {
+        "library": "usdaeco-toolchain",
+        "ref": "v0.3.9",
+        "repo": "usdaeco-toolchain",
+        "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+        "runtime_paths": [
+          "tools",
+          "library.json"
+        ],
+        "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887",
+        "version": "0.3.9"
+      }
+    },
+    "width": 1280
+  },
+  "clash": {
+    "bytes": 144689,
+    "camera": "manifests/cameras/clash.usda",
+    "camera_sha256": "895d2786cf7d8a715d0beccdf9f73616a7b832723e2d5053ec6b25a0aabd2201",
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 35,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "normalized_sha256": "b3c4a88c9b0ba844c1906d87035835d8be87a31c57d5f9151040318b12f69ca1",
+    "path": "dist/clash/vanilla.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "4ec3ed434cc02fee3c10a06412cbccb0bb6c147840e6aa8c8db5e657362dda55",
+    "sources": {
+      "code": {
+        "src/dcbuild/render.py": "c3f67a1983d7d815779add481788cd55dd74a1d50940c17bb6df9f563c03663d",
+        "src/dcbuild/vanilla.py": "dc8717c73902cfba2c6bbaefd6ead50e8e62abb4ac6ccac4ee9bf908747692e4"
+      },
+      "publication": {
+        "dc.geometry.usdc": "24c22644aa0b9470ceddfb8433a828284fea2df964d77840bea53b1328d8675e",
+        "dc.manifest.json": "a760940a286c42471a6b6db86c8b696a7077242c45275dce5b29898d6d87776d",
+        "dc.semantics.usdc": "5a9af9ff8ec3366d80408e73a0768f4698db71b329f9edb21e4d6fbc7ad91f15",
+        "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+      },
+      "toolchain": {
+        "library": "usdaeco-toolchain",
+        "ref": "v0.3.9",
+        "repo": "usdaeco-toolchain",
+        "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+        "runtime_paths": [
+          "tools",
+          "library.json"
+        ],
+        "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887",
+        "version": "0.3.9"
+      }
+    },
+    "width": 1280
+  },
+  "floors": {
+    "bytes": 145777,
+    "camera": "manifests/cameras/floors.usda",
+    "camera_sha256": "5ce695a48c04f0bcc437ccbcc6d64000476aa57890d48695fc165eb324320c91",
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          10.25
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 39,
+      "position": [
+        178.08107440626125,
+        -218.37971904890043,
+        175.35728928751348
+      ],
+      "purposes": "proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "normalized_sha256": "258fc0b00a62f2e94978d1ddcec872d7e21545c5d1a074a872e2a0274bc622d5",
+    "path": "dist/floors/vanilla.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "b1d23e113205fc117d9f180a3a3f50d495948431266da797dee73476cc16a15a",
+    "sources": {
+      "code": {
+        "src/dcbuild/render.py": "c3f67a1983d7d815779add481788cd55dd74a1d50940c17bb6df9f563c03663d",
+        "src/dcbuild/vanilla.py": "dc8717c73902cfba2c6bbaefd6ead50e8e62abb4ac6ccac4ee9bf908747692e4"
+      },
+      "publication": {
+        "dc.geometry.usdc": "feaced9b153a36baea8399d681ffe820e9b3b543075cdd15f8249a1ca0c2bf1f",
+        "dc.manifest.json": "625385384e2103aeb489532b3d270e9df4e9f2d2bcc32a5b578e3f56230ac179",
+        "dc.semantics.usdc": "7417b00cf602a4f48e4a4071d3f709e0be7ffb95216506ec2300da908f754004",
+        "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+      },
+      "toolchain": {
+        "library": "usdaeco-toolchain",
+        "ref": "v0.3.9",
+        "repo": "usdaeco-toolchain",
+        "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+        "runtime_paths": [
+          "tools",
+          "library.json"
+        ],
+        "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887",
+        "version": "0.3.9"
+      }
+    },
+    "width": 1280
+  },
+  "iris": {
+    "bytes": 144242,
+    "camera": "manifests/cameras/iris.usda",
+    "camera_sha256": "7773f1193fc7e75fd86e3d3aca32033dcf83072f2835851ea5e5c57f347f7d4b",
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 33,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "normalized_sha256": "3efd8aadb328d89261e782a30d00f78019b5522171afb61557fe3a8e5b38d3f3",
+    "path": "dist/iris/vanilla.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "27107bc04a0a84e113b4572233347510881a784e0b02678f7e46842e726e1d13",
+    "sources": {
+      "code": {
+        "src/dcbuild/render.py": "c3f67a1983d7d815779add481788cd55dd74a1d50940c17bb6df9f563c03663d",
+        "src/dcbuild/vanilla.py": "dc8717c73902cfba2c6bbaefd6ead50e8e62abb4ac6ccac4ee9bf908747692e4"
+      },
+      "publication": {
+        "dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+        "dc.manifest.json": "5e16cacc9fd6b4151262d1c8a910ebbaa28d4d813ab7723465975022efeac0c8",
+        "dc.semantics.usdc": "b857167e8555ee82f050c788b5664eab0628f4aa41921766eb0defb8c3699af7",
+        "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+      },
+      "toolchain": {
+        "library": "usdaeco-toolchain",
+        "ref": "v0.3.9",
+        "repo": "usdaeco-toolchain",
+        "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+        "runtime_paths": [
+          "tools",
+          "library.json"
+        ],
+        "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887",
+        "version": "0.3.9"
+      }
+    },
+    "width": 1280
+  },
+  "pod": {
+    "bytes": 144340,
+    "camera": "manifests/cameras/pod.usda",
+    "camera_sha256": "895d2786cf7d8a715d0beccdf9f73616a7b832723e2d5053ec6b25a0aabd2201",
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 35,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "normalized_sha256": "ac4e67da8600aa2dde70488275fe50abc6229508b4ce44ae9ff735a85cd8e3ab",
+    "path": "dist/pod/vanilla.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "905398308ea5405068850594222c0dc77c42da83fbc773bb81a26084bcadf9bf",
+    "sources": {
+      "code": {
+        "src/dcbuild/render.py": "c3f67a1983d7d815779add481788cd55dd74a1d50940c17bb6df9f563c03663d",
+        "src/dcbuild/vanilla.py": "dc8717c73902cfba2c6bbaefd6ead50e8e62abb4ac6ccac4ee9bf908747692e4"
+      },
+      "publication": {
+        "dc.geometry.usdc": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9",
+        "dc.manifest.json": "6ac73e7cfe8220f9c09fa95f2442f653b3ea25a6d73420979307ec4dae0c8d77",
+        "dc.semantics.usdc": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c",
+        "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+      },
+      "toolchain": {
+        "library": "usdaeco-toolchain",
+        "ref": "v0.3.9",
+        "repo": "usdaeco-toolchain",
+        "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+        "runtime_paths": [
+          "tools",
+          "library.json"
+        ],
+        "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887",
+        "version": "0.3.9"
+      }
+    },
+    "width": 1280
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "height": 1.6,
+  "passFraction": 0.9,
+  "requiredDensity": 62.5,
+  "rows": [
+    {
+      "density": 85.12269825815793,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "target": "/SecurityTargets/sp_corr_c"
+    },
+    {
+      "density": 85.12269825815793,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "target": "/SecurityTargets/sp_corr_e"
+    },
+    {
+      "density": 103.39795323770082,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "target": "/SecurityTargets/sp_corr_s"
+    },
+    {
+      "density": 72.17595697182452,
+      "fixedCoverage": true,
+      "fraction": 0.9768518518518519,
+      "target": "/SecurityTargets/sp_corr_spine"
+    },
+    {
+      "density": 85.12269825815793,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "target": "/SecurityTargets/sp_corr_w"
+    },
+    {
+      "density": 434.2293736184039,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "target": "/SecurityTargets/sp_ocorr_0"
+    },
+    {
+      "density": 103.75549638200933,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "target": "/SecurityTargets/sp_ocorr_1"
+    }
+  ],
+  "spacing": 0.5
+}

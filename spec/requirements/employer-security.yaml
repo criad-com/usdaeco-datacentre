@@ -1,0 +1,38 @@
+# ILLUSTRATIVE: every value below is demonstration data, not verified code content.
+title: Illustrative employer security requirements
+source: Demo employer security brief, illustrative reader clause 1
+kind: specification
+authority: 2
+illustrative: true
+appliesTo:
+  classification:
+  - IfcSensor.IDENTIFIERSENSOR
+  types:
+  - type.sec.iris
+requirements:
+- measure: MountingHeight
+  operator: between
+  values:
+  - 1.05
+  - 1.2
+  unit: m
+  tolerance: 1.0e-06
+  severity: hard
+  rationale: Illustrative reader centre-height band for the demonstration.
+- measure: DoorEdgeOffset
+  operator: between
+  values:
+  - 0.3
+  - 0.5
+  unit: m
+  tolerance: 1.0e-06
+  severity: hard
+  rationale: Illustrative distance from reader centre to nominal door leaf edge.
+- measure: Side
+  operator: eq
+  values:
+  - pull
+  unit: '1'
+  tolerance: 0
+  severity: hard
+  rationale: Illustrative pull-side mounting requirement.

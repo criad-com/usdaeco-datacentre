@@ -1,0 +1,77 @@
+# L02 copies the L01 room and door schedule; only the explicit wall and door edits differ.
+facility:
+  storeys:
+  - id: lvl.l2
+    name: L02 Office
+    elevation: 7.0
+    blocks:
+    - office
+    expected_areas:
+      office: 216
+    typical_of: lvl.l1
+  roof:
+    main:
+      elevation: 7.0
+    office:
+      elevation: 10.0
+  split_upper_slabs: false
+spaces:
+  doors:
+  - id: door.office.2b
+    name: Additional Meeting Access
+    between:
+    - sp.meeting.1.2
+    - sp.kitchen.2
+    at:
+    - 27
+    - -5.5
+    kind: single
+expected:
+  drift:
+    walls_moved: 1
+    doors_extra: 1
+    prototype: lvl.l1
+    instance: lvl.l2
+    offset_m:
+    - 0
+    - 0
+    - 3
+    expected_net_partition_length_delta_m: 3.2
+    deviations:
+    - kind: wallMoved
+      id: wall.l2.v.016
+      prototype: wall.l1.v.016
+      between:
+      - sp.meeting.1.2
+      - sp.kitchen.2
+      axis_from:
+      - - 26
+        - -8
+      - - 26
+        - -3
+      axis_to:
+      - - 27
+        - -11.2
+      - - 27
+        - -3
+      offset_m:
+      - 1
+      - 0
+      - 0
+      length_from_m: 5.0
+      length_to_m: 8.2
+      extension_m: 3.2
+      reason: Partition shifted 1 m east and extended 3.2 m south; room schedule remains
+        the typical baseline.
+    - kind: doorExtra
+      id: door.office.2b
+      wall: wall.l2.v.016
+      reason: Additional access through the edited partition.
+wall_edits:
+- id: wall.l2.v.016
+  p1:
+  - 27
+  - -11.2
+  p2:
+  - 27
+  - -3

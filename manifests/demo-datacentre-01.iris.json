@@ -1,0 +1,108 @@
+{
+  "counts": {
+    "activities_per_programme": {},
+    "cameras": 45,
+    "ceilings": 0,
+    "columns": 80,
+    "doors": 41,
+    "fitout_by_class": {},
+    "fix_counts": {},
+    "mep_by_class": {
+      "IfcAlarm": 12,
+      "IfcAudioVisualAppliance": 45,
+      "IfcCableCarrierFitting": 165,
+      "IfcCableCarrierSegment": 336,
+      "IfcCableFitting": 401,
+      "IfcCableSegment": 797,
+      "IfcChiller": 2,
+      "IfcCoolingTower": 4,
+      "IfcElectricDistributionBoard": 26,
+      "IfcElectricFlowStorageDevice": 16,
+      "IfcElectricGenerator": 2,
+      "IfcHeatExchanger": 1,
+      "IfcPipeFitting": 238,
+      "IfcPipeSegment": 476,
+      "IfcPump": 6,
+      "IfcSensor": 11,
+      "IfcTank": 3,
+      "IfcTransformer": 2,
+      "IfcUnitaryEquipment": 12
+    },
+    "pods": 0,
+    "readers": 11,
+    "rooms": 30,
+    "spaces": 33,
+    "storeys": 2,
+    "temporary": 0,
+    "voids": 0,
+    "walls": 92
+  },
+  "expected": {
+    "reader_summary": {
+      "fail": 1,
+      "pass": 10
+    },
+    "readers": {
+      "door.elec.a": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.elec.b": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.a.e": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.a.s": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.a.w": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.b.e": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.b.s": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.b.w": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.mmr.1": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.mmr.2": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.office.link": {
+        "accessibility": "fail",
+        "employer-security": "fail",
+        "reader-datasheet": "pass"
+      }
+    }
+  },
+  "facility": "demo-datacentre-01",
+  "plan_sha256": "59466a47d5d5fc3683d6c882bd3b10b578aee421ae878250408d6d765e0a532b",
+  "units": "metres",
+  "up_axis": "Z",
+  "variant": "iris"
+}

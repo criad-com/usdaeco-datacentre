@@ -1,0 +1,105 @@
+{
+  "counts": {
+    "activities_per_programme": {},
+    "cameras": 47,
+    "ceilings": 0,
+    "columns": 80,
+    "doors": 47,
+    "fitout_by_class": {},
+    "fix_counts": {},
+    "mep_by_class": {
+      "IfcAlarm": 12,
+      "IfcAudioVisualAppliance": 47,
+      "IfcCableCarrierFitting": 165,
+      "IfcCableCarrierSegment": 336,
+      "IfcCableFitting": 401,
+      "IfcCableSegment": 797,
+      "IfcChiller": 2,
+      "IfcCoolingTower": 4,
+      "IfcElectricDistributionBoard": 26,
+      "IfcElectricFlowStorageDevice": 16,
+      "IfcElectricGenerator": 2,
+      "IfcHeatExchanger": 1,
+      "IfcPipeFitting": 238,
+      "IfcPipeSegment": 476,
+      "IfcPump": 6,
+      "IfcSensor": 11,
+      "IfcTank": 3,
+      "IfcTransformer": 2,
+      "IfcUnitaryEquipment": 12
+    },
+    "pods": 0,
+    "readers": 11,
+    "rooms": 36,
+    "spaces": 39,
+    "storeys": 3,
+    "temporary": 0,
+    "voids": 0,
+    "walls": 111
+  },
+  "expected": {
+    "drift": {
+      "deviations": [
+        {
+          "axis_from": [
+            [
+              26,
+              -8
+            ],
+            [
+              26,
+              -3
+            ]
+          ],
+          "axis_to": [
+            [
+              27,
+              -11.2
+            ],
+            [
+              27,
+              -3
+            ]
+          ],
+          "between": [
+            "sp.meeting.1.2",
+            "sp.kitchen.2"
+          ],
+          "extension_m": 3.2,
+          "id": "wall.l2.v.016",
+          "kind": "wallMoved",
+          "length_from_m": 5.0,
+          "length_to_m": 8.2,
+          "offset_m": [
+            1,
+            0,
+            0
+          ],
+          "prototype": "wall.l1.v.016",
+          "reason": "Partition shifted 1 m east and extended 3.2 m south; room schedule remains the typical baseline."
+        },
+        {
+          "id": "door.office.2b",
+          "kind": "doorExtra",
+          "reason": "Additional access through the edited partition.",
+          "wall": "wall.l2.v.016"
+        }
+      ],
+      "doors_extra": 1,
+      "expected_net_partition_length_delta_m": 3.2,
+      "instance": "lvl.l2",
+      "offset_m": [
+        0,
+        0,
+        3
+      ],
+      "prototype": "lvl.l1",
+      "walls_moved": 1
+    }
+  },
+  "facility": "demo-datacentre-01",
+  "plan_sha256": "daf08cf219c275516efebff9758e25b365f22477a0ba8d756f85b8d4ad6727ea",
+  "units": "metres",
+  "up_axis": "Z",
+  "variant": "floors"
+}

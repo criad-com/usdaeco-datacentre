@@ -1,0 +1,71 @@
+{
+  "sources": {
+    "core": {
+      "revision": "0350a2fbc41deb2432dee336645b5350f69754d8",
+      "trackedChanges": false,
+      "plugins": {
+        "plugInfo.json": "7e752ab0cefbd168aef8042133009428a16c1a9c7e3dfdbf6921fb0ab4d98e1f",
+        "generatedSchema.usda": "d1c19403ee59d873e2b3e451aef2023377fdd942d052cd3054b10eb276c4de98"
+      }
+    },
+    "cctv": {
+      "revision": "f937f2f4a34f9240df957d9c3a441f1873e6b385",
+      "trackedChanges": false,
+      "plugins": {
+        "plugInfo.json": "f8a498f7a484b6bf5a6df1017027efd2239df0c7e718b4388db0b4a5acda30ce",
+        "generatedSchema.usda": "2b3d5072d85d2eaaca4920629ae7c36128178d6c3422e6ba334f08e08030fabb"
+      }
+    },
+    "sync": {
+      "revision": "f6b9bb94a2d7f0541d95dba34868d30bb443003e",
+      "trackedChanges": false,
+      "plugins": {
+        "plugInfo.json": "5abac2f0e707cb6ab51430473a60b0f97024b636e9a45168e692717bd19af78f",
+        "generatedSchema.usda": "c7c0952d857f4b182fbe5a66e5bb3c45d807bc56a85bc93427a6ffae108c0442"
+      }
+    }
+  },
+  "inputs": {
+    "plan": {
+      "sha256": "e2e8fe8f51263b28a52a6c8cf800e33c662b1d20bb82e8c07931c0b5a80e8786",
+      "bytes": 285541
+    },
+    "nativeExport": {
+      "sha256": "f52aa37b7d1284b1d3a913691cdaa81035abe506e92c01defeb69343bb36fdc3",
+      "bytes": 26175580
+    },
+    "core": {
+      "sha256": "e8e9083bc4519a335b736a0ea32cdca282490a2ca74c0ec952b3a114e34e3236",
+      "bytes": 555
+    },
+    "cameraPhase": {
+      "sha256": "1aff42f334fda7122324fd4e9d9d7695a1ba7c591dd7746391c2dc11a5534fe5",
+      "bytes": 10397
+    }
+  },
+  "runner": {
+    "releasedSha256": "cf9733edaaec6565d500626181f50626ae0b8cdeda5c08779cb6c8697f87a591",
+    "adaptedSha256": "c2ac6b151b129772c572028651b0a1df081df84a0f6506b2b19322088f4f602c",
+    "cameras": 45,
+    "changedAssertions": 2
+  },
+  "coreLayers": {
+    "core.geometry.usdc": {
+      "sha256": "74bc127bc6b6dbc90bea377b6171ac98ede7e9a4b6ea000407bcafa491352276",
+      "bytes": 900223
+    },
+    "core.semantics.usda": {
+      "sha256": "be92cc1b1d8cf0c73227cb021c07b2168527555e175d18b64cb99c7c0aaf1e01",
+      "bytes": 8715801
+    },
+    "core.usda": {
+      "sha256": "e8e9083bc4519a335b736a0ea32cdca282490a2ca74c0ec952b3a114e34e3236",
+      "bytes": 555
+    }
+  },
+  "liveReceipt": {
+    "sha256": "d86251b18973dd5d68a4854b8ca157fa0f71fd4c68e58a63df668d7a8e953890",
+    "bytes": 3621765
+  },
+  "retainedRun": ".work/dc-live.revit/run-x7821ogo"
+}

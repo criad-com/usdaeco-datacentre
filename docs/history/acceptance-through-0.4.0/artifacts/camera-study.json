@@ -1,0 +1,1645 @@
+{
+  "build": {
+    "cctv": {
+      "cameras": 45,
+      "presets": 7,
+      "propsBlocked": 459,
+      "sensors": 45,
+      "subInstancesFolded": 0,
+      "types": 3,
+      "unmatched": 0
+    },
+    "convert": {
+      "blankHeadingsOmitted": 0,
+      "elements": 2954,
+      "extents": 33,
+      "meshes": 2987,
+      "out": "core.usda",
+      "phases": 2954,
+      "portLinks": 3024,
+      "ports": 6212,
+      "spatial": 37,
+      "systems": 9,
+      "types": 64,
+      "unclassified": 2,
+      "unparented": 0,
+      "zones": 0
+    },
+    "derive": {
+      "cameras": 45,
+      "densityModel": "plane",
+      "envelopes": 3,
+      "levelSystem": "dori2015",
+      "output": "derived.usda",
+      "sectors": 45,
+      "sensors": 45,
+      "shells": 116,
+      "skipped": [],
+      "tours": 3,
+      "types": 3
+    },
+    "pipe": {
+      "AecoPipeAPI": 476,
+      "AecoPipeFittingAPI": 238,
+      "AecoPipePortAPI": 1864,
+      "AecoPipeSystemAPI": 5,
+      "AecoPipeTypeAPI": 15,
+      "nominalFallbacks": 0,
+      "propsBlocked": 0,
+      "unmatched": 0
+    },
+    "seconds": {
+      "build": 19.39498774986714,
+      "convert": 5.972771542146802,
+      "derive": 0.812774958088994,
+      "import": 4.87702358327806
+    },
+    "statusEnumsNormalized": 3,
+    "wall": {
+      "AecoBuildUpAPI": 0,
+      "AecoOpeningAPI": 41,
+      "AecoWallAPI": 92,
+      "axesReused": 92,
+      "catalogsCreated": 0,
+      "fillings": 41,
+      "joinTargets": 0,
+      "layerFunctionsOther": 0,
+      "missingAxes": 0,
+      "openingDimensionsUnavailable": 0,
+      "propsBlocked": 368,
+      "unmatched": 0,
+      "unsupportedJoins": 0,
+      "unsupportedLocationLines": 92
+    }
+  },
+  "kernel": "embree",
+  "optics": {
+    "sec.cam.door.elec.a": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.elec.b": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.hall.a.e": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.hall.a.s": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.hall.a.w": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.hall.b.e": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.hall.b.s": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.hall.b.w": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    },
+    "sec.cam.door.mmr.1": {
+      "inside": true,
+      "maxDistance": 2.78467233260935,
+      "minDensity": 363.61411721425384,
+      "passed": true
+    },
+    "sec.cam.door.mmr.2": {
+      "inside": true,
+      "maxDistance": 2.7846723326093517,
+      "minDensity": 363.6141172142536,
+      "passed": true
+    },
+    "sec.cam.door.office.link": {
+      "inside": true,
+      "maxDistance": 2.945657821268451,
+      "minDensity": 343.7419528642624,
+      "passed": true
+    }
+  },
+  "planSha256": "86bf12828d1035a3f723e71e0e9d940207dc22fd368c95561c99ce8f204a2898",
+  "rows": [
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 11,
+      "gate": "DC-critical-doors",
+      "passed": true,
+      "seconds": 0.976,
+      "status": "PASS",
+      "targets": 11
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 4,
+      "gate": "DC-external",
+      "passed": false,
+      "seconds": 0.622,
+      "status": "FINDING",
+      "targets": 5
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 7,
+      "gate": "DC-corridors",
+      "passed": true,
+      "seconds": 5.112,
+      "status": "PASS",
+      "targets": 7
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 4,
+      "gate": "DC-yard-day",
+      "passed": false,
+      "seconds": 0.724,
+      "status": "FINDING",
+      "targets": 8
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 4,
+      "gate": "DC-yard-night",
+      "passed": false,
+      "seconds": 0.734,
+      "status": "FINDING",
+      "targets": 8
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 3,
+      "gate": "DC-lobby",
+      "passed": true,
+      "seconds": 0.684,
+      "status": "PASS",
+      "targets": 3
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 0,
+      "gate": "DC-privacy-baseline",
+      "passed": true,
+      "seconds": 1.593,
+      "status": "PASS",
+      "targets": 0
+    },
+    {
+      "distanceErrors": 0,
+      "exclusions": 0,
+      "fixedCovered": 11,
+      "gate": "DC-revit-parity",
+      "passed": true,
+      "seconds": 0.637,
+      "status": "PASS",
+      "targets": 11
+    },
+    {
+      "errors": 0,
+      "gate": "DC-hall-rule-baseline",
+      "passed": true,
+      "status": "PASS"
+    }
+  ],
+  "scheduleSha256": "d8943fc20205d4e232d8dbb192cf950a843cc61c47bfc90cd0886d7e4e8b9d21",
+  "sources": {
+    "buildup": {
+      "modified": false,
+      "revision": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"
+    },
+    "cctv": {
+      "modified": false,
+      "revision": "6f5b5ad04e4328077466d8ce8f31b7254118372b"
+    },
+    "core": {
+      "modified": false,
+      "revision": "91a55c35bdd19ee1887f6522436d32ae99cd6c4f"
+    },
+    "datacentre": {
+      "modified": true,
+      "revision": "1ca6d2202b91c14530d9846e343c131925f73f04"
+    },
+    "pipe": {
+      "modified": false,
+      "revision": "f48a764dacc99c4467b426f3c1bb691c5c783952"
+    },
+    "scenarios": {
+      "modified": false,
+      "revision": "fcbc5469c590ba89cf6447ee62c46a5e1d2a5d63"
+    },
+    "sync": {
+      "modified": false,
+      "revision": "1b470c10c44c23e7a1af9171757d3dcaa1794879"
+    },
+    "toolchain": {
+      "modified": false,
+      "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919"
+    },
+    "wall": {
+      "modified": false,
+      "revision": "09b2993e11d07b96a2492e75c49448153524c8b2"
+    }
+  },
+  "studies": {
+    "Corridors": {
+      "exclusionsCovered": [],
+      "inputHash": "312662bdaad982c89b66a2cd92d3c77d81cdf90bf4dfbe5d4b2a106fe98461a8",
+      "kernel": "embree",
+      "layer": "analysis/Corridors.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 5568,
+      "results": {
+        "/SecurityTargets/sp_corr_c": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/col_044",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_031"
+          ],
+          "density": 85.06669210938121,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "observe",
+          "nearestViewDistance": 2.6098658969380018,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_corr_c",
+          "viewNotes": [
+            "sec_cam_corr_corr_c_1/Sensor_0 550 px/m 86%",
+            "sec_cam_corr_corr_c_2/Sensor_0 82 px/m 86%",
+            "sec_cam_door_hall_a_e/Sensor_0 109 px/m 7%",
+            "sec_cam_door_hall_b_w/Sensor_0 113 px/m 7%",
+            "sec_cam_corr_corr_spine_3/Sensor_0 blocked by wall_l0_h_031",
+            "sec_cam_corr_corr_spine_4/Sensor_0 blocked by col_044"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_corr_e": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/col_071",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_034"
+          ],
+          "density": 85.06669210938121,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "observe",
+          "nearestViewDistance": 2.6098658969380018,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_corr_e",
+          "viewNotes": [
+            "sec_cam_corr_corr_e_1/Sensor_0 550 px/m 86%",
+            "sec_cam_corr_corr_e_2/Sensor_0 82 px/m 86%",
+            "sec_cam_door_hall_b_e/Sensor_0 109 px/m 7%",
+            "sec_cam_corr_corr_spine_5/Sensor_0 blocked by col_071",
+            "sec_cam_corr_corr_spine_6/Sensor_0 blocked by wall_l0_h_034"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_corr_s": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/slab_l1_office_n"
+          ],
+          "density": 103.2976230333048,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "observe",
+          "nearestViewDistance": 3.3632424830808736,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_corr_s",
+          "viewNotes": [
+            "sec_cam_corr_corr_s_1/Sensor_0 426 px/m 83%",
+            "sec_cam_corr_corr_s_2/Sensor_0 98 px/m 83%",
+            "sec_cam_door_mmr_1/Sensor_0 95 px/m 6%",
+            "sec_cam_door_office_link/Sensor_0 248 px/m 4%",
+            "sec_cam_corr_ocorr_1_2/Sensor_0 blocked by slab_l1_office_n"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_corr_spine": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_030"
+          ],
+          "density": 72.14180642388138,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 0.9768518518518519,
+          "level": "observe",
+          "nearestViewDistance": 2.304647478466067,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_corr_spine",
+          "viewNotes": [
+            "sec_cam_corr_corr_spine_1/Sensor_0 622 px/m 29%",
+            "sec_cam_corr_corr_spine_2/Sensor_0 98 px/m 6%",
+            "sec_cam_corr_corr_spine_3/Sensor_0 50 px/m 29%",
+            "sec_cam_corr_corr_spine_4/Sensor_0 33 px/m 25%",
+            "sec_cam_corr_corr_spine_5/Sensor_0 25 px/m 18%",
+            "sec_cam_corr_corr_spine_6/Sensor_0 20 px/m 29%",
+            "sec_cam_door_elec_a/Sensor_0 120 px/m 2%",
+            "sec_cam_door_elec_b/Sensor_0 15 px/m 2%",
+            "sec_cam_door_hall_a_s/Sensor_0 118 px/m 2%",
+            "sec_cam_door_hall_b_s/Sensor_0 22 px/m 2%",
+            "sec_cam_door_mmr_2/Sensor_0 20 px/m 2%",
+            "sec_cam_corr_corr_w_2/Sensor_0 blocked by wall_l0_h_030"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_corr_w": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_030"
+          ],
+          "density": 85.06669210938121,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "observe",
+          "nearestViewDistance": 2.6098658969380018,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_corr_w",
+          "viewNotes": [
+            "sec_cam_corr_corr_w_1/Sensor_0 550 px/m 86%",
+            "sec_cam_corr_corr_w_2/Sensor_0 82 px/m 86%",
+            "sec_cam_door_hall_a_w/Sensor_0 113 px/m 7%",
+            "sec_cam_corr_corr_spine_2/Sensor_0 blocked by wall_l0_h_030"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_ocorr_0": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_011",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/slab_l1_office_n"
+          ],
+          "density": 420.02433371824486,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.304647478466067,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_ocorr_0",
+          "viewNotes": [
+            "sec_cam_corr_ocorr_0_1/Sensor_0 439 px/m 100%",
+            "sec_cam_corr_ocorr_0_2/Sensor_0 315 px/m 100%",
+            "sec_cam_corr_corr_s_2/Sensor_0 blocked by wall_l0_h_011",
+            "sec_cam_door_office_link/Sensor_0 blocked by wall_l0_h_011",
+            "sec_cam_corr_ocorr_1_2/Sensor_0 blocked by slab_l1_office_n"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_ocorr_1": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/wall_l1_h_010"
+          ],
+          "density": 103.68661677517937,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "observe",
+          "nearestViewDistance": 1.8350476833041698,
+          "required": 62.5,
+          "target": "/SecurityTargets/sp_ocorr_1",
+          "viewNotes": [
+            "sec_cam_corr_ocorr_1_1/Sensor_0 782 px/m 87%",
+            "sec_cam_corr_ocorr_1_2/Sensor_0 100 px/m 87%",
+            "sec_cam_corr_corr_s_2/Sensor_0 blocked by wall_l1_h_010"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0"
+          ]
+        }
+      },
+      "seconds": 5.111866749823093,
+      "skipped": [],
+      "study": "/SecurityStudies/Corridors",
+      "timings": {
+        "bvhBuild": 0.13527720887213945,
+        "depthCasting": 0.031497166492044926,
+        "geometryHashing": 0.16983378631994128,
+        "resultWriting": 0.17144678765907884,
+        "targetRays": 4.224768708460033,
+        "triangulation": 0.011693208012729883,
+        "usdTraversalGather": 0.367344509344548
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 29,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "CriticalDoors": {
+      "exclusionsCovered": [],
+      "inputHash": "935a4964c0c2360d83648067e6dd91631768dd49681a51534b7e40cf6058436c",
+      "kernel": "embree",
+      "layer": "analysis/CriticalDoors.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 2112,
+      "results": {
+        "/SecurityTargets/door_elec_a": {
+          "blockers": [],
+          "density": 343.74193710033416,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657956355659,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_elec_a",
+          "viewNotes": [
+            "sec_cam_door_elec_a/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_elec_b": {
+          "blockers": [],
+          "density": 343.74179542327363,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945659170441831,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_elec_b",
+          "viewNotes": [
+            "sec_cam_door_elec_b/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_a_e": {
+          "blockers": [],
+          "density": 343.7420221064902,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657227905124,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_a_e",
+          "viewNotes": [
+            "sec_cam_door_hall_a_e/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_a_s": {
+          "blockers": [],
+          "density": 343.7419371003342,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.9456579563556584,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_a_s",
+          "viewNotes": [
+            "sec_cam_door_hall_a_s/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_a_w": {
+          "blockers": [],
+          "density": 343.74199377112575,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.9456574707217498,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_a_w",
+          "viewNotes": [
+            "sec_cam_door_hall_a_w/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_b_e": {
+          "blockers": [],
+          "density": 343.74202210649,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657227905125,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_b_e",
+          "viewNotes": [
+            "sec_cam_door_hall_b_e/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_b_s": {
+          "blockers": [],
+          "density": 343.7419843259877,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657551660776,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_b_s",
+          "viewNotes": [
+            "sec_cam_door_hall_b_s/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_b_w": {
+          "blockers": [],
+          "density": 343.7420221064902,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657227905124,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_b_w",
+          "viewNotes": [
+            "sec_cam_door_hall_b_w/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_mmr_1": {
+          "blockers": [],
+          "density": 363.6140954248891,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.7846724994792313,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_mmr_1",
+          "viewNotes": [
+            "sec_cam_door_mmr_1/Sensor_0 364 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_mmr_2": {
+          "blockers": [],
+          "density": 363.61416697533497,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.7846719515232468,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_mmr_2",
+          "viewNotes": [
+            "sec_cam_door_mmr_2/Sensor_0 364 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_office_link": {
+          "blockers": [],
+          "density": 343.741992000163,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.9456574858978115,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_office_link",
+          "viewNotes": [
+            "sec_cam_door_office_link/Sensor_0 344 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0"
+          ]
+        }
+      },
+      "seconds": 0.9759284579195082,
+      "skipped": [],
+      "study": "/SecurityStudies/CriticalDoors",
+      "timings": {
+        "bvhBuild": 0.11185941705480218,
+        "depthCasting": 0.011023001279681921,
+        "geometryHashing": 0.21888961782678962,
+        "resultWriting": 0.09770858567208052,
+        "targetRays": 0.007097246591001749,
+        "triangulation": 0.057677112985402346,
+        "usdTraversalGather": 0.4716609357856214
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 11,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "ExternalDoors": {
+      "exclusionsCovered": [],
+      "inputHash": "80618dd8b896f75264e28a7dcd6190e1bc6a05380fafa645965d1fa9ecab4f2a",
+      "kernel": "embree",
+      "layer": "analysis/ExternalDoors.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 960,
+      "results": {
+        "/SecurityTargets/door_dock": {
+          "blockers": [],
+          "density": 287.70436222881455,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.919822054715154,
+          "required": 125.0,
+          "target": "/SecurityTargets/door_dock",
+          "viewNotes": [
+            "sec_cam_ext_dock/Sensor_0 288 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_gen_a": {
+          "blockers": [],
+          "density": 309.43745690086473,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445164576942757,
+          "required": 125.0,
+          "target": "/SecurityTargets/door_gen_a",
+          "viewNotes": [
+            "sec_cam_ext_gen_a/Sensor_0 309 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_gen_b": {
+          "blockers": [],
+          "density": 309.437511784761,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445158112785845,
+          "required": 125.0,
+          "target": "/SecurityTargets/door_gen_b",
+          "viewNotes": [
+            "sec_cam_ext_gen_b/Sensor_0 309 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_main": {
+          "blockers": [],
+          "density": 309.437442910848,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445166224669863,
+          "required": 125.0,
+          "target": "/SecurityTargets/door_main",
+          "viewNotes": [
+            "sec_cam_ext_main/Sensor_0 309 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_plant_ext": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.9285714285714286,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 125.0,
+          "target": "/SecurityTargets/door_plant_ext",
+          "viewNotes": [],
+          "views": []
+        }
+      },
+      "seconds": 0.6220630840398371,
+      "skipped": [],
+      "study": "/SecurityStudies/ExternalDoors",
+      "timings": {
+        "bvhBuild": 0.0035849600099027157,
+        "depthCasting": 0.006456955336034298,
+        "geometryHashing": 0.16394420666620135,
+        "resultWriting": 0.09188750060275197,
+        "targetRays": 0.0021829181350767612,
+        "triangulation": 0.011665834113955498,
+        "usdTraversalGather": 0.34233408421278
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 5,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "Lobby": {
+      "exclusionsCovered": [],
+      "inputHash": "f803bcd25f395015d2e4a3efaddaedef8fb38959f9639912deee6571056d20a5",
+      "kernel": "embree",
+      "layer": "analysis/Lobby.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 960,
+      "results": {
+        "/SecurityTargets/lobby_door_lobby_corr": {
+          "blockers": [],
+          "density": 148.58487268370692,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "recognise",
+          "nearestViewDistance": 4.400283927318116,
+          "required": 125.0,
+          "target": "/SecurityTargets/lobby_door_lobby_corr",
+          "viewNotes": [
+            "sec_cam_lobby/Sensor_0:LobbyCorridor 744 px/m 98% (motorised, duty 0.333)",
+            "sec_cam_lobby_fixed_1/Sensor_0 149 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/lobby_door_main": {
+          "blockers": [],
+          "density": 345.703204272797,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 9.232491848288943,
+          "required": 125.0,
+          "target": "/SecurityTargets/lobby_door_main",
+          "viewNotes": [
+            "sec_cam_lobby/Sensor_0:Home 346 px/m 100% (motorised, duty 0.333)",
+            "sec_cam_lobby/Sensor_0:MainDoor 346 px/m 100% (motorised, duty 0.333)",
+            "sec_cam_lobby_fixed_2/Sensor_0 155 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/sp_lobby": {
+          "blockers": [],
+          "density": 287.6579782113793,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 1.7214528747543454,
+          "required": 125.0,
+          "target": "/SecurityTargets/sp_lobby",
+          "viewNotes": [
+            "sec_cam_lobby/Sensor_0:Home 387 px/m 68% (motorised, duty 0.333)",
+            "sec_cam_lobby/Sensor_0:LobbyCorridor 387 px/m 15% (motorised, duty 0.333)",
+            "sec_cam_lobby/Sensor_0:MainDoor 387 px/m 56% (motorised, duty 0.333)",
+            "sec_cam_lobby_fixed_1/Sensor_0 833 px/m 88%",
+            "sec_cam_lobby_fixed_2/Sensor_0 141 px/m 88%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0"
+          ]
+        }
+      },
+      "seconds": 0.6835774169303477,
+      "skipped": [],
+      "study": "/SecurityStudies/Lobby",
+      "timings": {
+        "bvhBuild": 0.007387916557490826,
+        "depthCasting": 0.005292375572025776,
+        "geometryHashing": 0.1715612350963056,
+        "resultWriting": 0.11447795666754246,
+        "targetRays": 0.005469832569360733,
+        "triangulation": 0.011575458571314812,
+        "usdTraversalGather": 0.36780534964054823
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 5,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0|Home",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0|LobbyCorridor",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0|MainDoor",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "Privacy": {
+      "exclusionsCovered": [],
+      "inputHash": "82b4ecd225355abd5915a62668e13ae508161c2b2a65f36e1048fdce05665cb7",
+      "kernel": "embree",
+      "layer": "analysis/Privacy.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 9408,
+      "results": {},
+      "seconds": 1.5926769999787211,
+      "skipped": [],
+      "study": "/SecurityStudies/Privacy",
+      "timings": {
+        "bvhBuild": 0.15959919895976782,
+        "depthCasting": 0.04963483475148678,
+        "geometryHashing": 0.19515226408839226,
+        "resultWriting": 0.3049387070350349,
+        "targetRays": 0.438106048386544,
+        "triangulation": 0.011223291978240013,
+        "usdTraversalGather": 0.43401557207107544
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 49,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0|Home",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0|Pad_gen_a",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0|Home",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0|Pad_gen_b",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0|Home",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0|LobbyCorridor",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0|MainDoor",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "RevitParity": {
+      "exclusionsCovered": [],
+      "inputHash": "b4370bd810a8c5e6014d37f1e1aebeb78e29947de1d06fb5afe433223de80c42",
+      "kernel": "embree",
+      "layer": "analysis/RevitParity.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 2112,
+      "results": {
+        "/SecurityTargets/door_elec_a": {
+          "blockers": [],
+          "density": 484.77696369706763,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657956355659,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_elec_a",
+          "viewNotes": [
+            "sec_cam_door_elec_a/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_elec_b": {
+          "blockers": [],
+          "density": 484.77676389085303,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945659170441831,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_elec_b",
+          "viewNotes": [
+            "sec_cam_door_elec_b/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_a_e": {
+          "blockers": [],
+          "density": 484.7770835806831,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657227905124,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_a_e",
+          "viewNotes": [
+            "sec_cam_door_hall_a_e/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_a_s": {
+          "blockers": [],
+          "density": 484.77696369706763,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.9456579563556584,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_a_s",
+          "viewNotes": [
+            "sec_cam_door_hall_a_s/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_a_w": {
+          "blockers": [],
+          "density": 484.77704361950737,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.9456574707217498,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_a_w",
+          "viewNotes": [
+            "sec_cam_door_hall_a_w/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_b_e": {
+          "blockers": [],
+          "density": 484.77708358068287,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657227905125,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_b_e",
+          "viewNotes": [
+            "sec_cam_door_hall_b_e/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_b_s": {
+          "blockers": [],
+          "density": 484.7770302990921,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657551660776,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_b_s",
+          "viewNotes": [
+            "sec_cam_door_hall_b_s/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_hall_b_w": {
+          "blockers": [],
+          "density": 484.7770835806831,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.945657227905124,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_hall_b_w",
+          "viewNotes": [
+            "sec_cam_door_hall_b_w/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_mmr_1": {
+          "blockers": [],
+          "density": 512.8025361830726,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.7846724994792313,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_mmr_1",
+          "viewNotes": [
+            "sec_cam_door_mmr_1/Sensor_0 513 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_mmr_2": {
+          "blockers": [],
+          "density": 512.8026370901896,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.7846719515232468,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_mmr_2",
+          "viewNotes": [
+            "sec_cam_door_mmr_2/Sensor_0 513 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/door_office_link": {
+          "blockers": [],
+          "density": 484.7770411219304,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 2.9456574858978115,
+          "required": 250.0,
+          "target": "/SecurityTargets/door_office_link",
+          "viewNotes": [
+            "sec_cam_door_office_link/Sensor_0 485 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0"
+          ]
+        }
+      },
+      "seconds": 0.6367852496914566,
+      "skipped": [],
+      "study": "/SecurityStudies/RevitParity",
+      "timings": {
+        "bvhBuild": 3.491714596748352e-05,
+        "depthCasting": 0.0073043350130319595,
+        "geometryHashing": 0.1597188701853156,
+        "resultWriting": 0.098470164462924,
+        "targetRays": 0.0028106658719480038,
+        "triangulation": 0.010757375042885542,
+        "usdTraversalGather": 0.3576827561482787
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 11,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "Yards": {
+      "exclusionsCovered": [],
+      "inputHash": "f892cc4d229422fdf195e9381657238685dc262c0ab81767cefdcad83b6b6a45",
+      "kernel": "embree",
+      "layer": "analysis/Yards.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 2880,
+      "results": {
+        "/SecurityTargets/sp_yard_gen_a": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.8705357142857143,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 25.0,
+          "target": "/SecurityTargets/sp_yard_gen_a",
+          "viewNotes": [],
+          "views": []
+        },
+        "/SecurityTargets/sp_yard_gen_b": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.8705357142857143,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 25.0,
+          "target": "/SecurityTargets/sp_yard_gen_b",
+          "viewNotes": [],
+          "views": []
+        },
+        "/SecurityTargets/sp_yard_hr": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.7361111111111112,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 25.0,
+          "target": "/SecurityTargets/sp_yard_hr",
+          "viewNotes": [],
+          "views": []
+        },
+        "/SecurityTargets/yard_approach_door_dock": {
+          "blockers": [],
+          "density": 287.70436222881455,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.919822054715154,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_dock",
+          "viewNotes": [
+            "sec_cam_ext_dock/Sensor_0 288 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_gen_a": {
+          "blockers": [],
+          "density": 309.43745690086473,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445164576942757,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_gen_a",
+          "viewNotes": [
+            "sec_cam_ext_gen_a/Sensor_0 309 px/m 100%",
+            "sec_cam_yard_a/Sensor_0:Home 193 px/m 100% (motorised, duty 0.500)",
+            "sec_cam_yard_a/Sensor_0:Pad_gen_a 193 px/m 84% (motorised, duty 0.500)",
+            "sec_cam_yard_gen_a_fixed_1/Sensor_0 74 px/m 100%",
+            "sec_cam_yard_gen_a_fixed_2/Sensor_0 102 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_gen_b": {
+          "blockers": [],
+          "density": 309.437511784761,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445158112785845,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_gen_b",
+          "viewNotes": [
+            "sec_cam_ext_gen_b/Sensor_0 309 px/m 100%",
+            "sec_cam_yard_gen_b_fixed_1/Sensor_0 115 px/m 100%",
+            "sec_cam_yard_gen_b_fixed_2/Sensor_0 71 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_main": {
+          "blockers": [],
+          "density": 309.437442910848,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445166224669863,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_main",
+          "viewNotes": [
+            "sec_cam_ext_main/Sensor_0 309 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_plant_ext": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/rt_clg_fws_main_s_Seg_1"
+          ],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.9642857142857143,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_plant_ext",
+          "viewNotes": [
+            "sec_cam_yard_hr_fixed_2/Sensor_0 blocked by rt_clg_fws_main_s_Seg_1"
+          ],
+          "views": []
+        }
+      },
+      "seconds": 0.7237952500581741,
+      "skipped": [],
+      "study": "/SecurityStudies/Yards",
+      "timings": {
+        "bvhBuild": 0.028376375790685415,
+        "depthCasting": 0.01614466216415167,
+        "geometryHashing": 0.15086171869188547,
+        "resultWriting": 0.10993570741266012,
+        "targetRays": 0.08173154713585973,
+        "triangulation": 0.010617457795888186,
+        "usdTraversalGather": 0.32612219825387
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 15,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0|Home",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0|Pad_gen_a",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0|Home",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0|Pad_gen_b",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0"
+      ],
+      "viewsReused": []
+    },
+    "YardsNight": {
+      "exclusionsCovered": [],
+      "inputHash": "a35e605ddb6773a5d11b93d8393b3b8e6c924ca862a9aafb4abcfe2c4b5f85b0",
+      "kernel": "embree",
+      "layer": "analysis/YardsNight.usda",
+      "obstacles": 2954,
+      "outputChanged": true,
+      "rays": 2112,
+      "results": {
+        "/SecurityTargets/sp_yard_gen_a": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.8705357142857143,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 25.0,
+          "target": "/SecurityTargets/sp_yard_gen_a",
+          "viewNotes": [],
+          "views": []
+        },
+        "/SecurityTargets/sp_yard_gen_b": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.8705357142857143,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 25.0,
+          "target": "/SecurityTargets/sp_yard_gen_b",
+          "viewNotes": [],
+          "views": []
+        },
+        "/SecurityTargets/sp_yard_hr": {
+          "blockers": [],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.7361111111111112,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 25.0,
+          "target": "/SecurityTargets/sp_yard_hr",
+          "viewNotes": [],
+          "views": []
+        },
+        "/SecurityTargets/yard_approach_door_dock": {
+          "blockers": [],
+          "density": 287.70436222881455,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.919822054715154,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_dock",
+          "viewNotes": [
+            "sec_cam_ext_dock/Sensor_0 288 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_gen_a": {
+          "blockers": [],
+          "density": 309.43745690086473,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445164576942757,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_gen_a",
+          "viewNotes": [
+            "sec_cam_ext_gen_a/Sensor_0 309 px/m 100%",
+            "sec_cam_yard_gen_a_fixed_1/Sensor_0 74 px/m 100%",
+            "sec_cam_yard_gen_a_fixed_2/Sensor_0 102 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_gen_b": {
+          "blockers": [],
+          "density": 309.437511784761,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445158112785845,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_gen_b",
+          "viewNotes": [
+            "sec_cam_ext_gen_b/Sensor_0 309 px/m 100%",
+            "sec_cam_yard_gen_b_fixed_1/Sensor_0 115 px/m 100%",
+            "sec_cam_yard_gen_b_fixed_2/Sensor_0 71 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_main": {
+          "blockers": [],
+          "density": 309.437442910848,
+          "dutyFraction": 1.0,
+          "fixedCoverage": true,
+          "fraction": 1.0,
+          "level": "identify",
+          "nearestViewDistance": 3.6445166224669863,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_main",
+          "viewNotes": [
+            "sec_cam_ext_main/Sensor_0 309 px/m 100%"
+          ],
+          "views": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0"
+          ]
+        },
+        "/SecurityTargets/yard_approach_door_plant_ext": {
+          "blockers": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/rt_clg_fws_main_s_Seg_1"
+          ],
+          "density": 0.0,
+          "dutyFraction": 0.0,
+          "fixedCoverage": false,
+          "fraction": 0.9642857142857143,
+          "level": "none",
+          "nearestViewDistance": 0.0,
+          "required": 62.5,
+          "target": "/SecurityTargets/yard_approach_door_plant_ext",
+          "viewNotes": [
+            "sec_cam_yard_hr_fixed_2/Sensor_0 blocked by rt_clg_fws_main_s_Seg_1"
+          ],
+          "views": []
+        }
+      },
+      "seconds": 0.7343419166281819,
+      "skipped": [
+        [
+          "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0",
+          "Home",
+          "no reach"
+        ],
+        [
+          "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0",
+          "Pad_gen_a",
+          "no reach"
+        ],
+        [
+          "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0",
+          "Home",
+          "no reach"
+        ],
+        [
+          "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0",
+          "Pad_gen_b",
+          "no reach"
+        ]
+      ],
+      "study": "/SecurityStudies/YardsNight",
+      "timings": {
+        "bvhBuild": 0.0004104636609554291,
+        "depthCasting": 0.009731457103043795,
+        "geometryHashing": 0.18283858709037304,
+        "resultWriting": 0.11012358451262116,
+        "targetRays": 0.07634415943175554,
+        "triangulation": 0.010560040827840567,
+        "usdTraversalGather": 0.3443276244215667
+      },
+      "triangles": 87328,
+      "unclassifiedInView": [],
+      "unphasedInView": [],
+      "views": 11,
+      "viewsComputed": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0"
+      ],
+      "viewsReused": []
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# ILLUSTRATIVE: every value below is demonstration data, not verified code content.
+title: Illustrative accessible reader reach
+source: Illustrative accessibility design exercise; not a transcription of a regulation
+kind: regulation
+authority: 1
+illustrative: true
+appliesTo:
+  classification:
+  - IfcSensor.IDENTIFIERSENSOR
+  types:
+  - type.sec.iris
+requirements:
+- measure: MountingHeight
+  operator: between
+  values:
+  - 0.9
+  - 1.2
+  unit: m
+  tolerance: 1.0e-06
+  severity: hard
+  rationale: Illustrative reader centre-height band for the demonstration.

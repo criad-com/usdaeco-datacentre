@@ -1,0 +1,45 @@
+# Ceiling voids, fit-out products and two alternative programmes.
+fitout:
+  enabled: true
+programme:
+  enabled: true
+spaces:
+  spaces:
+  - id: sp.void.office
+    name: Office ceiling void
+    type: void
+    storey: lvl.l1
+    x: 12
+    y: -12
+    w: 10
+    d: 9
+    height: 0.4
+    z_offset: 2.6
+    parent: sp.office
+  - id: sp.void.ocorr.1
+    name: Corridor ceiling void
+    type: void
+    storey: lvl.l1
+    x: 15
+    y: -3
+    w: 15
+    d: 3
+    height: 0.4
+    z_offset: 2.6
+    parent: sp.ocorr.1
+expected:
+  programme:
+    A:
+    - AccessAfterEnclosure
+    - WorkspaceOccupied
+    - EnclosureBeforeInspection
+    B: []
+  temporary_pod:
+    bounds:
+    - - 20
+      - -3.3
+      - 4
+    - - 22.4
+      - 0.3
+      - 6.5
+    corridor_overhang_each_side: 0.3

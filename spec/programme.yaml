@@ -1,0 +1,458 @@
+# Illustrative construction dates; 24-hour elapsed-day calendar, no CPM calculation.
+epoch: '2027-03-01'
+timeCodesPerDay: 1
+hoursPerDay: 24
+programmes:
+- id: A
+  name: As issued
+  activities:
+  - id: act.pod.deliver
+    name: Deliver temporary pod
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: installation
+    scope:
+    - pod.wc.temp
+    workspace:
+      requiresAccess: []
+      encloses: []
+      occupies: []
+    plannedStart: '2027-03-15'
+    plannedFinish: '2027-03-15'
+    predecessors: []
+  - id: act.pod.park
+    name: Pod parked awaiting relocation
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: logistic
+    scope:
+    - pod.wc.temp
+    workspace:
+      requiresAccess: []
+      encloses: []
+      occupies:
+      - sp.ocorr.1
+    plannedStart: '2027-03-15'
+    plannedFinish: '2027-04-29'
+    predecessors:
+    - id: act.pod.deliver
+      type: SS
+      lagDays: 0
+  - id: act.first
+    name: MEP first fix in both voids
+    wbs:
+    - Fitout
+    - Services
+    taskType: installation
+    scope:
+    - tray.void.ocorr.1
+    - pipe.chw.void.f
+    - pipe.chw.void.r
+    - fcu.office.1
+    - cnd.void.office.1
+    - cnd.void.office.2
+    workspace:
+      requiresAccess:
+      - sp.void.office
+      - sp.void.ocorr.1
+      encloses: []
+      occupies: []
+    plannedStart: '2027-03-29'
+    plannedFinish: '2027-04-18'
+    predecessors:
+    - id: act.pod.deliver
+      type: FS
+      lagDays: 14
+  - id: act.inspect
+    name: Inspect first fix
+    wbs:
+    - Fitout
+    - Services
+    taskType: attendance
+    scope:
+    - sp.void.office
+    - sp.void.ocorr.1
+    workspace:
+      requiresAccess:
+      - sp.void.office
+      - sp.void.ocorr.1
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-19'
+    plannedFinish: '2027-04-20'
+    predecessors:
+    - id: act.first
+      type: FS
+      lagDays: 1
+  - id: act.ceiling.office
+    name: Close office ceiling
+    wbs:
+    - Fitout
+    - Services
+    taskType: construction
+    scope:
+    - clg.office
+    workspace:
+      requiresAccess:
+      - sp.office
+      encloses:
+      - sp.void.office
+      occupies: []
+    plannedStart: '2027-04-05'
+    plannedFinish: '2027-04-11'
+    predecessors:
+    - id: act.pod.deliver
+      type: FS
+      lagDays: 21
+  - id: act.ceiling.corridor
+    name: Close corridor ceiling
+    wbs:
+    - Fitout
+    - Services
+    taskType: construction
+    scope:
+    - clg.ocorr.1
+    workspace:
+      requiresAccess:
+      - sp.ocorr.1
+      encloses:
+      - sp.void.ocorr.1
+      occupies: []
+    plannedStart: '2027-04-05'
+    plannedFinish: '2027-04-11'
+    predecessors:
+    - id: act.pod.deliver
+      type: FS
+      lagDays: 21
+  - id: act.second
+    name: Luminaires and grilles from below
+    wbs:
+    - Fitout
+    - Services
+    taskType: installation
+    scope:
+    - lum.office.1
+    - lum.office.2
+    - lum.office.3
+    - lum.office.4
+    - lum.office.5
+    - lum.office.6
+    - grl.office.1
+    - grl.office.2
+    - grl.office.3
+    - grl.office.4
+    workspace:
+      requiresAccess:
+      - sp.office
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-19'
+    plannedFinish: '2027-04-30'
+    predecessors:
+    - id: act.ceiling.office
+      type: FS
+      lagDays: 8
+  - id: act.pod.remove
+    name: Remove temporary pod position
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: removal
+    scope:
+    - pod.wc.temp
+    workspace:
+      requiresAccess: []
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-29'
+    plannedFinish: '2027-04-29'
+    predecessors:
+    - id: act.pod.park
+      type: FF
+      lagDays: 0
+  - id: act.pod.install
+    name: Install final bathroom pod
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: installation
+    scope:
+    - pod.wc
+    workspace:
+      requiresAccess:
+      - sp.wc
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-30'
+    plannedFinish: '2027-04-30'
+    predecessors:
+    - id: act.pod.remove
+      type: FS
+      lagDays: 1
+  - id: act.third
+    name: Drainage and sanitary third fix
+    wbs:
+    - Fitout
+    - Services
+    taskType: installation
+    scope:
+    - pipe.drain.pod
+    - san.pod.1
+    - san.pod.2
+    workspace:
+      requiresAccess:
+      - sp.wc
+      encloses: []
+      occupies: []
+    plannedStart: '2027-05-03'
+    plannedFinish: '2027-05-09'
+    predecessors:
+    - id: act.pod.install
+      type: FS
+      lagDays: 3
+- id: B
+  name: Resequenced
+  activities:
+  - id: act.pod.deliver
+    name: Deliver temporary pod
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: installation
+    scope:
+    - pod.wc.temp
+    workspace:
+      requiresAccess: []
+      encloses: []
+      occupies: []
+    plannedStart: '2027-03-15'
+    plannedFinish: '2027-03-15'
+    predecessors: []
+  - id: act.pod.park
+    name: Pod parked awaiting relocation
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: logistic
+    scope:
+    - pod.wc.temp
+    workspace:
+      requiresAccess: []
+      encloses: []
+      occupies:
+      - sp.office
+    plannedStart: '2027-03-15'
+    plannedFinish: '2027-04-01'
+    predecessors:
+    - id: act.pod.deliver
+      type: SS
+      lagDays: 0
+  - id: act.first
+    name: MEP first fix in both voids
+    wbs:
+    - Fitout
+    - Services
+    taskType: installation
+    scope:
+    - tray.void.ocorr.1
+    - pipe.chw.void.f
+    - pipe.chw.void.r
+    - fcu.office.1
+    - cnd.void.office.1
+    - cnd.void.office.2
+    workspace:
+      requiresAccess:
+      - sp.void.office
+      - sp.void.ocorr.1
+      encloses: []
+      occupies: []
+    plannedStart: '2027-03-15'
+    plannedFinish: '2027-03-28'
+    predecessors:
+    - id: act.pod.deliver
+      type: SS
+      lagDays: 0
+  - id: act.inspect
+    name: Inspect first fix
+    wbs:
+    - Fitout
+    - Services
+    taskType: attendance
+    scope:
+    - sp.void.office
+    - sp.void.ocorr.1
+    workspace:
+      requiresAccess:
+      - sp.void.office
+      - sp.void.ocorr.1
+      encloses: []
+      occupies: []
+    plannedStart: '2027-03-29'
+    plannedFinish: '2027-03-30'
+    predecessors:
+    - id: act.first
+      type: FS
+      lagDays: 1
+  - id: act.ceiling.office
+    name: Close office ceiling
+    wbs:
+    - Fitout
+    - Services
+    taskType: construction
+    scope:
+    - clg.office
+    workspace:
+      requiresAccess:
+      - sp.office
+      encloses:
+      - sp.void.office
+      occupies: []
+    plannedStart: '2027-04-05'
+    plannedFinish: '2027-04-11'
+    predecessors:
+    - id: act.inspect
+      type: FS
+      lagDays: 6
+  - id: act.ceiling.corridor
+    name: Close corridor ceiling
+    wbs:
+    - Fitout
+    - Services
+    taskType: construction
+    scope:
+    - clg.ocorr.1
+    workspace:
+      requiresAccess:
+      - sp.ocorr.1
+      encloses:
+      - sp.void.ocorr.1
+      occupies: []
+    plannedStart: '2027-04-05'
+    plannedFinish: '2027-04-11'
+    predecessors:
+    - id: act.inspect
+      type: FS
+      lagDays: 6
+    - id: act.pod.remove
+      type: FS
+      lagDays: 4
+  - id: act.second
+    name: Luminaires and grilles from below
+    wbs:
+    - Fitout
+    - Services
+    taskType: installation
+    scope:
+    - lum.office.1
+    - lum.office.2
+    - lum.office.3
+    - lum.office.4
+    - lum.office.5
+    - lum.office.6
+    - grl.office.1
+    - grl.office.2
+    - grl.office.3
+    - grl.office.4
+    workspace:
+      requiresAccess:
+      - sp.office
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-19'
+    plannedFinish: '2027-04-30'
+    predecessors:
+    - id: act.ceiling.office
+      type: FS
+      lagDays: 8
+  - id: act.pod.remove
+    name: Remove temporary pod position
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: removal
+    scope:
+    - pod.wc.temp
+    workspace:
+      requiresAccess: []
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-01'
+    plannedFinish: '2027-04-01'
+    predecessors:
+    - id: act.pod.park
+      type: FF
+      lagDays: 0
+  - id: act.pod.install
+    name: Install final bathroom pod
+    wbs:
+    - Fitout
+    - Logistics
+    taskType: installation
+    scope:
+    - pod.wc
+    workspace:
+      requiresAccess:
+      - sp.wc
+      encloses: []
+      occupies: []
+    plannedStart: '2027-04-02'
+    plannedFinish: '2027-04-02'
+    predecessors:
+    - id: act.pod.remove
+      type: FS
+      lagDays: 1
+  - id: act.third
+    name: Drainage and sanitary third fix
+    wbs:
+    - Fitout
+    - Services
+    taskType: installation
+    scope:
+    - pipe.drain.pod
+    - san.pod.1
+    - san.pod.2
+    workspace:
+      requiresAccess:
+      - sp.wc
+      encloses: []
+      occupies: []
+    plannedStart: '2027-05-03'
+    plannedFinish: '2027-05-09'
+    predecessors:
+    - id: act.pod.install
+      type: FS
+      lagDays: 31
+  placements:
+    pod.wc.temp:
+      space: sp.office
+      pos:
+      - 17
+      - -7.5
+      - 4
+expected:
+  A:
+  - rule: AccessAfterEnclosure
+    activities:
+    - act.first
+    - act.ceiling.office
+    - act.ceiling.corridor
+    spaces:
+    - sp.void.office
+    - sp.void.ocorr.1
+  - rule: WorkspaceOccupied
+    activities:
+    - act.ceiling.corridor
+    - act.pod.park
+    spaces:
+    - sp.ocorr.1
+  - rule: EnclosureBeforeInspection
+    activities:
+    - act.ceiling.office
+    - act.ceiling.corridor
+    - act.inspect
+    spaces:
+    - sp.void.office
+    - sp.void.ocorr.1
+  B: []

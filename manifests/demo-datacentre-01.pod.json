@@ -1,0 +1,89 @@
+{
+  "counts": {
+    "activities_per_programme": {
+      "A": 10,
+      "B": 10
+    },
+    "cameras": 45,
+    "ceilings": 2,
+    "columns": 80,
+    "doors": 41,
+    "fitout_by_class": {
+      "IfcAirTerminal": 4,
+      "IfcCableCarrierSegment": 3,
+      "IfcCovering": 2,
+      "IfcElementAssembly": 2,
+      "IfcLightFixture": 6,
+      "IfcPipeSegment": 3,
+      "IfcSanitaryTerminal": 2,
+      "IfcUnitaryEquipment": 1
+    },
+    "fix_counts": {
+      "first": 6,
+      "second": 10,
+      "third": 3
+    },
+    "mep_by_class": {
+      "IfcAirTerminal": 4,
+      "IfcAlarm": 12,
+      "IfcAudioVisualAppliance": 45,
+      "IfcCableCarrierFitting": 165,
+      "IfcCableCarrierSegment": 339,
+      "IfcCableFitting": 401,
+      "IfcCableSegment": 797,
+      "IfcChiller": 2,
+      "IfcCoolingTower": 4,
+      "IfcElectricDistributionBoard": 26,
+      "IfcElectricFlowStorageDevice": 16,
+      "IfcElectricGenerator": 2,
+      "IfcHeatExchanger": 1,
+      "IfcLightFixture": 6,
+      "IfcPipeFitting": 238,
+      "IfcPipeSegment": 479,
+      "IfcPump": 6,
+      "IfcSanitaryTerminal": 2,
+      "IfcSensor": 11,
+      "IfcTank": 3,
+      "IfcTransformer": 2,
+      "IfcUnitaryEquipment": 13
+    },
+    "pods": 2,
+    "readers": 11,
+    "rooms": 30,
+    "spaces": 35,
+    "storeys": 2,
+    "temporary": 1,
+    "voids": 2,
+    "walls": 92
+  },
+  "expected": {
+    "programme": {
+      "A": [
+        "AccessAfterEnclosure",
+        "WorkspaceOccupied",
+        "EnclosureBeforeInspection"
+      ],
+      "B": []
+    },
+    "temporary_pod": {
+      "bounds": [
+        [
+          20,
+          -3.3,
+          4
+        ],
+        [
+          22.4,
+          0.3,
+          6.5
+        ]
+      ],
+      "corridor_overhang_each_side": 0.3
+    }
+  },
+  "facility": "demo-datacentre-01",
+  "plan_sha256": "0ff4131602621ffbf7608b2e301fb093747a258140de3ca503d55ca601922be7",
+  "units": "metres",
+  "up_axis": "Z",
+  "variant": "pod"
+}

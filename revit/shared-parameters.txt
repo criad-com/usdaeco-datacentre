@@ -1,0 +1,13 @@
+# Neutral camera contract parameters
+*META	VERSION	MINVERSION
+META	2	1
+*GROUP	ID	NAME
+GROUP	1	Camera contract
+*PARAM	GUID	NAME	DATATYPE	DATACATEGORY	GROUP	VISIBLE	DESCRIPTION	USERMODIFIABLE	HIDEWHENNOVALUE
+PARAM	acfbd0a0-fe25-5e70-816e-49d39232a5c6	AecoCctvContract	TEXT		1	1	Camera exchange payload	1	0
+PARAM	e8ba35bf-01db-5561-aa5b-70aab3afeb75	AecoCctvDrivers	TEXT		1	1	Camera exchange payload	1	0
+PARAM	d588d2bc-9341-57e8-b77b-4ff3ec5a073f	AecoCctvSensors	TEXT		1	1	Camera exchange payload	1	0
+PARAM	eef36a21-dd37-5912-a99f-e1b659a506dd	AecoCctvTypeContract	TEXT		1	1	Camera exchange payload	1	0
+PARAM	4d5a6062-95db-59c2-bc80-75c0445249ff	AecoCctvType	TEXT		1	1	Camera exchange payload	1	0
+PARAM	77e122e7-677f-56f6-8822-d9174b2e8825	AecoCctvTypeSensors	TEXT		1	1	Camera exchange payload	1	0
+PARAM	dd0fea16-acb0-51c3-9d18-207b17094194	Status	TEXT		1	1	Product asset phase	1	0

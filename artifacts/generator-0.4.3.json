@@ -1,0 +1,1205 @@
+{
+  "checks": [
+    {
+      "name": "core validators loaded",
+      "status": "PASS",
+      "ok": true,
+      "detail": "8/8 through UsdValidation"
+    },
+    {
+      "name": "resolve CLI",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "resolve CLI elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.845451458822936,
+      "detail": "5.845 s (measurement only)"
+    },
+    {
+      "name": "G0 CLI",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 CLI elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 0.30651012482121587,
+      "detail": "0.307 s (measurement only)"
+    },
+    {
+      "name": "IFC build CLI",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "IFC build CLI elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.575338874943554,
+      "detail": "14.575 s (measurement only)"
+    },
+    {
+      "name": "G1 schema/express and semantics",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G1 schema/express and semantics elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 43.46810449985787,
+      "detail": "43.468 s (measurement only)"
+    },
+    {
+      "name": "G0 power_2n",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 capacity",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 mech_n_plus_1",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 mech_diversity",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 circulation",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 door_columns",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 camera_rules",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 void_enclosures",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 temporary_lifecycle",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 activity_scopes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 predecessor_cycles",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 typical_deviations",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 requirement_files",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G0 expected_programmes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "door face plane optics before occlusion",
+      "status": "PASS",
+      "ok": true,
+      "detail": "11/11; max 2.945658 m; min 343.741953 px/m"
+    },
+    {
+      "name": "door mounts independent of clear height",
+      "status": "PASS",
+      "ok": true,
+      "detail": "11 at 3.0 m"
+    },
+    {
+      "name": "external primary face plane optics before occlusion",
+      "status": "PASS",
+      "ok": true,
+      "detail": "5/5; min 126.712970 px/m; full inset face corners"
+    },
+    {
+      "name": "external shared approach rule census",
+      "status": "PASS",
+      "ok": true,
+      "detail": "1 existing bullet, 2 approaches; scene coverage checked by the family runner"
+    },
+    {
+      "name": "camera design group census",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{'ext': 5, 'door': 11, 'corr': 18, 'yard': 8, 'lobby': 3}"
+    },
+    {
+      "name": "yard fixed IR provision",
+      "status": "PASS",
+      "ok": true,
+      "detail": "6 fixed bullets, IR 40 m; geometric coverage is a separate study"
+    },
+    {
+      "name": "lobby fixed provision",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2 fixed domes plus supplementary PTZ"
+    },
+    {
+      "name": "recorder camera allowance",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45"
+    },
+    {
+      "name": "45 retained camera GUIDs",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45; no camera added or removed"
+    },
+    {
+      "name": "pinned semantic and identity manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "769 resolved identities"
+    },
+    {
+      "name": "camera/head/type census",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45 cameras / 45 heads / 3 types"
+    },
+    {
+      "name": "41 doors, 12 alarms, 11 readers",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "door/column clearance",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 intersections; minimum 0.350 m"
+    },
+    {
+      "name": "combined/federated camera identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45"
+    },
+    {
+      "name": "both IFC camera contract tiers",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Status on every applicable product",
+      "status": "PASS",
+      "ok": true,
+      "detail": "9244/9244; 1 no-template exception"
+    },
+    {
+      "name": "Status exceptions are counted grids",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "second independent resolve",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "second independent resolve elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.8502776669338346,
+      "detail": "5.850 s (measurement only)"
+    },
+    {
+      "name": "second independent IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "second independent IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.727282624691725,
+      "detail": "14.727 s (measurement only)"
+    },
+    {
+      "name": "canonical plan determinism",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "target manifest determinism",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-arch",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-cooling",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-electrical",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-it",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-security",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-site",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01-structure",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "STEP determinism demo-datacentre-01",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "base plan bytes vs v0.3.4",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "base target bytes vs v0.3.4",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "base IFC bytes vs v0.3.4",
+      "status": "PASS",
+      "ok": true,
+      "detail": "8 files; only FILE_NAME timestamp and generator version normalized"
+    },
+    {
+      "name": "variant base G0",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant base independent plan bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant base independent IFC bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant base measured manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"activities_per_programme\": {}, \"cameras\": 45, \"ceilings\": 0, \"columns\": 80, \"doors\": 41, \"fitout_by_class\": {}, \"fix_counts\": {}, \"mep_by_class\": {\"IfcAlarm\": 12, \"IfcAudioVisualAppliance\": 45, \"IfcCableCarrierFitting\": 165, \"IfcCableCarrierSegment\": 336, \"IfcCableFitting\": 401, \"IfcCableSegment\": 797, \"IfcChiller\": 2, \"IfcCoolingTower\": 4, \"IfcElectricDistributionBoard\": 26, \"IfcElectricFlowStorageDevice\": 16, \"IfcElectricGenerator\": 2, \"IfcHeatExchanger\": 1, \"IfcPipeFitting\": 238, \"IfcPipeSegment\": 476, \"IfcPump\": 6, \"IfcSensor\": 11, \"IfcTank\": 3, \"IfcTransformer\": 2, \"IfcUnitaryEquipment\": 12}, \"pods\": 0, \"readers\": 11, \"rooms\": 30, \"spaces\": 33, \"storeys\": 2, \"temporary\": 0, \"voids\": 0, \"walls\": 92}"
+    },
+    {
+      "name": "clash independent plan a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "clash independent plan a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.933302167337388,
+      "detail": "5.933 s (measurement only)"
+    },
+    {
+      "name": "clash independent plan b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "clash independent plan b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.951652708929032,
+      "detail": "5.952 s (measurement only)"
+    },
+    {
+      "name": "clash IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "clash IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.712657374795526,
+      "detail": "14.713 s (measurement only)"
+    },
+    {
+      "name": "clash G1",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "clash G1 elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 44.57570387516171,
+      "detail": "44.576 s (measurement only)"
+    },
+    {
+      "name": "clash second IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "clash second IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 7.4898142497986555,
+      "detail": "7.490 s (measurement only)"
+    },
+    {
+      "name": "variant clash G0",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant clash independent plan bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant clash independent IFC bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant clash measured manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"activities_per_programme\": {\"A\": 10, \"B\": 10}, \"cameras\": 45, \"ceilings\": 2, \"columns\": 80, \"doors\": 41, \"fitout_by_class\": {\"IfcAirTerminal\": 4, \"IfcCableCarrierSegment\": 3, \"IfcCovering\": 2, \"IfcElementAssembly\": 2, \"IfcLightFixture\": 6, \"IfcPipeSegment\": 6, \"IfcSanitaryTerminal\": 2, \"IfcUnitaryEquipment\": 1}, \"fix_counts\": {\"first\": 6, \"second\": 10, \"third\": 3}, \"mep_by_class\": {\"IfcAirTerminal\": 4, \"IfcAlarm\": 12, \"IfcAudioVisualAppliance\": 45, \"IfcCableCarrierFitting\": 165, \"IfcCableCarrierSegment\": 339, \"IfcCableFitting\": 401, \"IfcCableSegment\": 797, \"IfcChiller\": 2, \"IfcCoolingTower\": 4, \"IfcElectricDistributionBoard\": 26, \"IfcElectricFlowStorageDevice\": 16, \"IfcElectricGenerator\": 2, \"IfcHeatExchanger\": 1, \"IfcLightFixture\": 6, \"IfcPipeFitting\": 238, \"IfcPipeSegment\": 482, \"IfcPump\": 6, \"IfcSanitaryTerminal\": 2, \"IfcSensor\": 11, \"IfcTank\": 3, \"IfcTransformer\": 2, \"IfcUnitaryEquipment\": 13}, \"pods\": 2, \"readers\": 11, \"rooms\": 30, \"spaces\": 35, \"storeys\": 2, \"temporary\": 1, \"voids\": 2, \"walls\": 92}"
+    },
+    {
+      "name": "variant clash programme bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2 XER, 2 MSPDI, 4 sidecars"
+    },
+    {
+      "name": "floors independent plan a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "floors independent plan a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.813986958935857,
+      "detail": "5.814 s (measurement only)"
+    },
+    {
+      "name": "floors independent plan b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "floors independent plan b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.855198166333139,
+      "detail": "5.855 s (measurement only)"
+    },
+    {
+      "name": "floors IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "floors IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 15.247263750061393,
+      "detail": "15.247 s (measurement only)"
+    },
+    {
+      "name": "floors G1",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "floors G1 elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 43.727824416942894,
+      "detail": "43.728 s (measurement only)"
+    },
+    {
+      "name": "floors second IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "floors second IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 7.673831917345524,
+      "detail": "7.674 s (measurement only)"
+    },
+    {
+      "name": "variant floors G0",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant floors independent plan bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant floors independent IFC bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant floors measured manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"activities_per_programme\": {}, \"cameras\": 47, \"ceilings\": 0, \"columns\": 80, \"doors\": 47, \"fitout_by_class\": {}, \"fix_counts\": {}, \"mep_by_class\": {\"IfcAlarm\": 12, \"IfcAudioVisualAppliance\": 47, \"IfcCableCarrierFitting\": 165, \"IfcCableCarrierSegment\": 336, \"IfcCableFitting\": 401, \"IfcCableSegment\": 797, \"IfcChiller\": 2, \"IfcCoolingTower\": 4, \"IfcElectricDistributionBoard\": 26, \"IfcElectricFlowStorageDevice\": 16, \"IfcElectricGenerator\": 2, \"IfcHeatExchanger\": 1, \"IfcPipeFitting\": 238, \"IfcPipeSegment\": 476, \"IfcPump\": 6, \"IfcSensor\": 11, \"IfcTank\": 3, \"IfcTransformer\": 2, \"IfcUnitaryEquipment\": 12}, \"pods\": 0, \"readers\": 11, \"rooms\": 36, \"spaces\": 39, \"storeys\": 3, \"temporary\": 0, \"voids\": 0, \"walls\": 112}"
+    },
+    {
+      "name": "iris independent plan a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "iris independent plan a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.807801000308245,
+      "detail": "5.808 s (measurement only)"
+    },
+    {
+      "name": "iris independent plan b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "iris independent plan b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.78829533373937,
+      "detail": "5.788 s (measurement only)"
+    },
+    {
+      "name": "iris IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "iris IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.50498254224658,
+      "detail": "14.505 s (measurement only)"
+    },
+    {
+      "name": "iris G1",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "iris G1 elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 42.79589479090646,
+      "detail": "42.796 s (measurement only)"
+    },
+    {
+      "name": "iris second IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "iris second IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 7.44630820909515,
+      "detail": "7.446 s (measurement only)"
+    },
+    {
+      "name": "variant iris G0",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant iris independent plan bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant iris independent IFC bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant iris measured manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"activities_per_programme\": {}, \"cameras\": 45, \"ceilings\": 0, \"columns\": 80, \"doors\": 41, \"fitout_by_class\": {}, \"fix_counts\": {}, \"mep_by_class\": {\"IfcAlarm\": 12, \"IfcAudioVisualAppliance\": 45, \"IfcCableCarrierFitting\": 165, \"IfcCableCarrierSegment\": 336, \"IfcCableFitting\": 401, \"IfcCableSegment\": 797, \"IfcChiller\": 2, \"IfcCoolingTower\": 4, \"IfcElectricDistributionBoard\": 26, \"IfcElectricFlowStorageDevice\": 16, \"IfcElectricGenerator\": 2, \"IfcHeatExchanger\": 1, \"IfcPipeFitting\": 238, \"IfcPipeSegment\": 476, \"IfcPump\": 6, \"IfcSensor\": 11, \"IfcTank\": 3, \"IfcTransformer\": 2, \"IfcUnitaryEquipment\": 12}, \"pods\": 0, \"readers\": 11, \"rooms\": 30, \"spaces\": 33, \"storeys\": 2, \"temporary\": 0, \"voids\": 0, \"walls\": 92}"
+    },
+    {
+      "name": "pod independent plan a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pod independent plan a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.920665209181607,
+      "detail": "5.921 s (measurement only)"
+    },
+    {
+      "name": "pod independent plan b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pod independent plan b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 5.93377120885998,
+      "detail": "5.934 s (measurement only)"
+    },
+    {
+      "name": "pod IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pod IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 14.977415208239108,
+      "detail": "14.977 s (measurement only)"
+    },
+    {
+      "name": "pod G1",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pod G1 elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 46.32173787476495,
+      "detail": "46.322 s (measurement only)"
+    },
+    {
+      "name": "pod second IFC build",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pod second IFC build elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 7.4758020411245525,
+      "detail": "7.476 s (measurement only)"
+    },
+    {
+      "name": "variant pod G0",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant pod independent plan bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant pod independent IFC bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "variant pod measured manifest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"activities_per_programme\": {\"A\": 10, \"B\": 10}, \"cameras\": 45, \"ceilings\": 2, \"columns\": 80, \"doors\": 41, \"fitout_by_class\": {\"IfcAirTerminal\": 4, \"IfcCableCarrierSegment\": 3, \"IfcCovering\": 2, \"IfcElementAssembly\": 2, \"IfcLightFixture\": 6, \"IfcPipeSegment\": 3, \"IfcSanitaryTerminal\": 2, \"IfcUnitaryEquipment\": 1}, \"fix_counts\": {\"first\": 6, \"second\": 10, \"third\": 3}, \"mep_by_class\": {\"IfcAirTerminal\": 4, \"IfcAlarm\": 12, \"IfcAudioVisualAppliance\": 45, \"IfcCableCarrierFitting\": 165, \"IfcCableCarrierSegment\": 339, \"IfcCableFitting\": 401, \"IfcCableSegment\": 797, \"IfcChiller\": 2, \"IfcCoolingTower\": 4, \"IfcElectricDistributionBoard\": 26, \"IfcElectricFlowStorageDevice\": 16, \"IfcElectricGenerator\": 2, \"IfcHeatExchanger\": 1, \"IfcLightFixture\": 6, \"IfcPipeFitting\": 238, \"IfcPipeSegment\": 479, \"IfcPump\": 6, \"IfcSanitaryTerminal\": 2, \"IfcSensor\": 11, \"IfcTank\": 3, \"IfcTransformer\": 2, \"IfcUnitaryEquipment\": 13}, \"pods\": 2, \"readers\": 11, \"rooms\": 30, \"spaces\": 35, \"storeys\": 2, \"temporary\": 1, \"voids\": 2, \"walls\": 92}"
+    },
+    {
+      "name": "variant pod programme bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2 XER, 2 MSPDI, 4 sidecars"
+    },
+    {
+      "name": "family structure lint",
+      "status": "PASS",
+      "ok": true,
+      "detail": "28 rules; "
+    },
+    {
+      "name": "published bytes vs v0.4.2",
+      "status": "PASS",
+      "ok": true,
+      "detail": "15 USD layers and 5 manifests; no normalization"
+    },
+    {
+      "name": "publish base publish-a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish base publish-a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 16.157380166929215,
+      "detail": "16.157 s (measurement only)"
+    },
+    {
+      "name": "publish base publish-b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish base publish-b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 15.744009458925575,
+      "detail": "15.744 s (measurement only)"
+    },
+    {
+      "name": "publish base byte identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "two independent publishes and committed data; 3 layers + manifest; no normalization"
+    },
+    {
+      "name": "publish base plugin-free",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"counts\": {\"elements\": 2954, \"levels\": 2, \"meshes\": 2987, \"ports\": 6212, \"spaces\": 33, \"unclassified\": 2, \"unparented\": 0}, \"fallback_types\": [\"AecoFacility\", \"AecoLevel\", \"AecoPort\", \"AecoSite\", \"AecoSpace\", \"AecoSystem\"]}"
+    },
+    {
+      "name": "publish base size",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2094152/10000000 bytes including overview"
+    },
+    {
+      "name": "render base",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"bytes\": 144133, \"height\": 800, \"sha256\": \"217af328515856ca820598f42b3f17e5e8c4522b2a445de6d8c9ee04b041d779\", \"width\": 1280}"
+    },
+    {
+      "name": "vanilla base fresh and non-uniform",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"all_corners_inside\": true, \"committed\": {\"bytes\": 144319, \"height\": 800, \"sha256\": \"1ce1ae9861dacad56bfe45d49aa36ade4de1835db280b583833d972be76a619a\", \"width\": 1280}, \"fresh\": {\"bytes\": 144300, \"height\": 800, \"sha256\": \"c3daf98f2ccd01b356ab266a067512bb39c2656af98f8d609fe190eb3d21372e\", \"width\": 1280}, \"purposes\": \"proxy,render\", \"source_fresh\": true}"
+    },
+    {
+      "name": "core validation base",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 errors; findings: {\"proxyClassified\": 2}"
+    },
+    {
+      "name": "publish clash publish-a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish clash publish-a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 15.99381941696629,
+      "detail": "15.994 s (measurement only)"
+    },
+    {
+      "name": "publish clash publish-b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish clash publish-b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 18.320277167018503,
+      "detail": "18.320 s (measurement only)"
+    },
+    {
+      "name": "publish clash byte identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "two independent publishes and committed data; 3 layers + manifest; no normalization"
+    },
+    {
+      "name": "publish clash plugin-free",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"counts\": {\"elements\": 2980, \"levels\": 2, \"meshes\": 3015, \"ports\": 6244, \"spaces\": 35, \"unclassified\": 2, \"unparented\": 0}, \"fallback_types\": [\"AecoFacility\", \"AecoLevel\", \"AecoPort\", \"AecoSite\", \"AecoSpace\", \"AecoSystem\"]}"
+    },
+    {
+      "name": "publish clash size",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2121762/10000000 bytes including overview"
+    },
+    {
+      "name": "render clash",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"bytes\": 144140, \"height\": 800, \"sha256\": \"0fa7366898999de26508aecd9fd6f412d7a8237bbbb96ef8bdf36dc761857bb7\", \"width\": 1280}"
+    },
+    {
+      "name": "vanilla clash fresh and non-uniform",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"all_corners_inside\": true, \"committed\": {\"bytes\": 143863, \"height\": 800, \"sha256\": \"4d5579a82c310544632aab4bfb11a11c410249a417ad7c2cf677dead1a551568\", \"width\": 1280}, \"fresh\": {\"bytes\": 144132, \"height\": 800, \"sha256\": \"c0f18b061bd8a90787b3c24991305590f125ead9a631175659da11b2d57bf19a\", \"width\": 1280}, \"purposes\": \"proxy,render\", \"source_fresh\": true}"
+    },
+    {
+      "name": "core validation clash",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 errors; findings: {\"proxyClassified\": 2}"
+    },
+    {
+      "name": "publish floors publish-a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish floors publish-a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 16.17739541688934,
+      "detail": "16.177 s (measurement only)"
+    },
+    {
+      "name": "publish floors publish-b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish floors publish-b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 15.876950875390321,
+      "detail": "15.877 s (measurement only)"
+    },
+    {
+      "name": "publish floors byte identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "two independent publishes and committed data; 3 layers + manifest; no normalization"
+    },
+    {
+      "name": "publish floors plugin-free",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"counts\": {\"elements\": 2983, \"levels\": 3, \"meshes\": 3022, \"ports\": 6212, \"spaces\": 39, \"unclassified\": 2, \"unparented\": 0}, \"fallback_types\": [\"AecoFacility\", \"AecoLevel\", \"AecoPort\", \"AecoSite\", \"AecoSpace\", \"AecoSystem\"]}"
+    },
+    {
+      "name": "publish floors size",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2111328/10000000 bytes including overview"
+    },
+    {
+      "name": "render floors",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"bytes\": 145848, \"height\": 800, \"sha256\": \"a1c1f6e341d47ecf2c2a2c3a07ae2dc556092fc7ab764594a3b2a51670e1e72b\", \"width\": 1280}"
+    },
+    {
+      "name": "vanilla floors fresh and non-uniform",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"all_corners_inside\": true, \"committed\": {\"bytes\": 145912, \"height\": 800, \"sha256\": \"73760f2017bca24ad601520da5760c9eacdb25663abe155179ca55e82b79ff38\", \"width\": 1280}, \"fresh\": {\"bytes\": 145575, \"height\": 800, \"sha256\": \"95fe03148982b81ab2c884c803de1eec76446e05bf826a3e156546d79075562f\", \"width\": 1280}, \"purposes\": \"proxy,render\", \"source_fresh\": true}"
+    },
+    {
+      "name": "core validation floors",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 errors; findings: {\"proxyClassified\": 2}"
+    },
+    {
+      "name": "publish iris publish-a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish iris publish-a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 16.249990624841303,
+      "detail": "16.250 s (measurement only)"
+    },
+    {
+      "name": "publish iris publish-b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish iris publish-b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 16.066836709156632,
+      "detail": "16.067 s (measurement only)"
+    },
+    {
+      "name": "publish iris byte identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "two independent publishes and committed data; 3 layers + manifest; no normalization"
+    },
+    {
+      "name": "publish iris plugin-free",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"counts\": {\"elements\": 2954, \"levels\": 2, \"meshes\": 2987, \"ports\": 6212, \"spaces\": 33, \"unclassified\": 2, \"unparented\": 0}, \"fallback_types\": [\"AecoFacility\", \"AecoLevel\", \"AecoPort\", \"AecoSite\", \"AecoSpace\", \"AecoSystem\"]}"
+    },
+    {
+      "name": "publish iris size",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2094845/10000000 bytes including overview"
+    },
+    {
+      "name": "render iris",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"bytes\": 144529, \"height\": 800, \"sha256\": \"5a964272d7e12a3a6e5bd222f9700e2a047442e1af9b9229263155dfe8c48097\", \"width\": 1280}"
+    },
+    {
+      "name": "vanilla iris fresh and non-uniform",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"all_corners_inside\": true, \"committed\": {\"bytes\": 144242, \"height\": 800, \"sha256\": \"27107bc04a0a84e113b4572233347510881a784e0b02678f7e46842e726e1d13\", \"width\": 1280}, \"fresh\": {\"bytes\": 144303, \"height\": 800, \"sha256\": \"e9ce8d66534a9b63c8c8bc50d97fb6c32eea32060bf176ea7c3ad3b16dc7d2a7\", \"width\": 1280}, \"purposes\": \"proxy,render\", \"source_fresh\": true}"
+    },
+    {
+      "name": "core validation iris",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 errors; findings: {\"proxyClassified\": 2}"
+    },
+    {
+      "name": "publish pod publish-a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish pod publish-a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 16.238003625068814,
+      "detail": "16.238 s (measurement only)"
+    },
+    {
+      "name": "publish pod publish-b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish pod publish-b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 16.090887499973178,
+      "detail": "16.091 s (measurement only)"
+    },
+    {
+      "name": "publish pod byte identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "two independent publishes and committed data; 3 layers + manifest; no normalization"
+    },
+    {
+      "name": "publish pod plugin-free",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"counts\": {\"elements\": 2977, \"levels\": 2, \"meshes\": 3012, \"ports\": 6238, \"spaces\": 35, \"unclassified\": 2, \"unparented\": 0}, \"fallback_types\": [\"AecoFacility\", \"AecoLevel\", \"AecoPort\", \"AecoSite\", \"AecoSpace\", \"AecoSystem\"]}"
+    },
+    {
+      "name": "publish pod size",
+      "status": "PASS",
+      "ok": true,
+      "detail": "2117566/10000000 bytes including overview"
+    },
+    {
+      "name": "render pod",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"bytes\": 144082, \"height\": 800, \"sha256\": \"f9df6db7c657673dd1674be8f7af566965876e35ec68f81e7ef76ad3449ebbca\", \"width\": 1280}"
+    },
+    {
+      "name": "vanilla pod fresh and non-uniform",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"all_corners_inside\": true, \"committed\": {\"bytes\": 144340, \"height\": 800, \"sha256\": \"905398308ea5405068850594222c0dc77c42da83fbc773bb81a26084bcadf9bf\", \"width\": 1280}, \"fresh\": {\"bytes\": 143887, \"height\": 800, \"sha256\": \"03f27c8878c18c61657478f0468272ec5627ec51f3121d3e71381e79a06796fc\", \"width\": 1280}, \"purposes\": \"proxy,render\", \"source_fresh\": true}"
+    },
+    {
+      "name": "core validation pod",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 errors; findings: {\"proxyClassified\": 2}"
+    },
+    {
+      "name": "Revit camera payload contract",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45 valid GUIDs, native levels, finite drivers and complete JSON payloads"
+    },
+    {
+      "name": "Revit 45-camera type distribution",
+      "status": "PASS",
+      "ok": true,
+      "detail": "31 domes / 11 bullets / 3 PTZ"
+    },
+    {
+      "name": "Revit one sensor per camera",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45 serialized heads"
+    },
+    {
+      "name": "Revit serialized pose drivers agree",
+      "status": "PASS",
+      "ok": true,
+      "detail": "225/225 serialized driver values; offline only"
+    },
+    {
+      "name": "Revit positive target density per type",
+      "status": "PASS",
+      "ok": true,
+      "detail": "3/3 types"
+    },
+    {
+      "name": "Revit finite user-radius inputs",
+      "status": "PASS",
+      "ok": true,
+      "detail": "45/45 cameras"
+    },
+    {
+      "name": "Revit Status payload",
+      "status": "PASS",
+      "ok": true,
+      "detail": "NEW on every authored product category"
+    },
+    {
+      "name": "Revit room and identity payload",
+      "status": "PASS",
+      "ok": true,
+      "detail": "30 interior rooms; camera GUIDs agree with the generator"
+    },
+    {
+      "name": "Revit shared client",
+      "status": "PASS",
+      "ok": true,
+      "detail": "usdaeco-revit v0.1.0; verified runtime source; local transport removed"
+    },
+    {
+      "name": "Revit script pack hashes",
+      "status": "PASS",
+      "ok": true,
+      "detail": "11/11 scripts"
+    },
+    {
+      "name": "Revit local dry run",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Revit local dry run elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 0.20677008293569088,
+      "detail": "0.207 s (measurement only)"
+    },
+    {
+      "name": "recorded Revit base update",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"batches\": 9, \"created\": 0, \"exit_code\": 0, \"status\": \"PASS\", \"updated\": 45}; recorded evidence, no live execution"
+    },
+    {
+      "name": "recorded Revit base parity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"cameras\": 45, \"categories\": [{\"category\": \"racks\", \"joined\": 160, \"max_position_delta_m\": 7.944109290391274e-15, \"planned\": 160}, {\"category\": \"equipment\", \"joined\": 109, \"max_position_delta_m\": 0.14000000000000057, \"planned\": 109}, {\"category\": \"doors\", \"joined\": 41, \"max_position_delta_m\": 0.04956309110620069, \"planned\": 41}, {\"category\": \"walls\", \"joined\": 92, \"max_position_delta_m\": 0.125, \"planned\": 92}, {\"category\": \"columns\", \"joined\": 80, \"max_position_delta_m\": 0.0, \"planned\": 80}, {\"category\": \"cameras\", \"joined\": 45, \"max_position_delta_m\": 7.105427357601002e-15, \"planned\": 45}], \"doors\": 41, \"failures\": 0, \"joined\": 527, \"required\": 527, \"rooms\": 30, \"status\": \"PASS\"}; recorded evidence, no live execution"
+    },
+    {
+      "name": "recorded Revit base importer",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"cameras\": 45, \"presets\": 7, \"propsBlocked\": 910, \"sensors\": 45, \"status\": \"PASS\", \"subInstancesFolded\": 49, \"types\": 3, \"unmatched\": 0}; recorded evidence, no live execution"
+    },
+    {
+      "name": "native Revit floors",
+      "status": "NOT RUN",
+      "ok": null,
+      "detail": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "native Revit pod",
+      "status": "NOT RUN",
+      "ok": null,
+      "detail": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "native Revit clash",
+      "status": "NOT RUN",
+      "ok": null,
+      "detail": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "native Revit iris",
+      "status": "NOT RUN",
+      "ok": null,
+      "detail": "Base only; further native family work required, including pods and ceilings"
+    },
+    {
+      "name": "pytest",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pytest elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 26.826358665712178,
+      "detail": "26.826 s (measurement only)"
+    },
+    {
+      "name": "repository sanitization",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 hits"
+    }
+  ],
+  "failed": 0,
+  "passed": 151,
+  "informational": 38,
+  "not_run": 4,
+  "total": 193
+}

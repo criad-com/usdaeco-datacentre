@@ -1,0 +1,476 @@
+# Fit-out products, world metres, Z up. Box positions are footprint centres at their base.
+elements:
+- id: clg.office
+  name: clg.office
+  ifc_class: IfcCovering
+  predefined: CEILING
+  space: sp.office
+  pos:
+  - 17
+  - -7.5
+  - 6.5875
+  size:
+  - 10
+  - 9
+  - 0.0125
+  material: Plasterboard
+  construction: 12.5 mm plasterboard on MF grid; top 2.6 m above L01
+- id: clg.ocorr.1
+  name: clg.ocorr.1
+  ifc_class: IfcCovering
+  predefined: CEILING
+  space: sp.ocorr.1
+  pos:
+  - 22.5
+  - -1.5
+  - 6.5875
+  size:
+  - 15
+  - 3
+  - 0.0125
+  material: Plasterboard
+  construction: 12.5 mm plasterboard on MF grid; top 2.6 m above L01
+- id: pod.wc.temp
+  name: pod.wc.temp
+  ifc_class: IfcElementAssembly
+  predefined: USERDEFINED
+  space: sp.ocorr.1
+  pos:
+  - 21.2
+  - -1.5
+  - 4
+  size:
+  - 2.4
+  - 3.6
+  - 2.5
+  status: TEMPORARY
+  construction: Prefabricated bathroom pod, temporary delivery position
+- id: pod.wc
+  name: pod.wc
+  ifc_class: IfcElementAssembly
+  predefined: USERDEFINED
+  space: sp.wc
+  pos:
+  - 27.4
+  - -10
+  - 4
+  size:
+  - 2.4
+  - 3.6
+  - 2.5
+  construction: Prefabricated bathroom pod, final position
+- id: tray.void.ocorr.1
+  name: tray.void.ocorr.1
+  ifc_class: IfcCableCarrierSegment
+  predefined: CABLETRAYSEGMENT
+  space: sp.void.ocorr.1
+  axis:
+  - &id001
+    - 16
+    - -1.5
+    - 6.8
+  - &id002
+    - 29
+    - -1.5
+    - 6.8
+  port_medium: CABLECARRIER
+  port_system: DATA
+  ports:
+  - *id001
+  - *id002
+  section:
+  - 0.3
+  - 0.1
+  fix: first
+- id: pipe.chw.void.f
+  name: pipe.chw.void.f
+  ifc_class: IfcPipeSegment
+  predefined: RIGIDSEGMENT
+  space: sp.void.ocorr.1
+  axis:
+  - &id003
+    - 28
+    - -1.9
+    - 3
+  - - 28
+    - -1.9
+    - 6.8
+  - - 19.5
+    - -1.9
+    - 6.8
+  - &id004
+    - 19.5
+    - -5.5
+    - 6.8
+  port_medium: PIPE
+  port_system: CHILLEDWATER
+  ports:
+  - *id003
+  - *id004
+  od: 0.0603
+  nominal_diameter: 0.05
+  fix: first
+- id: pipe.chw.void.r
+  name: pipe.chw.void.r
+  ifc_class: IfcPipeSegment
+  predefined: RIGIDSEGMENT
+  space: sp.void.ocorr.1
+  axis:
+  - &id005
+    - 28
+    - -2.15
+    - 3
+  - - 28
+    - -2.15
+    - 6.8
+  - - 19.7
+    - -2.15
+    - 6.8
+  - - 19.7
+    - -5.5
+    - 6.8
+  port_medium: PIPE
+  port_system: CHILLEDWATER
+  ports:
+  - *id005
+  - - 19.7
+    - -5.5
+    - 6.8
+  od: 0.0603
+  nominal_diameter: 0.05
+  fix: first
+- id: fcu.office.1
+  name: fcu.office.1
+  ifc_class: IfcUnitaryEquipment
+  predefined: AIRCONDITIONINGUNIT
+  space: sp.void.office
+  pos:
+  - 19.5
+  - -5.5
+  - 6.7
+  size:
+  - 1
+  - 0.6
+  - 0.2
+  fix: first
+  port_medium: PIPE
+  port_system: CHILLEDWATER
+  ports:
+  - - 19.5
+    - -5.5
+    - 6.8
+  - - 19.7
+    - -5.5
+    - 6.8
+  connects:
+  - - pipe.chw.void.f.port.2
+    - fcu.office.1.port.1
+  - - fcu.office.1.port.2
+    - pipe.chw.void.r.port.2
+- id: cnd.void.office.1
+  name: cnd.void.office.1
+  ifc_class: IfcCableCarrierSegment
+  predefined: CONDUITSEGMENT
+  space: sp.void.office
+  axis:
+  - &id006
+    - 13
+    - -6.5
+    - 6.8
+  - &id007
+    - 21
+    - -6.5
+    - 6.8
+  port_medium: CABLECARRIER
+  port_system: DATA
+  ports:
+  - *id006
+  - *id007
+  od: 0.025
+  fix: first
+- id: cnd.void.office.2
+  name: cnd.void.office.2
+  ifc_class: IfcCableCarrierSegment
+  predefined: CONDUITSEGMENT
+  space: sp.void.office
+  axis:
+  - &id008
+    - 13
+    - -8.5
+    - 6.8
+  - &id009
+    - 21
+    - -8.5
+    - 6.8
+  port_medium: CABLECARRIER
+  port_system: DATA
+  ports:
+  - *id008
+  - *id009
+  od: 0.025
+  fix: first
+- id: lum.office.1
+  name: lum.office.1
+  ifc_class: IfcLightFixture
+  predefined: POINTSOURCE
+  space: sp.office
+  pos:
+  - 14
+  - -5
+  - 6.54
+  size:
+  - 0.6
+  - 0.6
+  - 0.0475
+  fix: second
+  port_medium: CABLE
+  port_system: ELECTRICAL
+  ports:
+  - - 14
+    - -5
+    - 6.59
+- id: lum.office.2
+  name: lum.office.2
+  ifc_class: IfcLightFixture
+  predefined: POINTSOURCE
+  space: sp.office
+  pos:
+  - 17
+  - -5
+  - 6.54
+  size:
+  - 0.6
+  - 0.6
+  - 0.0475
+  fix: second
+  port_medium: CABLE
+  port_system: ELECTRICAL
+  ports:
+  - - 17
+    - -5
+    - 6.59
+- id: lum.office.3
+  name: lum.office.3
+  ifc_class: IfcLightFixture
+  predefined: POINTSOURCE
+  space: sp.office
+  pos:
+  - 20
+  - -5
+  - 6.54
+  size:
+  - 0.6
+  - 0.6
+  - 0.0475
+  fix: second
+  port_medium: CABLE
+  port_system: ELECTRICAL
+  ports:
+  - - 20
+    - -5
+    - 6.59
+- id: lum.office.4
+  name: lum.office.4
+  ifc_class: IfcLightFixture
+  predefined: POINTSOURCE
+  space: sp.office
+  pos:
+  - 14
+  - -10
+  - 6.54
+  size:
+  - 0.6
+  - 0.6
+  - 0.0475
+  fix: second
+  port_medium: CABLE
+  port_system: ELECTRICAL
+  ports:
+  - - 14
+    - -10
+    - 6.59
+- id: lum.office.5
+  name: lum.office.5
+  ifc_class: IfcLightFixture
+  predefined: POINTSOURCE
+  space: sp.office
+  pos:
+  - 17
+  - -10
+  - 6.54
+  size:
+  - 0.6
+  - 0.6
+  - 0.0475
+  fix: second
+  port_medium: CABLE
+  port_system: ELECTRICAL
+  ports:
+  - - 17
+    - -10
+    - 6.59
+- id: lum.office.6
+  name: lum.office.6
+  ifc_class: IfcLightFixture
+  predefined: POINTSOURCE
+  space: sp.office
+  pos:
+  - 20
+  - -10
+  - 6.54
+  size:
+  - 0.6
+  - 0.6
+  - 0.0475
+  fix: second
+  port_medium: CABLE
+  port_system: ELECTRICAL
+  ports:
+  - - 20
+    - -10
+    - 6.59
+- id: grl.office.1
+  name: grl.office.1
+  ifc_class: IfcAirTerminal
+  predefined: GRILLE
+  space: sp.office
+  pos:
+  - 14
+  - -6.5
+  - 6.55
+  size:
+  - 0.4
+  - 0.4
+  - 0.0375
+  fix: second
+  port_medium: DUCT
+  port_system: VENTILATION
+  ports:
+  - - 14
+    - -6.5
+    - 6.59
+- id: grl.office.2
+  name: grl.office.2
+  ifc_class: IfcAirTerminal
+  predefined: GRILLE
+  space: sp.office
+  pos:
+  - 20
+  - -6.5
+  - 6.55
+  size:
+  - 0.4
+  - 0.4
+  - 0.0375
+  fix: second
+  port_medium: DUCT
+  port_system: VENTILATION
+  ports:
+  - - 20
+    - -6.5
+    - 6.59
+- id: grl.office.3
+  name: grl.office.3
+  ifc_class: IfcAirTerminal
+  predefined: GRILLE
+  space: sp.office
+  pos:
+  - 14
+  - -8.5
+  - 6.55
+  size:
+  - 0.4
+  - 0.4
+  - 0.0375
+  fix: second
+  port_medium: DUCT
+  port_system: VENTILATION
+  ports:
+  - - 14
+    - -8.5
+    - 6.59
+- id: grl.office.4
+  name: grl.office.4
+  ifc_class: IfcAirTerminal
+  predefined: GRILLE
+  space: sp.office
+  pos:
+  - 20
+  - -8.5
+  - 6.55
+  size:
+  - 0.4
+  - 0.4
+  - 0.0375
+  fix: second
+  port_medium: DUCT
+  port_system: VENTILATION
+  ports:
+  - - 20
+    - -8.5
+    - 6.59
+- id: pipe.drain.pod
+  name: pipe.drain.pod
+  ifc_class: IfcPipeSegment
+  predefined: RIGIDSEGMENT
+  space: sp.wc
+  axis:
+  - &id010
+    - 27.4
+    - -10
+    - 4.15
+  - - 27.4
+    - -4
+    - 4.15
+  - &id011
+    - 27.4
+    - -4
+    - 1
+  port_medium: PIPE
+  port_system: DRAINAGE
+  ports:
+  - *id010
+  - *id011
+  od: 0.11
+  nominal_diameter: 0.1
+  fix: third
+- id: san.pod.1
+  name: san.pod.1
+  ifc_class: IfcSanitaryTerminal
+  predefined: TOILETPAN
+  space: sp.wc
+  pos:
+  - 27.4
+  - -10.5
+  - 4
+  size:
+  - 0.6
+  - 0.7
+  - 0.8
+  fix: third
+  port_medium: PIPE
+  port_system: DRAINAGE
+  ports:
+  - - 27.4
+    - -10.5
+    - 4.15
+- id: san.pod.2
+  name: san.pod.2
+  ifc_class: IfcSanitaryTerminal
+  predefined: WASHHANDBASIN
+  space: sp.wc
+  pos:
+  - 27.4
+  - -9
+  - 4
+  size:
+  - 0.6
+  - 0.7
+  - 0.8
+  fix: third
+  port_medium: PIPE
+  port_system: DRAINAGE
+  ports:
+  - - 27.4
+    - -9
+    - 4.15

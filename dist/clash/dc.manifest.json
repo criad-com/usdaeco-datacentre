@@ -1,0 +1,284 @@
+{
+  "clash": {
+    "cases": [
+      {
+        "axis": [
+          [
+            24,
+            -4,
+            6.8
+          ],
+          [
+            24,
+            -2,
+            6.8
+          ]
+        ],
+        "exact": {
+          "distance": null,
+          "method": "analytic source sweep",
+          "verdict": "hard"
+        },
+        "id": "pipe.clash.hard",
+        "mesh": {
+          "combined_deflection_band": 0.00022009999999999998,
+          "partner_deflection": 0.0,
+          "pipe_deflection": 0.00022009999999999998,
+          "signed_distance": -0.07500000298023224,
+          "verdict": "hard",
+          "witness": [
+            24.0,
+            -3.0,
+            6.8000000073359566
+          ]
+        },
+        "partner": "wall.l1.h.007",
+        "radius": 0.03015,
+        "sides": 26,
+        "tessellation": {
+          "mode": "converter-default"
+        }
+      },
+      {
+        "axis": [
+          [
+            23,
+            -1.5,
+            6.88515
+          ],
+          [
+            25,
+            -1.5,
+            6.88515
+          ]
+        ],
+        "exact": {
+          "distance": 0.005000000000000782,
+          "method": "analytic source sweep",
+          "verdict": "clearance"
+        },
+        "id": "pipe.clash.near",
+        "mesh": {
+          "combined_deflection_band": 0.0057582,
+          "partner_deflection": 0.0,
+          "pipe_deflection": 0.0057582,
+          "signed_distance": 0.005000114440917969,
+          "verdict": "undecidable",
+          "witness": [
+            23.0,
+            -1.5,
+            6.855000019073486
+          ]
+        },
+        "partner": "tray.void.ocorr.1",
+        "radius": 0.03015,
+        "sides": 5,
+        "tessellation": {
+          "deflection": 0.006,
+          "mode": "inscribed",
+          "vertex_direction": [
+            0,
+            0,
+            -1
+          ]
+        }
+      },
+      {
+        "axis": [
+          [
+            23,
+            -2.89485,
+            6.8
+          ],
+          [
+            25,
+            -2.89485,
+            6.8
+          ]
+        ],
+        "exact": {
+          "distance": 0.0,
+          "method": "analytic source sweep",
+          "verdict": "touching"
+        },
+        "id": "pipe.clash.tangent",
+        "mesh": {
+          "combined_deflection_band": 0.0010636,
+          "partner_deflection": 0.0,
+          "pipe_deflection": 0.0010636,
+          "signed_distance": -0.0010635405778884888,
+          "verdict": "falsePenetration",
+          "witness": [
+            23.0,
+            -2.9260635375976562,
+            6.800000190734863
+          ]
+        },
+        "partner": "wall.l1.h.007",
+        "radius": 0.03015,
+        "sides": 12,
+        "tessellation": {
+          "deflection": 0.0012,
+          "mode": "circumscribed",
+          "vertex_direction": [
+            0,
+            -1,
+            0
+          ]
+        }
+      }
+    ],
+    "expected": [
+      {
+        "axis": [
+          [
+            24,
+            -4,
+            6.8
+          ],
+          [
+            24,
+            -2,
+            6.8
+          ]
+        ],
+        "exact": {
+          "verdict": "hard"
+        },
+        "id": "pipe.clash.hard",
+        "mesh": {
+          "verdict": "hard"
+        },
+        "od": 0.0603,
+        "partner": "wall.l1.h.007",
+        "wall_face_plane": {
+          "axis_y": -3,
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "offset": -2.925,
+          "thickness": 0.15,
+          "wall": "wall.l1.h.007"
+        }
+      },
+      {
+        "axis": [
+          [
+            23,
+            -1.5,
+            6.88515
+          ],
+          [
+            25,
+            -1.5,
+            6.88515
+          ]
+        ],
+        "exact": {
+          "distance": 0.005,
+          "verdict": "clearance"
+        },
+        "id": "pipe.clash.near",
+        "mesh": {
+          "combined_deflection_band": 0.0057582,
+          "verdict": "undecidable"
+        },
+        "od": 0.0603,
+        "overlap": 2,
+        "partner": "tray.void.ocorr.1",
+        "tray_top": 6.85,
+        "wall_face_plane": {
+          "axis_y": -3,
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "offset": -2.925,
+          "thickness": 0.15,
+          "wall": "wall.l1.h.007"
+        }
+      },
+      {
+        "axis": [
+          [
+            23,
+            -2.89485,
+            6.8
+          ],
+          [
+            25,
+            -2.89485,
+            6.8
+          ]
+        ],
+        "exact": {
+          "distance": 0,
+          "verdict": "touching"
+        },
+        "id": "pipe.clash.tangent",
+        "mesh": {
+          "combined_deflection_band": 0.0010636,
+          "minimum_penetration": 0.0005,
+          "verdict": "falsePenetration"
+        },
+        "od": 0.0603,
+        "partner": "wall.l1.h.007",
+        "wall_face_plane": {
+          "axis_y": -3,
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "offset": -2.925,
+          "thickness": 0.15,
+          "wall": "wall.l1.h.007"
+        }
+      }
+    ],
+    "units": "metres"
+  },
+  "converter": {
+    "ref": "v0.1.0",
+    "repo": "usdaeco-ifc",
+    "revision": "43935df9e059b724f8d1ae3d0ea324dbae7efd29",
+    "version": "0.1.0"
+  },
+  "core": {
+    "ref": "v0.8.4",
+    "repo": "usdaeco-core",
+    "revision": "c818a1533bcfe36be47845252388a1c732ec69c0",
+    "version": "0.8.4"
+  },
+  "counts": {
+    "elements": 2980,
+    "levels": 2,
+    "meshes": 3015,
+    "ports": 6244,
+    "spaces": 35,
+    "unclassified": 2,
+    "unparented": 0
+  },
+  "facility": "demo-datacentre-01",
+  "generator": {
+    "version": "0.4.4"
+  },
+  "layers": {
+    "dc.geometry.usdc": {
+      "bytes": 359760,
+      "sha256": "24c22644aa0b9470ceddfb8433a828284fea2df964d77840bea53b1328d8675e"
+    },
+    "dc.semantics.usdc": {
+      "bytes": 1485167,
+      "sha256": "5a9af9ff8ec3366d80408e73a0768f4698db71b329f9edb21e4d6fbc7ad91f15"
+    },
+    "dc.usda": {
+      "bytes": 517,
+      "sha256": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    }
+  },
+  "variant": "clash"
+}

@@ -1,0 +1,124 @@
+{
+  "converter": {
+    "ref": "v0.1.0",
+    "repo": "usdaeco-ifc",
+    "revision": "43935df9e059b724f8d1ae3d0ea324dbae7efd29",
+    "version": "0.1.0"
+  },
+  "core": {
+    "ref": "v0.8.4",
+    "repo": "usdaeco-core",
+    "revision": "c818a1533bcfe36be47845252388a1c732ec69c0",
+    "version": "0.8.4"
+  },
+  "counts": {
+    "elements": 2983,
+    "levels": 3,
+    "meshes": 3022,
+    "ports": 6212,
+    "spaces": 39,
+    "unclassified": 2,
+    "unparented": 0
+  },
+  "facility": "demo-datacentre-01",
+  "generator": {
+    "version": "0.4.5"
+  },
+  "layers": {
+    "dc.geometry.usdc": {
+      "bytes": 337888,
+      "sha256": "feaced9b153a36baea8399d681ffe820e9b3b543075cdd15f8249a1ca0c2bf1f"
+    },
+    "dc.semantics.usdc": {
+      "bytes": 1479629,
+      "sha256": "7417b00cf602a4f48e4a4071d3f709e0be7ffb95216506ec2300da908f754004"
+    },
+    "dc.usda": {
+      "bytes": 517,
+      "sha256": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    }
+  },
+  "typical": {
+    "changes": [
+      {
+        "classification": "IfcWall.PARTITIONING",
+        "instance": "wall.l2.v.016",
+        "kind": "changed",
+        "prototype": "wall.l1.v.016"
+      },
+      {
+        "classification": "IfcDoor.DOOR",
+        "instance": "door.office.2b",
+        "kind": "extra",
+        "prototype": null
+      }
+    ],
+    "expected": {
+      "deviations": [
+        {
+          "axis_from": [
+            [
+              26,
+              -8
+            ],
+            [
+              26,
+              -3
+            ]
+          ],
+          "axis_to": [
+            [
+              27,
+              -11.2
+            ],
+            [
+              27,
+              -3
+            ]
+          ],
+          "between": [
+            "sp.meeting.1.2",
+            "sp.kitchen.2"
+          ],
+          "extension_m": 3.2,
+          "id": "wall.l2.v.016",
+          "kind": "wallMoved",
+          "length_from_m": 5.0,
+          "length_to_m": 8.2,
+          "offset_m": [
+            1,
+            0,
+            0
+          ],
+          "prototype": "wall.l1.v.016",
+          "reason": "Partition shifted 1 m east and extended 3.2 m south; room schedule remains the typical baseline."
+        },
+        {
+          "id": "door.office.2b",
+          "kind": "doorExtra",
+          "reason": "Additional access through the edited partition.",
+          "wall": "wall.l2.v.016"
+        }
+      ],
+      "doors_extra": 1,
+      "expected_net_partition_length_delta_m": 3.2,
+      "instance": "lvl.l2",
+      "offset_m": [
+        0,
+        0,
+        3
+      ],
+      "prototype": "lvl.l1",
+      "walls_moved": 1
+    },
+    "matched_elements": 28,
+    "matching": "classification + inherited type + placement; body comparison",
+    "net_partition_length_delta_m": 3.2,
+    "partition_length_m": {
+      "lvl.l1": 43.0,
+      "lvl.l2": 46.2
+    },
+    "units": "metres"
+  },
+  "variant": "floors"
+}

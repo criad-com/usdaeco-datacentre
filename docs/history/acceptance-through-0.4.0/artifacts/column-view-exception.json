@@ -1,0 +1,117 @@
+{
+  "originalResults": {
+    "/SecurityTargets/sp_corr_c": {
+      "blockers": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/col_044",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_031"
+      ],
+      "density": 85.06669210938121,
+      "dutyFraction": 1.0,
+      "enclosedSamples": 0,
+      "evaluatedSamples": 288,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "level": "observe",
+      "nearestViewDistance": 2.6098658969380018,
+      "required": 62.5,
+      "sampleCount": 288,
+      "target": "/SecurityTargets/sp_corr_c",
+      "viewNotes": [
+        "sec_cam_corr_corr_c_1/Sensor_0 550 px/m 86%",
+        "sec_cam_corr_corr_c_2/Sensor_0 82 px/m 86%",
+        "sec_cam_door_hall_a_e/Sensor_0 109 px/m 7%",
+        "sec_cam_door_hall_b_w/Sensor_0 113 px/m 7%",
+        "sec_cam_corr_corr_spine_3/Sensor_0 blocked by wall_l0_h_031",
+        "sec_cam_corr_corr_spine_4/Sensor_0 blocked by col_044"
+      ],
+      "views": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0"
+      ]
+    },
+    "/SecurityTargets/sp_corr_e": {
+      "blockers": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/col_071",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/wall_l0_h_034"
+      ],
+      "density": 85.06669210938121,
+      "dutyFraction": 1.0,
+      "enclosedSamples": 0,
+      "evaluatedSamples": 288,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "level": "observe",
+      "nearestViewDistance": 2.6098658969380018,
+      "required": 62.5,
+      "sampleCount": 288,
+      "target": "/SecurityTargets/sp_corr_e",
+      "viewNotes": [
+        "sec_cam_corr_corr_e_1/Sensor_0 550 px/m 86%",
+        "sec_cam_corr_corr_e_2/Sensor_0 82 px/m 86%",
+        "sec_cam_door_hall_b_e/Sensor_0 109 px/m 7%",
+        "sec_cam_corr_corr_spine_5/Sensor_0 blocked by col_071",
+        "sec_cam_corr_corr_spine_6/Sensor_0 blocked by wall_l0_h_034"
+      ],
+      "views": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0"
+      ]
+    }
+  },
+  "passed": true,
+  "results": {
+    "/SecurityTargets/sp_corr_c": {
+      "blockers": [],
+      "density": 85.06669210938121,
+      "dutyFraction": 1.0,
+      "enclosedSamples": 0,
+      "evaluatedSamples": 288,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "level": "observe",
+      "nearestViewDistance": 2.6098658969380018,
+      "required": 62.5,
+      "sampleCount": 288,
+      "target": "/SecurityTargets/sp_corr_c",
+      "viewNotes": [
+        "sec_cam_corr_corr_c_1/Sensor_0 550 px/m 86%",
+        "sec_cam_corr_corr_c_2/Sensor_0 82 px/m 86%"
+      ],
+      "views": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0"
+      ]
+    },
+    "/SecurityTargets/sp_corr_e": {
+      "blockers": [],
+      "density": 85.06669210938121,
+      "dutyFraction": 1.0,
+      "enclosedSamples": 0,
+      "evaluatedSamples": 288,
+      "fixedCoverage": true,
+      "fraction": 1.0,
+      "level": "observe",
+      "nearestViewDistance": 2.6098658969380018,
+      "required": 62.5,
+      "sampleCount": 288,
+      "target": "/SecurityTargets/sp_corr_e",
+      "viewNotes": [
+        "sec_cam_corr_corr_e_1/Sensor_0 550 px/m 86%",
+        "sec_cam_corr_corr_e_2/Sensor_0 82 px/m 86%"
+      ],
+      "views": [
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0",
+        "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0"
+      ]
+    }
+  },
+  "selectedCameras": [
+    "sec.cam.corr.corr.c.1",
+    "sec.cam.corr.corr.c.2",
+    "sec.cam.corr.corr.e.1",
+    "sec.cam.corr.corr.e.2"
+  ]
+}

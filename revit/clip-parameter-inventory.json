@@ -1,0 +1,1675 @@
+[
+  {
+    "camera": "dome",
+    "instance": [
+      {
+        "name": "_Pendant Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.2965879265091864,
+        "formatted": "700"
+      },
+      {
+        "name": "FOV Actual Focal Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 4,
+        "formatted": "4"
+      },
+      {
+        "name": "FOV Desired Focal Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 4,
+        "formatted": "4"
+      },
+      {
+        "name": "FOV Distance to Object",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 39.37007874015748,
+        "formatted": "12000"
+      },
+      {
+        "name": "FOV Horizontal Range",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "104-34",
+        "formatted": "104-34"
+      },
+      {
+        "name": "FOV Range of Lens",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "3.0 - 8.5",
+        "formatted": "3.0 - 8.5"
+      },
+      {
+        "name": "FOV Target Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 180,
+        "formatted": "180"
+      },
+      {
+        "name": "FOV Vertical Range",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "76-26",
+        "formatted": "76-26"
+      },
+      {
+        "name": "Max Resolution",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "2592x1944",
+        "formatted": "2592x1944"
+      },
+      {
+        "name": "Pendant Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.2965879265091864,
+        "formatted": "700"
+      },
+      {
+        "name": "Pixel Density at Distance to Object",
+        "readOnly": true,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 147,
+        "formatted": "147"
+      },
+      {
+        "name": "Target Resolution Units",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "Pixels per meter",
+        "formatted": "Pixels per meter"
+      },
+      {
+        "name": "Telescopic Mount Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.2965879265091864,
+        "formatted": "700"
+      },
+      {
+        "name": "User-defined Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.bool-1.0.0",
+        "value": 0,
+        "formatted": "No"
+      },
+      {
+        "name": "XEff",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.228335573456413,
+        "formatted": "7.228336"
+      }
+    ],
+    "type": [
+      {
+        "name": "_FOV Horizontal Range",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "104-34",
+        "formatted": "104-34"
+      },
+      {
+        "name": "_FOV Range of Lens",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "3.0 - 8.5",
+        "formatted": "3.0 - 8.5"
+      },
+      {
+        "name": "_FOV Vertical Range",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "76-26",
+        "formatted": "76-26"
+      },
+      {
+        "name": "_Max Resolution",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "2592x1944",
+        "formatted": "2592x1944"
+      },
+      {
+        "name": "FOV Focal Length Maximum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 8.5,
+        "formatted": "8.5"
+      },
+      {
+        "name": "FOV Focal Length Minimum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 3,
+        "formatted": "3"
+      },
+      {
+        "name": "FOV Horizontal Maximum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 1.8151424220741008,
+        "formatted": "104.00\u00b0"
+      },
+      {
+        "name": "FOV Horizontal Resolution",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 2592,
+        "formatted": "2592"
+      },
+      {
+        "name": "FOV Vertical Maximum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 1.3264502315156892,
+        "formatted": "76.00\u00b0"
+      },
+      {
+        "name": "FOV Vertical Resolution",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 1944,
+        "formatted": "1944"
+      },
+      {
+        "name": "MaxPoEPower",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 12.9,
+        "formatted": "12.9"
+      },
+      {
+        "name": "Mounting Angle",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 0,
+        "formatted": "0.00\u00b0"
+      },
+      {
+        "name": "Telescopic Length Maximum",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 3.3891076115485563,
+        "formatted": "1033"
+      },
+      {
+        "name": "Telescopic Length Minimum",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.5688976377952755,
+        "formatted": "783"
+      },
+      {
+        "name": "XEff Max",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 5.19742158479722,
+        "formatted": "5.197422"
+      },
+      {
+        "name": "XEff Min",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.679649793158457,
+        "formatted": "7.67965"
+      }
+    ],
+    "children": [
+      {
+        "instance": [
+          {
+            "name": "_T_Res_Det",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 26,
+            "formatted": "26"
+          },
+          {
+            "name": "_T_Res_Id",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 250,
+            "formatted": "250"
+          },
+          {
+            "name": "_T_Res_Obs",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 62,
+            "formatted": "62"
+          },
+          {
+            "name": "_T_Res_Rec",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 125,
+            "formatted": "125"
+          },
+          {
+            "name": "_T_Res_UD",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 180,
+            "formatted": "180"
+          },
+          {
+            "name": "Focal Length",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 4,
+            "formatted": "4"
+          },
+          {
+            "name": "Focal Length Maximum",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 8.5,
+            "formatted": "8.5"
+          },
+          {
+            "name": "Focal Length Minimum",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 3,
+            "formatted": "3"
+          },
+          {
+            "name": "FOV Distance",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "FOV Distance to Object",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "FOV Horizontal Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 1.8151424220741008,
+            "formatted": "104.00\u00b0"
+          },
+          {
+            "name": "FOV Vertical Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 1.3264502315156892,
+            "formatted": "76.00\u00b0"
+          },
+          {
+            "name": "Horizontal Angle",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.7347685355513632,
+            "formatted": "42.10\u00b0"
+          },
+          {
+            "name": "Horizontal Res",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 2592,
+            "formatted": "2592"
+          },
+          {
+            "name": "Resolution",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 0.11952959173239605,
+            "formatted": "0.11953"
+          },
+          {
+            "name": "RG_Length_Det",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Det_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 222.56975120567267,
+            "formatted": "67839"
+          },
+          {
+            "name": "RG_Length_Id",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 23.147254125389956,
+            "formatted": "7055"
+          },
+          {
+            "name": "RG_Length_Id_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 23.147254125389956,
+            "formatted": "7055"
+          },
+          {
+            "name": "RG_Length_Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Obs",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Obs_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 93.33570211850788,
+            "formatted": "28449"
+          },
+          {
+            "name": "RG_Length_Rec",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Rec_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 46.29450825077991,
+            "formatted": "14111"
+          },
+          {
+            "name": "RG_Length_UD",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 32.14896406304161,
+            "formatted": "9799"
+          },
+          {
+            "name": "RG_Length_UD_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 32.14896406304161,
+            "formatted": "9799"
+          },
+          {
+            "name": "T_Res_Det",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 26,
+            "formatted": "26"
+          },
+          {
+            "name": "T_Res_Id",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 250,
+            "formatted": "250"
+          },
+          {
+            "name": "T_Res_Obs",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 62,
+            "formatted": "62"
+          },
+          {
+            "name": "T_Res_Rec",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 125,
+            "formatted": "125"
+          },
+          {
+            "name": "T_Res_UD",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 180,
+            "formatted": "180"
+          },
+          {
+            "name": "User-defined Target Resolution",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.bool-1.0.0",
+            "value": 0,
+            "formatted": "No"
+          },
+          {
+            "name": "V_XEff",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014924523481756092,
+            "formatted": "5"
+          },
+          {
+            "name": "V_XEff Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.012876506722882444,
+            "formatted": "4"
+          },
+          {
+            "name": "V_XEff Min",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.015379638317061347,
+            "formatted": "5"
+          },
+          {
+            "name": "Vertical Angle",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.5170296051459949,
+            "formatted": "29.62\u00b0"
+          },
+          {
+            "name": "Vertical Res",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 1944,
+            "formatted": "1944"
+          },
+          {
+            "name": "XEff",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.023715011723938365,
+            "formatted": "7"
+          },
+          {
+            "name": "XEff Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.017051908086605054,
+            "formatted": "5"
+          },
+          {
+            "name": "XEff Min",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.025195701421123547,
+            "formatted": "8"
+          }
+        ],
+        "type": []
+      },
+      {
+        "instance": [],
+        "type": []
+      }
+    ]
+  },
+  {
+    "camera": "ptz",
+    "instance": [
+      {
+        "name": "_Pendant Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.2965879265091864,
+        "formatted": "700"
+      },
+      {
+        "name": "FOV 1 Actual Focal Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 8,
+        "formatted": "8"
+      },
+      {
+        "name": "FOV 1 Desired Focal Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 8,
+        "formatted": "8"
+      },
+      {
+        "name": "FOV 1 Distance to Object",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 39.37007874015748,
+        "formatted": "12000"
+      },
+      {
+        "name": "FOV 1 Pixel Density at Distance to Object",
+        "readOnly": true,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 353,
+        "formatted": "353"
+      },
+      {
+        "name": "FOV 1 Target Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 180,
+        "formatted": "180"
+      },
+      {
+        "name": "FOV 1 User-defined Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.bool-1.0.0",
+        "value": 0,
+        "formatted": "No"
+      },
+      {
+        "name": "FOV 1 XEff",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.791832465559557,
+        "formatted": "7.791832"
+      },
+      {
+        "name": "FOV 2 Actual Focal Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 10,
+        "formatted": "10"
+      },
+      {
+        "name": "FOV 2 Desired Focal Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 10,
+        "formatted": "10"
+      },
+      {
+        "name": "FOV 2 Distance to Object",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 19.68503937007874,
+        "formatted": "6000"
+      },
+      {
+        "name": "FOV 2 Pixel Density at Distance to Object",
+        "readOnly": true,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 861,
+        "formatted": "861"
+      },
+      {
+        "name": "FOV 2 Target Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 180,
+        "formatted": "180"
+      },
+      {
+        "name": "FOV 2 User-defined Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.bool-1.0.0",
+        "value": 0,
+        "formatted": "No"
+      },
+      {
+        "name": "FOV 2 XEff",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.792571792613043,
+        "formatted": "7.792572"
+      },
+      {
+        "name": "FOV 3 Actual Focal Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 6.64,
+        "formatted": "6.64"
+      },
+      {
+        "name": "FOV 3 Desired Focal Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 6.64,
+        "formatted": "6.64"
+      },
+      {
+        "name": "FOV 3 Distance to Object",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 19.68503937007874,
+        "formatted": "6000"
+      },
+      {
+        "name": "FOV 3 Pixel Density at Distance to Object",
+        "readOnly": true,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 603,
+        "formatted": "603"
+      },
+      {
+        "name": "FOV 3 Target Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 180,
+        "formatted": "180"
+      },
+      {
+        "name": "FOV 3 User-defined Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.bool-1.0.0",
+        "value": 0,
+        "formatted": "No"
+      },
+      {
+        "name": "FOV 3 XEff",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.791329723163187,
+        "formatted": "7.79133"
+      },
+      {
+        "name": "FOV 4 Actual Focal Length",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 6.64,
+        "formatted": "6.64"
+      },
+      {
+        "name": "FOV 4 Desired Focal Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 6.64,
+        "formatted": "6.64"
+      },
+      {
+        "name": "FOV 4 Distance to Object",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 19.68503937007874,
+        "formatted": "6000"
+      },
+      {
+        "name": "FOV 4 Pixel Density at Distance to Object",
+        "readOnly": true,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 603,
+        "formatted": "603"
+      },
+      {
+        "name": "FOV 4 Target Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 180,
+        "formatted": "180"
+      },
+      {
+        "name": "FOV 4 User-defined Pixel Density",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.bool-1.0.0",
+        "value": 0,
+        "formatted": "No"
+      },
+      {
+        "name": "FOV 4 XEff",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.791329723163187,
+        "formatted": "7.79133"
+      },
+      {
+        "name": "FOV Horizontal Range",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "60.8 - 2.0",
+        "formatted": "60.8 - 2.0"
+      },
+      {
+        "name": "FOV Range of Lenses",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "6.64 - 225.50",
+        "formatted": "6.64 - 225.50"
+      },
+      {
+        "name": "FOV Vertical Range",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "36.5 - 1.1",
+        "formatted": "36.5 - 1.1"
+      },
+      {
+        "name": "Max Resolution",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "3840x2160",
+        "formatted": "3840x2160"
+      },
+      {
+        "name": "Pendant Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.2965879265091864,
+        "formatted": "700"
+      },
+      {
+        "name": "Target Resolution Units",
+        "readOnly": true,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "Pixels per meter",
+        "formatted": "Pixels per meter"
+      },
+      {
+        "name": "Telescopic Length Maximum",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 3.3891076115485563,
+        "formatted": "1033"
+      },
+      {
+        "name": "Telescopic Length Minimum",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 2.5688976377952755,
+        "formatted": "783"
+      },
+      {
+        "name": "Telescopic Mount Length",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:length-2.0.0",
+        "value": 0,
+        "formatted": "0"
+      }
+    ],
+    "type": [
+      {
+        "name": "_FOV Horizontal Range",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "60.8 - 2.0",
+        "formatted": "60.8 - 2.0"
+      },
+      {
+        "name": "_FOV Range of Lens",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "6.64 - 225.50",
+        "formatted": "6.64 - 225.50"
+      },
+      {
+        "name": "_FOV Vertical Range",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "36.5 - 1.1",
+        "formatted": "36.5 - 1.1"
+      },
+      {
+        "name": "_Max Resolution",
+        "readOnly": false,
+        "storage": "String",
+        "dataType": "autodesk.spec:spec.string-2.0.0",
+        "value": "3840x2160",
+        "formatted": "3840x2160"
+      },
+      {
+        "name": "FOV Focal Length Maximum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 225.5,
+        "formatted": "225.5"
+      },
+      {
+        "name": "FOV Focal Length Minimum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 6.64,
+        "formatted": "6.64"
+      },
+      {
+        "name": "FOV Horizontal Maximum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 1.0611601852125512,
+        "formatted": "60.80\u00b0"
+      },
+      {
+        "name": "FOV Horizontal Resolution",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 3840,
+        "formatted": "3840"
+      },
+      {
+        "name": "FOV Tilt Max",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 1.570796326794895,
+        "formatted": "90.00\u00b0"
+      },
+      {
+        "name": "FOV Vertical Maximum",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 0.6370451769779296,
+        "formatted": "36.50\u00b0"
+      },
+      {
+        "name": "FOV Vertical Resolution",
+        "readOnly": false,
+        "storage": "Integer",
+        "dataType": "autodesk.spec:spec.int64-2.0.0",
+        "value": 2160,
+        "formatted": "2160"
+      },
+      {
+        "name": "MaxPoEPower",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 51,
+        "formatted": "51"
+      },
+      {
+        "name": "Mounting Angle",
+        "readOnly": false,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:angle-2.0.0",
+        "value": 0,
+        "formatted": "0.00\u00b0"
+      },
+      {
+        "name": "XEff Max",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.872234282626123,
+        "formatted": "7.872234"
+      },
+      {
+        "name": "XEff Min",
+        "readOnly": true,
+        "storage": "Double",
+        "dataType": "autodesk.spec.aec:number-2.0.0",
+        "value": 7.791329723163187,
+        "formatted": "7.79133"
+      }
+    ],
+    "children": [
+      {
+        "instance": [
+          {
+            "name": "_T_Res_Det",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 26,
+            "formatted": "26"
+          },
+          {
+            "name": "_T_Res_Id",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 250,
+            "formatted": "250"
+          },
+          {
+            "name": "_T_Res_Obs",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 62,
+            "formatted": "62"
+          },
+          {
+            "name": "_T_Res_Rec",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 125,
+            "formatted": "125"
+          },
+          {
+            "name": "_T_Res_UD",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 180,
+            "formatted": "180"
+          },
+          {
+            "name": "Focal Length",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 8,
+            "formatted": "8"
+          },
+          {
+            "name": "Focal Length Maximum",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 225.5,
+            "formatted": "225.5"
+          },
+          {
+            "name": "Focal Length Minimum",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 6.64,
+            "formatted": "6.64"
+          },
+          {
+            "name": "FOV Distance",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "FOV Distance to Object",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "FOV Horizontal Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 1.0611601852125512,
+            "formatted": "60.80\u00b0"
+          },
+          {
+            "name": "FOV Vertical Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.6370451769779296,
+            "formatted": "36.50\u00b0"
+          },
+          {
+            "name": "Horizontal Angle",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.45318516352112886,
+            "formatted": "25.97\u00b0"
+          },
+          {
+            "name": "Horizontal Res",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 3840,
+            "formatted": "3840"
+          },
+          {
+            "name": "Resolution",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 0.32854915853432143,
+            "formatted": "0.328549"
+          },
+          {
+            "name": "RG_Length_Det",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Det_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 534.6101927726561,
+            "formatted": "162949"
+          },
+          {
+            "name": "RG_Length_Id",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Id_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 55.599460048356214,
+            "formatted": "16947"
+          },
+          {
+            "name": "RG_Length_Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Obs",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Obs_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 224.1913711627267,
+            "formatted": "68334"
+          },
+          {
+            "name": "RG_Length_Rec",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_Rec_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 111.19892009671243,
+            "formatted": "33893"
+          },
+          {
+            "name": "RG_Length_UD",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 39.37007874015748,
+            "formatted": "12000"
+          },
+          {
+            "name": "RG_Length_UD_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 77.22147228938366,
+            "formatted": "23537"
+          },
+          {
+            "name": "T_Res_Det",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 26,
+            "formatted": "26"
+          },
+          {
+            "name": "T_Res_Id",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 250,
+            "formatted": "250"
+          },
+          {
+            "name": "T_Res_Obs",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 62,
+            "formatted": "62"
+          },
+          {
+            "name": "T_Res_Rec",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 125,
+            "formatted": "125"
+          },
+          {
+            "name": "T_Res_UD",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 180,
+            "formatted": "180"
+          },
+          {
+            "name": "User-defined Target Resolution",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.bool-1.0.0",
+            "value": 0,
+            "formatted": "No"
+          },
+          {
+            "name": "V_XEff",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014366071674374929,
+            "formatted": "4"
+          },
+          {
+            "name": "V_XEff Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014204141047063882,
+            "formatted": "4"
+          },
+          {
+            "name": "V_XEff Min",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014367084206113517,
+            "formatted": "4"
+          },
+          {
+            "name": "Vertical Angle",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.2671327105318103,
+            "formatted": "15.31\u00b0"
+          },
+          {
+            "name": "Vertical Res",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 2160,
+            "formatted": "2160"
+          },
+          {
+            "name": "XEff",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.025563754808266264,
+            "formatted": "8"
+          },
+          {
+            "name": "XEff Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.0258275402973298,
+            "formatted": "8"
+          },
+          {
+            "name": "XEff Min",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.02556210539095534,
+            "formatted": "8"
+          }
+        ],
+        "type": []
+      },
+      {
+        "instance": [],
+        "type": []
+      },
+      {
+        "instance": [
+          {
+            "name": "_T_Res_Det",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 26,
+            "formatted": "26"
+          },
+          {
+            "name": "_T_Res_Id",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 250,
+            "formatted": "250"
+          },
+          {
+            "name": "_T_Res_Obs",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 62,
+            "formatted": "62"
+          },
+          {
+            "name": "_T_Res_Rec",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 125,
+            "formatted": "125"
+          },
+          {
+            "name": "_T_Res_UD",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 180,
+            "formatted": "180"
+          },
+          {
+            "name": "Focal Length",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 10,
+            "formatted": "10"
+          },
+          {
+            "name": "Focal Length Maximum",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 225.5,
+            "formatted": "225.5"
+          },
+          {
+            "name": "Focal Length Minimum",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 6.64,
+            "formatted": "6.64"
+          },
+          {
+            "name": "FOV Distance",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "FOV Distance to Object",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "FOV Horizontal Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 1.0611601852125512,
+            "formatted": "60.80\u00b0"
+          },
+          {
+            "name": "FOV Vertical Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.6370451769779296,
+            "formatted": "36.50\u00b0"
+          },
+          {
+            "name": "Horizontal Angle",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.3715336564727899,
+            "formatted": "21.29\u00b0"
+          },
+          {
+            "name": "Horizontal Res",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 3840,
+            "formatted": "3840"
+          },
+          {
+            "name": "Resolution",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:number-2.0.0",
+            "value": 0.8212949678650211,
+            "formatted": "0.821295"
+          },
+          {
+            "name": "RG_Length_Det",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "RG_Length_Det_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 652.1008350409892,
+            "formatted": "198760"
+          },
+          {
+            "name": "RG_Length_Id",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "RG_Length_Id_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 67.81848684426288,
+            "formatted": "20671"
+          },
+          {
+            "name": "RG_Length_Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "RG_Length_Obs",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "RG_Length_Obs_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 273.46164050105995,
+            "formatted": "83351"
+          },
+          {
+            "name": "RG_Length_Rec",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "RG_Length_Rec_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 135.63697368852576,
+            "formatted": "41342"
+          },
+          {
+            "name": "RG_Length_UD",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 19.68503937007874,
+            "formatted": "6000"
+          },
+          {
+            "name": "RG_Length_UD_True",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 94.192342839254,
+            "formatted": "28710"
+          },
+          {
+            "name": "T_Res_Det",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 26,
+            "formatted": "26"
+          },
+          {
+            "name": "T_Res_Id",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 250,
+            "formatted": "250"
+          },
+          {
+            "name": "T_Res_Obs",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 62,
+            "formatted": "62"
+          },
+          {
+            "name": "T_Res_Rec",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 125,
+            "formatted": "125"
+          },
+          {
+            "name": "T_Res_UD",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 180,
+            "formatted": "180"
+          },
+          {
+            "name": "User-defined Target Resolution",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.bool-1.0.0",
+            "value": 0,
+            "formatted": "No"
+          },
+          {
+            "name": "V_XEff",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014364582657112298,
+            "formatted": "4"
+          },
+          {
+            "name": "V_XEff Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014204141047063882,
+            "formatted": "4"
+          },
+          {
+            "name": "V_XEff Min",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.014367084206113517,
+            "formatted": "4"
+          },
+          {
+            "name": "Vertical Angle",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:angle-2.0.0",
+            "value": 0.2155163423241533,
+            "formatted": "12.35\u00b0"
+          },
+          {
+            "name": "Vertical Res",
+            "readOnly": true,
+            "storage": "Integer",
+            "dataType": "autodesk.spec:spec.int64-2.0.0",
+            "value": 2160,
+            "formatted": "2160"
+          },
+          {
+            "name": "XEff",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.025566180421958802,
+            "formatted": "8"
+          },
+          {
+            "name": "XEff Max",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.0258275402973298,
+            "formatted": "8"
+          },
+          {
+            "name": "XEff Min",
+            "readOnly": true,
+            "storage": "Double",
+            "dataType": "autodesk.spec.aec:length-2.0.0",
+            "value": 0.02556210539095534,
+            "formatted": "8"
+          }
+        ],
+        "type": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+# Base preserves the historical body-base datum; the iris example uses centre height.
+iris_readers: {height: 1.4, door_edge_offset: 0.35, side: pull, reference: base}
+# Security rules: SI positions/ranges, degrees, focal lengths in mm.
+# Volumetric alarm (AVA) in critical spaces; iris scanner at critical doors.
+ava_spaces: [sp.hall.a, sp.hall.b, sp.elec.a, sp.elec.b, sp.batt.a, sp.batt.b,
+             sp.mmr.1, sp.mmr.2, sp.plant, sp.fire, sp.loading, sp.lobby]
+iris_doors: [door.hall.a.s, door.hall.a.w, door.hall.a.e,
+             door.hall.b.s, door.hall.b.w, door.hall.b.e,
+             door.mmr.1, door.mmr.2, door.elec.a, door.elec.b,
+             door.office.link]
+
+camera_types:
+  dome_5mp:
+    target_density: 250
+    focal_range: [3, 8.5]
+    hfov_range: [104, 34]
+    vfov_range: [76, 26]
+    pixels: [2592, 1944]
+    offset: [0, 0, -0.08]
+    ir_range: 30
+    body_size: [0.16, 0.16, 0.10]
+  bullet_4mp_outdoor:
+    target_density: 250
+    focal_range: [3.7, 7.5]
+    hfov_range: [100, 52]
+    vfov_range: [55, 30]
+    pixels: [2688, 1512]
+    outdoor: true
+    ir_range: 40
+    body_size: [0.25, 0.10, 0.10]
+  ptz_4k:
+    target_density: 250
+    outdoor: true
+    focal_range: [6.64, 225.5]
+    hfov_range: [60.8, 2]
+    vfov_range: [36.5, 1.1]
+    pixels: [3840, 2160]
+    pan_range: [-180, 180]
+    tilt_range: [0, 90]
+    motorised: true
+    ir_range: 0
+    body_size: [0.22, 0.22, 0.30]
+
+door_cameras: {type: dome_5mp, setback: 0.65, lateral_offset: 0.45, height: 3.0, tilt: 60, range: 12}
+external_door_cameras: {type: bullet_4mp_outdoor, setback: 1.7, height: 3.5, tilt: 55, range: 40}
+# Wide openings share their existing bullet with a nearby coplanar approach.
+# A high pole clears yard equipment; long-end optics retain recognition density.
+external_shared_approaches: {min_width: 3, max_neighbour_distance: 18, setback: 18.25, height: 8, aim_height: 1.2, focal_length: 7.5}
+corridor_cameras: {type: dome_5mp, max_spacing: 18, height: 3.5, ceiling_offset: 0.1, corner_inset: 0.5, focal_length: 4, tilt: 15, range: 24}
+yard_cameras: {type: ptz_4k, height: 6, corner_inset: 0.5, tilt: 30, range: 20}
+yard_fixed_cameras: {type: bullet_4mp_outdoor, height: 6.5, corner_inset: 0.5, tilt: 35, range: 40}
+lobby_ptz: {type: ptz_4k, height: 3.3, corner_inset: 0.5, tilt: 30, range: 20}
+lobby_fixed_cameras: {type: dome_5mp, height: 3.3, corner_inset: 0.3, focal_length: 4, tilt: 25, range: 14}

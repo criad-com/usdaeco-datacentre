@@ -1,0 +1,500 @@
+{
+  "counts": {
+    "FINDING": 1,
+    "NOT RUN": 2,
+    "PASS": 56
+  },
+  "failed": 0,
+  "finalChecksRerun": [
+    {
+      "gate": "gate regression tests",
+      "passed": true,
+      "result": "53 passed in 11.44s",
+      "status": "PASS"
+    },
+    {
+      "gate": "links",
+      "passed": true,
+      "result": "18/18 roots",
+      "status": "PASS"
+    },
+    {
+      "gate": "sanitization",
+      "passed": true,
+      "result": "60 text files, no matches",
+      "status": "PASS"
+    }
+  ],
+  "fullAcceptance": false,
+  "libraries": {
+    "buildup": {
+      "counts": "20/20",
+      "passed": true,
+      "seconds": 0.59
+    },
+    "cctv": {
+      "counts": "119/119",
+      "passed": true,
+      "seconds": 27.4
+    },
+    "core": {
+      "counts": "42/42",
+      "passed": true,
+      "seconds": 23.04
+    },
+    "datacentre": {
+      "counts": "59/59",
+      "passed": true,
+      "seconds": 78.86
+    },
+    "pipe": {
+      "counts": "41/41",
+      "passed": true,
+      "seconds": 2.86
+    },
+    "sync": {
+      "counts": "47/47",
+      "passed": true,
+      "seconds": 315.05
+    },
+    "toolchain": {
+      "counts": "4/4",
+      "passed": true,
+      "seconds": 8.16
+    },
+    "wall": {
+      "counts": "48/48",
+      "passed": true,
+      "seconds": 3.21
+    }
+  },
+  "note": "One completed family run; only regression tests, links and sanitization repeated after candidate metadata/layout repair. Column exception and offline Revit remain explicit.",
+  "originalFullRunFailures": [
+    {
+      "gate": "gate regression tests",
+      "passed": false,
+      "result": "1 failed, 52 passed in 11.72s",
+      "status": "FAIL"
+    },
+    {
+      "gate": "links",
+      "passed": false,
+      "result": "17/18 roots",
+      "status": "FAIL"
+    }
+  ],
+  "passed": true,
+  "repositories": {
+    "buildup": {
+      "base_tag": "v0.1.2",
+      "expected": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606",
+      "modified": false,
+      "revision": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"
+    },
+    "cctv": {
+      "base_tag": "v0.4.4",
+      "expected": "f6b8b7a3785a6f2d6402a40822728a91250c15e0",
+      "modified": false,
+      "revision": "f6b8b7a3785a6f2d6402a40822728a91250c15e0"
+    },
+    "cctv-exec": {
+      "base_tag": "v0.1.1",
+      "expected": "6d992da6af563d3534c484638fbfb462a09cf34a",
+      "modified": false,
+      "revision": "6d992da6af563d3534c484638fbfb462a09cf34a"
+    },
+    "core": {
+      "base_tag": "v0.8.2",
+      "expected": "0350a2fbc41deb2432dee336645b5350f69754d8",
+      "modified": false,
+      "revision": "0350a2fbc41deb2432dee336645b5350f69754d8"
+    },
+    "datacentre": {
+      "base_tag": "wp/W12",
+      "expected": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84",
+      "modified": false,
+      "revision": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84"
+    },
+    "pipe": {
+      "base_tag": "v0.1.2",
+      "expected": "f48a764dacc99c4467b426f3c1bb691c5c783952",
+      "modified": false,
+      "revision": "f48a764dacc99c4467b426f3c1bb691c5c783952"
+    },
+    "sync": {
+      "base_tag": "v0.4.3",
+      "expected": "2cb242df97a089ff9d16fc547b8d12d797028960",
+      "modified": false,
+      "revision": "2cb242df97a089ff9d16fc547b8d12d797028960"
+    },
+    "toolchain": {
+      "base_tag": "v0.1.0",
+      "expected": "01f6caebf5d6bfb9eeba51a1251fa965f062f919",
+      "modified": false,
+      "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919"
+    },
+    "wall": {
+      "base_tag": "v0.1.2",
+      "expected": "09b2993e11d07b96a2492e75c49448153524c8b2",
+      "modified": false,
+      "revision": "09b2993e11d07b96a2492e75c49448153524c8b2"
+    }
+  },
+  "rows": [
+    {
+      "gate": "revision pins",
+      "passed": true,
+      "result": "9/9 exact; audited before builds",
+      "status": "PASS"
+    },
+    {
+      "gate": "released requirements",
+      "passed": true,
+      "result": "15/15 tags and schema requirements",
+      "status": "PASS"
+    },
+    {
+      "gate": "one plugin path",
+      "passed": true,
+      "result": "6/6 libraries",
+      "status": "PASS"
+    },
+    {
+      "gate": "core",
+      "passed": true,
+      "result": "42/42 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "buildup",
+      "passed": true,
+      "result": "20/20 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "wall",
+      "passed": true,
+      "result": "48/48 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "pipe",
+      "passed": true,
+      "result": "41/41 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv",
+      "passed": true,
+      "result": "119/119 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "sync",
+      "passed": true,
+      "result": "47/47",
+      "status": "PASS"
+    },
+    {
+      "gate": "ifc scenarios",
+      "passed": true,
+      "result": "39/39",
+      "status": "PASS"
+    },
+    {
+      "gate": "bonsai scenarios",
+      "passed": true,
+      "result": "21/21",
+      "status": "PASS"
+    },
+    {
+      "gate": "scenario + S4 parity",
+      "passed": true,
+      "result": "608/608 values; 22 parity cases",
+      "status": "PASS"
+    },
+    {
+      "gate": "toolchain",
+      "passed": true,
+      "result": "4/4 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "datacentre",
+      "passed": true,
+      "result": "59/59",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv scenarios",
+      "passed": true,
+      "result": "31/31 (embree)",
+      "status": "PASS"
+    },
+    {
+      "gate": "demo ifc + bonsai",
+      "passed": true,
+      "result": "3 edits each; intent empty",
+      "status": "PASS"
+    },
+    {
+      "gate": "demo parity",
+      "passed": true,
+      "result": "152/152",
+      "status": "PASS"
+    },
+    {
+      "gate": "roundtrip profile",
+      "passed": true,
+      "result": "0 errors on both demo stages",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv demo derivation",
+      "passed": true,
+      "result": "4/4 sensors",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv demo steps",
+      "passed": true,
+      "result": "6/6; findings printed",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv demo render",
+      "passed": true,
+      "result": "2/2 images",
+      "status": "PASS"
+    },
+    {
+      "gate": "Revit",
+      "passed": false,
+      "result": "live Revit acceptance not configured",
+      "status": "NOT RUN"
+    },
+    {
+      "gate": "datacentre build",
+      "passed": true,
+      "result": "loadedMachineLimit=45; nominalBudget=15; seconds=13.672",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-build",
+      "passed": true,
+      "result": "files=8",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-convert",
+      "passed": true,
+      "result": "elements=2954; extents=33; phasePercent=100.0; phases=2954; unparented=0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-system",
+      "passed": true,
+      "result": "cameras=45; recorderCapacity=45; retentionDays=90",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-import",
+      "passed": true,
+      "result": "cameras=45; pipes=476; presets=7; sensors=45; types=3; walls=92",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-derive",
+      "passed": true,
+      "result": "sectors=45; sensors=45; tours=3",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-profile",
+      "passed": true,
+      "result": "designErrors=0; implementationErrors=0; nativePortGaps=160; statusEnumsNormalized=3; warnings=4000",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-critical-doors",
+      "passed": true,
+      "result": "enclosedSamples=0; evaluatedSamples=568; exclusions=0; fixedCovered=11; sampleCount=568; seconds=0.754; targets=11; views=11",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-external",
+      "passed": true,
+      "result": "enclosedSamples=2; evaluatedSamples=334; exclusions=0; fixedCovered=5; sampleCount=336; seconds=0.55; targets=5; views=5",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-corridors",
+      "passed": true,
+      "result": "enclosedSamples=0; evaluatedSamples=2304; exclusions=0; fixedCovered=7; sampleCount=2304; seconds=5.023; targets=7; views=29",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-yard-day",
+      "passed": true,
+      "result": "enclosedSamples=282; evaluatedSamples=1974; exclusions=0; fixedCovered=8; sampleCount=2256; seconds=0.797; targets=8; views=15",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-yard-night",
+      "passed": true,
+      "result": "enclosedSamples=282; evaluatedSamples=1974; exclusions=0; fixedCovered=8; sampleCount=2256; seconds=0.763; targets=8; views=11",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-lobby",
+      "passed": true,
+      "result": "enclosedSamples=0; evaluatedSamples=328; exclusions=0; fixedCovered=3; sampleCount=328; seconds=0.552; targets=3; views=5",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-privacy-baseline",
+      "passed": true,
+      "result": "enclosedSamples=0; evaluatedSamples=0; exclusions=0; fixedCovered=0; sampleCount=0; seconds=1.359; targets=0; views=49",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-revit-parity",
+      "passed": true,
+      "result": "enclosedSamples=0; evaluatedSamples=568; exclusions=0; fixedCovered=11; sampleCount=568; seconds=0.585; targets=11; views=11",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-column",
+      "passed": false,
+      "result": "columnBlockers=2; criticalDoorColumnBlockers=0",
+      "status": "FINDING"
+    },
+    {
+      "gate": "DC-idempotence",
+      "passed": true,
+      "result": "reused=136; views=136",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-determinism",
+      "passed": true,
+      "result": "builds=2; normalizedStageHash=fe0256161399eef3e9c7bb65ecc76cd968ff213a34b1d585be2d7543c3be4e37; secondHash=fe0256161399eef3e9c7bb65ecc76cd968ff213a34b1d585be2d7543c3be4e37; studies=8",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-tray",
+      "passed": true,
+      "result": "afterFixedCovered=10; beforeFixedCovered=11; loweredMetres=0.9; tray=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Spine_A_Seg_1",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-temporary",
+      "passed": true,
+      "result": "blocker=/ScenarioEdits/LoadingHoarding; ignoredFraction=1.0; includedFraction=0.0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-privacy",
+      "passed": true,
+      "result": "camera=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1; panDegrees=20.0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-hall-rule",
+      "passed": true,
+      "result": "camera=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1; errors=1",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-noc-turn",
+      "passed": true,
+      "result": "limitation=NOC monitoring is allowed. Privacy-error demonstration uses a hall intrusion instead.; panDelta=20.0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-ptz-duty",
+      "passed": true,
+      "result": "afterFixedCoverage=False; beforeFixedCoverage=True; dutyFraction=0.6666666666666666; enclosedSamples=0; expectedDuty=0.6666666666666666; fraction=1.0; removedCamera=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2; sampleCount=56; target=/SecurityTargets/lobby_door_main",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-night-override",
+      "passed": true,
+      "result": "fraction=0.0; irMetres=0.1",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-stale",
+      "passed": true,
+      "result": "",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-results-incomplete",
+      "passed": true,
+      "result": "",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-sync-ifc",
+      "passed": true,
+      "result": "accepted=3; guidPreserved=True; maxPositionError=0.0; mutations=3; pan=35.0; pending=0; repeatMutations=0; tilt=40.0; transactions=2",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-sync-bonsai",
+      "passed": true,
+      "result": "accepted=3; guidPreserved=True; maxPositionError=0.0; mutations=3; pan=35.0; pending=0; repeatMutations=0; tilt=40.0; transactions=2",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-revit",
+      "passed": false,
+      "result": "reason=Offline run; separately recorded native evidence is not a current host pass; recordedCameraCount=45; recordedCases=12; recordedCasesPassed=12; recordedConvergedCameras=45; recordedRollbacks=10; recordedZeroRequestRefusals=2; reference=docs/revit-reference.json",
+      "status": "NOT RUN"
+    },
+    {
+      "gate": "DC-vanilla",
+      "passed": true,
+      "result": "stages=12",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-render",
+      "passed": true,
+      "result": "domeIntensity=0.65; envelopeMeshes=3; ground=Neutral display plane below model bounds; not source geometry; outlineSegments=3600; outlineWidth=0.07; sectorDisplay=Mesh boundary and crease outlines; analytic faces hidden in display snapshots; sectorMeshes=45; shading=Diagnostic camera light 65%; ambient occlusion off; 8 samples. No lighting-design claim.; status=pass; tolerance=Content and luminance limits; no byte-identical renderer claim.",
+      "status": "PASS"
+    },
+    {
+      "gate": "datacentre sanitization",
+      "passed": true,
+      "result": "files=158",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-budget",
+      "passed": true,
+      "result": "kernel=embree; limit=240; seconds=177.554",
+      "status": "PASS"
+    },
+    {
+      "gate": "gate regression tests",
+      "passed": true,
+      "result": "53 passed in 11.44s",
+      "status": "PASS"
+    },
+    {
+      "gate": "links",
+      "passed": true,
+      "result": "18/18 roots",
+      "status": "PASS"
+    },
+    {
+      "gate": "sanitization",
+      "passed": true,
+      "result": "60 text files, no matches",
+      "status": "PASS"
+    }
+  ],
+  "total": 59
+}

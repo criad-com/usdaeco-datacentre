@@ -1,0 +1,109 @@
+# demo-datacentre-01 mechanical / liquid cooling design. Three hydraulic loops:
+#
+#   fws   Facility Water System (warm-water glycol loop): dry coolers on the
+#         heat-rejection yard <-> CDU primary sides in Hall A. N+1 dry coolers,
+#         N+1 pumps, buffer tank, dosing, trim heat exchanger to CHW.
+#   tcs   Technology Cooling System (Hall A secondary): CDUs -> per-row
+#         supply/return manifolds -> rack quick-connect hoses (direct liquid
+#         cooling). Manifolds + hoses are GENERATED per row by dcbuild.layout.
+#   chw   Chilled water: chillers <-> CRAHs in Hall B + office AHU + trim HX.
+#
+# Node classes -> IFC4X3:
+#   dry_cooler  -> IfcEvaporativeCooler (closed-circuit dry cooler)
+#   pump        -> IfcPump/ENDSUCTION
+#   buffer_tank -> IfcTank/BREAKPRESSURE
+#   dosing      -> IfcInterceptor/USERDEFINED (glycol dosing/water treatment skid)
+#   heat_exchanger -> IfcHeatExchanger/PLATE
+#   chiller     -> IfcChiller/WATERCOOLED (air-cooled scroll in reality; trim duty)
+#   cdu         -> IfcUnitaryEquipment/USERDEFINED (coolant distribution unit)
+#   crah        -> IfcUnitaryEquipment/AIRHANDLER (computer-room air handler)
+#   ahu         -> IfcAirHandlingUnit? -> authored as IfcUnitaryEquipment/AIRHANDLER
+#
+# Pipe routing between equipment is computed by the builders as orthogonal
+# (Manhattan) runs at the loop's header elevation, using the penetration and
+# riser hints below.
+
+elevations:
+  yard_header: 0.8       # dry-cooler yard headers
+  fws_header: 4.6        # FWS distribution inside the building
+  tcs_supply: 4.2        # Hall A row manifold supply
+  tcs_return: 4.5        # Hall A row manifold return
+  chw_header: 5.0        # CHW distribution (separate layer above FWS)
+
+pipe_diameters:
+  fws_main: 0.20
+  fws_branch: 0.10
+  tcs_header: 0.15
+  tcs_manifold: 0.10
+  tcs_hose: 0.025
+  chw_main: 0.15
+  chw_branch: 0.065
+
+nodes:
+  # -- Heat rejection (yard, pad.hr) --
+  - {id: clg.drc.1, class: dry_cooler, name: "DRC-1", space: EXT, pad: pad.hr, pos: [34.0, -6.5, 0.0], rating_kw: 700, loop: fws}
+  - {id: clg.drc.2, class: dry_cooler, name: "DRC-2", space: EXT, pad: pad.hr, pos: [38.0, -6.5, 0.0], rating_kw: 700, loop: fws}
+  - {id: clg.drc.3, class: dry_cooler, name: "DRC-3", space: EXT, pad: pad.hr, pos: [42.0, -6.5, 0.0], rating_kw: 700, loop: fws}
+  - {id: clg.drc.4, class: dry_cooler, name: "DRC-4", space: EXT, pad: pad.hr, pos: [46.0, -6.5, 0.0], rating_kw: 700, loop: fws}
+
+  # -- Plant room (sp.plant, x 24..48 y 0..15) --
+  - {id: clg.fwp.1, class: pump, name: "FWP-1", space: sp.plant, pos: [26.0, 3.0, 0.0], flow_ls: 60, loop: fws}
+  - {id: clg.fwp.2, class: pump, name: "FWP-2", space: sp.plant, pos: [29.0, 3.0, 0.0], flow_ls: 60, loop: fws}
+  - {id: clg.fwp.3, class: pump, name: "FWP-3", space: sp.plant, pos: [32.0, 3.0, 0.0], flow_ls: 60, loop: fws}
+  - {id: clg.bt.1,  class: buffer_tank, name: "BT-1",  space: sp.plant, pos: [25.5, 12.0, 0.0], volume_l: 5000, loop: fws}
+  - {id: clg.dos.1, class: dosing, name: "DOS-1", space: sp.plant, pos: [28.5, 12.5, 0.0], loop: fws}
+  - {id: clg.hx.1,  class: heat_exchanger, name: "HX-1", space: sp.plant, pos: [35.0, 12.0, 0.0], rating_kw: 800, loop: fws}   # trim: CHW assists FWS at high ambient
+  - {id: clg.ch.1,  class: chiller, name: "CH-1", space: sp.plant, pos: [38.0, 3.0, 0.0], rating_kw: 1000, loop: chw}
+  - {id: clg.ch.2,  class: chiller, name: "CH-2", space: sp.plant, pos: [43.0, 3.0, 0.0], rating_kw: 1000, loop: chw}
+  - {id: clg.chp.1, class: pump, name: "CHP-1", space: sp.plant, pos: [44.0, 11.5, 0.0], flow_ls: 30, loop: chw}
+  - {id: clg.chp.2, class: pump, name: "CHP-2", space: sp.plant, pos: [46.0, 11.5, 0.0], flow_ls: 30, loop: chw}
+  - {id: clg.chp.3, class: pump, name: "CHP-3", space: sp.plant, pos: [44.0, 13.5, 0.0], flow_ls: 30, loop: chw}
+  - {id: clg.ahu.1, class: ahu, name: "AHU-1", space: sp.plant, pos: [30.5, 12.5, 0.0], rating_kw: 100, loop: chw}   # serves office wing
+
+  # -- Hall A CDUs (in-hall skids along the south wall) --
+  - {id: clg.cdu.a1, class: cdu, name: "CDU-A1", space: sp.hall.a, pos: [12.0, 19.2, 0.0], rating_kw: 800, loop: fws, secondary_loop: tcs}
+  - {id: clg.cdu.a2, class: cdu, name: "CDU-A2", space: sp.hall.a, pos: [17.0, 19.2, 0.0], rating_kw: 800, loop: fws, secondary_loop: tcs}
+  - {id: clg.cdu.a3, class: cdu, name: "CDU-A3", space: sp.hall.a, pos: [22.0, 19.2, 0.0], rating_kw: 800, loop: fws, secondary_loop: tcs}
+  - {id: clg.cdu.a4, class: cdu, name: "CDU-A4", space: sp.hall.a, pos: [27.0, 19.2, 0.0], rating_kw: 800, loop: fws, secondary_loop: tcs}
+
+  # -- Hall B CRAHs (perimeter, west + east walls) --
+  - {id: clg.crah.b1, class: crah, name: "CRAH-B1", space: sp.hall.b, pos: [39.3, 22.0, 0.0], rating_kw: 200, loop: chw}
+  - {id: clg.crah.b2, class: crah, name: "CRAH-B2", space: sp.hall.b, pos: [39.3, 27.0, 0.0], rating_kw: 200, loop: chw}
+  - {id: clg.crah.b3, class: crah, name: "CRAH-B3", space: sp.hall.b, pos: [39.3, 32.0, 0.0], rating_kw: 200, loop: chw}
+  - {id: clg.crah.b4, class: crah, name: "CRAH-B4", space: sp.hall.b, pos: [66.7, 22.0, 0.0], rating_kw: 200, loop: chw}
+  - {id: clg.crah.b5, class: crah, name: "CRAH-B5", space: sp.hall.b, pos: [66.7, 27.0, 0.0], rating_kw: 200, loop: chw}
+  - {id: clg.crah.b6, class: crah, name: "CRAH-B6", space: sp.hall.b, pos: [66.7, 32.0, 0.0], rating_kw: 200, loop: chw}
+
+# Route hints: fixed crossing points so both builders route identically.
+routing:
+  fws:
+    # yard header along the dry coolers, wall penetration south of the plant
+    # room, riser inside the plant, spine crossing north into Hall A.
+    yard_header_y: -4.5
+    wall_penetration: [40.0, 0.0]      # through the south facade at yard_header z
+    plant_riser: [40.0, 1.5]           # riser from yard_header z up to fws_header z
+    spine_crossing_x: 30.0             # plant -> spine -> Hall A at fws_header z
+    hall_header_y: 20.3                # header above/behind the CDU row
+  chw:
+    spine_crossing_x: 36.0             # plant -> corridor centre -> Hall B
+    hall_b_entry: [38.0, 27.0]         # enters Hall B through the west wall
+    west_wall_x: 39.3                  # CRAH branch header (west trio)
+    east_wall_x: 66.7                  # CRAH branch header (east trio)
+    north_crossing_y: 34.5             # west->east crossing along the north wall
+    office_riser: [29.0, 1.0]          # branch dropping south to AHU-1 / office
+
+# TCS manifold generation rules (per Hall A rack row, expanded by layout):
+tcs_manifolds:
+  y_offset: {supply: -0.55, return: 0.55}   # either side of the rack row line
+  feed: west_end                            # N-S connector from the CDU header at the row's west end
+  hose_drop_z: 2.2                          # rack quick-connect elevation
+
+# Redundancy groups (QA: group survives worst single failure at design load;
+# power diversity: members of one group must not all be fed from one side).
+redundancy_groups:
+  - {id: rg.cdu.a,  members: [clg.cdu.a1, clg.cdu.a2, clg.cdu.a3, clg.cdu.a4], duty_required: 3, serves_kw: 2000}
+  - {id: rg.drc,    members: [clg.drc.1, clg.drc.2, clg.drc.3, clg.drc.4],     duty_required: 3, serves_kw: 2000}
+  - {id: rg.fwp,    members: [clg.fwp.1, clg.fwp.2, clg.fwp.3],                duty_required: 2, serves_kw: 2000}
+  - {id: rg.ch,     members: [clg.ch.1, clg.ch.2],                             duty_required: 1, serves_kw: 900}
+  - {id: rg.chp,    members: [clg.chp.1, clg.chp.2, clg.chp.3],                duty_required: 2, serves_kw: 900}
+  - {id: rg.crah.b, members: [clg.crah.b1, clg.crah.b2, clg.crah.b3, clg.crah.b4, clg.crah.b5, clg.crah.b6], duty_required: 4, serves_kw: 800}

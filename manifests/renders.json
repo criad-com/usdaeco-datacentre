@@ -1,0 +1,227 @@
+{
+  "base": {
+    "bytes": 144133,
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 33,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "guide,proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "path": "dist/base/overview.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "217af328515856ca820598f42b3f17e5e8c4522b2a445de6d8c9ee04b041d779",
+    "source_layers": {
+      "dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "dc.semantics.usdc": "1d9e6753da91b62fa95f553102f435c56a5ff93d63c2cec4f01d512dd8f1d3cd",
+      "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    },
+    "toolchain": "v0.2.1",
+    "width": 1280
+  },
+  "clash": {
+    "bytes": 144199,
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 35,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "guide,proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "path": "dist/clash/overview.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "1a6b89ba2278762af715ff5624b00034bdd3b2b8390d2d53d412f657a551ec30",
+    "source_layers": {
+      "dc.geometry.usdc": "24c22644aa0b9470ceddfb8433a828284fea2df964d77840bea53b1328d8675e",
+      "dc.semantics.usdc": "5a9af9ff8ec3366d80408e73a0768f4698db71b329f9edb21e4d6fbc7ad91f15",
+      "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    },
+    "toolchain": "v0.3.2",
+    "width": 1280
+  },
+  "floors": {
+    "bytes": 145695,
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          10.25
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 39,
+      "position": [
+        178.08107440626125,
+        -218.37971904890043,
+        175.35728928751348
+      ],
+      "purposes": "guide,proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "path": "dist/floors/overview.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "f64b370b2b1369034f116a37d5fd9b2f043ff7c7754b8b48746e747f0346f2d9",
+    "source_layers": {
+      "dc.geometry.usdc": "feaced9b153a36baea8399d681ffe820e9b3b543075cdd15f8249a1ca0c2bf1f",
+      "dc.semantics.usdc": "7417b00cf602a4f48e4a4071d3f709e0be7ffb95216506ec2300da908f754004",
+      "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    },
+    "toolchain": "v0.3.2",
+    "width": 1280
+  },
+  "iris": {
+    "bytes": 144529,
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 33,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "guide,proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "path": "dist/iris/overview.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "5a964272d7e12a3a6e5bd222f9700e2a047442e1af9b9229263155dfe8c48097",
+    "source_layers": {
+      "dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "dc.semantics.usdc": "b857167e8555ee82f050c788b5664eab0628f4aa41921766eb0defb8c3699af7",
+      "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    },
+    "toolchain": "v0.2.1",
+    "width": 1280
+  },
+  "pod": {
+    "bytes": 144082,
+    "frame": {
+      "all_corners_inside": true,
+      "bounds": [
+        [
+          -14.0,
+          -18.300000000745058,
+          -0.53
+        ],
+        [
+          86.0,
+          36.20000000298023,
+          8.100000001490116
+        ]
+      ],
+      "direction": [
+        -0.447213595499958,
+        0.7155417527999328,
+        -0.5366563145999494
+      ],
+      "hidden_space_extents": 35,
+      "position": [
+        177.82307440644004,
+        -217.9669190491865,
+        173.9726892884731
+      ],
+      "purposes": "guide,proxy,render",
+      "size": [
+        1280,
+        800
+      ]
+    },
+    "height": 800,
+    "path": "dist/pod/overview.png",
+    "renderer": "usdrecord/Embree",
+    "sha256": "f9df6db7c657673dd1674be8f7af566965876e35ec68f81e7ef76ad3449ebbca",
+    "source_layers": {
+      "dc.geometry.usdc": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9",
+      "dc.semantics.usdc": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c",
+      "dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    },
+    "toolchain": "v0.2.1",
+    "width": 1280
+  }
+}

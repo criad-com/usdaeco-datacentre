@@ -1,0 +1,124 @@
+diff --git a/check_all.py b/check_all.py
+index a4ccec9..a8df41d 100644
+--- a/check_all.py
++++ b/check_all.py
+@@ -71,7 +71,7 @@ assert registry.FindAppliedAPIPrimDefinition('AecoAxisAPI').GetPropertyMetadata(
+     dependencies["sync"] = set(paths)
+     dependencies["datacentre"] = {"datacentre","toolchain"}
+     for name in (*LIBRARIES, "toolchain", "datacentre"):
+-        if previous and not (changed & dependencies[name]):
++        if previous and name in previous["libraries"] and not (changed & dependencies[name]):
+             entry = previous["libraries"][name]
+             report["libraries"][name] = entry
+             record(name, entry["passed"], entry["counts"] + " (unchanged pinned library; prior check)")
+diff --git a/dependencies.json b/dependencies.json
+index e797b4f..14f1a3c 100644
+--- a/dependencies.json
++++ b/dependencies.json
+@@ -1,8 +1,8 @@
+ {
+   "repositories": {
+     "core": {
+-      "revision": "cc2c37a81c9b3f8cd1a0a28c5e95c4d9cf030828",
+-      "base_tag": "v0.8.0"
++      "revision": "91a55c35bdd19ee1887f6522436d32ae99cd6c4f",
++      "base_tag": "v0.8.1"
+     },
+     "toolchain": {
+       "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919",
+@@ -29,8 +29,8 @@
+       "base_tag": "v0.4.2"
+     },
+     "datacentre": {
+-      "revision": "26b89d1d5cc2b3df6cb1f76f3baadb469f7709ef",
+-      "base_tag": "v0.2.0"
++      "revision": "88e4217481a3cc55bab9b2bf6584bbb38a914827",
++      "base_tag": "wp/W9"
+     }
+   },
+   "runtime": {
+diff --git a/flake.nix b/flake.nix
+index 2f20f5c..8ac299a 100644
+--- a/flake.nix
++++ b/flake.nix
+@@ -1,14 +1,14 @@
+ {
+   description = "Pinned usdAeco family plugin set and integration gate";
+   inputs = {
+-    core = { type = "indirect"; id = "usdaeco-core"; rev = "cc2c37a81c9b3f8cd1a0a28c5e95c4d9cf030828"; flake = false; };
++    core = { type = "indirect"; id = "usdaeco-core"; rev = "91a55c35bdd19ee1887f6522436d32ae99cd6c4f"; flake = false; };
+     toolchain = { type = "indirect"; id = "usdaeco-toolchain"; rev = "01f6caebf5d6bfb9eeba51a1251fa965f062f919"; };
+     buildup = { type = "indirect"; id = "usdaeco-buildup"; rev = "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"; flake = false; };
+     wall = { type = "indirect"; id = "usdaeco-wall"; rev = "09b2993e11d07b96a2492e75c49448153524c8b2"; flake = false; };
+     pipe = { type = "indirect"; id = "usdaeco-pipe"; rev = "f48a764dacc99c4467b426f3c1bb691c5c783952"; flake = false; };
+     cctv = { type = "indirect"; id = "usdaeco-cctv"; rev = "6f5b5ad04e4328077466d8ce8f31b7254118372b"; flake = false; };
+     sync = { type = "indirect"; id = "usdaeco-sync"; rev = "1b470c10c44c23e7a1af9171757d3dcaa1794879"; flake = false; };
+-    datacentre = { type = "indirect"; id = "usdaeco-datacentre"; rev = "26b89d1d5cc2b3df6cb1f76f3baadb469f7709ef"; flake = false; };
++    datacentre = { type = "indirect"; id = "usdaeco-datacentre"; rev = "88e4217481a3cc55bab9b2bf6584bbb38a914827"; flake = false; };
+     nixpkgs.follows = "toolchain/nixpkgs";
+   };
+   outputs = { self, nixpkgs, toolchain, core, buildup, wall, pipe, cctv, sync, datacentre }:
+diff --git a/scenarios/datacentre.py b/scenarios/datacentre.py
+index f43ad54..071dfa8 100644
+--- a/scenarios/datacentre.py
++++ b/scenarios/datacentre.py
+@@ -433,16 +433,16 @@ def run_scenario(directory, *, kernel='auto', render=True, determinism=True):
+     c=stats['convert'];i=stats['cctv'];d=stats['derive']
+     row('datacentre build',stats['seconds']['build']<=45,seconds=round(stats['seconds']['build'],3),nominalBudget=15,loadedMachineLimit=45)
+     row('DC-build',len(list((directory/'ifc').glob('*.ifc')))>=8,files=len(list((directory/'ifc').glob('*.ifc'))))
+-    row('DC-convert',c['elements']==c['phases']==2938 and c['extents']==33 and c['unparented']==0,
++    row('DC-convert',c['elements']==c['phases']==2954 and c['extents']==33 and c['unparented']==0,
+         elements=c['elements'],phases=c['phases'],phasePercent=100*c['phases']/c['elements'],extents=c['extents'],unparented=c['unparented'])
+     stage,config=author_schedule(directory)
+     optics=optics_evidence(stage,directory)
+     security=next(p for p in stage.Traverse() if p.HasAPI('AecoCctvSystemAPI'))
+-    row('DC-system',security.GetAttribute('aeco:cctvSystem:retentionDays').Get()==90 and security.GetAttribute('aeco:cctvSystem:recorderCapacity').Get()==45,retentionDays=90,recorderCapacity=45,cameras=29)
+-    row('DC-import',i['cameras']==i['sensors']==29 and i['types']==3 and i['presets']==7 and i['unmatched']==0,
++    row('DC-system',security.GetAttribute('aeco:cctvSystem:retentionDays').Get()==90 and security.GetAttribute('aeco:cctvSystem:recorderCapacity').Get()==45,retentionDays=90,recorderCapacity=45,cameras=45)
++    row('DC-import',i['cameras']==i['sensors']==45 and i['types']==3 and i['presets']==7 and i['unmatched']==0,
+         cameras=i['cameras'],sensors=i['sensors'],types=i['types'],presets=i['presets'],optics=optics,
+         walls=stats['wall']['AecoWallAPI'],pipes=stats['pipe']['AecoPipeAPI'])
+-    row('DC-derive',d['sensors']==d['sectors']==29 and d['tours']==3 and not d['skipped'],sensors=d['sensors'],sectors=d['sectors'],tours=d['tours'])
++    row('DC-derive',d['sensors']==d['sectors']==45 and d['tours']==3 and not d['skipped'],sensors=d['sensors'],sectors=d['sectors'],tours=d['tours'])
+     studies=run_schedule(stage,directory,kernel)
+     stage_path=save_composed(stage,directory)
+     findings=evaluate(stage)
+@@ -522,7 +522,7 @@ def main():
+     activate(args.pluginset)
+     if args.smoke:
+         result = prepare(args.output.resolve())
+-        assert result['cctv']['sensors'] == result['derive']['sensors'] == 29
++        assert result['cctv']['sensors'] == result['derive']['sensors'] == 45
+         assert not result['derive']['skipped']
+         write_json(args.output / 'smoke.json', portable(result,args.output))
+         print('4 checks, 0 failed')
+diff --git a/scenarios/dc_cases.py b/scenarios/dc_cases.py
+index 473fb0e..9183642 100644
+--- a/scenarios/dc_cases.py
++++ b/scenarios/dc_cases.py
+@@ -66,7 +66,7 @@ def run_cases(stage_path, directory, kernel):
+     r=study(stage,'CriticalDoors',directory/'tray.usda',kernel)
+     row('DC-tray',len(r['results'])==11, tray=str(tray.GetPath()), loweredMetres=.9,
+         uncovered=sum(not x['views'] for x in r['results'].values()), findings=codes(stage,'CriticalDoors'),
+-        limitation='Baseline critical doors already fail; newly uncovered door and tray attribution are not proven.')
++        limitation='Tray edit retained; newly uncovered door and tray attribution are not proven.')
+     if rows[-1]['passed']:
+         rows[-1]['status']='FINDING'
+     # A hoarding across the loading approach, excluded and included by phase.
+@@ -113,6 +113,7 @@ def run_cases(stage_path, directory, kernel):
+         panDelta=20., limitation='NOC monitoring is allowed. Privacy-error demonstration uses a hall intrusion instead.')
+     # Test the real PTZ tour on a visible point close to its Home preset.
+     stage=fresh();prim=stage.GetPrimAtPath('/SecurityStudies/Lobby')
++    Usd.CollectionAPI(prim,'cameras').GetIncludesRel().SetTargets([camera(stage,'sec.cam.lobby').GetPath()])
+     views,_=enumerate_views(stage,Settings(prim));view=next(v for v in views if v.key=='Home')
+     target=stage.DefinePrim('/SecurityTargets/DutyProbe','Scope');target.ApplyAPI('AecoCctvTargetAPI')
+     point=view.origin-view.basis[2]*1.0
+@@ -123,7 +124,7 @@ def run_cases(stage_path, directory, kernel):
+     value=r['results'][str(target.GetPath())];findings=codes(stage,'Lobby')
+     row('DC-ptz-duty',0<value['dutyFraction']<=1 and not value['fixedCoverage'] and any(f['rule']=='cctvPtzSoleCoverage' for f in findings),
+         dutyFraction=value['dutyFraction'], expectedHomeDuty=view.dwell_fraction, findings=findings,
+-        limitation='No fixed lobby dome exists in the generator; removal is not executable. This positive control proves sole-PTZ grading.')
++        limitation='Fixed lobby cameras removed from this negative control only; sole-PTZ grading remains required.')
+     # IR overrides must affect both the effective hash and the result.
+     stage=fresh();cam=camera(stage,'sec.cam.ext.dock')
+     cam.CreateAttribute('aeco:cctvType:irRange',Sdf.ValueTypeNames.Double).Set(.1)

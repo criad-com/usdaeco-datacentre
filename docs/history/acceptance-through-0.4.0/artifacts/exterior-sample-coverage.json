@@ -1,0 +1,45 @@
+{
+  "requiredDensity": 125,
+  "results": {
+    "/SecurityTargets/door_dock": {
+      "enclosedSamples": 0,
+      "evaluatedSamples": 112,
+      "fixedCoveredSamples": 112,
+      "minimumDensityView": "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0",
+      "minimumFixedDensity": 126.83707565657464,
+      "sampleCount": 112
+    },
+    "/SecurityTargets/door_gen_a": {
+      "enclosedSamples": 0,
+      "evaluatedSamples": 56,
+      "fixedCoveredSamples": 56,
+      "minimumDensityView": "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0",
+      "minimumFixedDensity": 309.43745690086473,
+      "sampleCount": 56
+    },
+    "/SecurityTargets/door_gen_b": {
+      "enclosedSamples": 0,
+      "evaluatedSamples": 56,
+      "fixedCoveredSamples": 56,
+      "minimumDensityView": "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0",
+      "minimumFixedDensity": 309.437511784761,
+      "sampleCount": 56
+    },
+    "/SecurityTargets/door_main": {
+      "enclosedSamples": 0,
+      "evaluatedSamples": 56,
+      "fixedCoveredSamples": 56,
+      "minimumDensityView": "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0",
+      "minimumFixedDensity": 309.437442910848,
+      "sampleCount": 56
+    },
+    "/SecurityTargets/door_plant_ext": {
+      "enclosedSamples": 2,
+      "evaluatedSamples": 54,
+      "fixedCoveredSamples": 54,
+      "minimumDensityView": "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0",
+      "minimumFixedDensity": 126.33885771864,
+      "sampleCount": 56
+    }
+  }
+}

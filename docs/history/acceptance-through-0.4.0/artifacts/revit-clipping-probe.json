@@ -1,0 +1,337 @@
+[
+  {
+    "rangeMetres": 6,
+    "densityPixelsPerMetre": 0,
+    "transactionRolledBack": true,
+    "observations": [
+      {
+        "camera": "dome",
+        "distanceMetres": 6.000000000000001,
+        "horizontalHalfAngleRadians": 0.7347685355513632,
+        "radiiMetres": [
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          5.711948480688827,
+          6.000000000000001
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          0
+        ],
+        "maximumRadiusErrorMetres": null
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 6.000000000000001,
+        "horizontalHalfAngleRadians": 0.45318516352112886,
+        "radiiMetres": [
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          0
+        ],
+        "maximumRadiusErrorMetres": null
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 6.000000000000001,
+        "horizontalHalfAngleRadians": 0.3715336564727899,
+        "radiiMetres": [
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          0
+        ],
+        "maximumRadiusErrorMetres": null
+      }
+    ]
+  },
+  {
+    "rangeMetres": 12,
+    "densityPixelsPerMetre": 0,
+    "transactionRolledBack": true,
+    "observations": [
+      {
+        "camera": "dome",
+        "distanceMetres": 12.000000000000002,
+        "horizontalHalfAngleRadians": 0.7347685355513632,
+        "radiiMetres": [
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          5.711948480688827,
+          6.000000000000001
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          0
+        ],
+        "maximumRadiusErrorMetres": null
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 12.000000000000002,
+        "horizontalHalfAngleRadians": 0.45318516352112886,
+        "radiiMetres": [
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          0
+        ],
+        "maximumRadiusErrorMetres": null
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 11.999999999999998,
+        "horizontalHalfAngleRadians": 0.3715336564727899,
+        "radiiMetres": [
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001,
+          6.000000000000001
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          0
+        ],
+        "maximumRadiusErrorMetres": null
+      }
+    ]
+  },
+  {
+    "rangeMetres": 12,
+    "densityPixelsPerMetre": 250,
+    "transactionRolledBack": true,
+    "observations": [
+      {
+        "camera": "dome",
+        "distanceMetres": 12.000000000000002,
+        "horizontalHalfAngleRadians": 0.7347685355513632,
+        "radiiMetres": [
+          12.000000000000002,
+          12.000000000000002,
+          12.000000000000002,
+          7.055283057418859,
+          7.055283057418859
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 1.7763568394002505e-15
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 12.000000000000002,
+        "horizontalHalfAngleRadians": 0.45318516352112886,
+        "radiiMetres": [
+          12.000000000000002,
+          12.000000000000002,
+          12.000000000000002,
+          12.000000000000002,
+          12.000000000000002
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 1.7763568394002505e-15
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 11.999999999999998,
+        "horizontalHalfAngleRadians": 0.3715336564727899,
+        "radiiMetres": [
+          11.999999999999998,
+          11.999999999999998,
+          11.999999999999998,
+          11.999999999999998,
+          11.999999999999998
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 1.7763568394002505e-15
+      }
+    ]
+  },
+  {
+    "rangeMetres": 20,
+    "densityPixelsPerMetre": 250,
+    "transactionRolledBack": true,
+    "observations": [
+      {
+        "camera": "dome",
+        "distanceMetres": 19.999999999999996,
+        "horizontalHalfAngleRadians": 0.7347685355513632,
+        "radiiMetres": [
+          19.999999999999996,
+          19.999999999999996,
+          14.110566114837718,
+          7.055283057418859,
+          7.055283057418859
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 3.552713678800501e-15
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 19.999999999999996,
+        "horizontalHalfAngleRadians": 0.45318516352112886,
+        "radiiMetres": [
+          19.999999999999996,
+          19.999999999999996,
+          19.999999999999996,
+          16.946715422738976,
+          16.946715422738976
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 3.552713678800501e-15
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 19.999999999999996,
+        "horizontalHalfAngleRadians": 0.3715336564727899,
+        "radiiMetres": [
+          19.999999999999996,
+          19.999999999999996,
+          19.999999999999996,
+          19.999999999999996,
+          19.999999999999996
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 3.552713678800501e-15
+      }
+    ]
+  },
+  {
+    "rangeMetres": 40,
+    "densityPixelsPerMetre": 250,
+    "transactionRolledBack": true,
+    "observations": [
+      {
+        "camera": "dome",
+        "distanceMetres": 39.99999999999999,
+        "horizontalHalfAngleRadians": 0.7347685355513632,
+        "radiiMetres": [
+          39.99999999999999,
+          28.448722005721205,
+          14.110566114837718,
+          7.055283057418859,
+          7.055283057418859
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 7.105427357601002e-15
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 39.99999999999999,
+        "horizontalHalfAngleRadians": 0.45318516352112886,
+        "radiiMetres": [
+          39.99999999999999,
+          39.99999999999999,
+          33.89343084547795,
+          16.946715422738976,
+          16.946715422738976
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 7.105427357601002e-15
+      },
+      {
+        "camera": "ptz",
+        "distanceMetres": 39.99999999999999,
+        "horizontalHalfAngleRadians": 0.3715336564727899,
+        "radiiMetres": [
+          39.99999999999999,
+          39.99999999999999,
+          39.99999999999999,
+          20.671074790131325,
+          20.671074790131325
+        ],
+        "thresholdsPixelsPerMetre": [
+          26,
+          62,
+          125,
+          250,
+          250
+        ],
+        "maximumRadiusErrorMetres": 7.105427357601002e-15
+      }
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+diff --git a/dependencies.json b/dependencies.json
+index 9f9e9e7..f9a345f 100644
+--- a/dependencies.json
++++ b/dependencies.json
+@@ -29,8 +29,8 @@
+       "base_tag": "v0.4.4"
+     },
+     "datacentre": {
+-      "revision": "211c7d78b6ecb0035d0824e7f0ace34eb3b49c1a",
+-      "base_tag": "v0.3.1"
++      "revision": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84",
++      "base_tag": "wp/W12"
+     }
+   },
+   "runtime": {
+diff --git a/flake.lock b/flake.lock
+index d1305d7..1c24ff0 100644
+--- a/flake.lock
++++ b/flake.lock
+@@ -75,17 +75,17 @@
+     "datacentre": {
+       "flake": false,
+       "locked": {
+-        "lastModified": 1789089768,
+-        "narHash": "sha256-G0LdCq9SL4rv9CoqSarORVCbe6sMsI6L+/lPyGPjSqg=",
+-        "ref": "v0.3.1",
+-        "rev": "211c7d78b6ecb0035d0824e7f0ace34eb3b49c1a",
+-        "revCount": 27,
++        "lastModified": 1789093002,
++        "narHash": "sha256-veJgAlnhpr5/UF3aOLsv0b2C9GW9R7WU5xdoItFtyr8=",
++        "ref": "wp/W12",
++        "rev": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84",
++        "revCount": 29,
+         "type": "git",
+         "url": "https://example.invalid/aeco/usdaeco-datacentre.git"
+       },
+       "original": {
+         "id": "usdaeco-datacentre",
+-        "rev": "211c7d78b6ecb0035d0824e7f0ace34eb3b49c1a",
++        "rev": "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84",
+         "type": "indirect"
+       }
+     },
+diff --git a/flake.nix b/flake.nix
+index 0fcf5f6..4e3c0f3 100644
+--- a/flake.nix
++++ b/flake.nix
+@@ -8,7 +8,7 @@
+     pipe = { type = "indirect"; id = "usdaeco-pipe"; rev = "f48a764dacc99c4467b426f3c1bb691c5c783952"; flake = false; };
+     cctv = { type = "indirect"; id = "usdaeco-cctv"; rev = "f6b8b7a3785a6f2d6402a40822728a91250c15e0"; flake = false; };
+     sync = { type = "indirect"; id = "usdaeco-sync"; rev = "2cb242df97a089ff9d16fc547b8d12d797028960"; flake = false; };
+-    datacentre = { type = "indirect"; id = "usdaeco-datacentre"; rev = "211c7d78b6ecb0035d0824e7f0ace34eb3b49c1a"; flake = false; };
++    datacentre = { type = "indirect"; id = "usdaeco-datacentre"; rev = "ae2a0e47ebb4b7c2bfa7d79027aba33586e92e84"; flake = false; };
+     nixpkgs.follows = "toolchain/nixpkgs";
+   };
+   outputs = { self, nixpkgs, toolchain, core, buildup, wall, pipe, cctv, sync, datacentre }:
+diff --git a/scenarios/datacentre.py b/scenarios/datacentre.py
+index 15930c3..0bd8693 100644
+--- a/scenarios/datacentre.py
++++ b/scenarios/datacentre.py
+@@ -510,7 +510,9 @@ def run_scenario(directory, *, kernel='auto', render=True, determinism=True):
+     rows.extend(sync_cases(directory,stage_path))
+     reference=json.loads((ROOT/'docs/revit-reference.json').read_text())
+     source=reference['source']
+-    assert source['revision']==json.loads((ROOT/'dependencies.json').read_text())['repositories']['datacentre']['revision']
++    run(['git', 'merge-base', '--is-ancestor', source['revision'],
++         json.loads((ROOT/'dependencies.json').read_text())['repositories']['datacentre']['revision']],
++        cwd=repos()['datacentre'])
+     assert hashlib.sha256((repos()['datacentre']/source['artifact']).read_bytes()).hexdigest()==source['sha256']
+     rows.append(dict(gate='DC-revit',passed=False,status='NOT RUN',evidence=dict(
+         reason='Offline run; separately recorded native evidence is not a current host pass',

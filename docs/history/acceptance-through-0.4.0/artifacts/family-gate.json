@@ -1,0 +1,1819 @@
+{
+  "changedPinsSinceLibraryEvidence": [],
+  "checkpoint": "Core, buildup, wall and pipe completed before a plugin-descriptor conflict; resumed without repeating those checks. Their timings were not recorded.",
+  "datacentre": {
+    "kernel": "embree",
+    "rows": [
+      {
+        "evidence": {
+          "loadedMachineLimit": 45,
+          "nominalBudget": 15,
+          "seconds": 14.806
+        },
+        "gate": "datacentre build",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "files": 8
+        },
+        "gate": "DC-build",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "elements": 2954,
+          "extents": 33,
+          "phasePercent": 100.0,
+          "phases": 2954,
+          "unparented": 0
+        },
+        "gate": "DC-convert",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "cameras": 45,
+          "recorderCapacity": 45,
+          "retentionDays": 90
+        },
+        "gate": "DC-system",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "cameras": 45,
+          "optics": {
+            "compared": 980,
+            "maxError": 3.3306690738754696e-16,
+            "tolerance": 1e-06
+          },
+          "pipes": 476,
+          "presets": 7,
+          "sensors": 45,
+          "types": 3,
+          "walls": 92
+        },
+        "gate": "DC-import",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "sectors": 45,
+          "sensors": 45,
+          "tours": 3
+        },
+        "gate": "DC-derive",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "designErrors": 9,
+          "implementationErrors": 0,
+          "nativePortGaps": 160,
+          "statusEnumsNormalized": 3,
+          "warnings": 4000
+        },
+        "gate": "DC-profile",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [],
+          "fixedCovered": 11,
+          "seconds": 0.812,
+          "targets": 11,
+          "views": 11
+        },
+        "gate": "DC-critical-doors",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [
+            {
+              "message": "door_plant_ext: 125 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/door_plant_ext",
+                "/SecurityStudies/ExternalDoors"
+              ]
+            }
+          ],
+          "fixedCovered": 4,
+          "seconds": 0.576,
+          "targets": 5,
+          "views": 5
+        },
+        "gate": "DC-external",
+        "passed": true,
+        "status": "FINDING"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [],
+          "fixedCovered": 7,
+          "seconds": 4.949,
+          "targets": 7,
+          "views": 29
+        },
+        "gate": "DC-corridors",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [
+            {
+              "message": "sp_yard_gen_a: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_gen_a",
+                "/SecurityStudies/Yards"
+              ]
+            },
+            {
+              "message": "sp_yard_gen_a: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_gen_a",
+                "/SecurityStudies/YardsNight"
+              ]
+            },
+            {
+              "message": "sp_yard_gen_b: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_gen_b",
+                "/SecurityStudies/Yards"
+              ]
+            },
+            {
+              "message": "sp_yard_gen_b: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_gen_b",
+                "/SecurityStudies/YardsNight"
+              ]
+            },
+            {
+              "message": "sp_yard_hr: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_hr",
+                "/SecurityStudies/Yards"
+              ]
+            },
+            {
+              "message": "sp_yard_hr: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_hr",
+                "/SecurityStudies/YardsNight"
+              ]
+            },
+            {
+              "message": "yard_approach_door_plant_ext: 62.5 px/m required, best 0 px/m (none); sightlines blocked by rt_clg_fws_main_s_Seg_1",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/yard_approach_door_plant_ext",
+                "/SecurityStudies/Yards",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/rt_clg_fws_main_s_Seg_1"
+              ]
+            },
+            {
+              "message": "yard_approach_door_plant_ext: 62.5 px/m required, best 0 px/m (none); sightlines blocked by rt_clg_fws_main_s_Seg_1",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/yard_approach_door_plant_ext",
+                "/SecurityStudies/YardsNight",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/rt_clg_fws_main_s_Seg_1"
+              ]
+            }
+          ],
+          "fixedCovered": 4,
+          "seconds": 0.727,
+          "targets": 8,
+          "views": 15
+        },
+        "gate": "DC-yard-day",
+        "passed": true,
+        "status": "FINDING"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [
+            {
+              "message": "sp_yard_gen_a: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_gen_a",
+                "/SecurityStudies/YardsNight"
+              ]
+            },
+            {
+              "message": "sp_yard_gen_b: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_gen_b",
+                "/SecurityStudies/YardsNight"
+              ]
+            },
+            {
+              "message": "sp_yard_hr: 25 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/sp_yard_hr",
+                "/SecurityStudies/YardsNight"
+              ]
+            },
+            {
+              "message": "yard_approach_door_plant_ext: 62.5 px/m required, best 0 px/m (none); sightlines blocked by rt_clg_fws_main_s_Seg_1",
+              "rule": "cctvTargetUncovered",
+              "severity": "error",
+              "sites": [
+                "/SecurityTargets/yard_approach_door_plant_ext",
+                "/SecurityStudies/YardsNight",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/rt_clg_fws_main_s_Seg_1"
+              ]
+            }
+          ],
+          "fixedCovered": 4,
+          "seconds": 0.673,
+          "targets": 8,
+          "views": 11
+        },
+        "gate": "DC-yard-night",
+        "passed": true,
+        "status": "FINDING"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [],
+          "fixedCovered": 3,
+          "seconds": 0.581,
+          "targets": 3,
+          "views": 5
+        },
+        "gate": "DC-lobby",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [],
+          "fixedCovered": 0,
+          "seconds": 1.499,
+          "targets": 0,
+          "views": 49
+        },
+        "gate": "DC-privacy-baseline",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "exclusions": 0,
+          "findings": [],
+          "fixedCovered": 11,
+          "seconds": 0.619,
+          "targets": 11,
+          "views": 11
+        },
+        "gate": "DC-revit-parity",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "columnBlockers": 2
+        },
+        "gate": "DC-column",
+        "passed": false,
+        "status": "FAIL"
+      },
+      {
+        "evidence": {
+          "reused": 136,
+          "views": 136
+        },
+        "gate": "DC-idempotence",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "builds": 2,
+          "normalizedStageHash": "76841cd0e919157221b8598c4b05902f819d0c28faddb3aad7433a4485bdbb04",
+          "secondHash": "76841cd0e919157221b8598c4b05902f819d0c28faddb3aad7433a4485bdbb04",
+          "studies": 8
+        },
+        "gate": "DC-determinism",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "findings": [
+            {
+              "message": "door_hall_a_s: 250 px/m required, best 0 px/m (none); sightlines blocked by Data_Spine_A_Seg_1",
+              "rule": "cctvTargetUncovered",
+              "sites": [
+                "/SecurityTargets/door_hall_a_s",
+                "/SecurityStudies/CriticalDoors",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Spine_A_Seg_1"
+              ]
+            }
+          ],
+          "limitation": "Tray edit retained; newly uncovered door and tray attribution are not proven.",
+          "loweredMetres": 0.9,
+          "tray": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Spine_A_Seg_1",
+          "uncovered": 1
+        },
+        "gate": "DC-tray",
+        "passed": true,
+        "status": "FINDING"
+      },
+      {
+        "evidence": {
+          "blocker": "/ScenarioEdits/LoadingHoarding",
+          "findings": [
+            {
+              "message": "door_dock: 125 px/m required, best 0 px/m (none); sightlines blocked by LoadingHoarding",
+              "rule": "cctvTargetUncovered",
+              "sites": [
+                "/SecurityTargets/door_dock",
+                "/SecurityStudies/ExternalDoors",
+                "/ScenarioEdits/LoadingHoarding"
+              ]
+            },
+            {
+              "message": "door_plant_ext: 125 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "sites": [
+                "/SecurityTargets/door_plant_ext",
+                "/SecurityStudies/ExternalDoors"
+              ]
+            }
+          ],
+          "ignoredFraction": 1.0,
+          "includedFraction": 0.0
+        },
+        "gate": "DC-temporary",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "camera": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1",
+          "exclusions": [
+            "/SecurityTargets/sp_hall_a_tile_0",
+            "/SecurityTargets/sp_hall_a_tile_1",
+            "/SecurityTargets/sp_hall_a_tile_11",
+            "/SecurityTargets/sp_hall_a_tile_12",
+            "/SecurityTargets/sp_hall_a_tile_13",
+            "/SecurityTargets/sp_hall_a_tile_14",
+            "/SecurityTargets/sp_hall_a_tile_15",
+            "/SecurityTargets/sp_hall_a_tile_16",
+            "/SecurityTargets/sp_hall_a_tile_21",
+            "/SecurityTargets/sp_hall_a_tile_26",
+            "/SecurityTargets/sp_hall_a_tile_31",
+            "/SecurityTargets/sp_hall_a_tile_5",
+            "/SecurityTargets/sp_hall_a_tile_6",
+            "/SecurityTargets/sp_hall_a_tile_7",
+            "/SecurityTargets/sp_hall_a_tile_8"
+          ],
+          "findings": [
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_0 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_0",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_1 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_1",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_11 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_11",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_12 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_12",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_13 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_13",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_14 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_14",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_15 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_15",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_16 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_16",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_21 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_21",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_26 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_26",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_31 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_31",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_5 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_5",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_6 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_6",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_7 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_7",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            },
+            {
+              "message": "/SecurityTargets/sp_hall_a_tile_8 is an exclusion of /SecurityStudies/Privacy; visible from /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0",
+              "rule": "cctvExclusionCovered",
+              "sites": [
+                "/SecurityTargets/sp_hall_a_tile_8",
+                "/SecurityStudies/Privacy",
+                "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0"
+              ]
+            }
+          ],
+          "panDegrees": 20.0
+        },
+        "gate": "DC-privacy",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "camera": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1",
+          "errors": 1
+        },
+        "gate": "DC-hall-rule",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "limitation": "NOC monitoring is allowed. Privacy-error demonstration uses a hall intrusion instead.",
+          "panDelta": 20.0
+        },
+        "gate": "DC-noc-turn",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "dutyFraction": 0.6666666666666666,
+          "expectedHomeDuty": 0.3333333333333333,
+          "findings": [
+            {
+              "message": "DutyProbe: 125 px/m only from motorised presets, duty fraction 0.667",
+              "rule": "cctvPtzSoleCoverage",
+              "sites": [
+                "/SecurityTargets/DutyProbe"
+              ]
+            }
+          ],
+          "limitation": "Fixed lobby cameras removed from this negative control only; sole-PTZ grading remains required."
+        },
+        "gate": "DC-ptz-duty",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "findings": [
+            {
+              "message": "door_dock: 125 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "sites": [
+                "/SecurityTargets/door_dock",
+                "/SecurityStudies/ExternalDoors"
+              ]
+            },
+            {
+              "message": "door_plant_ext: 125 px/m required, best 0 px/m (none)",
+              "rule": "cctvTargetUncovered",
+              "sites": [
+                "/SecurityTargets/door_plant_ext",
+                "/SecurityStudies/ExternalDoors"
+              ]
+            }
+          ],
+          "fraction": 0.0,
+          "irMetres": 0.1
+        },
+        "gate": "DC-night-override",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "findings": [
+            {
+              "message": "coverage results are older than their inputs; re-run aeco-cctv study /SecurityStudies/CriticalDoors",
+              "rule": "cctvStudyStale",
+              "sites": [
+                "/SecurityStudies/CriticalDoors"
+              ]
+            }
+          ]
+        },
+        "gate": "DC-stale",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "findings": [
+            {
+              "message": "/SecurityTargets/door_elec_a needs exactly one active result; found 0",
+              "rule": "cctvStudyIncomplete",
+              "sites": [
+                "/SecurityStudies/CriticalDoors",
+                "/SecurityTargets/door_elec_a"
+              ]
+            }
+          ]
+        },
+        "gate": "DC-results-incomplete",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "accepted": 3,
+          "actualPosition": [
+            12.75,
+            -3.5,
+            3.4
+          ],
+          "expectedPosition": [
+            12.75,
+            -3.5,
+            3.4
+          ],
+          "guidPreserved": true,
+          "maxPositionError": 0.0,
+          "mutations": 3,
+          "pan": 35.0,
+          "pending": 0,
+          "repeatMutations": 0,
+          "tilt": 40.0,
+          "transactions": 2
+        },
+        "gate": "DC-sync-ifc",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "reason": "Blender with Bonsai is unavailable"
+        },
+        "gate": "DC-sync-bonsai",
+        "passed": false,
+        "status": "NOT RUN"
+      },
+      {
+        "evidence": {
+          "stages": 10
+        },
+        "gate": "DC-vanilla",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "hiddenGuides": [
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Envelope",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Privacy_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Privacy_LobbyCorridor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Privacy_MainDoor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Lobby_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Lobby_LobbyCorridor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Lobby_MainDoor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Coverage_Lobby",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Coverage_Lobby",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Hall_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Hall_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Battery_Room_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meet_Me_Room_2/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Security_Office/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Electrical_Room_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meet_Me_Room_1/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Loading_Storage/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Electrical_Room_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Battery_Room_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Comms_Room/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Cooling_Plant_Room/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Water_Treatment/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meeting_Room/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Fire_Suppression/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Stair_L00/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Network_Operations_Centre/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Kitchen_Break/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Open_Office/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/WC/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Stair_L01/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Meeting_Room_L01/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Envelope",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Privacy_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Privacy_Pad_gen_a",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Yards_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Yards_Pad_gen_a",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Envelope",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Privacy_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Privacy_Pad_gen_b",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Yards_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Yards_Pad_gen_b",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Envelope",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Privacy_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Privacy_LobbyCorridor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Privacy_MainDoor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Lobby_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Lobby_LobbyCorridor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby/Sensor_0/Coverage_Lobby_MainDoor",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1/Sensor_0/Coverage_Lobby",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2/Sensor_0/Coverage_Lobby",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Hall_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Hall_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Battery_Room_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meet_Me_Room_2/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Security_Office/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Electrical_Room_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meet_Me_Room_1/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Loading_Storage/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Electrical_Room_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Battery_Room_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Comms_Room/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Cooling_Plant_Room/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_RevitParity",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w/Sensor_0/Coverage_CriticalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Water_Treatment/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meeting_Room/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Fire_Suppression/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Stair_L00/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Network_Operations_Centre/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Kitchen_Break/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Open_Office/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1/Sensor_0/Coverage_Corridors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/WC/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Stair_L01/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Meeting_Room_L01/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Envelope",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Privacy_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Privacy_Pad_gen_a",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Yards_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a/Sensor_0/Coverage_Yards_Pad_gen_a",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Envelope",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Privacy_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Privacy_Pad_gen_b",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Yards_Home",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b/Sensor_0/Coverage_Yards_Pad_gen_b",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/Extent",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_Yards",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b/Sensor_0/Coverage_ExternalDoors",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Sector",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Shell_identify",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Shell_recognise",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Shell_observe",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Coverage_Privacy",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Coverage_YardsNight",
+            "/demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2/Sensor_0/Coverage_Yards"
+          ],
+          "reason": "toolchain usd-dev Python with Embree and usdrecord is unavailable",
+          "status": "skipped"
+        },
+        "gate": "DC-render",
+        "passed": false,
+        "status": "SKIP"
+      },
+      {
+        "evidence": {
+          "files": 142,
+          "violations": []
+        },
+        "gate": "datacentre sanitization",
+        "passed": true,
+        "status": "PASS"
+      },
+      {
+        "evidence": {
+          "kernel": "embree",
+          "limit": 240,
+          "seconds": 149.771
+        },
+        "gate": "DC-budget",
+        "passed": true,
+        "status": "PASS"
+      }
+    ],
+    "seconds": 149.77077066572383
+  },
+  "failures": {
+    "DC-column": "Two blocked secondary corridor sightlines; both affected regions have fixedCoverage=true and fraction=1.0. Critical-door results contain no column blockers.",
+    "sync": "Seed census still requires 29 cameras; imported 45 cameras, 45 sensors, zero unmatched."
+  },
+  "fullAcceptance": false,
+  "libraries": {
+    "buildup": {
+      "counts": "20/20",
+      "passed": true,
+      "seconds": null
+    },
+    "cctv": {
+      "counts": "118/118",
+      "passed": true,
+      "seconds": 25.54
+    },
+    "core": {
+      "counts": "42/42",
+      "passed": true,
+      "seconds": null
+    },
+    "datacentre": {
+      "counts": "53/53",
+      "passed": true,
+      "seconds": 81.39
+    },
+    "pipe": {
+      "counts": "41/41",
+      "passed": true,
+      "seconds": null
+    },
+    "sync": {
+      "counts": "no acceptance count; see log",
+      "passed": false,
+      "seconds": 56.35
+    },
+    "toolchain": {
+      "counts": "4/4",
+      "passed": true,
+      "seconds": 8.57
+    },
+    "wall": {
+      "counts": "48/48",
+      "passed": true,
+      "seconds": null
+    }
+  },
+  "libraryEvidenceReused": true,
+  "passed": false,
+  "repositories": {
+    "buildup": {
+      "base_tag": "v0.1.2",
+      "expected": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606",
+      "modified": false,
+      "revision": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"
+    },
+    "cctv": {
+      "base_tag": "v0.4.2",
+      "expected": "6f5b5ad04e4328077466d8ce8f31b7254118372b",
+      "modified": false,
+      "revision": "6f5b5ad04e4328077466d8ce8f31b7254118372b"
+    },
+    "core": {
+      "base_tag": "v0.8.1",
+      "expected": "91a55c35bdd19ee1887f6522436d32ae99cd6c4f",
+      "modified": false,
+      "revision": "91a55c35bdd19ee1887f6522436d32ae99cd6c4f"
+    },
+    "datacentre": {
+      "base_tag": "wp/W9",
+      "expected": "88e4217481a3cc55bab9b2bf6584bbb38a914827",
+      "modified": false,
+      "revision": "88e4217481a3cc55bab9b2bf6584bbb38a914827"
+    },
+    "pipe": {
+      "base_tag": "v0.1.2",
+      "expected": "f48a764dacc99c4467b426f3c1bb691c5c783952",
+      "modified": false,
+      "revision": "f48a764dacc99c4467b426f3c1bb691c5c783952"
+    },
+    "sync": {
+      "base_tag": "v0.4.1",
+      "expected": "1b470c10c44c23e7a1af9171757d3dcaa1794879",
+      "modified": false,
+      "revision": "1b470c10c44c23e7a1af9171757d3dcaa1794879"
+    },
+    "toolchain": {
+      "base_tag": "v0.1.0",
+      "expected": "01f6caebf5d6bfb9eeba51a1251fa965f062f919",
+      "modified": false,
+      "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919"
+    },
+    "wall": {
+      "base_tag": "v0.1.2",
+      "expected": "09b2993e11d07b96a2492e75c49448153524c8b2",
+      "modified": false,
+      "revision": "09b2993e11d07b96a2492e75c49448153524c8b2"
+    }
+  },
+  "rows": [
+    {
+      "gate": "revision pins",
+      "passed": true,
+      "result": "8/8 exact; audited before builds",
+      "status": "PASS"
+    },
+    {
+      "gate": "one plugin path",
+      "passed": true,
+      "result": "6/6 libraries",
+      "status": "PASS"
+    },
+    {
+      "gate": "core",
+      "passed": true,
+      "result": "42/42 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "buildup",
+      "passed": true,
+      "result": "20/20 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "wall",
+      "passed": true,
+      "result": "48/48 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "pipe",
+      "passed": true,
+      "result": "41/41 (unchanged pinned library; prior check)",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv",
+      "passed": true,
+      "result": "118/118",
+      "status": "PASS"
+    },
+    {
+      "gate": "sync",
+      "passed": false,
+      "result": "no acceptance count; see log",
+      "status": "FAIL"
+    },
+    {
+      "gate": "toolchain",
+      "passed": true,
+      "result": "4/4",
+      "status": "PASS"
+    },
+    {
+      "gate": "datacentre",
+      "passed": true,
+      "result": "53/53",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv scenarios",
+      "passed": true,
+      "result": "30/30 (embree)",
+      "status": "PASS"
+    },
+    {
+      "gate": "demo ifc + bonsai",
+      "passed": false,
+      "result": "IFC: 3 edits; Bonsai unavailable",
+      "status": "NOT RUN"
+    },
+    {
+      "gate": "demo parity",
+      "passed": false,
+      "result": "0/0",
+      "status": "NOT RUN"
+    },
+    {
+      "gate": "roundtrip profile",
+      "passed": true,
+      "result": "0 errors on both demo stages",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv demo derivation",
+      "passed": true,
+      "result": "4/4 sensors",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv demo steps",
+      "passed": true,
+      "result": "6/6; findings printed",
+      "status": "PASS"
+    },
+    {
+      "gate": "cctv demo render",
+      "passed": false,
+      "result": "toolchain usd-dev Python with Embree and usdrecord is unavailable",
+      "status": "SKIP"
+    },
+    {
+      "gate": "Revit",
+      "passed": false,
+      "result": "live Revit acceptance not configured",
+      "status": "NOT RUN"
+    },
+    {
+      "gate": "datacentre build",
+      "passed": true,
+      "result": "loadedMachineLimit=45; nominalBudget=15; seconds=14.806",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-build",
+      "passed": true,
+      "result": "files=8",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-convert",
+      "passed": true,
+      "result": "elements=2954; extents=33; phasePercent=100.0; phases=2954; unparented=0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-system",
+      "passed": true,
+      "result": "cameras=45; recorderCapacity=45; retentionDays=90",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-import",
+      "passed": true,
+      "result": "cameras=45; pipes=476; presets=7; sensors=45; types=3; walls=92",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-derive",
+      "passed": true,
+      "result": "sectors=45; sensors=45; tours=3",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-profile",
+      "passed": true,
+      "result": "designErrors=9; implementationErrors=0; nativePortGaps=160; statusEnumsNormalized=3; warnings=4000",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-critical-doors",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=11; seconds=0.812; targets=11; views=11",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-external",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=4; seconds=0.576; targets=5; views=5",
+      "status": "FINDING"
+    },
+    {
+      "gate": "DC-corridors",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=7; seconds=4.949; targets=7; views=29",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-yard-day",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=4; seconds=0.727; targets=8; views=15",
+      "status": "FINDING"
+    },
+    {
+      "gate": "DC-yard-night",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=4; seconds=0.673; targets=8; views=11",
+      "status": "FINDING"
+    },
+    {
+      "gate": "DC-lobby",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=3; seconds=0.581; targets=3; views=5",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-privacy-baseline",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=0; seconds=1.499; targets=0; views=49",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-revit-parity",
+      "passed": true,
+      "result": "exclusions=0; fixedCovered=11; seconds=0.619; targets=11; views=11",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-column",
+      "passed": false,
+      "result": "columnBlockers=2",
+      "status": "FAIL"
+    },
+    {
+      "gate": "DC-idempotence",
+      "passed": true,
+      "result": "reused=136; views=136",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-determinism",
+      "passed": true,
+      "result": "builds=2; normalizedStageHash=76841cd0e919157221b8598c4b05902f819d0c28faddb3aad7433a4485bdbb04; secondHash=76841cd0e919157221b8598c4b05902f819d0c28faddb3aad7433a4485bdbb04; studies=8",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-tray",
+      "passed": true,
+      "result": "limitation=Tray edit retained; newly uncovered door and tray attribution are not proven.; loweredMetres=0.9; tray=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Spine_A_Seg_1; uncovered=1",
+      "status": "FINDING"
+    },
+    {
+      "gate": "DC-temporary",
+      "passed": true,
+      "result": "blocker=/ScenarioEdits/LoadingHoarding; ignoredFraction=1.0; includedFraction=0.0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-privacy",
+      "passed": true,
+      "result": "camera=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1; panDegrees=20.0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-hall-rule",
+      "passed": true,
+      "result": "camera=/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1; errors=1",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-noc-turn",
+      "passed": true,
+      "result": "limitation=NOC monitoring is allowed. Privacy-error demonstration uses a hall intrusion instead.; panDelta=20.0",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-ptz-duty",
+      "passed": true,
+      "result": "dutyFraction=0.6666666666666666; expectedHomeDuty=0.3333333333333333; limitation=Fixed lobby cameras removed from this negative control only; sole-PTZ grading remains required.",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-night-override",
+      "passed": true,
+      "result": "fraction=0.0; irMetres=0.1",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-stale",
+      "passed": true,
+      "result": "",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-results-incomplete",
+      "passed": true,
+      "result": "",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-sync-ifc",
+      "passed": true,
+      "result": "accepted=3; guidPreserved=True; maxPositionError=0.0; mutations=3; pan=35.0; pending=0; repeatMutations=0; tilt=40.0; transactions=2",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-sync-bonsai",
+      "passed": false,
+      "result": "reason=Blender with Bonsai is unavailable",
+      "status": "NOT RUN"
+    },
+    {
+      "gate": "DC-vanilla",
+      "passed": true,
+      "result": "stages=10",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-render",
+      "passed": false,
+      "result": "reason=toolchain usd-dev Python with Embree and usdrecord is unavailable; status=skipped",
+      "status": "SKIP"
+    },
+    {
+      "gate": "datacentre sanitization",
+      "passed": true,
+      "result": "files=142",
+      "status": "PASS"
+    },
+    {
+      "gate": "DC-budget",
+      "passed": true,
+      "result": "kernel=embree; limit=240; seconds=149.771",
+      "status": "PASS"
+    },
+    {
+      "gate": "gate regression tests",
+      "passed": true,
+      "result": "48 passed in 11.52s",
+      "status": "PASS"
+    },
+    {
+      "gate": "links",
+      "passed": true,
+      "result": "18/18 roots",
+      "status": "PASS"
+    },
+    {
+      "gate": "sanitization",
+      "passed": true,
+      "result": "53 text files, no matches",
+      "status": "PASS"
+    }
+  ]
+}

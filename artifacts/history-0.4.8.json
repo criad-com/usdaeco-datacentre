@@ -1,0 +1,303 @@
+{
+  "version": "0.4.8",
+  "baseline": {
+    "version": "0.4.7",
+    "revision": "2f87b6f40eb276888a0be831096fd8247c223f70"
+  },
+  "history": {
+    "directories": {
+      "docs/history/acceptance-through-0.4.0": 24,
+      "docs/history/acceptance-through-0.4.1": 2
+    },
+    "files": 26,
+    "json_files": 24,
+    "patch_files": 2,
+    "bytes": 482433,
+    "member_paths_preserved": true,
+    "byte_identical": 26,
+    "redactions": 0,
+    "dropped": 0,
+    "term_findings": 0,
+    "members": [
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/camera-manifest-diff.json",
+        "bytes": 3642,
+        "sha256": "ebdef3202ea34e20daebfd92e65190655019ec4ef6351a50f73087ff8e92773d"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/camera-study.json",
+        "bytes": 72207,
+        "sha256": "5e3968234b095092c8d1624d67aa56529fbdcb22b33653eb1dd634d518af41b0"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/check-0.3.4.json",
+        "bytes": 8434,
+        "sha256": "04b5110bb58bf79545bd77e5b75c3ce6d289a4555adb6e9c53e2f63a75f91bf9"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/check-design.json",
+        "bytes": 7421,
+        "sha256": "f803f063a719f788cd7e4ae18ed2c7aeec0d176fabe92797aed1286064eb15e0"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/check-exterior.json",
+        "bytes": 8437,
+        "sha256": "704ac0ba667152beff15d024dc2ad9dd23877439a6c6be59792d9358d8ce8609"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/check-revit.json",
+        "bytes": 7891,
+        "sha256": "349e3c60d53be03cf6a316d5e77b46af311b503840ec107014413222d4adb29b"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/column-view-exception.json",
+        "bytes": 4770,
+        "sha256": "f330cac7c2273390aa41d32727c38fe3b64e5c563ba37a67d0472a6b2ae25073"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/corridor-height-1.6.json",
+        "bytes": 1149,
+        "sha256": "37ace42abadf74dbf5f688247ff6d68d6f541b8da74f5040661d696a283ab572"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/dc-live-acceptance.json",
+        "bytes": 85417,
+        "sha256": "6ce0a07a2081ae1ecdfb2c87d4446d13608a7aa3f80b7a33f918c6d7551cd10d"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/exterior-camera-change.json",
+        "bytes": 2337,
+        "sha256": "ed7b8d35b399f089b5c56c3de349a6f4f8c74916fd67efef018147ec32578d2a"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/exterior-gate-provenance.json",
+        "bytes": 3059,
+        "sha256": "aa43204a6b145680e5d0f1073c16aad74773c15b479befdbfc8bb3f427e016fa"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/exterior-sample-coverage.json",
+        "bytes": 1687,
+        "sha256": "fe0a494d1a02829b02ded731d6869552dc95c4e7d366cdfc146eb46e1aa7da32"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/family-gate.json",
+        "bytes": 130383,
+        "sha256": "64b8bab7b7d224e36e49feb4b0b239205ca60f4afe3cef69e3a6a8867ec1c352"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/family-runner-adaptation.patch",
+        "bytes": 3297,
+        "sha256": "3e815e9f1280efbefc3fe44da7a38725bd37f69daffcf7e21822c5afc2ec207d"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/family-runner.patch",
+        "bytes": 8227,
+        "sha256": "1ab8a1456e5073ffd39f8f8a02275cbc19fedc36cfae283f7d1481cea591621a"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/family-schedule-hashes.json",
+        "bytes": 435,
+        "sha256": "b03b04ef3b101be106cf0e797964e7fe9a62de9073d23028738bf568225ab373"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/generator-0.4.0.json",
+        "bytes": 7597,
+        "sha256": "54d33bd274c55e791105eb666f34a9f24a51d345622b9b2639adb7a271b720fb"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/output-comparison-0.3.4.json",
+        "bytes": 19999,
+        "sha256": "525d2ef7addbf19c62e29c555581c100a19e5e03a2aa023b34318701cf9f378f"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/revit-clipping-probe.json",
+        "bytes": 8138,
+        "sha256": "276d3592f9af6736a6729e164218bc0669844c9cabd33c45c82f35cabb8a19dc"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/revit-export-acceptance.json",
+        "bytes": 4725,
+        "sha256": "0e2f484d12899e1dde5ef6d789eea12360e864964478f455aa4f4f4796cb9567"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/revit-provenance.json",
+        "bytes": 2419,
+        "sha256": "c2e94f3ead9cc6a8f362fbf42f5cf0e0a9003dcee291c556ab58597c8417c879"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/revit-rerun-provenance.json",
+        "bytes": 3896,
+        "sha256": "8c4d88cb8c8de3e2d38ca9d4ee11ff37e544c306290a1848e5328afa5ceb8ef2"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/artifacts/sample-obstructions.json",
+        "bytes": 28441,
+        "sha256": "b1f8e4ff7008de522eb1136d3fc1ce7d0c68e62300b2c4db492c9a10d4923496"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.0/docs/check-result.json",
+        "bytes": 22967,
+        "sha256": "cb55aa37b12198eb3490d67ca86b07043ee8057ffdc3da8d65a173f16a43e141"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.1/artifacts/generator-0.4.1.json",
+        "bytes": 30699,
+        "sha256": "c7c2768ddd2a6258772ec935ac7cb59c6bf9a44b201335603e4e044c7f81a0e7"
+      },
+      {
+        "path": "docs/history/acceptance-through-0.4.1/artifacts/revit-rerun-acceptance.json",
+        "bytes": 4759,
+        "sha256": "5b34ebda67eabb04742f05ce2ba4f80da28832e1b465c65a234b9fe395f3dcc2"
+      }
+    ]
+  },
+  "references": {
+    "updated_links": 34,
+    "documents": 12,
+    "extraction_commands_removed": 2,
+    "by_document": {
+      "README.md": 2,
+      "docs/acceptance-revit-0.4.2.md": 1,
+      "docs/family-gate.md": 1,
+      "docs/acceptance-0.3.4.md": 2,
+      "docs/acceptance-0.4.0.md": 2,
+      "docs/acceptance-design.md": 8,
+      "docs/acceptance-0.4.1.md": 2,
+      "docs/acceptance-revit-0.3.1.md": 4,
+      "docs/acceptance-revit.md": 2,
+      "docs/acceptance-exterior.md": 6,
+      "docs/acceptance-offline.md": 2,
+      "docs/history/README.md": 2
+    }
+  },
+  "dist": {
+    "variants": 5,
+    "dc_files_unchanged": 20,
+    "all_files_unchanged": 31,
+    "sha256": {
+      "dist/README.md": "2fe0382e9c126158182b6f5d02c0f29837a52efcd46723214de89c8f6da2d1e9",
+      "dist/base/dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "dist/base/dc.manifest.json": "2e9970f0def8657bb88a9a8b769de7266d1543e5132eacf0d56141c73faf158c",
+      "dist/base/dc.semantics.usdc": "1d9e6753da91b62fa95f553102f435c56a5ff93d63c2cec4f01d512dd8f1d3cd",
+      "dist/base/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "dist/base/overview.png": "217af328515856ca820598f42b3f17e5e8c4522b2a445de6d8c9ee04b041d779",
+      "dist/base/vanilla.png": "1ce1ae9861dacad56bfe45d49aa36ade4de1835db280b583833d972be76a619a",
+      "dist/clash/dc.geometry.usdc": "24c22644aa0b9470ceddfb8433a828284fea2df964d77840bea53b1328d8675e",
+      "dist/clash/dc.manifest.json": "a760940a286c42471a6b6db86c8b696a7077242c45275dce5b29898d6d87776d",
+      "dist/clash/dc.semantics.usdc": "5a9af9ff8ec3366d80408e73a0768f4698db71b329f9edb21e4d6fbc7ad91f15",
+      "dist/clash/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "dist/clash/overview.png": "1a6b89ba2278762af715ff5624b00034bdd3b2b8390d2d53d412f657a551ec30",
+      "dist/clash/vanilla.png": "4ec3ed434cc02fee3c10a06412cbccb0bb6c147840e6aa8c8db5e657362dda55",
+      "dist/floors/dc.geometry.usdc": "feaced9b153a36baea8399d681ffe820e9b3b543075cdd15f8249a1ca0c2bf1f",
+      "dist/floors/dc.manifest.json": "625385384e2103aeb489532b3d270e9df4e9f2d2bcc32a5b578e3f56230ac179",
+      "dist/floors/dc.semantics.usdc": "7417b00cf602a4f48e4a4071d3f709e0be7ffb95216506ec2300da908f754004",
+      "dist/floors/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "dist/floors/overview.png": "f64b370b2b1369034f116a37d5fd9b2f043ff7c7754b8b48746e747f0346f2d9",
+      "dist/floors/vanilla.png": "b1d23e113205fc117d9f180a3a3f50d495948431266da797dee73476cc16a15a",
+      "dist/iris/dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "dist/iris/dc.manifest.json": "5e16cacc9fd6b4151262d1c8a910ebbaa28d4d813ab7723465975022efeac0c8",
+      "dist/iris/dc.semantics.usdc": "b857167e8555ee82f050c788b5664eab0628f4aa41921766eb0defb8c3699af7",
+      "dist/iris/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "dist/iris/overview.png": "5a964272d7e12a3a6e5bd222f9700e2a047442e1af9b9229263155dfe8c48097",
+      "dist/iris/vanilla.png": "27107bc04a0a84e113b4572233347510881a784e0b02678f7e46842e726e1d13",
+      "dist/pod/dc.geometry.usdc": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9",
+      "dist/pod/dc.manifest.json": "6ac73e7cfe8220f9c09fa95f2442f653b3ea25a6d73420979307ec4dae0c8d77",
+      "dist/pod/dc.semantics.usdc": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c",
+      "dist/pod/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "dist/pod/overview.png": "f9df6db7c657673dd1674be8f7af566965876e35ec68f81e7ef76ad3449ebbca",
+      "dist/pod/vanilla.png": "905398308ea5405068850594222c0dc77c42da83fbc773bb81a26084bcadf9bf"
+    }
+  },
+  "frozen_record": {
+    "path": "artifacts/repin-0.4.6.json",
+    "sha256": "e0c7a17702bc99e2d2097d9679baf726d8e3f723109607dc277cdfa8acc213fb",
+    "unchanged": true
+  },
+  "regression_tests": {
+    "new": 16,
+    "repository_publication": 1,
+    "archive_extensions": 10,
+    "renamed_archive_signatures": 5,
+    "tracked_ignored_directories": true
+  },
+  "nix": {
+    "attempts": 1,
+    "exit_code": 1,
+    "offline": true,
+    "outbound_ip_denied": true,
+    "source_overrides": true,
+    "result": "NOT PROVEN",
+    "reason": "Uncached nested toolchain/aeco-toolchain input at e190680d3f94eb76e06abe77574fda1308af2c85 could not resolve; no lockfile written.",
+    "toolchain": "v0.3.8",
+    "final_pin_packaging": "not-proven; no second attempt"
+  },
+  "pytest": {
+    "passed": 213,
+    "failed": 0,
+    "errors": 0,
+    "seconds": 60.04,
+    "toolchain": "v0.3.9"
+  },
+  "initial_gate": {
+    "checks": 204,
+    "failed": 1,
+    "pytest": {
+      "passed": 205,
+      "failed": 2,
+      "errors": 6
+    },
+    "reason": "Shared toolchain advanced from v0.3.8 to v0.3.9 during pytest; corrected by an owned checkout frozen at v0.3.8."
+  },
+  "dependencies_frozen": true,
+  "toolchain": {
+    "repo": "usdaeco-toolchain",
+    "library": "usdaeco-toolchain",
+    "ref": "v0.3.9",
+    "version": "0.3.9",
+    "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+    "runtime_paths": [
+      "tools",
+      "library.json"
+    ],
+    "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887"
+  },
+  "vanilla_receipts": {
+    "count": 5,
+    "changed_fields": [
+      "sources.toolchain"
+    ],
+    "published_bytes_unchanged": true
+  },
+  "stopped_gate": {
+    "reason": "Stopped after required toolchain update to v0.3.9; final gate uses an owned checkout frozen at that tag."
+  },
+  "unchanged_pins": {
+    "direct": 3,
+    "fixtures": 4,
+    "observations_unchanged": true
+  },
+  "gate": {
+    "total": 204,
+    "failed": 0,
+    "passed": 162,
+    "informational": 38,
+    "not_run": 4,
+    "report": "artifacts/generator-0.4.8.json"
+  },
+  "structure": {
+    "rules": 29,
+    "failed": 0
+  },
+  "core": {
+    "loaded": 8,
+    "variants": 5,
+    "errors": 0
+  },
+  "fresh_vanilla_renders": 5,
+  "publication": {
+    "files": 235,
+    "findings": 0,
+    "archives": 0,
+    "repository_term_hits": 0
+  }
+}

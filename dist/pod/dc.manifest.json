@@ -1,0 +1,42 @@
+{
+  "converter": {
+    "ref": "v0.1.0",
+    "repo": "usdaeco-ifc",
+    "revision": "43935df9e059b724f8d1ae3d0ea324dbae7efd29",
+    "version": "0.1.0"
+  },
+  "core": {
+    "ref": "v0.8.4",
+    "repo": "usdaeco-core",
+    "revision": "c818a1533bcfe36be47845252388a1c732ec69c0",
+    "version": "0.8.4"
+  },
+  "counts": {
+    "elements": 2977,
+    "levels": 2,
+    "meshes": 3012,
+    "ports": 6238,
+    "spaces": 35,
+    "unclassified": 2,
+    "unparented": 0
+  },
+  "facility": "demo-datacentre-01",
+  "generator": {
+    "version": "0.4.2"
+  },
+  "layers": {
+    "dc.geometry.usdc": {
+      "bytes": 344521,
+      "sha256": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9"
+    },
+    "dc.semantics.usdc": {
+      "bytes": 1483117,
+      "sha256": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c"
+    },
+    "dc.usda": {
+      "bytes": 517,
+      "sha256": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+    }
+  },
+  "variant": "pod"
+}

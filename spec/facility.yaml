@@ -1,0 +1,62 @@
+# demo-datacentre-01 — Demo data centre 01: site, building envelope, levels, grid, construction.
+# All coordinates in METRES, site-local. X east, Y north, Z up. Origin = SW corner
+# of the main block at ground floor level.
+project:
+  code: demo-datacentre-01
+  name: "Demo data centre 01"
+  description: >
+    2.8 MW dual-hall data centre: Hall A direct-liquid-cooled (2.0 MW),
+    Hall B air-cooled (0.8 MW), 2N electrical topology, N+1 mechanical plant,
+    two meet-me rooms and a two-storey office wing.
+
+site:
+  name: "demo-datacentre-01 Site"
+
+building:
+  name: "demo-datacentre-01"
+  # Footprint = union of the two rectangles below. Everything outside is exterior.
+  blocks:
+    main:   {x: 0.0, y: 0.0, w: 72.0, d: 36.0}       # single-storey technical block
+    office: {x: 12.0, y: -12.0, w: 18.0, d: 12.0}    # two-storey office wing (south face)
+
+storeys:
+  - {id: lvl.l0, name: "L00 Ground", elevation: 0.0, blocks: [main, office], expected_areas: {main: 2592, office: 216}}
+  - {id: lvl.l1, name: "L01 Office", elevation: 4.0, blocks: [office], expected_areas: {office: 216}}   # office wing only
+
+roof:
+  elevation: 7.0        # one flat roof plane over both blocks
+  thickness: 0.25
+
+grid:
+  # Numbered grids along X, lettered along Y. 6 m module.
+  x: {start: 0.0, step: 6.0, count: 13}     # grids 1..13 at x = 0..72
+  y: {start: -12.0, step: 6.0, count: 9}    # grids A..I at y = -12..36
+
+heights:
+  main_clear: 6.0        # technical block clear height (soffit of roof structure zone)
+  office_l0_clear: 3.75  # to u/s of L01 slab
+  office_l1_clear: 3.0
+
+wall_types:
+  external: {thickness: 0.30, material: "Precast Concrete Panel", fire_rating: "REI 120"}
+  fire:     {thickness: 0.20, material: "Dense Concrete Blockwork", fire_rating: "REI 120"}
+  internal: {thickness: 0.15, material: "Metal Stud Partition", fire_rating: "REI 30"}
+
+slabs:
+  ground: {thickness: 0.30, material: "Reinforced Concrete"}
+  upper:  {thickness: 0.25, material: "Reinforced Concrete"}   # office L01 floor
+
+structure:
+  column: {size: 0.4, material: "Reinforced Concrete"}   # 400x400 on perimeter + spine grids
+  # Columns are generated on grid intersections that fall on the building perimeter
+  # and on the internal lines listed here (clear-span halls are truss-roofed).
+  internal_lines:
+    y: [15.0, 18.0]      # corridor spine walls
+    x: [34.0, 38.0]      # hall separation walls
+
+external_works:
+  # Site slabs (equipment pads / yards). Equipment placed on them is contained in the site.
+  pads:
+    - {id: pad.gen.a, name: "Generator Yard A", x: -14.0, y: 2.0,  w: 12.0, d: 14.0, thickness: 0.3}
+    - {id: pad.gen.b, name: "Generator Yard B", x: 74.0,  y: 2.0,  w: 12.0, d: 14.0, thickness: 0.3}
+    - {id: pad.hr,    name: "Heat Rejection Yard", x: 32.0, y: -11.0, w: 16.0, d: 9.0, thickness: 0.25}

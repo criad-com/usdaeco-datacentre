@@ -1,0 +1,237 @@
+{
+  "generatorVersion": [
+    0,
+    3,
+    3
+  ],
+  "designVersion": [
+    0,
+    3,
+    2
+  ],
+  "coreVersion": [
+    0,
+    8,
+    1
+  ],
+  "cctvVersion": [
+    0,
+    4,
+    4
+  ],
+  "syncVersion": [
+    0,
+    4,
+    3
+  ],
+  "measuredDate": [
+    2026,
+    9,
+    11
+  ],
+  "authoring": {
+    "first": {
+      "created": 0,
+      "updated": 45,
+      "batches": 9
+    },
+    "repeat": {
+      "created": 0,
+      "updated": 45,
+      "batches": 9
+    },
+    "nativeCameras": 45,
+    "uniqueNativeBindings": 45,
+    "retainedBindings": 45,
+    "retainedGuids": 45,
+    "changedCameraPositions": 1,
+    "unchangedCameraPositions": 44,
+    "movedCameraPosition": [
+      49.37499999999999,
+      -18.25,
+      7.999999999999999
+    ],
+    "movedCameraPositionError": 7.160723346098895e-15,
+    "maxCameraPositionError": 1.4654943925052066e-14,
+    "positionTolerance": 0.001,
+    "repeatPositionsUnchanged": 45,
+    "roomsUnchanged": 30,
+    "foregroundUnchanged": 1,
+    "foregroundElements": 6190,
+    "statusNew": 1840,
+    "statusProducts": 1840,
+    "warningsBefore": 466,
+    "warningsAfter": 466,
+    "nativeTypes": {
+      "bullet_4mp_outdoor": 11,
+      "dome_5mp": 31,
+      "ptz_4k": 3
+    }
+  },
+  "commonStatusProducts": 1514,
+  "allProducts": 3639,
+  "physicalElements": 1514,
+  "physicalStatusNew": 1514,
+  "missingCommonStatus": {
+    "IfcOpeningElement": 40,
+    "IfcDistributionPort": 2048,
+    "IfcBuildingStorey": 3,
+    "IfcBuilding": 1,
+    "IfcSite": 1,
+    "IfcSpace": 30
+  },
+  "noCommonTemplate": {
+    "IfcGrid": 2
+  },
+  "exportClasses": {
+    "IfcAudioVisualAppliance": 45,
+    "IfcWall": 92,
+    "IfcDoor": 41,
+    "IfcColumn": 80,
+    "IfcSpace": 30,
+    "IfcBuildingElementProxy": 318,
+    "IfcCableCarrierSegment": 681,
+    "IfcPipeSegment": 248,
+    "IfcDistributionPort": 2048,
+    "IfcSite": 1,
+    "IfcBuilding": 1,
+    "IfcBuildingStorey": 3
+  },
+  "roomsWithInternalStatus": 30,
+  "levelsWithInternalStatus": 3,
+  "core": {
+    "elapsedSeconds": 9.439793167170137,
+    "elements": 1514,
+    "elementPhases": 1514,
+    "spaces": 30,
+    "spacePhases": 0,
+    "compositionErrors": 0,
+    "elementPhaseValues": {
+      "proposed": 1514
+    },
+    "importer": {
+      "cameras": 45,
+      "sensors": 45,
+      "presets": 7,
+      "types": 24,
+      "propsBlocked": 1162,
+      "subInstancesFolded": 1,
+      "unmatched": 48
+    }
+  },
+  "parity": {
+    "categories": {
+      "racks": {
+        "planned": 160,
+        "joined": 160,
+        "max_position_delta_m": 7.944109290391274e-15
+      },
+      "equipment": {
+        "planned": 109,
+        "joined": 109,
+        "max_position_delta_m": 0.14000000000000057
+      },
+      "doors": {
+        "planned": 41,
+        "joined": 41,
+        "max_position_delta_m": 0.04956309110620069
+      },
+      "walls": {
+        "planned": 92,
+        "joined": 92,
+        "max_position_delta_m": 0.125
+      },
+      "columns": {
+        "planned": 80,
+        "joined": 80,
+        "max_position_delta_m": 0.0
+      },
+      "cameras": {
+        "planned": 45,
+        "joined": 45,
+        "max_position_delta_m": 7.105427357601002e-15
+      }
+    },
+    "joined": 527,
+    "planned": 527,
+    "cameras": 45,
+    "spaces": 30,
+    "doors": 41,
+    "failures": 0
+  },
+  "cameraErrors": {
+    "position": {
+      "compared": 45,
+      "passed": 45,
+      "maxError": 7.105427357601002e-15,
+      "tolerance": 0.001
+    },
+    "pan": {
+      "compared": 45,
+      "passed": 45,
+      "maxError": 1.4210854715202004e-13,
+      "tolerance": 1e-06
+    },
+    "tilt": {
+      "compared": 45,
+      "passed": 45,
+      "maxError": 2.842170943040401e-14,
+      "tolerance": 1e-06
+    },
+    "focal": {
+      "compared": 45,
+      "passed": 45,
+      "maxError": 0.0,
+      "tolerance": 1e-06
+    }
+  },
+  "nix": {
+    "attempts": 1,
+    "passed": 0,
+    "flakePresent": 0
+  },
+  "offline": {
+    "total": 59,
+    "passed": 51,
+    "failed": 0,
+    "informational": 8,
+    "pytest": 75
+  },
+  "vanilla": {
+    "stages": 3,
+    "familyPlugins": 0,
+    "results": [
+      {
+        "compositionErrors": 0,
+        "fallbacks": 9,
+        "worldTransformsCompared": 5142
+      },
+      {
+        "compositionErrors": 0,
+        "fallbacks": 9,
+        "worldTransformsCompared": 5185
+      },
+      {
+        "compositionErrors": 0,
+        "fallbacks": 9,
+        "worldTransformsCompared": 5305
+      }
+    ]
+  },
+  "afterLive": {
+    "nativeCameras": 45,
+    "camerasUnchanged": 45,
+    "roomsUnchanged": 30,
+    "foregroundUnchanged": 1,
+    "statusNew": 1840,
+    "statusProducts": 1840,
+    "warnings": 466,
+    "uniqueMarks": 45
+  },
+  "liveSeed": {
+    "cameraGuidAgreements": 45,
+    "nativeBindings": 45,
+    "nativeObservations": 49
+  },
+  "exportTransferHashAgreement": 1
+}

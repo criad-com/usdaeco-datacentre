@@ -1,0 +1,21 @@
+# ILLUSTRATIVE: every value below is demonstration data, not verified code content.
+title: Illustrative reader capture envelope
+source: Generic demo reader datasheet, illustrative capture clause 1
+kind: datasheet
+authority: 3
+illustrative: true
+appliesTo:
+  classification:
+  - IfcSensor.IDENTIFIERSENSOR
+  types:
+  - type.sec.iris
+requirements:
+- measure: MountingHeight
+  operator: between
+  values:
+  - 1
+  - 1.7
+  unit: m
+  tolerance: 1.0e-06
+  severity: advisory
+  rationale: Illustrative reader centre-height band for the demonstration.

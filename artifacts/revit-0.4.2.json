@@ -1,0 +1,192 @@
+{
+  "version": "0.4.2",
+  "facility": "demo-datacentre-01",
+  "variant": "base",
+  "measured_at": "2026-09-11T13:37:00.426577+00:00",
+  "transport": {
+    "repo": "usdaeco-revit",
+    "ref": "v0.1.0",
+    "revision": "49da593728d4829bef7fe8c491f45b8b97d1d11e",
+    "runtime_sha256": "abcda286eabb68fb8309a8a903f9515e6ccf40eb67a89b9d0e60c472ac93ce88"
+  },
+  "source_sha256": {
+    "revit/driver.py": "561856e6c4ef9b3c0cd1da4173495d9b9a0b6336c24817a6d81888755520f1a0",
+    "revit/src/manifest.json": "e7ee592fa0d4f1c4283f70bf0aa6a33d308b91d9d252bbf64dc0bf28acb441c7",
+    "src/dcbuild/revit_payload.py": "954c43c9aa9f1a57a68c6b7ea8e7935f753bee75c0d92aec98bf44ed82013d59"
+  },
+  "status_probe": {
+    "measured_at": "2026-09-11T13:20:36.639822+00:00",
+    "method": "GET",
+    "route": "/status",
+    "evaluations": 0,
+    "status": "READY"
+  },
+  "native_preflight": {
+    "exists": true,
+    "resident": true,
+    "background": true,
+    "warnings": 466
+  },
+  "update": {
+    "status": "PASS",
+    "created": 0,
+    "updated": 45,
+    "batches": 9,
+    "exit_code": 0
+  },
+  "camera_audit": {
+    "cameras": 45,
+    "verified": 45
+  },
+  "export": {
+    "schema": "IFC4X3",
+    "bytes": 26824960,
+    "sha256": "f7bfe155c9a44bdf776b9db026b05a37615d46ddc21a2bbd2a4600eb74358472",
+    "transfer_sha256_agreement": true
+  },
+  "parity": {
+    "status": "PASS",
+    "joined": 527,
+    "required": 527,
+    "failures": 0,
+    "cameras": 45,
+    "rooms": 30,
+    "doors": 41,
+    "categories": [
+      {
+        "category": "racks",
+        "planned": 160,
+        "joined": 160,
+        "max_position_delta_m": 7.944109290391274e-15
+      },
+      {
+        "category": "equipment",
+        "planned": 109,
+        "joined": 109,
+        "max_position_delta_m": 0.14000000000000057
+      },
+      {
+        "category": "doors",
+        "planned": 41,
+        "joined": 41,
+        "max_position_delta_m": 0.04956309110620069
+      },
+      {
+        "category": "walls",
+        "planned": 92,
+        "joined": 92,
+        "max_position_delta_m": 0.125
+      },
+      {
+        "category": "columns",
+        "planned": 80,
+        "joined": 80,
+        "max_position_delta_m": 0.0
+      },
+      {
+        "category": "cameras",
+        "planned": 45,
+        "joined": 45,
+        "max_position_delta_m": 7.105427357601002e-15
+      }
+    ]
+  },
+  "importer": {
+    "status": "PASS",
+    "cameras": 45,
+    "sensors": 45,
+    "presets": 7,
+    "types": 3,
+    "propsBlocked": 910,
+    "subInstancesFolded": 49,
+    "unmatched": 0
+  },
+  "core_conversion": {
+    "spatial": 35,
+    "elements": 1514,
+    "types": 290,
+    "systems": 248,
+    "zones": 0,
+    "ports": 2048,
+    "portLinks": 0,
+    "meshes": 1544,
+    "unparented": 0,
+    "unclassified": 318,
+    "phases": 1514,
+    "extents": 30,
+    "blankHeadingsOmitted": 472
+  },
+  "vanilla": [
+    {
+      "stage": "core.usda",
+      "fallback_types": 8,
+      "used_types": 6,
+      "composition_errors": 0
+    },
+    {
+      "stage": "cctv.usda",
+      "fallback_types": 8,
+      "used_types": 6,
+      "composition_errors": 0
+    }
+  ],
+  "inputs": {
+    "core": {
+      "repo": "usdaeco-core",
+      "ref": "v0.8.4",
+      "revision": "c818a1533bcfe36be47845252388a1c732ec69c0",
+      "runtime_sha256": "5fa7e009081defeaa427b1a3921cb93c15337140810a0f7af9459cc1be0c3ef6"
+    },
+    "ifc": {
+      "repo": "usdaeco-ifc",
+      "ref": "v0.1.0",
+      "revision": "43935df9e059b724f8d1ae3d0ea324dbae7efd29",
+      "runtime_sha256": "af2a5ba8127d0c00cb11fc57df71e1bf6388834e00261ff76f43b10abaaf2b20"
+    },
+    "cctv": {
+      "repo": "usdaeco-cctv",
+      "ref": "v0.4.8",
+      "revision": "20c569d3ed43cc00513a662be9baa0f018d3c2bf"
+    }
+  },
+  "followup_fetch": {
+    "status": "FAILED",
+    "operation": "read-only detailed camera receipt fetch after verified IFC transfer",
+    "reason": "C# compilation: Dc does not exist in the current context",
+    "submissions_after_failure": 0,
+    "stop_latch_retained": true
+  },
+  "after_warning_census": {
+    "status": "NOT RUN",
+    "reason": "Transport stopped after follow-up compilation failure"
+  },
+  "rollback_suite": {
+    "status": "NOT RUN",
+    "reason": "Separate optional acceptance; no native requests after the follow-up failure"
+  },
+  "native_variants": {
+    "floors": {
+      "status": "NOT RUN",
+      "reason": "Base only; further native families required, including pods and ceilings"
+    },
+    "pod": {
+      "status": "NOT RUN",
+      "reason": "Base only; further native families required, including pods and ceilings"
+    },
+    "clash": {
+      "status": "NOT RUN",
+      "reason": "Base only; further native families required, including pods and ceilings"
+    },
+    "iris": {
+      "status": "NOT RUN",
+      "reason": "Base only; further native families required, including pods and ceilings"
+    }
+  },
+  "raw_evidence_sha256": {
+    "update.log": "9d5e07db910dd29649cc1f58b25391e0ea8360614aec129d0cf3be0af88bb798",
+    "audit.json": "9302f0251a0983c163004c6d0ee0f79e59c762d96aa30b00df34c4263ffdc509",
+    "demo-datacentre-01-revit.parity.json": "b5fbe4b6e6da876dfcdf82ab55319d72081831e97cafdf7b7ab6908d47b904db",
+    "import/conversion.json": "389086cd2b2a2093ed1d1d026d2393e1b3770d3327a389ea5eb68a8cf169fec2",
+    "import/cctv.json": "a3f021c5ff991cf7965016495d6ee05eabef00c3bf00703baf1986eb32e4eb06"
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "baseline": {
+    "ref": "v0.3.3",
+    "revision": "c3517940cd0f491112ee980d76024f6e7dcf66f1"
+  },
+  "byteIdentical": 15,
+  "candidate": {
+    "revision": "8ed0b13b11e87ff7c5c1d232056ebfe3e0168abe",
+    "version": "0.3.4"
+  },
+  "countBySuffix": {
+    ".ifc": 8,
+    ".json": 6,
+    ".usda": 16,
+    ".usdc": 1
+  },
+  "excludedFields": [
+    "IFC FILE_NAME creation timestamp",
+    "USD customLayerData aeco:cctv:time receipt timestamp"
+  ],
+  "failed": 0,
+  "nativeRevit": "NOT RUN",
+  "outputs": [
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 773578,
+      "bytesCandidate": 773578,
+      "comparableSha256Baseline": "7610e7254f6e747154edfadeddfd81694fd0ddcee2011e9c2522af94dad26e5e",
+      "comparableSha256Candidate": "7610e7254f6e747154edfadeddfd81694fd0ddcee2011e9c2522af94dad26e5e",
+      "passed": true,
+      "path": "analysis/Corridors.usda",
+      "sha256Baseline": "17524832ead207f5df0c4e88a88af0fba80f6da54141f2afe98ea4bb4aed2943",
+      "sha256Candidate": "ce40a7f58888400df6f023de64e22068f91b975830afc8978983a8bbc4a6ff4a",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 168876,
+      "bytesCandidate": 168876,
+      "comparableSha256Baseline": "629b9ad5b3044843d10d3832b67e27895134538855e136b8cafb3a878a636651",
+      "comparableSha256Candidate": "629b9ad5b3044843d10d3832b67e27895134538855e136b8cafb3a878a636651",
+      "passed": true,
+      "path": "analysis/CriticalDoors.usda",
+      "sha256Baseline": "4bf2594454919b72262122610b848f4183e7389574ccab0a0b0d154bf7da5701",
+      "sha256Candidate": "913d978368de991311f98ae0bcf6df35d3bf283e6f6363c10b674b98c1ad9bfa",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 82594,
+      "bytesCandidate": 82594,
+      "comparableSha256Baseline": "db31d7b83ebf0b78d86f149f71cedf4a0f9900adc3de3cedb9701f4da5b6cbeb",
+      "comparableSha256Candidate": "db31d7b83ebf0b78d86f149f71cedf4a0f9900adc3de3cedb9701f4da5b6cbeb",
+      "passed": true,
+      "path": "analysis/ExternalDoors.usda",
+      "sha256Baseline": "f07a48f04badfe038adc8e9af4c5f52cff3df5d697a935ef690652fccf79e9fc",
+      "sha256Candidate": "9ffdcb1aa0ca136c1c0008d949510327c6e2adf688ffdd7454953ac669bc88b8",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 102127,
+      "bytesCandidate": 102127,
+      "comparableSha256Baseline": "e96e5ef445559e5704783960b13ea140be790c7f1888ef8581d42bf46893dea8",
+      "comparableSha256Candidate": "e96e5ef445559e5704783960b13ea140be790c7f1888ef8581d42bf46893dea8",
+      "passed": true,
+      "path": "analysis/Lobby.usda",
+      "sha256Baseline": "90f380ab6e873df818709d0498be0e25e495b82b4a7462d240a4f7fa1443e579",
+      "sha256Candidate": "dbd51d3eedd1df319f9ab35e9e5bae6a8bc0b48e02b6f10e64a5d5434af31db8",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 672220,
+      "bytesCandidate": 672220,
+      "comparableSha256Baseline": "b07a68b44be6e53e5c608c3979d8c3fbdef070c08bbe7927dba9f41207ebb0b9",
+      "comparableSha256Candidate": "b07a68b44be6e53e5c608c3979d8c3fbdef070c08bbe7927dba9f41207ebb0b9",
+      "passed": true,
+      "path": "analysis/Privacy.usda",
+      "sha256Baseline": "a1852715ea21c294114ac2f6eae766f0b121766eab3526a8829f3481ecdcd01c",
+      "sha256Candidate": "eaa2f8c344cbdab8e2e5ba49da8b5de3d3403ab32ae1b24a810bb67974179a9b",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 168854,
+      "bytesCandidate": 168854,
+      "comparableSha256Baseline": "2569dbd58d37cd890afa9ed3700106fb1aec85e7ef6d58a62c14b459029a5090",
+      "comparableSha256Candidate": "2569dbd58d37cd890afa9ed3700106fb1aec85e7ef6d58a62c14b459029a5090",
+      "passed": true,
+      "path": "analysis/RevitParity.usda",
+      "sha256Baseline": "51743c51087a78aee3b9ca242dcd77f39ba082b6824e1b773a6dd6278e134d20",
+      "sha256Candidate": "9698eb3badc1c81e7663885003bda487fc342c6ea1f4eae168aa231bde7b2823",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 365246,
+      "bytesCandidate": 365246,
+      "comparableSha256Baseline": "4d9665d9d1438c1e497aa06dfb166c22f0d6c9d35ec5595ec19c91753c3b431a",
+      "comparableSha256Candidate": "4d9665d9d1438c1e497aa06dfb166c22f0d6c9d35ec5595ec19c91753c3b431a",
+      "passed": true,
+      "path": "analysis/Yards.usda",
+      "sha256Baseline": "9b32e4d9733d8b1393e55b9ba6fef7f2ef3254f85645f73c8872a6ddc5b84364",
+      "sha256Candidate": "b7d0bf31216ea86f1b7484f0d6137596a99a61230cd9327493b5efd299b16acf",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 265521,
+      "bytesCandidate": 265521,
+      "comparableSha256Baseline": "97f42fde2c16fa8327a5839be69d33f1385978605ba64eaae749fac616b9e0a4",
+      "comparableSha256Candidate": "97f42fde2c16fa8327a5839be69d33f1385978605ba64eaae749fac616b9e0a4",
+      "passed": true,
+      "path": "analysis/YardsNight.usda",
+      "sha256Baseline": "221573eccced5e37552bbcfa23adb56f7d79832f38edacc7d1ef54817218dccc",
+      "sha256Candidate": "29b862cf1de06ed3d5ea272256dd9f352ed3e928b99151c99c4b2fc321c242db",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 87682,
+      "bytesCandidate": 87682,
+      "comparableSha256Baseline": "ba8764e946006c8c871a70a37d785b99534aa9b676bf52481263b922527bbb12",
+      "comparableSha256Candidate": "ba8764e946006c8c871a70a37d785b99534aa9b676bf52481263b922527bbb12",
+      "passed": true,
+      "path": "cctv.usda",
+      "sha256Baseline": "ba8764e946006c8c871a70a37d785b99534aa9b676bf52481263b922527bbb12",
+      "sha256Candidate": "ba8764e946006c8c871a70a37d785b99534aa9b676bf52481263b922527bbb12",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 332637,
+      "bytesCandidate": 332637,
+      "comparableSha256Baseline": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "comparableSha256Candidate": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "passed": true,
+      "path": "core.geometry.usdc",
+      "sha256Baseline": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "sha256Candidate": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 8283222,
+      "bytesCandidate": 8283222,
+      "comparableSha256Baseline": "b5876992dd83d7dfd900d75ab2f9d9608df37cb0577cc5f3ed74365d533b99c1",
+      "comparableSha256Candidate": "b5876992dd83d7dfd900d75ab2f9d9608df37cb0577cc5f3ed74365d533b99c1",
+      "passed": true,
+      "path": "core.semantics.usda",
+      "sha256Baseline": "b5876992dd83d7dfd900d75ab2f9d9608df37cb0577cc5f3ed74365d533b99c1",
+      "sha256Candidate": "b5876992dd83d7dfd900d75ab2f9d9608df37cb0577cc5f3ed74365d533b99c1",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 568,
+      "bytesCandidate": 568,
+      "comparableSha256Baseline": "821589cf4a78232f93ac526808e086e08b6347c2dea68ad501dd38cffa369bc1",
+      "comparableSha256Candidate": "821589cf4a78232f93ac526808e086e08b6347c2dea68ad501dd38cffa369bc1",
+      "passed": true,
+      "path": "core.usda",
+      "sha256Baseline": "821589cf4a78232f93ac526808e086e08b6347c2dea68ad501dd38cffa369bc1",
+      "sha256Candidate": "821589cf4a78232f93ac526808e086e08b6347c2dea68ad501dd38cffa369bc1",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 3937661,
+      "bytesCandidate": 3937661,
+      "comparableSha256Baseline": "1727c0261b060d4fe9deef7f8066a69d19504cfab74fe8529f6457d9a22ed1e3",
+      "comparableSha256Candidate": "1727c0261b060d4fe9deef7f8066a69d19504cfab74fe8529f6457d9a22ed1e3",
+      "passed": true,
+      "path": "derived.usda",
+      "sha256Baseline": "1727c0261b060d4fe9deef7f8066a69d19504cfab74fe8529f6457d9a22ed1e3",
+      "sha256Candidate": "1727c0261b060d4fe9deef7f8066a69d19504cfab74fe8529f6457d9a22ed1e3",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 664607,
+      "bytesCandidate": 664607,
+      "comparableSha256Baseline": "7e5d03a5dbafa737735fe86e6c6d70e7be4a2ddfbf493e1f6cce0e801678f38c",
+      "comparableSha256Candidate": "7e5d03a5dbafa737735fe86e6c6d70e7be4a2ddfbf493e1f6cce0e801678f38c",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-arch.ifc",
+      "sha256Baseline": "d06734e7bcd86bc66ff8b087afe82a64ba33de27227d6945a37f1b77700b2125",
+      "sha256Candidate": "22387a8a7f9d2c9609e85d07486691b14d2265c2958737dad1bbe4940c2f8d72",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 2886405,
+      "bytesCandidate": 2886405,
+      "comparableSha256Baseline": "3e1dca28f2efc881fc1b63d67a0a53b094d6c0102bcc540831daef524772b94d",
+      "comparableSha256Candidate": "3e1dca28f2efc881fc1b63d67a0a53b094d6c0102bcc540831daef524772b94d",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-cooling.ifc",
+      "sha256Baseline": "5528e54995b7ee0e0cdfb5843941e23133d7c87eb28687ff18eb8488c3d87f32",
+      "sha256Candidate": "002f1d8a1181b6b6c695fa524c0a17c3281187783ea6bcaef3d02c174cf9bd99",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 4871617,
+      "bytesCandidate": 4871617,
+      "comparableSha256Baseline": "6b7cbd0feacb20f11390ca95ee1180dc17f437c4f03422410d297f85d5e41108",
+      "comparableSha256Candidate": "6b7cbd0feacb20f11390ca95ee1180dc17f437c4f03422410d297f85d5e41108",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-electrical.ifc",
+      "sha256Baseline": "04985cd68c0017b9850a7f2f2a1d58fb0078c69f5d315e9e3da8a5a5ef5d248c",
+      "sha256Candidate": "e1e87913b684de2a7e7dc5379a27de072256e67051a5c933333aeccbedfb4093",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 2310948,
+      "bytesCandidate": 2310948,
+      "comparableSha256Baseline": "4ff685491922f8bbe8feb698289cb6b8ec2f9350cc508ca01eb2fd4760465f59",
+      "comparableSha256Candidate": "4ff685491922f8bbe8feb698289cb6b8ec2f9350cc508ca01eb2fd4760465f59",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-it.ifc",
+      "sha256Baseline": "3017edb51a3686a9b74aefd3ef6ac3ffa4a1391bde7003a83fd81fd579fad9be",
+      "sha256Candidate": "3902ac89705820460059eb537e2a914bd885e320e4030287f37281ff15480e00",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 242141,
+      "bytesCandidate": 242141,
+      "comparableSha256Baseline": "f2af581c1f6e0060eeb79758701547fac6603dd7a9ca54e58be4fa83172c5c7a",
+      "comparableSha256Candidate": "f2af581c1f6e0060eeb79758701547fac6603dd7a9ca54e58be4fa83172c5c7a",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-security.ifc",
+      "sha256Baseline": "94d589dba00b1976da7fa01b3b5d9f683c95f15fb6772aa5b43897c0510a158e",
+      "sha256Candidate": "cb0142fbdc0979431f7bdba71effbf4529fbb351df27da6c5f24ce033ae236f4",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 73870,
+      "bytesCandidate": 73870,
+      "comparableSha256Baseline": "974d5109726514bd829a26bc82b93b3ddfdacb72ae063c3547b4a6eb2b6123cb",
+      "comparableSha256Candidate": "974d5109726514bd829a26bc82b93b3ddfdacb72ae063c3547b4a6eb2b6123cb",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-site.ifc",
+      "sha256Baseline": "b02eda8773dd9fa9f72efcd72aa6f408076462b8e83e96a8002eb9f4dce61d10",
+      "sha256Candidate": "f978c73a61860facce27a988096427a317fa36517ec881a132f4cc4b5d205030",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 200841,
+      "bytesCandidate": 200841,
+      "comparableSha256Baseline": "8d96d0fd8a4c60833927b35b745d99d8aaad34d7be2ecec3092064bc25bc5e94",
+      "comparableSha256Candidate": "8d96d0fd8a4c60833927b35b745d99d8aaad34d7be2ecec3092064bc25bc5e94",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01-structure.ifc",
+      "sha256Baseline": "6131a2c8dbd349a97d8289f5fa2f88c364de7a0b704ec86614f220d875f97b77",
+      "sha256Candidate": "db589a7cd2ab07c1511daa35c6b59098d44b1e0ca603dabfcca7241da72a582a",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": false,
+      "bytesBaseline": 11590319,
+      "bytesCandidate": 11590319,
+      "comparableSha256Baseline": "5c2153a59071777f5e117471260ad6f3a0e16980fcdd7b15af108715b95c987d",
+      "comparableSha256Candidate": "5c2153a59071777f5e117471260ad6f3a0e16980fcdd7b15af108715b95c987d",
+      "passed": true,
+      "path": "ifc/demo-datacentre-01.ifc",
+      "sha256Baseline": "1594195c3f1f074f724dbff71e0a3a3bf07fa2d8d3082d7880d4cad12216d313",
+      "sha256Candidate": "b05f8b1ed0a70b272a81adfd359529683f0d3cd7b662a62f3ffbbe48f97ac65a",
+      "stampOnly": true
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 285768,
+      "bytesCandidate": 285768,
+      "comparableSha256Baseline": "fe56d5ff2652eb6f3bac9a30cca3cae7dcb955e03215bfcafe183767ae76620d",
+      "comparableSha256Candidate": "fe56d5ff2652eb6f3bac9a30cca3cae7dcb955e03215bfcafe183767ae76620d",
+      "passed": true,
+      "path": "out/build_plan.json",
+      "sha256Baseline": "fe56d5ff2652eb6f3bac9a30cca3cae7dcb955e03215bfcafe183767ae76620d",
+      "sha256Candidate": "fe56d5ff2652eb6f3bac9a30cca3cae7dcb955e03215bfcafe183767ae76620d",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 33828,
+      "bytesCandidate": 33828,
+      "comparableSha256Baseline": "e6e8db761d68989392d6d24264988616e351fca4bf5c91bc2e546e703593113b",
+      "comparableSha256Candidate": "e6e8db761d68989392d6d24264988616e351fca4bf5c91bc2e546e703593113b",
+      "passed": true,
+      "path": "out/targets.json",
+      "sha256Baseline": "e6e8db761d68989392d6d24264988616e351fca4bf5c91bc2e546e703593113b",
+      "sha256Candidate": "e6e8db761d68989392d6d24264988616e351fca4bf5c91bc2e546e703593113b",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 518697,
+      "bytesCandidate": 518697,
+      "comparableSha256Baseline": "1e4d2189be1e4c93c71630c7fa1392b39456df195494264e00405f7a6c0b1b4e",
+      "comparableSha256Candidate": "1e4d2189be1e4c93c71630c7fa1392b39456df195494264e00405f7a6c0b1b4e",
+      "passed": true,
+      "path": "pipe.usda",
+      "sha256Baseline": "1e4d2189be1e4c93c71630c7fa1392b39456df195494264e00405f7a6c0b1b4e",
+      "sha256Candidate": "1e4d2189be1e4c93c71630c7fa1392b39456df195494264e00405f7a6c0b1b4e",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 1440,
+      "bytesCandidate": 1440,
+      "comparableSha256Baseline": "b7683ac11e42b8ae43a065cbc4e772aad391dccbe3dcb64d29f1d6a9c625ed8e",
+      "comparableSha256Candidate": "b7683ac11e42b8ae43a065cbc4e772aad391dccbe3dcb64d29f1d6a9c625ed8e",
+      "passed": true,
+      "path": "qa/build.json",
+      "sha256Baseline": "b7683ac11e42b8ae43a065cbc4e772aad391dccbe3dcb64d29f1d6a9c625ed8e",
+      "sha256Candidate": "b7683ac11e42b8ae43a065cbc4e772aad391dccbe3dcb64d29f1d6a9c625ed8e",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 3092,
+      "bytesCandidate": 3092,
+      "comparableSha256Baseline": "61a75b7e58b54c0d7ded382c0e935b5ca938ceae29477874e7cf7e17b9a5b38c",
+      "comparableSha256Candidate": "61a75b7e58b54c0d7ded382c0e935b5ca938ceae29477874e7cf7e17b9a5b38c",
+      "passed": true,
+      "path": "qa/manifest.json",
+      "sha256Baseline": "61a75b7e58b54c0d7ded382c0e935b5ca938ceae29477874e7cf7e17b9a5b38c",
+      "sha256Candidate": "61a75b7e58b54c0d7ded382c0e935b5ca938ceae29477874e7cf7e17b9a5b38c",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 2587,
+      "bytesCandidate": 2587,
+      "comparableSha256Baseline": "4c3eb45c2164b772d10a51aff8c7b089d4a7186ba366788f784658c39629e174",
+      "comparableSha256Candidate": "4c3eb45c2164b772d10a51aff8c7b089d4a7186ba366788f784658c39629e174",
+      "passed": true,
+      "path": "qa/optics.json",
+      "sha256Baseline": "4c3eb45c2164b772d10a51aff8c7b089d4a7186ba366788f784658c39629e174",
+      "sha256Candidate": "4c3eb45c2164b772d10a51aff8c7b089d4a7186ba366788f784658c39629e174",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 50556,
+      "bytesCandidate": 50556,
+      "comparableSha256Baseline": "838eff47336052a7bbe7d296063a8a3991edc99baa31cbee846508aed5377cd5",
+      "comparableSha256Candidate": "838eff47336052a7bbe7d296063a8a3991edc99baa31cbee846508aed5377cd5",
+      "passed": true,
+      "path": "qa/studies.json",
+      "sha256Baseline": "838eff47336052a7bbe7d296063a8a3991edc99baa31cbee846508aed5377cd5",
+      "sha256Candidate": "838eff47336052a7bbe7d296063a8a3991edc99baa31cbee846508aed5377cd5",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 380106,
+      "bytesCandidate": 380106,
+      "comparableSha256Baseline": "a111b18f241b11331ab8388abf48481939a63f2e103b6c77d272165df975bd94",
+      "comparableSha256Candidate": "a111b18f241b11331ab8388abf48481939a63f2e103b6c77d272165df975bd94",
+      "passed": true,
+      "path": "schedule.usda",
+      "sha256Baseline": "a111b18f241b11331ab8388abf48481939a63f2e103b6c77d272165df975bd94",
+      "sha256Candidate": "a111b18f241b11331ab8388abf48481939a63f2e103b6c77d272165df975bd94",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 885,
+      "bytesCandidate": 885,
+      "comparableSha256Baseline": "95763b1a4d818512510de8b9938ced566479142042089ea92089d859b55369e1",
+      "comparableSha256Candidate": "95763b1a4d818512510de8b9938ced566479142042089ea92089d859b55369e1",
+      "passed": true,
+      "path": "stage.usda",
+      "sha256Baseline": "95763b1a4d818512510de8b9938ced566479142042089ea92089d859b55369e1",
+      "sha256Candidate": "95763b1a4d818512510de8b9938ced566479142042089ea92089d859b55369e1",
+      "stampOnly": false
+    },
+    {
+      "byteIdentical": true,
+      "bytesBaseline": 135814,
+      "bytesCandidate": 135814,
+      "comparableSha256Baseline": "a88896d64d4082dd99ce6956a3ae2bd48b86a022e860f4c7cf325d231f3e3ee3",
+      "comparableSha256Candidate": "a88896d64d4082dd99ce6956a3ae2bd48b86a022e860f4c7cf325d231f3e3ee3",
+      "passed": true,
+      "path": "wall.usda",
+      "sha256Baseline": "a88896d64d4082dd99ce6956a3ae2bd48b86a022e860f4c7cf325d231f3e3ee3",
+      "sha256Candidate": "a88896d64d4082dd99ce6956a3ae2bd48b86a022e860f4c7cf325d231f3e3ee3",
+      "stampOnly": false
+    }
+  ],
+  "releaseStampsExcluded": [],
+  "scope": "Both generators use the same current family inputs. QA contains semantic data; timings are INFO in the run log.",
+  "scriptSha256": "c68ec39b1a31c7cbdb41233af44cd7f7f731b80f9b176900ac6589b42c896668",
+  "sources": {
+    "buildup": {
+      "ref": "v0.1.2",
+      "revision": "8377d0e1e2bcf94435a4c8518e0f3f3e1b32c606"
+    },
+    "cctv": {
+      "ref": "v0.4.8",
+      "revision": "20c569d3ed43cc00513a662be9baa0f018d3c2bf"
+    },
+    "core": {
+      "ref": "v0.8.4",
+      "revision": "c818a1533bcfe36be47845252388a1c732ec69c0"
+    },
+    "pipe": {
+      "ref": "v0.1.2",
+      "revision": "f48a764dacc99c4467b426f3c1bb691c5c783952"
+    },
+    "scenarios": {
+      "ref": "v0.3.6",
+      "revision": "c6751418abdfbe8e07b3a7cbb49535bf95ed07e8"
+    },
+    "sync": {
+      "ref": "v0.4.5",
+      "revision": "e527672e0fc20a0e26f2aa4f4617fe2d38ff5ecc"
+    },
+    "toolchain": {
+      "ref": "v0.1.0",
+      "revision": "01f6caebf5d6bfb9eeba51a1251fa965f062f919"
+    },
+    "wall": {
+      "ref": "v0.1.2",
+      "revision": "09b2993e11d07b96a2492e75c49448153524c8b2"
+    }
+  },
+  "stampOnly": 16,
+  "testedInputs": {
+    "usdAeco": {
+      "ref": "v0.8.4",
+      "revision": "c818a1533bcfe36be47845252388a1c732ec69c0"
+    },
+    "usdAecoCctv": {
+      "ref": "v0.4.8",
+      "revision": "20c569d3ed43cc00513a662be9baa0f018d3c2bf"
+    },
+    "usdAecoSync": {
+      "ref": "v0.4.5",
+      "revision": "e527672e0fc20a0e26f2aa4f4617fe2d38ff5ecc"
+    }
+  },
+  "total": 31
+}

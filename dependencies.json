@@ -1,0 +1,150 @@
+{
+  "repos": {
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.9",
+      "version": "0.3.9",
+      "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+      "runtime_paths": [
+        "tools",
+        "library.json"
+      ],
+      "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887"
+    },
+    "revit": {
+      "repo": "usdaeco-revit",
+      "library": "usdaeco-revit",
+      "ref": "v0.1.2",
+      "version": "0.1.2",
+      "revision": "67ca38f29d294268f542a9f07ef3802a31edede0",
+      "runtime_paths": [
+        "tools/usdaeco_revit",
+        "library.json"
+      ],
+      "runtime_sha256": "8c924593af12b34c00b03736c184325b49cb60b80e9fd292b88c3855df1a139b"
+    },
+    "validation_core": {
+      "repo": "usdaeco-core",
+      "library": "usdAecoValidators",
+      "ref": "v0.9.2",
+      "version": "0.9.2",
+      "revision": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "runtime_paths": [
+        "usdAeco",
+        "usdAecoValidators",
+        "tools/usdaeco_tools",
+        "registries",
+        "library.json"
+      ],
+      "runtime_sha256": "5a1a9a58d793d7fad87bb7bd26551f7eff8e1bfe8c37f2ab136037623c8a164d"
+    },
+    "sync": {
+      "repo": "usdaeco-sync",
+      "library": "usdAecoSync",
+      "ref": "v0.5.2",
+      "version": "0.5.2",
+      "revision": "1ed6e5d50425811c5c85326630819bc1f04a1a15",
+      "runtime_paths": [
+        "aeco_sync",
+        "tools/usdaeco_sync",
+        "usdAecoSync",
+        "usdAecoSyncValidators",
+        "registries",
+        "library.json"
+      ],
+      "runtime_sha256": "fb8c635f0a3aed06ae77567989e7a464d1c5f5eb8cd5705088cb9f4ef6693bef"
+    }
+  },
+  "observations": {
+    "usdAecoCctv": {
+      "ref": "v0.4.8",
+      "revision": "20c569d3ed43cc00513a662be9baa0f018d3c2bf"
+    },
+    "usdAecoSync": {
+      "ref": "v0.4.5",
+      "revision": "e527672e0fc20a0e26f2aa4f4617fe2d38ff5ecc"
+    },
+    "nix": {
+      "release": "0.4.7",
+      "attempts": 1,
+      "status": "input-unavailable",
+      "mode": "offline, direct source overrides, outbound IP connections denied, no lockfile written",
+      "reason": "uncached nested toolchain/aeco-toolchain input could not resolve",
+      "input": "github:criad-com/aeco-toolchain?ref=e190680d3f94eb76e06abe77574fda1308af2c85",
+      "packaging": "not-proven"
+    },
+    "nativeRevit": {
+      "release": "0.4.2",
+      "variant": "base",
+      "evidence": "artifacts/revit-0.4.2.json",
+      "update": "0 created / 45 updated",
+      "parity": "527/527",
+      "importer": "45 cameras / 45 sensors",
+      "followup": "read-only receipt fetch failed; stop latch retained"
+    },
+    "nixPrevious": {
+      "release": "0.4.6",
+      "attempts": 1,
+      "status": "daemon-unavailable",
+      "mode": "offline, direct source overrides, outbound connections denied, no lockfile written",
+      "reason": "network-disabled sandbox denied connection to the Nix daemon socket",
+      "packaging": "not-proven"
+    }
+  },
+  "fixtures": {
+    "ifc": {
+      "repo": "usdaeco-ifc",
+      "library": "usdaeco-ifc",
+      "ref": "v0.1.0",
+      "version": "0.1.0",
+      "revision": "43935df9e059b724f8d1ae3d0ea324dbae7efd29",
+      "runtime_paths": [
+        "tools/usdaeco_ifc",
+        "library.json"
+      ],
+      "runtime_sha256": "af2a5ba8127d0c00cb11fc57df71e1bf6388834e00261ff76f43b10abaaf2b20",
+      "purpose": "Generation fixture for the byte-identical published USD under dist/."
+    },
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.8.4",
+      "version": "0.8.4",
+      "revision": "c818a1533bcfe36be47845252388a1c732ec69c0",
+      "runtime_paths": [
+        "tools/usdaeco_tools",
+        "plugins/usdAeco/resources",
+        "registries"
+      ],
+      "runtime_sha256": "5fa7e009081defeaa427b1a3921cb93c15337140810a0f7af9459cc1be0c3ef6",
+      "purpose": "Generation fixture paired with converter v0.1.0; validation uses the direct validation_core pin."
+    },
+    "revit_recorded": {
+      "repo": "usdaeco-revit",
+      "library": "usdaeco-revit",
+      "ref": "v0.1.0",
+      "version": "0.1.0",
+      "revision": "49da593728d4829bef7fe8c491f45b8b97d1d11e",
+      "runtime_paths": [
+        "tools/usdaeco_revit",
+        "library.json"
+      ],
+      "runtime_sha256": "abcda286eabb68fb8309a8a903f9515e6ccf40eb67a89b9d0e60c472ac93ce88",
+      "purpose": "Historical transport for artifacts/revit-0.4.2.json; native execution is not repeated by the offline gate."
+    },
+    "toolchain_recorded": {
+      "repo": "usdaeco-toolchain",
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.2",
+      "version": "0.3.2",
+      "revision": "362c3a392b37a5d27d876b2e55a3d00d0af798b5",
+      "runtime_paths": [
+        "tools",
+        "library.json"
+      ],
+      "runtime_sha256": "03530ed2dd7949017a607fe57daa9ffd65b4b8257a1f64c6ccfc5cbb822ce956",
+      "purpose": "Historical overview and publication receipts through v0.4.5; active freshness uses the direct toolchain pin."
+    }
+  }
+}

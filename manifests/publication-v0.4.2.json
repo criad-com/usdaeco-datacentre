@@ -1,0 +1,25 @@
+{
+  "data_version": "0.4.2",
+  "sha256": {
+    "dist/base/dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+    "dist/base/dc.manifest.json": "2e9970f0def8657bb88a9a8b769de7266d1543e5132eacf0d56141c73faf158c",
+    "dist/base/dc.semantics.usdc": "1d9e6753da91b62fa95f553102f435c56a5ff93d63c2cec4f01d512dd8f1d3cd",
+    "dist/base/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+    "dist/clash/dc.geometry.usdc": "2a7573cb5ddec89ae1487b6f89274bd60b96c0ef4a094fa773bc9187e18de14f",
+    "dist/clash/dc.manifest.json": "0ad550b4388bea84111c6d9506daf5483cacb132d6702277d569df67e75c1c2b",
+    "dist/clash/dc.semantics.usdc": "5a9af9ff8ec3366d80408e73a0768f4698db71b329f9edb21e4d6fbc7ad91f15",
+    "dist/clash/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+    "dist/floors/dc.geometry.usdc": "89f3668789729d2ebcdbb17322e821f99fdc63638ff11ebbc9720f6dcea78ab4",
+    "dist/floors/dc.manifest.json": "576edb4a2af1672ee5303b70c8b0542d01bfa0d18c34ca4a1c743927c8dcf31d",
+    "dist/floors/dc.semantics.usdc": "14c60fefcae7d31a8ffcd968b1c806be3f4c625c9cde6eaf2fb9dd7cad2e3f24",
+    "dist/floors/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+    "dist/iris/dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+    "dist/iris/dc.manifest.json": "5e16cacc9fd6b4151262d1c8a910ebbaa28d4d813ab7723465975022efeac0c8",
+    "dist/iris/dc.semantics.usdc": "b857167e8555ee82f050c788b5664eab0628f4aa41921766eb0defb8c3699af7",
+    "dist/iris/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+    "dist/pod/dc.geometry.usdc": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9",
+    "dist/pod/dc.manifest.json": "6ac73e7cfe8220f9c09fa95f2442f653b3ea25a6d73420979307ec4dae0c8d77",
+    "dist/pod/dc.semantics.usdc": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c",
+    "dist/pod/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+  }
+}
