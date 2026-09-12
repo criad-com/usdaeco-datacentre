@@ -3,33 +3,33 @@
     "toolchain": {
       "repo": "usdaeco-toolchain",
       "library": "usdaeco-toolchain",
-      "ref": "v0.3.9",
-      "version": "0.3.9",
-      "revision": "d8f09dfd2ddfb6e8a08a9528e90f949248d5a1c2",
+      "ref": "v0.3.10",
+      "version": "0.3.10",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73",
       "runtime_paths": [
         "tools",
         "library.json"
       ],
-      "runtime_sha256": "76b75132dcafffabb5a77f7960d9150039bf6292d597f8a7f50507df597a0887"
+      "runtime_sha256": "d68110556117bd6dfde73a564e7d231d0ace38d8a4fe5289a76bee6496913cbb"
     },
     "revit": {
       "repo": "usdaeco-revit",
       "library": "usdaeco-revit",
-      "ref": "v0.1.2",
-      "version": "0.1.2",
-      "revision": "67ca38f29d294268f542a9f07ef3802a31edede0",
+      "ref": "v0.1.4",
+      "version": "0.1.4",
+      "revision": "6840bbe8d1a42ffa4c456038e7ba42b8bc22acce",
       "runtime_paths": [
         "tools/usdaeco_revit",
         "library.json"
       ],
-      "runtime_sha256": "8c924593af12b34c00b03736c184325b49cb60b80e9fd292b88c3855df1a139b"
+      "runtime_sha256": "5c53c93f6fac281893daacb723c3a983b631890a888d19fb2ea72831ebee229c"
     },
     "validation_core": {
       "repo": "usdaeco-core",
       "library": "usdAecoValidators",
-      "ref": "v0.9.2",
-      "version": "0.9.2",
-      "revision": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "ref": "v0.9.4",
+      "version": "0.9.4",
+      "revision": "80a099e14e7bb825b207548d0a4f8a93e9ffa62f",
       "runtime_paths": [
         "usdAeco",
         "usdAecoValidators",
@@ -37,14 +37,14 @@
         "registries",
         "library.json"
       ],
-      "runtime_sha256": "5a1a9a58d793d7fad87bb7bd26551f7eff8e1bfe8c37f2ab136037623c8a164d"
+      "runtime_sha256": "c3bcffdf850eea294073ab69ba23a749ab0c9c079209a0490f636818a35439bd"
     },
     "sync": {
       "repo": "usdaeco-sync",
       "library": "usdAecoSync",
-      "ref": "v0.5.2",
-      "version": "0.5.2",
-      "revision": "1ed6e5d50425811c5c85326630819bc1f04a1a15",
+      "ref": "v0.5.4",
+      "version": "0.5.4",
+      "revision": "1d67810d7add1a23b825461e44cfdfb721b689f5",
       "runtime_paths": [
         "aeco_sync",
         "tools/usdaeco_sync",
@@ -53,7 +53,7 @@
         "registries",
         "library.json"
       ],
-      "runtime_sha256": "fb8c635f0a3aed06ae77567989e7a464d1c5f5eb8cd5705088cb9f4ef6693bef"
+      "runtime_sha256": "b836ef3adb09cb23942ef4df5ed9bc71f80c78c6390aecfc1ba3d57ca16bff67"
     }
   },
   "observations": {
@@ -66,12 +66,13 @@
       "revision": "e527672e0fc20a0e26f2aa4f4617fe2d38ff5ecc"
     },
     "nix": {
-      "release": "0.4.7",
+      "release": "0.4.9",
       "attempts": 1,
       "status": "input-unavailable",
-      "mode": "offline, direct source overrides, outbound IP connections denied, no lockfile written",
-      "reason": "uncached nested toolchain/aeco-toolchain input could not resolve",
-      "input": "github:criad-com/aeco-toolchain?ref=e190680d3f94eb76e06abe77574fda1308af2c85",
+      "mode": "offline, six local source overrides, outbound IP connections denied, no lockfile written",
+      "reason": "uncached nested toolchain/aeco-toolchain v0.4.0 could not resolve",
+      "input": "github:criad-com/aeco-toolchain?ref=v0.4.0",
+      "exit_code": 1,
       "packaging": "not-proven"
     },
     "nativeRevit": {
@@ -90,6 +91,16 @@
       "mode": "offline, direct source overrides, outbound connections denied, no lockfile written",
       "reason": "network-disabled sandbox denied connection to the Nix daemon socket",
       "packaging": "not-proven"
+    },
+    "publicTags": {
+      "release": "0.4.9",
+      "active": "four direct tags and the recursive processing-toolchain tag confirmed by the release instructions",
+      "generationFixtures": {
+        "core": "v0.8.4",
+        "ifc": "v0.1.0"
+      },
+      "generationFixtureAvailability": "vendored-runtime-hashes-verified",
+      "onlineResolution": "not-run"
     }
   },
   "fixtures": {
@@ -104,7 +115,10 @@
         "library.json"
       ],
       "runtime_sha256": "af2a5ba8127d0c00cb11fc57df71e1bf6388834e00261ff76f43b10abaaf2b20",
-      "purpose": "Generation fixture for the byte-identical published USD under dist/."
+      "purpose": "Generation fixture for the byte-identical published USD under dist/.",
+      "flakeInput": false,
+      "path": "fixtures/ifc-0.1.0",
+      "reason": "Generation fixture for the byte-identical published USD under dist/."
     },
     "core": {
       "repo": "usdaeco-core",
@@ -118,7 +132,10 @@
         "registries"
       ],
       "runtime_sha256": "5fa7e009081defeaa427b1a3921cb93c15337140810a0f7af9459cc1be0c3ef6",
-      "purpose": "Generation fixture paired with converter v0.1.0; validation uses the direct validation_core pin."
+      "purpose": "Generation fixture paired with converter v0.1.0; validation uses the direct validation_core pin.",
+      "flakeInput": false,
+      "path": "fixtures/core-0.8.4",
+      "reason": "Generation fixture paired with converter v0.1.0; validation uses the direct validation_core pin."
     },
     "revit_recorded": {
       "repo": "usdaeco-revit",

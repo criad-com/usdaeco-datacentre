@@ -1,32 +1,16 @@
 {
   description = "Generated demo data centre and published USD variants";
   inputs = {
-    toolchain.url = "github:criad-com/usdaeco-toolchain?ref=v0.3.9";
-    validation_core.url = "github:criad-com/usdaeco-core?ref=v0.9.2";
+    toolchain.url = "github:criad-com/usdaeco-toolchain?ref=v0.3.10";
+    validation_core.url = "github:criad-com/usdaeco-core?ref=v0.9.4";
     validation_core.flake = false;
-    revit.url = "github:criad-com/usdaeco-revit?ref=v0.1.2";
+    revit.url = "github:criad-com/usdaeco-revit?ref=v0.1.4";
     revit.flake = false;
-    sync.url = "github:criad-com/usdaeco-sync?ref=v0.5.2";
+    sync.url = "github:criad-com/usdaeco-sync?ref=v0.5.4";
     sync.flake = false;
-    # Frozen generation fixtures, separate from the direct train URL pins.
-    # Public GitHub attributes retain ordinary --override-input support.
-    core = {
-      type = "github";
-      owner = "criad-com";
-      repo = "usdaeco-core";
-      ref = "v0.8.4";
-      flake = false;
-    };
-    ifc = {
-      type = "github";
-      owner = "criad-com";
-      repo = "usdaeco-ifc";
-      ref = "v0.1.0";
-      flake = false;
-    };
     nixpkgs.follows = "toolchain/nixpkgs";
   };
-  outputs = { self, nixpkgs, toolchain, core, validation_core, ifc, revit, sync }:
+  outputs = { self, nixpkgs, toolchain, validation_core, revit, sync }:
     let
       each = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
       make = system:
@@ -38,8 +22,8 @@
           ]);
           setup = ''
             export AECO_VALIDATION_CORE_ROOT=${validation_core}
-            export AECO_CORE_ROOT=${core}
-            export AECO_IFC_ROOT=${ifc}
+            export AECO_CORE_ROOT=${self}/fixtures/core-0.8.4
+            export AECO_IFC_ROOT=${self}/fixtures/ifc-0.1.0
             export AECO_REVIT_ROOT=${revit}
             export AECO_SYNC_ROOT=${sync}
             export AECO_TOOLCHAIN_ROOT=${toolchain}

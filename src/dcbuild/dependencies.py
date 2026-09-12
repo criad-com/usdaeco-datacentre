@@ -68,6 +68,8 @@ def dependency_source(name):
     version = pin["version"]
     candidates = [ROOT.parent / (pin["repo"] + "-" + ".".join(version.split(".")[:2])),
                   ROOT.parent / pin["repo"]]
+    if "path" in pin:
+        candidates = [ROOT / pin["path"]]
     source = Path(override) if override else next((p for p in candidates if p.is_dir()), candidates[-1])
     source = source.resolve()
     if not source.is_dir():

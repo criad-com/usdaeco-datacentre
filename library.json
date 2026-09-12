@@ -1,6 +1,6 @@
 {
   "name": "usdaeco-datacentre",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "kind": "data",
   "tier": "data",
   "requires": {

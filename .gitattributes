@@ -1,0 +1,2 @@
+# Preserve the pinned generated schema's upstream whitespace byte-for-byte.
+fixtures/core-0.8.4/plugins/usdAeco/resources/generatedSchema.usda whitespace=-blank-at-eol,-blank-at-eof

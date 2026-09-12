@@ -135,6 +135,15 @@ are synthetic examples, not verified regulations. See the detailed
 
 ## 9 Status
 
+Version 0.4.9 updates the public release pins to toolchain v0.3.10, validation
+core v0.9.4, Revit v0.1.4 and Sync v0.5.4. Requirement ranges and the
+frozen generation inputs remain unchanged. Public availability of the
+frozen core v0.8.4 and IFC v0.1.0 tags is not yet verified; see the
+[public re-pin acceptance](acceptance-0.4.9.md). The full gate passes
+204 checks with zero failures, 213 tests and all 29 structure rules.
+All 31 published dist files and five cameras retain their bytes; five fresh
+plugin-free renders pass with zero core validation errors.
+
 Version 0.4.8 expands the [historical records](history/README.md) into 26
 plain files with original paths and bytes. The family term sweep reports
 zero findings; no redactions or drops were needed. The gate and tests reject

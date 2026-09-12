@@ -53,22 +53,21 @@ USD 26.8, numpy, pydantic 2, pyyaml, Pillow and pytest. Set `PY` to that
 prepared Python executable. Source commands and tests need no installed
 package, editable install, setuptools or network service.
 
-The publisher and gate read released sibling checkouts without modifying
-them. The example setup below uses `usdaeco-ifc-0.1.0`, `usdaeco-core-0.8`,
-`usdaeco-toolchain` v0.3.9 and `usdaeco-revit` v0.1.2 beside this checkout; validation
-also uses `usdaeco-core` v0.9.2.
-Sync must be v0.5.2; use frozen tag checkouts when sibling main advances.
+The publisher and gate use the bundled [generation runtimes](fixtures/README.md)
+for IFC v0.1.0 and core v0.8.4, verifying their recorded hashes before use.
+The example setup below reads `usdaeco-toolchain` v0.3.10 and
+`usdaeco-revit` v0.1.4 beside this checkout without modifying them; validation
+also uses `usdaeco-core` v0.9.4.
+Sync must be v0.5.4; use frozen tag checkouts when sibling main advances.
 Each checkout must match its exact pin. A source archive made with
 `git archive <tag>` is also supported; unpack it into an ignored `out/dependencies/`
 directory and point the corresponding override there.
 The gate additionally requires a Git checkout for the toolchain archive check.
 Runtime hashes use tracked files only, excluding build metadata; a fresh
-`git archive v0.3.9` must reproduce the recorded toolchain hash `76b75132…`.
+`git archive v0.3.10` must reproduce the recorded toolchain hash `d6811055…`.
 Explicit overrides are available:
 
 ```sh
-export AECO_IFC_ROOT="../usdaeco-ifc-0.1.0"
-export AECO_CORE_ROOT="../usdaeco-core-0.8"
 export AECO_TOOLCHAIN_ROOT="../usdaeco-toolchain"
 export AECO_REVIT_ROOT="../usdaeco-revit"
 export AECO_SYNC_ROOT="../usdaeco-sync"
@@ -80,9 +79,9 @@ env -u PYTHONPATH PYTHONPATH="$AECO_VALIDATION_CORE_ROOT:$PWD" "$PY" check.py --
 env -u PYTHONPATH "$PY" -m pytest -q
 ```
 
-`dependencies.json` pins converter 0.1.0, core 0.8.4 and toolchain 0.3.9 by
+`dependencies.json` pins converter 0.1.0, core 0.8.4 and toolchain 0.3.10 by
 release and commit, with fingerprints of their runtime files. The builder uses
-Revit integration v0.1.2 through its shared status-first client and verified
+Revit integration v0.1.4 through its shared status-first client and verified
 uploads. Publishing
 verifies the pins, builds each combined IFC, invokes the converter in a
 subprocess with the frozen core plugin, and checks the output in a second
@@ -99,7 +98,7 @@ two independent publishes per variant compared byte-for-byte against `dist/`,
 plugin-free census/fallback checks, size caps and render receipts. One
 `check_example()` row per variant binds its vanilla image to source/code/pin
 hashes, regenerates the camera and flattened stage, and invokes the shared S28
-renderer in an isolated process. Core v0.9.2 validators must import and all
+renderer in an isolated process. Core v0.9.4 validators must import and all
 eight callbacks must load through `UsdValidation`; every variant is validated.
 The legacy v0.8.4 core is used only by the frozen converter subprocess. IFC header
 timestamps and the generator version alone are normalized in the historical
@@ -150,28 +149,30 @@ nix run . -- publish --variant pod
 nix flake check --no-write-lock-file
 ```
 
-All flake inputs use public tagged forms. For local mirrors or offline source
-checkouts, use `--override-input toolchain path:../usdaeco-toolchain`,
+All six flake inputs use public tagged forms and participate in S05.
+The two frozen generation tags still need public availability verification.
+For local mirrors or offline source checkouts, use
+`--override-input toolchain path:../usdaeco-toolchain`,
 `--override-input core path:../usdaeco-core-0.8`,
 `--override-input ifc path:../usdaeco-ifc-0.1.0`,
 `--override-input revit path:../usdaeco-revit`,
 `--override-input sync path:../usdaeco-sync`, and
 `--override-input validation_core path:../usdaeco-core`; the toolchain documents the mapping
 of its own nested inputs in
-[repository conventions](https://github.com/criad-com/usdaeco-toolchain/blob/v0.3.9/docs/repo-conventions.md).
+[repository conventions](https://github.com/criad-com/usdaeco-toolchain/blob/v0.3.10/docs/repo-conventions.md).
 Packaging is not proven until the single recorded Nix attempt resolves its
 inputs; source execution is checked independently.
 
 ## Family
 
 The repository has `kind: data`, `tier: data` and no schemas. Its builder
-requires `usdaeco-revit >=0.1,<0.2`, tested at v0.1.2.
+requires `usdaeco-revit >=0.1,<0.2`, tested at v0.1.4.
 The exact generation/check inputs are converter **v0.1.0**, core **v0.8.4**
-and toolchain **v0.3.9**. The `usdAecoValidators` pin selects core **v0.9.2**
+and toolchain **v0.3.10**. The `usdAecoValidators` pin selects core **v0.9.4**
 for the gate. Generation core stays at 0.8.4 to match the converter; published
 stages remain readable without it. CCTV **v0.4.8** supplies the current native
 importer census. Sync **v0.4.5** remains a historical observation; the optional
-Revit integration uses Sync **v0.5.2** (also required for offline imports). These are recorded in
+Revit integration uses Sync **v0.5.4** (also required for offline imports). These are recorded in
 [dependencies.json](dependencies.json) and the native receipt, alongside the
 active publisher dependencies.
 The [family board](https://github.com/criad-com/usdaeco-board) consumes the
@@ -184,6 +185,7 @@ manifests, counts, acceptance receipts and overview images.
 | `spec/` | Facility inputs, variant overlays, programmes and illustrative requirements |
 | `src/dcbuild/` | Resolver, IFC builder, publisher, QA and source CLI |
 | `tests/` | Source-based tests; no installed package needed |
+| `fixtures/` | Hash-verified frozen core and IFC generation runtimes |
 | `dist/<variant>/` | Three USD layers, receipt, overview and vanilla PNGs |
 | `manifests/` | Generator counts, baseline hashes, cameras and render receipts |
 | `docs/` | Use case, variant contracts, acceptance and the [history directory](docs/history/README.md) |
@@ -192,26 +194,24 @@ manifests, counts, acceptance receipts and overview images.
 
 ## Status
 
-Version **0.4.8** exposes all 26 historical receipt and patch files directly
-under `docs/history/`, with their original member paths and bytes preserved.
-The family term sweep finds **0** prohibited terms; nothing was redacted or
-dropped. The gate and regression tests reject tracked archives. All five
-published variants retain their bytes.
+Version **0.4.9** pins toolchain **v0.3.10**, validation core **v0.9.4**,
+Revit **v0.1.4** and Sync **v0.5.4** to their published release tags.
+The recursive processing toolchain pin is **v0.4.0**. Requirement ranges
+remain unchanged. Frozen converter/core generation inputs and historical
+native evidence remain declared under `dependencies.json.fixtures`.
+Core **v0.8.4** and IFC **v0.1.0** are vendored with unchanged runtime hashes;
+their historical tags are provenance records and are not flake inputs.
+S05 checks the four active family URLs; see
+[release acceptance](docs/acceptance-0.4.9.md).
 
-The toolchain advances to **v0.3.9**, which derives its Nix package version
-from library metadata. Public names remain `github.com/criad-com`; all other
-dependency pins retain their preceding values.
-Five vanilla receipts record the new toolchain; all published stages, manifests,
-cameras and images retain their bytes. Generation and historical evidence
-inputs remain declared under `fixtures`.
 Version **0.4.5** makes L02 typical of L01 except for the moved and resized
 partition and the extra door. The manifest records wall `wall.l2.v.016`, its
 1 m eastward offset and 3.2 m extension, and door `door.office.2b` in that wall.
 The published comparison finds exactly two differences; partition lengths are
 **43.0 m / 46.2 m (+3.2 m)**. The released typical consumer agrees.
-The gate passes **204 checks, 0 failed** (162 passes, 38 informational timings,
+The v0.4.9 gate passes **204 checks, 0 failed** (162 passes, 38 informational timings,
 four native variants NOT RUN), with **213 tests** and **29/0 structure rules**.
-See [release acceptance](docs/acceptance-0.4.8.md),
+See [release acceptance](docs/acceptance-0.4.9.md),
 [publication acceptance](docs/acceptance-0.4.5.md) and [the floor geometry contract](docs/variants.md#floors).
 The native builder uses
 `usdaeco_revit.transport.Client`.
@@ -221,8 +221,8 @@ export/parity/importer results and the offline gate totals.
 
 All five published variants remain available, with three layers per variant.
 The four other variant directories, source manifests and cameras retain their
-v0.4.4 bytes (32 files). Their rendering receipts change only to correct the
-old toolchain runtime digest; image bytes remain identical. The gate includes
+v0.4.4 bytes (32 files). Their current vanilla receipts change only the
+verified toolchain provenance; image bytes remain identical. The gate includes
 that comparison and a fresh archive reproduction of the toolchain pin.
 Native floors/pod/clash/iris remain **NOT RUN** and require further family work.
 Nix packaging remains **not proven**; the current acceptance records its one
@@ -449,6 +449,7 @@ See [packaging acceptance](docs/packaging.md) for the packaging baseline and lim
 [MIT](LICENSE).
 
 Runtime dependencies retain their own licences; third-party code is not vendored.
+The frozen family runtimes in [fixtures/](fixtures/README.md) are MIT code.
 
 | Dependency | Licence | Use |
 |---|---|---|

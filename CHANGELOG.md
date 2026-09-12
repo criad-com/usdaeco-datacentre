@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.4.9 — 2026-09-12
+
+- public re-pin: toolchain v0.3.10, validation core v0.9.4, Revit v0.1.4,
+  Sync v0.5.4; the toolchain selects processing toolchain v0.4.0 recursively.
+- Record exact tagged revisions and pristine runtime fingerprints. The
+  supported Revit requirement remains `>=0.1,<0.2`.
+- Vendor exactly the frozen core v0.8.4 and IFC v0.1.0 runtime paths with
+  unchanged fingerprints. Remove their unpublished tags from flake inputs;
+  retain historical generation pins as provenance records with local paths.
+- Republish five variants and verify ten further independent publishes. All
+  31 dist files and five cameras retain their bytes; five vanilla receipts
+  change only toolchain provenance after fresh plugin-free rendering.
+- Verify 204 checks, 0 failed; 213 tests; 29 structure rules; eight core
+  validators and zero errors across all five variants. No ranges widened.
+- Record one unsuccessful offline Nix attempt at nested processing toolchain
+  v0.4.0. Nix packaging remains not proven; native variant rows remain not run.
+
 ## 0.4.8
 
 - Verify 204 checks, 0 failed; 213 tests; 29 structure rules and five fresh

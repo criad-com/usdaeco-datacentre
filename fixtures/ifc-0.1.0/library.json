@@ -1,0 +1,10 @@
+{
+  "name": "usdaeco-ifc",
+  "version": "0.1.0",
+  "kind": "integration",
+  "tier": "integration",
+  "requires": {
+    "usdAeco": ">=0.8.1,<0.9",
+    "usdAecoSync": ">=0.5,<0.6"
+  }
+}
