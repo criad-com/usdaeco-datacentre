@@ -127,3 +127,25 @@ def test_floors_ground_interface_stops_at_main_roof():
                 layout._block_of(source,rooms[w.left])!=layout._block_of(source,rooms[w.right])]
     assert interfaces
     assert all(w.storey=='lvl.l0' and w.height==7 for w in interfaces)
+
+
+def test_full_union_preserves_rooms_fixtures_and_design():
+    from dcbuild import graph
+    plan = layout.resolve(spec.load(variant="full"))
+    assert not graph.run_all(plan)
+    assert (len(plan.storeys), len(plan.spaces), len(plan.walls), len(plan.doors),
+            len(plan.columns), len(plan.cameras)) == (3, 41, 111, 47, 80, 47)
+    assert sum(s.storey == "lvl.l2" for s in plan.spaces) == 6
+    assert sum(s.type == "void" for s in plan.spaces) == 2
+    assert len(plan.meta["fitout"]) == 26
+    assert plan.meta["expected"]["reader_summary"] == {"pass": 10, "fail": 1}
+    assert len(plan.meta["expected"]["clash"]) == 3
+
+
+def test_multiple_parents_check_cycles(tmp_path):
+    import shutil
+    shutil.copytree(spec.spec_dir(), tmp_path / "spec")
+    directory = tmp_path / "spec"
+    (directory / "variants/iris.yaml").write_text("extends: [base, full]\n")
+    with pytest.raises(ValueError, match="cycle"):
+        spec.load(directory, "full")

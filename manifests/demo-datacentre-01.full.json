@@ -1,0 +1,319 @@
+{
+  "counts": {
+    "activities_per_programme": {
+      "A": 10,
+      "B": 10
+    },
+    "cameras": 47,
+    "ceilings": 2,
+    "columns": 80,
+    "doors": 47,
+    "fitout_by_class": {
+      "IfcAirTerminal": 4,
+      "IfcCableCarrierSegment": 3,
+      "IfcCovering": 2,
+      "IfcElementAssembly": 2,
+      "IfcLightFixture": 6,
+      "IfcPipeSegment": 6,
+      "IfcSanitaryTerminal": 2,
+      "IfcUnitaryEquipment": 1
+    },
+    "fix_counts": {
+      "first": 6,
+      "second": 10,
+      "third": 3
+    },
+    "mep_by_class": {
+      "IfcAirTerminal": 4,
+      "IfcAlarm": 12,
+      "IfcAudioVisualAppliance": 47,
+      "IfcCableCarrierFitting": 165,
+      "IfcCableCarrierSegment": 339,
+      "IfcCableFitting": 401,
+      "IfcCableSegment": 797,
+      "IfcChiller": 2,
+      "IfcCoolingTower": 4,
+      "IfcElectricDistributionBoard": 26,
+      "IfcElectricFlowStorageDevice": 16,
+      "IfcElectricGenerator": 2,
+      "IfcHeatExchanger": 1,
+      "IfcLightFixture": 6,
+      "IfcPipeFitting": 238,
+      "IfcPipeSegment": 482,
+      "IfcPump": 6,
+      "IfcSanitaryTerminal": 2,
+      "IfcSensor": 11,
+      "IfcTank": 3,
+      "IfcTransformer": 2,
+      "IfcUnitaryEquipment": 13
+    },
+    "pods": 2,
+    "readers": 11,
+    "rooms": 36,
+    "spaces": 41,
+    "storeys": 3,
+    "temporary": 1,
+    "voids": 2,
+    "walls": 111
+  },
+  "expected": {
+    "clash": [
+      {
+        "axis": [
+          [
+            24,
+            -4,
+            6.8
+          ],
+          [
+            24,
+            -2,
+            6.8
+          ]
+        ],
+        "exact": {
+          "verdict": "hard"
+        },
+        "id": "pipe.clash.hard",
+        "mesh": {
+          "verdict": "hard"
+        },
+        "od": 0.0603,
+        "partner": "wall.l1.h.007",
+        "wall_face_plane": {
+          "axis_y": -3,
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "offset": -2.925,
+          "thickness": 0.15,
+          "wall": "wall.l1.h.007"
+        }
+      },
+      {
+        "axis": [
+          [
+            23,
+            -1.5,
+            6.88515
+          ],
+          [
+            25,
+            -1.5,
+            6.88515
+          ]
+        ],
+        "exact": {
+          "distance": 0.005,
+          "verdict": "clearance"
+        },
+        "id": "pipe.clash.near",
+        "mesh": {
+          "combined_deflection_band": 0.0057582,
+          "verdict": "undecidable"
+        },
+        "od": 0.0603,
+        "overlap": 2,
+        "partner": "tray.void.ocorr.1",
+        "tray_top": 6.85,
+        "wall_face_plane": {
+          "axis_y": -3,
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "offset": -2.925,
+          "thickness": 0.15,
+          "wall": "wall.l1.h.007"
+        }
+      },
+      {
+        "axis": [
+          [
+            23,
+            -2.89485,
+            6.8
+          ],
+          [
+            25,
+            -2.89485,
+            6.8
+          ]
+        ],
+        "exact": {
+          "distance": 0,
+          "verdict": "touching"
+        },
+        "id": "pipe.clash.tangent",
+        "mesh": {
+          "combined_deflection_band": 0.0010636,
+          "minimum_penetration": 0.0005,
+          "verdict": "falsePenetration"
+        },
+        "od": 0.0603,
+        "partner": "wall.l1.h.007",
+        "wall_face_plane": {
+          "axis_y": -3,
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "offset": -2.925,
+          "thickness": 0.15,
+          "wall": "wall.l1.h.007"
+        }
+      }
+    ],
+    "drift": {
+      "deviations": [
+        {
+          "axis_from": [
+            [
+              26,
+              -8
+            ],
+            [
+              26,
+              -3
+            ]
+          ],
+          "axis_to": [
+            [
+              27,
+              -11.2
+            ],
+            [
+              27,
+              -3
+            ]
+          ],
+          "between": [
+            "sp.meeting.1.2",
+            "sp.kitchen.2"
+          ],
+          "extension_m": 3.2,
+          "id": "wall.l2.v.016",
+          "kind": "wallMoved",
+          "length_from_m": 5.0,
+          "length_to_m": 8.2,
+          "offset_m": [
+            1,
+            0,
+            0
+          ],
+          "prototype": "wall.l1.v.016",
+          "reason": "Partition shifted 1 m east and extended 3.2 m south; room schedule remains the typical baseline."
+        },
+        {
+          "id": "door.office.2b",
+          "kind": "doorExtra",
+          "reason": "Additional access through the edited partition.",
+          "wall": "wall.l2.v.016"
+        }
+      ],
+      "doors_extra": 1,
+      "expected_net_partition_length_delta_m": 3.2,
+      "instance": "lvl.l2",
+      "offset_m": [
+        0,
+        0,
+        3
+      ],
+      "prototype": "lvl.l1",
+      "walls_moved": 1
+    },
+    "programme": {
+      "A": [
+        "AccessAfterEnclosure",
+        "WorkspaceOccupied",
+        "EnclosureBeforeInspection"
+      ],
+      "B": []
+    },
+    "reader_summary": {
+      "fail": 1,
+      "pass": 10
+    },
+    "readers": {
+      "door.elec.a": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.elec.b": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.a.e": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.a.s": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.a.w": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.b.e": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.b.s": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.hall.b.w": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.mmr.1": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.mmr.2": {
+        "accessibility": "pass",
+        "employer-security": "pass",
+        "reader-datasheet": "pass"
+      },
+      "door.office.link": {
+        "accessibility": "fail",
+        "employer-security": "fail",
+        "reader-datasheet": "pass"
+      }
+    },
+    "temporary_pod": {
+      "bounds": [
+        [
+          20,
+          -3.3,
+          4
+        ],
+        [
+          22.4,
+          0.3,
+          6.5
+        ]
+      ],
+      "corridor_overhang_each_side": 0.3
+    }
+  },
+  "facility": "demo-datacentre-01",
+  "plan_sha256": "c4c804491a3cbc7dd1ec0d66040ef1559dc581375bb756fc1f43b2303903d4d3",
+  "units": "metres",
+  "up_axis": "Z",
+  "variant": "full"
+}

@@ -87,7 +87,8 @@ def core_validation_context():
     core, _ = dependency_source("validation_core")
     Plug.Registry().RegisterPlugins(str(core / "usdAeco"))
     Plug.Registry().RegisterPlugins(str(core / "usdAecoValidators"))
-    # Import must succeed: missing PYTHONPATH is a failure, never a skipped gate.
+    sys.path.insert(0, str(core))
+    # Load the verified source directly; no installed package or PYTHONPATH needed.
     import usdAecoValidators
     if Path(usdAecoValidators.__file__).resolve() != core / "usdAecoValidators/__init__.py":
         raise ValueError("usdAecoValidators did not import from the pinned validation core")
@@ -133,6 +134,8 @@ def term_sweep():
                     content = json.dumps(im.info, default=str)
             else:
                 content = p.read_text()
+                if p.suffix == ".ifc":
+                    content = ifc_sweep_text(content)
             # Same narrowly scoped public attribution exception as S25.
             if p.name == "LICENSE":
                 content = re.sub(r"(?m)^Copyright \(c\) 2026 Cr[i]ad$", "", content)
@@ -141,6 +144,25 @@ def term_sweep():
         except (UnicodeDecodeError, OSError, ValueError):
             hits.append(str(p.relative_to(ROOT))+" (unreviewed binary)")
     return hits
+
+
+def ifc_sweep_text(content):
+    """Exclude only parsed identity fields, never arbitrary IFC string values.
+
+    Compressed GlobalIds can coincidentally contain a short historical term.
+    Keep names, properties, headers, document locations and all other text.
+    """
+    model = ifcopenshell.file.from_string(content)
+    fields = {e.id(): e.GlobalId for e in model.by_type("IfcRoot")}
+    fields.update({e.id(): e.Identification for e in model.by_type("IfcDocumentReference")
+                   if e.Name == "aeco:connectedPorts" and e.Identification
+                   and re.fullmatch(r"[a-z]+[.]ifc", e.Location or "")})
+    def replace(match):
+        value = fields.get(int(match[1]))
+        if value and re.fullmatch(r"[0-3][0-9A-Za-z_$]{21}", value):
+            return match[0].replace("'" + value + "'", "'<uuid>'", 1)
+        return match[0]
+    return re.sub(r"(?m)^#(\d+)=.*;$", replace, content)
 
 
 def recorded_revit(report):
@@ -315,7 +337,7 @@ def main():
             print(f"{row.name} {'PASS' if row.ok else 'FAIL'} {row.detail}", flush=True)
         report.check("family structure lint", all(structure),
                      f"{len(structure)} rules; " + "; ".join(r.name + " " + r.detail for r in structure if not r))
-        from dcbuild.publish import PUBLISHED, SIZE_CAP, verify_publication
+        from dcbuild.publish import publication_files, size_cap, verify_publication
         from dcbuild.render import verify_render
         from dcbuild.vanilla import check_example
         from pxr import Usd, UsdValidation
@@ -329,11 +351,17 @@ def main():
             # rendering records the current, independently verified toolchain.
             expected_receipts = json.loads(json.dumps(unchanged["receipts"]))
             expected_receipts["vanilla.json"][variant]["sources"]["toolchain"] = pin
+            from dcbuild.vanilla import source_record
+            expected_receipts["vanilla.json"][variant]["sources"]["code"] = source_record(variant)["code"]
             receipts_match = all(json.loads((ROOT / "manifests" / name).read_text())[variant] == records[variant]
                                  for name, records in expected_receipts.items())
             report.check(f"published {variant} bytes vs v0.4.4",
                          len(files) == 8 and all(digest(ROOT / name) == value for name, value in files.items())
-                         and receipts_match, "8 files byte-identical; receipts differ only by the verified toolchain pin")
+                         and receipts_match, "8 files byte-identical; receipts update verified toolchain and renderer code provenance")
+        legacy = json.loads((ROOT / "manifests/publication-v0.4.9.json").read_text())["sha256"]
+        report.check("five complete publications byte-identical to v0.4.9",
+                     all(digest(ROOT / name) == value for name, value in legacy.items()),
+                     f"{len(legacy)} files; base, floors, pod, clash, iris")
         print("== stage: published typical floors", flush=True)
         from dcbuild.qa.typical import verify as verify_typical
         floors = ROOT / "dist/floors"
@@ -356,15 +384,26 @@ def main():
                 command(f"publish {variant} {target.name}", "-m", "dcbuild", "publish", "--variant", variant,
                         "--out", str(target))
             published = ROOT/"dist"/variant
+            names = publication_files(variant)
+            # Full inventories include separately rendered images. Copy those
+            # committed bytes into scratch publications before inventory sealing.
+            if variant == "full":
+                import shutil
+                from dcbuild.federation import refresh_inventory
+                for target in (first_dir/variant, second_dir/variant):
+                    for name in ("overview.png", "vanilla.png"):
+                        shutil.copyfile(published/name, target/name)
+                    refresh_inventory(target)
             report.check(f"publish {variant} byte identity", all(
                 (first_dir/variant/name).read_bytes() == (second_dir/variant/name).read_bytes()
-                == (published/name).read_bytes() for name in PUBLISHED),
-                "two independent publishes and committed data; 3 layers + manifest; no normalization")
+                == (published/name).read_bytes() for name in names),
+                f"two independent publishes and committed data; {len(names)} files; no comparison normalization")
             probe = verify_publication(published)
             report.check(f"publish {variant} plugin-free", True,
                          json.dumps(probe, sort_keys=True))
             total = sum(p.stat().st_size for p in published.iterdir() if p.is_file())
-            report.check(f"publish {variant} size", total <= SIZE_CAP, f"{total}/{SIZE_CAP} bytes including overview")
+            cap = size_cap(variant)
+            report.check(f"publish {variant} size", total <= cap, f"{total}/{cap} bytes including both images")
             image = verify_render(variant)
             report.check(f"render {variant}", True, json.dumps(image, sort_keys=True))
             print(f"== stage: vanilla freshness {variant}", flush=True)
@@ -375,6 +414,24 @@ def main():
             counts = Counter(e.GetName() for e in findings)
             report.check(f"core validation {variant}", not errors,
                          f"{len(errors)} errors; findings: {json.dumps(counts, sort_keys=True)}")
+            if variant == "full":
+                from dcbuild.qa.federation import (compare_monolithic, connected_text, ifc_ownership,
+                                                   mute_drill, spatial_ownership)
+                print("== stage: full federation proofs", flush=True)
+                for name, result in (
+                    ("IFC and twin ownership", ifc_ownership(published)),
+                    ("shared spatial definitions", spatial_ownership(published)),
+                    ("connected root text", connected_text(published)),
+                    ("monolithic census and world transforms", compare_monolithic(published,
+                     args.out/"variants/full/a/ifc/demo-datacentre-01.ifc", args.out/"monolithic-full")),
+                ):
+                    report.check("full " + name, True, json.dumps(result, sort_keys=True))
+                for row in mute_drill(published, validation):
+                    report.check("full E11 mute " + row["package"], True, json.dumps(row, sort_keys=True))
+                report.not_run("full connected composition", "not proven; usdIfc from usdaeco-ifc >= 0.3 required")
+                from dcbuild.qa.federation import usdchecker
+                result = usdchecker(published/"dc.usda")
+                report.check("full plugin-free usdchecker", True, json.dumps(result, sort_keys=True))
         payload = prepare(dataclasses.asdict(plan))
         report.check("Revit camera payload contract", len(payload["cameras"]) == 45,
                      "45 valid GUIDs, native levels, finite drivers and complete JSON payloads")

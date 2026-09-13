@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    defaultPrim = "demo_datacentre_01"
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoFacilityPart = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoPort = ["Xform"]
+        token[] AecoSite = ["Xform"]
+        token[] AecoSpace = ["Xform"]
+        token[] AecoSystem = ["Scope"]
+        token[] AecoZone = ["Scope"]
+    }
+    metersPerUnit = 1
+    subLayers = [
+        @site.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @arch.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @structure.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @cooling.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @electrical.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @it.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @fitout.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @security.ifc:SDF_FORMAT_ARGS:spine=over@,
+        @shared.ifc@
+    ]
+    upAxis = "Z"
+)
+

@@ -1,0 +1,29 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:layer:package" = "security"
+        string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
+        string "aeco:layer:role" = "package"
+        string "aeco:layer:source" = "security.ifc"
+        string "aeco:layer:sourceSha256" = "0a3d070a7dd95723a62577172d541cbae4f743cd6e2e0dc8d426927a7b093d5a"
+        string "aeco:layer:tag" = "v0.5.0"
+    }
+    defaultPrim = "demo_datacentre_01"
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoFacilityPart = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoPort = ["Xform"]
+        token[] AecoSite = ["Xform"]
+        token[] AecoSpace = ["Xform"]
+        token[] AecoSystem = ["Scope"]
+        token[] AecoZone = ["Scope"]
+    }
+    metersPerUnit = 1
+    subLayers = [
+        @security.semantics.usda@,
+        @security.geometry.usdc@
+    ]
+    upAxis = "Z"
+)
+

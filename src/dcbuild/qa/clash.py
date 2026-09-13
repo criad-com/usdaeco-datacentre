@@ -98,9 +98,9 @@ def hard_fingerprint(stage):
     return hashlib.sha256(json.dumps(values, sort_keys=True).encode()).hexdigest()
 
 
-def measure_cases(stage, cases, policies, *, stamp=False):
+def measure_cases(stage, cases, policies, *, stamp=False, stamp_layer=None):
     """Return measured receipts and fail if geometry, stamps or expectations drift."""
-    from pxr import Sdf
+    from pxr import Sdf, Usd
     rows = []
     for case in cases:
         name = case["id"]
@@ -116,9 +116,10 @@ def measure_cases(stage, cases, policies, *, stamp=False):
         for prim, error in ((mesh.GetPrim(), band), (partner.GetPrim(), 0.)):
             for key in ("aeco:body:tolerance", "aeco:derived:tolerance"):
                 if stamp:
-                    attr = prim.CreateAttribute(key, Sdf.ValueTypeNames.Double, custom=False)
-                    attr.SetMetadata("aecoDerived", True)
-                    attr.Set(error)
+                    with Usd.EditContext(stage, stamp_layer(prim) if stamp_layer else stage.GetEditTarget()):
+                        attr = prim.CreateAttribute(key, Sdf.ValueTypeNames.Double, custom=False)
+                        attr.SetMetadata("aecoDerived", True)
+                        attr.Set(error)
                 value = prim.GetAttribute(key).Get()
                 if value is None or not math.isfinite(value) or abs(value-error) > 1e-12:
                     raise ValueError(f"Measured deflection differs from {key}: {name}")

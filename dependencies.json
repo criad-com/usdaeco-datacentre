@@ -66,14 +66,13 @@
       "revision": "e527672e0fc20a0e26f2aa4f4617fe2d38ff5ecc"
     },
     "nix": {
-      "release": "0.4.9",
+      "release": "0.5.0",
       "attempts": 1,
-      "status": "input-unavailable",
-      "mode": "offline, six local source overrides, outbound IP connections denied, no lockfile written",
-      "reason": "uncached nested toolchain/aeco-toolchain v0.4.0 could not resolve",
-      "input": "github:criad-com/aeco-toolchain?ref=v0.4.0",
-      "exit_code": 1,
-      "packaging": "not-proven"
+      "status": "evaluation-failed",
+      "mode": "offline; direct family and nested processing-toolchain local overrides; external registry; no lockfile written",
+      "reason": "resolved nixpkgs selects Python 3.14 and marks ifcopenshell 0.8.0 broken; required source runtime is Python 3.13 with ifcopenshell 0.8.5",
+      "packaging": "not-proven",
+      "exit_code": 1
     },
     "nativeRevit": {
       "release": "0.4.2",
@@ -85,11 +84,13 @@
       "followup": "read-only receipt fetch failed; stop latch retained"
     },
     "nixPrevious": {
-      "release": "0.4.6",
+      "release": "0.4.9",
       "attempts": 1,
-      "status": "daemon-unavailable",
-      "mode": "offline, direct source overrides, outbound connections denied, no lockfile written",
-      "reason": "network-disabled sandbox denied connection to the Nix daemon socket",
+      "status": "input-unavailable",
+      "mode": "offline, six local source overrides, outbound IP connections denied, no lockfile written",
+      "reason": "uncached nested toolchain/aeco-toolchain v0.4.0 could not resolve",
+      "input": "github:criad-com/aeco-toolchain?ref=v0.4.0",
+      "exit_code": 1,
       "packaging": "not-proven"
     },
     "publicTags": {

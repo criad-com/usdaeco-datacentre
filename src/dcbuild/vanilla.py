@@ -8,14 +8,14 @@ import sys
 import tempfile
 
 from .dependencies import ROOT, clean_environment, dependency_source
-from .publish import PUBLISHED, digest, write_json
+from .publish import publication_files, digest, write_json
 from .render import SIZE, frame_overview
 
 
 def source_record(variant):
     """Bind pictures to data, camera code and the exact rendering toolchain."""
     return {
-        "publication": {name: digest(ROOT / "dist" / variant / name) for name in PUBLISHED},
+        "publication": {name: digest(ROOT / "dist" / variant / name) for name in publication_files(variant)},
         "code": {name: digest(ROOT / name) for name in
                  ("src/dcbuild/vanilla.py", "src/dcbuild/render.py")},
         "toolchain": dependency_source("toolchain")[1],
@@ -76,7 +76,22 @@ def publish_variant(variant, *, publish=False):
               "camera": f"manifests/cameras/{variant}.usda"}
     write_json(output / "receipt.json", record)
     if publish:
-        shutil.copyfile(output / "vanilla.png", ROOT / record["path"])
+        destination = ROOT / record["path"]
+        # Historical publications are frozen. Prove a fresh render but retain
+        # their reviewed pixels when all source publication bytes still match.
+        baseline = json.loads((ROOT / "manifests/publication-v0.4.9.json").read_text())["sha256"]
+        frozen = variant != "full" and all(
+            baseline.get(f"dist/{variant}/{name}") == digest(ROOT / "dist" / variant / name)
+            for name in publication_files(variant))
+        if frozen and destination.exists():
+            from usdaeco_check.images import image_info
+            record.update(image_info(destination))
+        else:
+            shutil.copyfile(output / "vanilla.png", destination)
+        if variant == "full":
+            from .federation import refresh_inventory
+            refresh_inventory(ROOT / "dist" / variant)
+            record["sources"] = source_record(variant)
         camera = ROOT / record["camera"]
         camera.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(output / "cameras.usda", camera)
@@ -125,6 +140,9 @@ def main():
     kit, _ = dependency_source("toolchain")
     sys.path.insert(0, str(kit / "tools"))
     for variant in variants() if args.all else [args.variant or "base"]:
+        if variant == "full" and args.publish:
+            from .render import render_variant
+            render_variant(variant)
         publish_variant(variant, publish=args.publish)
 
 

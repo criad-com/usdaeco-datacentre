@@ -1,0 +1,823 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:layer:package" = "shared"
+        string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
+        string "aeco:layer:role" = "spine"
+        string "aeco:layer:source" = "shared.ifc"
+        string "aeco:layer:sourceSha256" = "1fd81e6f52ae614cfda8829ba5520f2cc5342d6aa98940fe49db2f5a21f57173"
+        string "aeco:layer:tag" = "v0.5.0"
+    }
+)
+
+def Xform "demo_datacentre_01" (
+    prepend apiSchemas = ["AecoProjectAPI"]
+    kind = "assembly"
+)
+{
+    string aeco:project:id = "0c4e53f3-56fb-50d8-a287-1ee80e4e5f1f"
+    string aeco:project:name = "demo-datacentre-01"
+
+    def AecoSite "demo_datacentre_01_Site" (
+        prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+    )
+    {
+        string aeco:class:ifc:code = "IfcSite"
+        string aeco:class:ifc:name = "demo-datacentre-01 Site"
+        string aeco:id = "8565d6cd-0479-54e9-87f5-f044966073bc"
+        custom string aeco:props:DC_Identity:Discipline = "coordination"
+        custom string aeco:props:DC_Identity:Id = "site"
+        custom string aeco:props:Pset_SiteCommon:Status = "NEW"
+
+        def AecoSpace "Generator_Yard_B" (
+            prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSpace"
+            string aeco:class:ifc:name = "Generator Yard B"
+            string aeco:id = "4ad41b6b-bb2a-5bd8-b003-a0d1c6cd40ae"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "sp.yard.gen.b"
+            custom string aeco:props:DC_Space:SpaceType = "yard"
+            custom bool aeco:props:Pset_SpaceCommon:IsExternal = 1
+            custom string aeco:props:Pset_SpaceCommon:Reference = "sp.yard.gen.b"
+            custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+            custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 168
+            custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 1008
+            custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+        }
+
+        def AecoSpace "Generator_Yard_A" (
+            prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSpace"
+            string aeco:class:ifc:name = "Generator Yard A"
+            string aeco:id = "77e1820c-4309-55ce-9916-944f4c2fa5a5"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "sp.yard.gen.a"
+            custom string aeco:props:DC_Space:SpaceType = "yard"
+            custom bool aeco:props:Pset_SpaceCommon:IsExternal = 1
+            custom string aeco:props:Pset_SpaceCommon:Reference = "sp.yard.gen.a"
+            custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+            custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 168
+            custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 1008
+            custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+        }
+
+        def AecoSpace "Heat_Rejection_Yard" (
+            prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSpace"
+            string aeco:class:ifc:name = "Heat Rejection Yard"
+            string aeco:id = "a87657fb-0748-5834-af8e-87a58680b9a6"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "sp.yard.hr"
+            custom string aeco:props:DC_Space:SpaceType = "yard"
+            custom bool aeco:props:Pset_SpaceCommon:IsExternal = 1
+            custom string aeco:props:Pset_SpaceCommon:Reference = "sp.yard.hr"
+            custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+            custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 144
+            custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 864
+            custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+        }
+
+        def AecoFacility "demo_datacentre_01" (
+            prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcBuilding"
+            string aeco:class:ifc:name = "demo-datacentre-01"
+            string aeco:id = "a9b54027-a170-5ea3-ade1-dec011ba680e"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "building"
+            custom string aeco:props:Pset_BuildingCommon:Status = "NEW"
+
+            def AecoLevel "L01_Office" (
+                prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+            )
+            {
+                string aeco:class:ifc:code = "IfcBuildingStorey"
+                string aeco:class:ifc:name = "L01 Office"
+                double aeco:elevation = 4
+                string aeco:id = "05fc4eac-b98d-5d67-81f7-a34191f2ad20"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "lvl.l1"
+                custom string aeco:props:Pset_BuildingStoreyCommon:Status = "NEW"
+
+                def AecoSpace "Kitchen_Break" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Kitchen & Break"
+                    string aeco:id = "02a16cfa-0423-524e-8447-88d1b328b9c6"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.kitchen"
+                    custom string aeco:props:DC_Space:SpaceType = "kitchen"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.kitchen"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 20
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 60
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Open_Office" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Open Office"
+                    string aeco:id = "08c1554d-a7cb-5fb1-b834-10b3c55ab8cd"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.office"
+                    custom string aeco:props:DC_Space:SpaceType = "office"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.office"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 270
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+
+                    def AecoSpace "Office_ceiling_void" (
+                        prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSpace"
+                        string aeco:class:ifc:name = "Office ceiling void"
+                        string aeco:id = "d656ba04-10f3-5839-acc4-b1421ffb9491"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sp.void.office"
+                        custom string aeco:props:DC_Space:SpaceType = "void"
+                        custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                        custom string aeco:props:Pset_SpaceCommon:Reference = "sp.void.office"
+                        custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                        custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 90
+                        custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 36
+                        custom double aeco:props:Qto_SpaceBaseQuantities:Height = 0.4
+                    }
+                }
+
+                def AecoSpace "WC" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "WC"
+                    string aeco:id = "9e2b5273-ec32-52b4-9539-30c5dba88017"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.wc"
+                    custom string aeco:props:DC_Space:SpaceType = "wc"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.wc"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 16
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 48
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Stair_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Stair L01"
+                    string aeco:id = "e0c7c2e3-3201-560f-84c9-8cbb69ca4804"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.stair.1"
+                    custom string aeco:props:DC_Space:SpaceType = "stair"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.stair.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 9
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 27
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Meeting_Room_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Meeting Room L01"
+                    string aeco:id = "ec7507b6-b9b2-5391-99f7-4ddebb13178e"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.meeting.1"
+                    custom string aeco:props:DC_Space:SpaceType = "meeting"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.meeting.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 36
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 108
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Office_Corridor_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Office Corridor L01"
+                    string aeco:id = "f455f79e-95a1-53af-b17c-a819532eef3e"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.ocorr.1"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.ocorr.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 45
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 135
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+
+                    def AecoSpace "Corridor_ceiling_void" (
+                        prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSpace"
+                        string aeco:class:ifc:name = "Corridor ceiling void"
+                        string aeco:id = "258abaad-3b13-5c68-b90c-a450390ef159"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sp.void.ocorr.1"
+                        custom string aeco:props:DC_Space:SpaceType = "void"
+                        custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                        custom string aeco:props:Pset_SpaceCommon:Reference = "sp.void.ocorr.1"
+                        custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                        custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 45
+                        custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 18
+                        custom double aeco:props:Qto_SpaceBaseQuantities:Height = 0.4
+                    }
+                }
+            }
+
+            def AecoLevel "L00_Ground" (
+                prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+            )
+            {
+                string aeco:class:ifc:code = "IfcBuildingStorey"
+                string aeco:class:ifc:name = "L00 Ground"
+                double aeco:elevation = 0
+                string aeco:id = "501c2120-e676-59e9-b881-8f2f12694a08"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "lvl.l0"
+                custom string aeco:props:Pset_BuildingStoreyCommon:Status = "NEW"
+
+                def AecoSpace "Office_Corridor_L00" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Office Corridor L00"
+                    string aeco:id = "035e67b7-464d-5b5e-97ad-e8e1570a311e"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.ocorr.0"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.ocorr.0"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 9
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 33.75
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Security_Office" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Security Office"
+                    string aeco:id = "092aadbc-91e0-521c-ad33-9bf6835715ce"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.security"
+                    custom string aeco:props:DC_Space:SpaceType = "office"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.security"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 24
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Corridor_East" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Corridor East"
+                    string aeco:id = "09f5702f-ff97-5f1e-8ada-86c30bd20e5b"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.corr.e"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.corr.e"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 72
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 432
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Electrical_Room_A" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Electrical Room A"
+                    string aeco:id = "0e36c123-465a-5f54-8d83-8fad2eb2527d"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.elec.a"
+                    custom string aeco:props:DC_Space:SpaceType = "electrical"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.elec.a"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 108
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 648
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Corridor_Spine" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Corridor Spine"
+                    string aeco:id = "0e82392f-492b-5cc8-aba3-4002847bc76a"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.corr.spine"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.corr.spine"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 216
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 1296
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Battery_Room_A" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Battery Room A"
+                    string aeco:id = "1de8e0fe-5c03-5fc9-b285-44e6c1a275ce"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.batt.a"
+                    custom string aeco:props:DC_Space:SpaceType = "battery"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.batt.a"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 72
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 432
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Corridor_South" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Corridor South"
+                    string aeco:id = "269c98a3-77a0-5ec6-85d6-33cee5ad12fc"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.corr.s"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.corr.s"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 540
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Office_Comms_Room" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Office Comms Room"
+                    string aeco:id = "29f63fa8-cdb8-5ce4-aa6a-4aa122fb19d1"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.comms"
+                    custom string aeco:props:DC_Space:SpaceType = "mmr"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.comms"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 24
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Water_Treatment" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Water Treatment"
+                    string aeco:id = "375fb9fd-a4d5-5eaf-a556-c0dc5b58280b"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.water"
+                    custom string aeco:props:DC_Space:SpaceType = "water"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.water"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 36
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 216
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Corridor_Centre" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Corridor Centre"
+                    string aeco:id = "42adcfd4-f99e-5bd6-b86d-4a6ceb372a7c"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.corr.c"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.corr.c"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 72
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 432
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Electrical_Room_B" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Electrical Room B"
+                    string aeco:id = "4a9e44a8-245e-51b6-8a9e-db1175ae3d7c"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.elec.b"
+                    custom string aeco:props:DC_Space:SpaceType = "electrical"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.elec.b"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 108
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 648
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Data_Hall_B" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Data Hall B"
+                    string aeco:id = "50e50013-9f97-51c7-b4f1-43b7d4ab21cd"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.hall.b"
+                    custom string aeco:props:DC_Space:SpaceType = "hall"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.hall.b"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 540
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 3240
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Meeting_Room" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Meeting Room"
+                    string aeco:id = "5c39ac12-a76d-54a1-952e-57aa3738ae91"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.meeting"
+                    custom string aeco:props:DC_Space:SpaceType = "meeting"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.meeting"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 48
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 180
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Corridor_West" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Corridor West"
+                    string aeco:id = "69988f54-1ed1-59fe-b235-775d80f4dd78"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.corr.w"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.corr.w"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 72
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 432
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Loading_Storage" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Loading & Storage"
+                    string aeco:id = "750953f5-b983-5831-aa10-c6d59a973168"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.loading"
+                    custom string aeco:props:DC_Space:SpaceType = "loading"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.loading"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 540
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Entrance_Lobby" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Entrance Lobby"
+                    string aeco:id = "7ed26988-e89d-5e36-a8d1-09b90edbf0bb"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.lobby"
+                    custom string aeco:props:DC_Space:SpaceType = "lobby"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.lobby"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 54
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 202.5
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Fire_Suppression" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Fire Suppression"
+                    string aeco:id = "835630fb-7da9-5d85-bbc7-3cba4e345216"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.fire"
+                    custom string aeco:props:DC_Space:SpaceType = "fire"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.fire"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 36
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 216
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Meet_Me_Room_1" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Meet-Me Room 1"
+                    string aeco:id = "8c2a14e4-e613-5e07-8bba-665b07963911"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.mmr.1"
+                    custom string aeco:props:DC_Space:SpaceType = "mmr"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.mmr.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 54
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 324
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Meet_Me_Room_2" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Meet-Me Room 2"
+                    string aeco:id = "981fc437-a753-5f77-81eb-70f0dfaa1946"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.mmr.2"
+                    custom string aeco:props:DC_Space:SpaceType = "mmr"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.mmr.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 54
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 324
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Data_Hall_A" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Data Hall A"
+                    string aeco:id = "a5fbd0ab-e086-5dcc-81a3-555789d9098b"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.hall.a"
+                    custom string aeco:props:DC_Space:SpaceType = "hall"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.hall.a"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 540
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 3240
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Cooling_Plant_Room" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Cooling Plant Room"
+                    string aeco:id = "ab9d4e89-319c-57a3-8be7-1e940a663564"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.plant"
+                    custom string aeco:props:DC_Space:SpaceType = "plant"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.plant"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 360
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 2160
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+
+                def AecoSpace "Network_Operations_Centre" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Network Operations Centre"
+                    string aeco:id = "bca0a55f-3197-5b49-923a-d65d6be3909c"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.noc"
+                    custom string aeco:props:DC_Space:SpaceType = "noc"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.noc"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 48
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 180
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Stair_L00" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Stair L00"
+                    string aeco:id = "e1387bc4-46b6-58e0-9c3c-a6f77742fb82"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.stair.0"
+                    custom string aeco:props:DC_Space:SpaceType = "stair"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.stair.0"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 9
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 33.75
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3.75
+                }
+
+                def AecoSpace "Battery_Room_B" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Battery Room B"
+                    string aeco:id = "ec457027-6e97-5fbc-861c-7dd77a877a71"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.batt.b"
+                    custom string aeco:props:DC_Space:SpaceType = "battery"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.batt.b"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 72
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 432
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 6
+                }
+            }
+
+            def AecoLevel "L02_Office" (
+                prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+            )
+            {
+                string aeco:class:ifc:code = "IfcBuildingStorey"
+                string aeco:class:ifc:name = "L02 Office"
+                double aeco:elevation = 7
+                string aeco:id = "9943aaa1-78be-543b-a04f-34ba731fdcfb"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "lvl.l2"
+                custom string aeco:props:DC_Typical:Prototype = "lvl.l1"
+                custom string aeco:props:Pset_BuildingStoreyCommon:Status = "NEW"
+
+                def AecoSpace "WC" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "WC"
+                    string aeco:id = "04e285cd-05a9-5304-b405-67f31eca58c8"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.wc.2"
+                    custom string aeco:props:DC_Space:SpaceType = "wc"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.wc.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 16
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 48
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Kitchen_Break" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Kitchen & Break"
+                    string aeco:id = "58a57278-7ce5-5715-a63d-1055e608040b"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.kitchen.2"
+                    custom string aeco:props:DC_Space:SpaceType = "kitchen"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.kitchen.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 20
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 60
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Stair_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Stair L01"
+                    string aeco:id = "7c59001c-f965-5188-86e2-92c6056b07f0"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.stair.1.2"
+                    custom string aeco:props:DC_Space:SpaceType = "stair"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.stair.1.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 9
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 27
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Office_Corridor_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Office Corridor L01"
+                    string aeco:id = "940e208f-3e02-58a1-aee5-bf97ae63ba64"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.ocorr.1.2"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.ocorr.1.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 45
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 135
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Open_Office" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Open Office"
+                    string aeco:id = "9988a960-ad5b-5cb7-a923-06a376d3e25a"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.office.2"
+                    custom string aeco:props:DC_Space:SpaceType = "office"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.office.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 270
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+
+                def AecoSpace "Meeting_Room_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Meeting Room L01"
+                    string aeco:id = "9c342601-01bc-510f-8632-6e91dfa81aea"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.meeting.1.2"
+                    custom string aeco:props:DC_Space:SpaceType = "meeting"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.meeting.1.2"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 36
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 108
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                }
+            }
+        }
+    }
+}
+

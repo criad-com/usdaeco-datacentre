@@ -77,10 +77,25 @@ def test_resealed_camera_still_requires_fresh_derivation(publication, monkeypatc
         vanilla.check_example("base")
 
 
-def test_core_validation_fails_without_importable_plugin():
+def test_core_validation_loads_verified_sources_without_pythonpath():
     code = ("import sys; sys.path.insert(0,sys.argv[1]); "
             "from check import core_validation_context; core_validation_context()")
     result = subprocess.run([sys.executable, "-I", "-c", code, str(ROOT)],
                             env=clean_environment(), capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+
+
+@pytest.mark.parametrize("failure", ["missing_source", "unimportable_plugin"])
+def test_core_validation_fails_without_importable_plugin(tmp_path, failure):
+    code = "import sys; sys.path.insert(0,sys.argv[1]); "
+    environment = clean_environment()
+    if failure == "missing_source":
+        environment["AECO_VALIDATION_CORE_ROOT"] = str(tmp_path)
+    else:
+        code += "sys.modules['usdAecoValidators'] = None; "
+    code += "from check import core_validation_context; core_validation_context()"
+    result = subprocess.run([sys.executable, "-I", "-c", code, str(ROOT)],
+                            env=environment, capture_output=True, text=True)
     assert result.returncode != 0
-    assert "No module named 'usdAecoValidators'" in result.stderr
+    expected = "runtime bytes differ" if failure == "missing_source" else "import of usdAecoValidators halted"
+    assert expected in result.stderr

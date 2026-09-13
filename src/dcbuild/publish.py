@@ -17,6 +17,27 @@ SIZE_CAP = 10_000_000
 DATA_VERSION = "0.4.2"
 
 
+def layer_names(variant):
+    if variant == "full":
+        from .federation import LAYERS as full_layers
+        return full_layers
+    return LAYERS
+
+
+def publication_files(variant):
+    if variant == "full":
+        from .federation import DATA_FILES
+        return (*DATA_FILES, "dc.manifest.json")
+    return PUBLISHED
+
+
+def size_cap(variant):
+    if variant == "full":
+        from .federation import FULL_CAP
+        return FULL_CAP
+    return SIZE_CAP
+
+
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -73,7 +94,8 @@ def stage_census(path):
     if not stage or stage.GetCompositionErrors() or not stage.GetDefaultPrim():
         raise ValueError("Published stage does not compose with a default prim")
     root = stage.GetRootLayer()
-    if root.subLayerPaths != ["dc.semantics.usdc", "dc.geometry.usdc"]:
+    from .federation import PACKAGES
+    if root.subLayerPaths not in (["dc.semantics.usdc", "dc.geometry.usdc"], [p + ".usda" for p in PACKAGES]):
         raise ValueError("Published stage must have exactly two portable sublayers")
     if not (stage.HasAuthoredMetadata("metersPerUnit") and UsdGeom.GetStageMetersPerUnit(stage) == 1
             and stage.HasAuthoredMetadata("upAxis") and UsdGeom.GetStageUpAxis(stage) == "Z"):
@@ -119,6 +141,9 @@ def verify_publication(folder):
     """Verify bytes, formats, counts and vanilla composition of a publication."""
     folder = Path(folder)
     data = json.loads((folder / "dc.manifest.json").read_text())
+    if data["variant"] == "full":
+        from .qa.federation import verify_publication as verify_full
+        return verify_full(folder)
     if set(data["layers"]) != set(LAYERS):
         raise ValueError("Publication must contain three declared layers")
     for name in LAYERS:
@@ -136,6 +161,9 @@ def verify_publication(folder):
 
 
 def publish(variant, output=Path("dist")):
+    if variant == "full":
+        from .federation import publish as publish_full
+        return publish_full(output)
     converter, converter_pin = dependency_source("ifc")
     core, core_pin = dependency_source("core")
     plugin = core / "plugins/usdAeco/resources"

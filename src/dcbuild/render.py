@@ -9,7 +9,7 @@ import sys
 import tempfile
 
 from .dependencies import ROOT, clean_environment, dependency_source
-from .publish import LAYERS, SIZE_CAP, digest, write_json
+from .publish import layer_names, size_cap, digest, write_json
 
 SIZE = (1280, 800)
 PURPOSES = "guide,proxy,render"
@@ -82,12 +82,15 @@ def render_worker(variant, output):
                purposes=PURPOSES, executable=recorder)
         image = temporary / "renders/overview.png"
         record = {"path": f"dist/{variant}/overview.png", **image_info(image), "frame": frame,
-                  "source_layers": {name: digest(publication / name) for name in LAYERS},
+                  "source_layers": {name: digest(publication / name) for name in layer_names(variant)},
                   "renderer": "usdrecord/Embree", "toolchain": dependency_source("toolchain")[1]["ref"]}
         total = sum(p.stat().st_size for p in publication.iterdir() if p.is_file() and p.name != "overview.png")
-        if total + record["bytes"] > SIZE_CAP:
+        if total + record["bytes"] > size_cap(variant):
             raise ValueError("Overview would exceed the variant publication cap")
         shutil.copyfile(image, publication / "overview.png")
+        if variant == "full":
+            from .federation import refresh_inventory
+            refresh_inventory(publication)
         write_json(output, record)
         print(f"rendered {variant}: {record['width']}x{record['height']}, {record['bytes']} bytes", flush=True)
 
@@ -118,7 +121,7 @@ def verify_render(variant):
     info = image_info(ROOT / record["path"])
     if any(record[key] != value for key, value in info.items()):
         raise ValueError("Overview pixels differ from their receipt")
-    hashes = {name: digest(ROOT / "dist" / variant / name) for name in LAYERS}
+    hashes = {name: digest(ROOT / "dist" / variant / name) for name in layer_names(variant)}
     if record["source_layers"] != hashes:
         raise ValueError("Overview source layers are stale")
     if record["frame"]["purposes"] != PURPOSES or not record["frame"]["all_corners_inside"]:

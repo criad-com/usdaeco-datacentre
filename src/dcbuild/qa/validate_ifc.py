@@ -151,7 +151,7 @@ def validate_file(path: Path, plan) -> list[str]:
         fails += cameras(f, plan) + approaches_and_yards(f, plan)
         from .fitout import check as fitout_check
         fails += fitout_check(f, plan)
-    elif path.name == "demo-datacentre-01-security.ifc":
+    elif path.name in {"demo-datacentre-01-security.ifc", "security.ifc"}:
         fails += cameras(f, plan)
     return fails
 
@@ -165,6 +165,9 @@ def main(dir: Path, variant="base") -> int:
     plan = layout.resolve(spec_mod.load(variant=variant))
     if plan.meta.get("fitout"):
         required.add("demo-datacentre-01-fitout.ifc")
+    if variant == "full":
+        from ..ifc.federation import DELIVERY_ORDER
+        required = {COMBINED, "shared.ifc", *(p + ".ifc" for p in DELIVERY_ORDER)}
     missing = required - {p.name for p in files}
     if missing:
         print(f"G1 FAIL — missing required files: {sorted(missing)}")

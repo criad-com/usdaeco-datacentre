@@ -30,6 +30,13 @@ This is a **data** repository and introduces no schemas.
 | `pod` | 2 | 30 / 2 / 3 | 92 | 41 | 45 | Two ceilings, two pod products; 6 / 10 / 3 first / second / third-fix products |
 | `clash` | 2 | 30 / 2 / 3 | 92 | 41 | 45 | Pod plus three pipes: hard, 5 mm clearance, tangent |
 | `iris` | 2 | 30 / 0 / 3 | 92 | 41 | 45 | Ten readers at 1.2 m centre; one at 1.65 m |
+| `full` | 3 | 36 / 2 / 3 | 111 | 47 | 47 | Union of all fixtures, delivered as shared + eight discipline packages |
+
+`full` publishes delivered IFC files next to their USD twins. Open
+`dist/full/dc.usda` in stock USD; the connected root
+`dist/full/dc.connected.usda` needs the **usdIfc plugin from usdaeco-ifc ≥ 0.3**.
+Connected composition and resolution of the delivered external port references
+are **not proven** here. See the [federation contract](docs/variants.md#federation-contract).
 
 All variants retain 80 columns and 11 iris readers. Full manifests include MEP
 elements by concrete IFC class and activities per programme. Programme A and B
@@ -68,14 +75,18 @@ Runtime hashes use tracked files only, excluding build metadata; a fresh
 Explicit overrides are available:
 
 ```sh
+mkdir -p out/dependencies/revit out/dependencies/sync out/dependencies/validation_core
+git -C ../usdaeco-revit archive v0.1.4 | tar -x -C out/dependencies/revit
+git -C ../usdaeco-sync archive v0.5.4 | tar -x -C out/dependencies/sync
+git -C ../usdaeco-core archive v0.9.4 | tar -x -C out/dependencies/validation_core
 export AECO_TOOLCHAIN_ROOT="../usdaeco-toolchain"
-export AECO_REVIT_ROOT="../usdaeco-revit"
-export AECO_SYNC_ROOT="../usdaeco-sync"
-export AECO_VALIDATION_CORE_ROOT="../usdaeco-core"
-env -u PYTHONPATH "$PY" -m dcbuild publish --variant pod
+export AECO_REVIT_ROOT="$PWD/out/dependencies/revit"
+export AECO_SYNC_ROOT="$PWD/out/dependencies/sync"
+export AECO_VALIDATION_CORE_ROOT="$PWD/out/dependencies/validation_core"
+env -u PYTHONPATH "$PY" -m dcbuild publish --variant full
 env -u PYTHONPATH "$PY" -m dcbuild publish --all
 env -u PYTHONPATH "$PY" run.py --all --publish
-env -u PYTHONPATH PYTHONPATH="$AECO_VALIDATION_CORE_ROOT:$PWD" "$PY" check.py --report out/check.json
+env -u PYTHONPATH "$PY" check.py --report out/check.json
 env -u PYTHONPATH "$PY" -m pytest -q
 ```
 
@@ -86,8 +97,9 @@ uploads. Publishing
 verifies the pins, builds each combined IFC, invokes the converter in a
 subprocess with the frozen core plugin, and checks the output in a second
 process without plugins. `--out out/published` redirects the publication
-parent. Scratch data lives in ignored `out/`. The cap is 10,000,000 bytes per
-variant including the manifest, overview and vanilla render. Data provenance
+parent. Scratch data lives in ignored `out/`. The cap is 10,000,000 bytes for each historical variant and
+40,000,000 bytes for `full`, including delivered IFC, all twins, the manifest
+and both renders. The five historical directories retain every v0.4.9 byte. Data provenance
 is 0.4.5 for `floors`, 0.4.4 for `clash`, and 0.4.2 for the other variants.
 The clash publisher uses a local per-product tessellation adapter before the
 pinned converter's USD authoring pass; see [the measured cases](docs/variants.md#clash).
@@ -186,13 +198,22 @@ manifests, counts, acceptance receipts and overview images.
 | `src/dcbuild/` | Resolver, IFC builder, publisher, QA and source CLI |
 | `tests/` | Source-based tests; no installed package needed |
 | `fixtures/` | Hash-verified frozen core and IFC generation runtimes |
-| `dist/<variant>/` | Three USD layers, receipt, overview and vanilla PNGs |
+| `dist/<variant>/` | Portable USD entry, manifest and PNGs; `full` adds nine IFC deliveries and their twins |
 | `manifests/` | Generator counts, baseline hashes, cameras and render receipts |
 | `docs/` | Use case, variant contracts, acceptance and the [history directory](docs/history/README.md) |
 | `revit/` | Hashed native model script pack, shared-client builder and live launcher |
 | `out/` | Ignored scratch plans, IFCs, comparisons and gate reports |
 
 ## Status
+
+Version **0.5.0** adds the federated `full` publication: **3,009 elements**,
+**6,244 ports**, **3,050 meshes**, **64 catalog types** and **9 systems**.
+Its **46 spatial prims** and project are defined only in shared semantics.
+The [manifest](dist/full/dc.manifest.json) records **1,017 cross-package targets**
+(1,008 directional port links and 9 served-spine targets).
+The full gate passes **244 checks, 0 failed**, including **29 structure rules**; the final pytest suite passes **229 tests**.
+See [current acceptance](docs/acceptance-0.5.0.md) for tests, receipts and deviations.
+
 
 Version **0.4.9** pins toolchain **v0.3.10**, validation core **v0.9.4**,
 Revit **v0.1.4** and Sync **v0.5.4** to their published release tags.

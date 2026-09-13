@@ -1,0 +1,367 @@
+#usda 1.0
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Kitchen_Break"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Open_Office"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+
+                    over "Office_ceiling_void"
+                    {
+                        over "Extent"
+                        {
+                            token visibility = "invisible"
+                        }
+                    }
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "Corridor_ceiling_void"
+                    {
+                        over "Extent"
+                        {
+                            token visibility = "invisible"
+                        }
+                    }
+
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "WC"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Stair_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Meeting_Room_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+            }
+
+            over "L00_Ground"
+            {
+                over "Office_Corridor_L00"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Security_Office"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Corridor_East"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Electrical_Room_A"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Corridor_Spine"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Battery_Room_A"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Corridor_South"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Office_Comms_Room"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Water_Treatment"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Corridor_Centre"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Electrical_Room_B"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Data_Hall_B"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Meeting_Room"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Corridor_West"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Loading_Storage"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Entrance_Lobby"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Fire_Suppression"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Meet_Me_Room_1"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Meet_Me_Room_2"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Data_Hall_A"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Cooling_Plant_Room"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Network_Operations_Centre"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Stair_L00"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Battery_Room_B"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+            }
+
+            over "L02_Office"
+            {
+                over "WC"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Kitchen_Break"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Stair_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Open_Office"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+
+                over "Meeting_Room_L01"
+                {
+                    over "Extent"
+                    {
+                        token visibility = "invisible"
+                    }
+                }
+            }
+        }
+
+        over "Generator_Yard_B"
+        {
+            over "Extent"
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "Generator_Yard_A"
+        {
+            over "Extent"
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+            over "Extent"
+            {
+                token visibility = "invisible"
+            }
+        }
+    }
+}
+
+def "Renders"
+{
+    def Camera "overview"
+    {
+        float4[] clippingPlanes = []
+        float2 clippingRange = (136.47559, 543.68207)
+        float focalLength = 50
+        float focusDistance = 0
+        float fStop = 0
+        float horizontalAperture = 20.955
+        float horizontalApertureOffset = 0
+        token projection = "perspective"
+        float verticalAperture = 13.096875
+        float verticalApertureOffset = 0
+        matrix4d xformOp:transform = ( (0.847998304005088, 0.52999894000318, -5.551115123125784e-17, 0), (-0.2844272778839863, 0.4550836446143782, 0.8438009243891597, 0), (0.447213595499958, -0.7155417527999328, 0.5366563145999496, 0), (178.08107440626128, -218.37971904890043, 175.35728928751348, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

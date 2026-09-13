@@ -1,0 +1,2059 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:layer:package" = "security"
+        string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
+        string "aeco:layer:role" = "package"
+        string "aeco:layer:source" = "security.ifc"
+        string "aeco:layer:sourceSha256" = "0a3d070a7dd95723a62577172d541cbae4f743cd6e2e0dc8d426927a7b093d5a"
+        string "aeco:layer:tag" = "v0.5.0"
+    }
+)
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "Generator_Yard_B"
+        {
+            def Xform "sec_cam_yard_gen_b_fixed_1" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.gen.b.fixed.1"
+                string aeco:id = "1680c4a8-fefd-5db9-91b0-a826a9453cc7"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.gen.b.fixed.1"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 49.76364169072618, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 35.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 49.76364169072618
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.6108652381980153
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (74.5, 2.5, 6.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_yard_b" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/ptz_4k>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.b"
+                string aeco:id = "23cf46a8-bc82-5782-b3d2-89c31f41bf14"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.b"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 6.64, "aeco:cctvSensor:pan": 49.76364169072618, "aeco:cctvSensor:range": 20.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 27.3278313349803}, "name": "Sensor_0", "presets": {"Home": {"dwell": 4.0, "focalLength": 6.64, "home": true, "pan": 49.76364169072618, "tilt": 27.3278313349803}, "Pad_gen_b": {"dwell": 4.0, "focalLength": 6.64, "home": false, "pan": 49.76364169072618, "tilt": 33.799580561112094}}, "tour": ["Home", "Pad_gen_b"]}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 0.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "ptz_4k"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 49.76364169072618
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.47696063422508367
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 2160
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 3840
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.00664
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (74.5, 2.5, 6, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_ext_gen_b" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.ext.gen.b"
+                string aeco:id = "5956e453-050d-5e48-b00a-08d5e24c4965"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.ext.gen.b"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "wall", "aeco:cctv:scenario": "door"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 55.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.9599310885968813
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (73.7, 10.5, 3.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_yard_gen_b_fixed_2" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.gen.b.fixed.2"
+                string aeco:id = "9a73cfd4-cf42-51c7-bb95-e4804591690c"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.gen.b.fixed.2"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": -130.2363583092738, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 35.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -130.2363583092738
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.6108652381980153
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (85.5, 15.5, 6.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        over "Generator_Yard_A"
+        {
+            def Xform "sec_cam_ext_gen_a" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.ext.gen.a"
+                string aeco:id = "1604d036-e3b5-5c9a-9dc8-aa487cd85d08"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.ext.gen.a"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "wall", "aeco:cctv:scenario": "door"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 55.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.9599310885968813
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-1.7000000000000002, 10.5, 3.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_yard_a" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/ptz_4k>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.a"
+                string aeco:id = "9b519a5b-4a53-5430-81a4-4063d64ed8bf"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.a"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 6.64, "aeco:cctvSensor:pan": 49.76364169072618, "aeco:cctvSensor:range": 20.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 27.3278313349803}, "name": "Sensor_0", "presets": {"Home": {"dwell": 4.0, "focalLength": 6.64, "home": true, "pan": 49.76364169072618, "tilt": 27.3278313349803}, "Pad_gen_a": {"dwell": 4.0, "focalLength": 6.64, "home": false, "pan": 49.76364169072618, "tilt": 33.799580561112094}}, "tour": ["Home", "Pad_gen_a"]}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 0.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "ptz_4k"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 49.76364169072618
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.47696063422508367
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 2160
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 3840
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.00664
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-13.5, 2.5, 6, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_yard_gen_a_fixed_1" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.gen.a.fixed.1"
+                string aeco:id = "a6017978-22fe-5283-96a9-c002af3310c0"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.gen.a.fixed.1"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": -49.76364169072618, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 35.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -49.76364169072618
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.6108652381980153
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-13.5, 15.5, 6.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_yard_gen_a_fixed_2" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.gen.a.fixed.2"
+                string aeco:id = "f8f0af52-c8dc-5470-b630-40afb9037f7a"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.gen.a.fixed.2"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 130.2363583092738, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 35.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 130.2363583092738
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.6108652381980153
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-2.5, 2.5, 6.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+            def Xform "sec_cam_yard_hr_fixed_2" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.hr.fixed.2"
+                string aeco:id = "021ca726-e05c-5ea8-853c-a20d1f571e2c"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.hr.fixed.2"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": -151.92751306414706, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 35.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -151.92751306414706
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.6108652381980153
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (47.5, -2.5, 6.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_ext_plant_ext" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.ext.plant.ext"
+                string aeco:id = "1df38d7f-3bd3-5d3d-b760-abde2a162779"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.ext.plant.ext"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "wall", "aeco:cctv:scenario": "door"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 55.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.9599310885968813
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (40, -1.7000000000000002, 3.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_ext_dock" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.ext.dock"
+                string aeco:id = "36e6aabe-a946-534d-a4f0-43274b1f365b"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.ext.dock"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "door"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 7.5, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 20.435531437994403}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.35666730798781376
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0075
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (49.375, -18.25, 8, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_ext_main" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.ext.main"
+                string aeco:id = "7cc0bb8b-1ee6-5dbd-bb56-ce1bbc1c346a"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.ext.main"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "wall", "aeco:cctv:scenario": "door"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 55.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.9599310885968813
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15, -13.7, 3.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "sec_cam_yard_hr_fixed_1" (
+                prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                prepend inherits = </demo_datacentre_01/_TypeCatalog/bullet_4mp_outdoor>
+            )
+            {
+                string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                string aeco:class:ifc:name = "sec.cam.yard.hr.fixed.1"
+                string aeco:id = "a7eacd6f-8c00-580b-997b-722f6d00561b"
+                uniform token aeco:phase = "proposed"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "sec.cam.yard.hr.fixed.1"
+                custom string aeco:props:DC_Identity:System = "sys.sec"
+                custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pole", "aeco:cctv:scenario": "plant"}'
+                custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.7, "aeco:cctvSensor:pan": 28.072486935852957, "aeco:cctvSensor:range": 40.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 35.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 28.072486935852957
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.6108652381980153
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1512
+                custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2688
+                custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.0037
+                custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (32.5, -10.5, 6.5, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Open_Office"
+                {
+                    over "Office_ceiling_void"
+                    {
+                    }
+                }
+
+                over "WC"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "Corridor_ceiling_void"
+                    {
+                    }
+
+                    def Xform "sec_cam_corr_ocorr_1_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.1.2"
+                        string aeco:id = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.1.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (29.5, -1.5, 6.9, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_ocorr_1_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.1.1"
+                        string aeco:id = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.1.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15.5, -1.5, 6.9, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+            }
+
+            over "L00_Ground"
+            {
+                over "Office_Corridor_L00"
+                {
+                    def Xform "sec_cam_corr_ocorr_0_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.0.1"
+                        string aeco:id = "81a4b44f-b5f8-592c-ae43-07b198fb1c1f"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.0.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (16.5, -2.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_ocorr_0_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.0.2"
+                        string aeco:id = "f1de745b-2c2d-5448-930f-14db4f2fcda6"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.0.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 270.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 270
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (16.5, -0.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Security_Office"
+                {
+                }
+
+                over "Corridor_East"
+                {
+                    def Xform "sec_cam_corr_corr_e_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.e.2"
+                        string aeco:id = "2a746327-674b-56ca-96b0-8dc6c3e60cb2"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.e.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 270.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 270
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (70, 35.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_hall_b_e" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.hall.b.e"
+                        string aeco:id = "55f5a3c5-ef38-5ef8-b656-f1a6e89347b2"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.hall.b.e"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.hall.b.e"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (68.14, 28.25, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_e_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.e.1"
+                        string aeco:id = "6dd21295-3c0e-5fe2-8cc5-647b2acdee6c"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.e.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (70, 18.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_hall_b_e" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.hall.b.e"
+                        string aeco:id = "f72a4c59-2931-5574-8be9-4a98e49cccc7"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.hall.b.e"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": -145.3048464687663, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -145.3048464687663
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (68.65, 27.45, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Electrical_Room_A"
+                {
+                    def Xform "AVA_Electrical_Room_A" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Electrical Room A"
+                        string aeco:id = "4b584bb1-e55d-5386-9e2a-acd52604fd61"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.elec.a"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6, 10.5, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Corridor_Spine"
+                {
+                    def Xform "sec_cam_corr_corr_spine_6" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.spine.6"
+                        string aeco:id = "157ad518-4b50-5525-8fea-20cb3f0b041c"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.spine.6"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (71.5, 16.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_spine_4" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.spine.4"
+                        string aeco:id = "15dda753-a796-5cae-8d3d-8d3d1b798b1d"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.spine.4"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (43.1, 16.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_elec_b" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.elec.b"
+                        string aeco:id = "16acdf41-334b-5bd5-a3da-6dda44f2a7d7"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.elec.b"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.elec.b"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (6.123233995736766e-17, 1, 0, 0), (-1, 6.123233995736766e-17, 0, 0), (0, 0, 1, 0), (70.25, 15.14, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_mmr_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.mmr.2"
+                        string aeco:id = "1c297e59-d234-5b8e-a6a3-609f5585cf74"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.mmr.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": -55.304846468765874, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -55.304846468765874
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (50.55, 15.65, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_elec_a" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.elec.a"
+                        string aeco:id = "58c4272e-5e9d-559a-b3ab-f602af24d1fb"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.elec.a"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.elec.a"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (6.123233995736766e-17, 1, 0, 0), (-1, 6.123233995736766e-17, 0, 0), (0, 0, 1, 0), (10.25, 15.14, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_elec_a" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.elec.a"
+                        string aeco:id = "6787dbc9-b68c-542e-9141-7234ea79b9de"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.elec.a"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": -55.304846468766094, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -55.304846468766094
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.55, 15.65, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_elec_b" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.elec.b"
+                        string aeco:id = "9659bb7a-bd71-5cfc-939e-0c7df304e336"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.elec.b"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": -55.304846468765874, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -55.304846468765874
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (68.55, 15.65, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_mmr_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.mmr.2"
+                        string aeco:id = "9fc66cb7-c597-548c-b8af-75575bf46649"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.mmr.2"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.mmr.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (6.123233995736766e-17, 1, 0, 0), (-1, 6.123233995736766e-17, 0, 0), (0, 0, 1, 0), (51.8, 15.14, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_spine_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.spine.2"
+                        string aeco:id = "a1102286-c4c4-5f37-85bf-7f8533e08cc5"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.spine.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (14.7, 16.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_spine_3" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.spine.3"
+                        string aeco:id = "c0d22337-3534-5aab-9a48-d116522c9473"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.spine.3"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (28.9, 16.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_hall_b_s" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.hall.b.s"
+                        string aeco:id = "ce6c55ad-4e78-5e63-828c-456d846d70c1"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.hall.b.s"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.hall.b.s"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (6.123233995736766e-17, 1, 0, 0), (-1, 6.123233995736766e-17, 0, 0), (0, 0, 1, 0), (46.25, 17.86, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_spine_5" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.spine.5"
+                        string aeco:id = "d405dbd2-9cfc-56f5-a320-d77fa1618022"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.spine.5"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (57.3, 16.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_hall_a_s" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.hall.a.s"
+                        string aeco:id = "d714f2dd-af6c-5604-8957-7c837bd54bdb"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.hall.a.s"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.hall.a.s"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (6.123233995736766e-17, 1, 0, 0), (-1, 6.123233995736766e-17, 0, 0), (0, 0, 1, 0), (9.25, 17.86, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_hall_a_s" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.hall.a.s"
+                        string aeco:id = "ebb5fb2b-745a-56a9-b089-d5d95c593514"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.hall.a.s"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 124.69515353123397, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 124.69515353123397
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.45, 17.35, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_hall_b_s" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.hall.b.s"
+                        string aeco:id = "eecb40ab-3b50-5217-8489-8fed04a3483c"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.hall.b.s"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 124.69515353123421, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 124.69515353123421
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (45.45, 17.35, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_spine_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.spine.1"
+                        string aeco:id = "f9543eb0-4bd3-55ce-8b94-105a44e68e14"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.spine.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.5, 16.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Battery_Room_A"
+                {
+                    def Xform "AVA_Battery_Room_A" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Battery Room A"
+                        string aeco:id = "041d941e-50dc-5699-82d3-b3e40267b049"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.batt.a"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6, 3, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Corridor_South"
+                {
+                    def Xform "sec_cam_corr_corr_s_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.s.1"
+                        string aeco:id = "15a84451-1e32-5917-8c2a-ca39bb800db4"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.s.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15, 0.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_office_link" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.office.link"
+                        string aeco:id = "45eb74fd-120c-50f4-8a96-04557e24e6d4"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.office.link"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": -55.30484646876608, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -55.30484646876608
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (16.05, 0.6500000000000004, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_s_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.s.2"
+                        string aeco:id = "6a964f1a-e11e-5876-a9ac-32bbeadc9882"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.s.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 270.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 270
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15, 14.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_office_link" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.office.link"
+                        string aeco:id = "9f18ec18-169f-5d23-8daa-ab76fcd64c0d"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.office.link"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.office.link"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.65
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (6.123233995736766e-17, 1, 0, 0), (-1, 6.123233995736766e-17, 0, 0), (0, 0, 1, 0), (17.75, 0.13999999999999968, 1.5699999999999998, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_mmr_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.mmr.1"
+                        string aeco:id = "9f69ec75-4c5a-5c9d-a6f8-f2c19355e505"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.mmr.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 34.695153531233984, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 34.695153531233984
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17.35, 9.55, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_mmr_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.mmr.1"
+                        string aeco:id = "d3c1a99b-5ad0-585e-9844-0ce455d9d0c8"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.mmr.1"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.mmr.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17.86, 10.8, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Office_Comms_Room"
+                {
+                }
+
+                over "Water_Treatment"
+                {
+                }
+
+                over "Corridor_Centre"
+                {
+                    def Xform "sec_cam_door_hall_b_w" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.hall.b.w"
+                        string aeco:id = "05ff5cd2-7bdf-51b1-9b63-7ea84ca65250"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.hall.b.w"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 34.695153531233984, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 34.695153531233984
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (37.35, 26.55, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_c_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.c.2"
+                        string aeco:id = "290e2c0d-ca55-55d0-b1d2-a1c4e3ab6951"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.c.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 270.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 270
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 35.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_hall_b_w" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.hall.b.w"
+                        string aeco:id = "98bfb7a6-153e-58e8-92df-e77a80ac2726"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.hall.b.w"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.hall.b.w"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (37.86, 28.25, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_hall_a_e" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.hall.a.e"
+                        string aeco:id = "9e666400-0d29-5bd8-83a4-03903c8153b2"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.hall.a.e"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.hall.a.e"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34.14, 28.25, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_door_hall_a_e" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.hall.a.e"
+                        string aeco:id = "e879ff19-3558-5c1b-9863-bb8a6b8395cf"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.hall.a.e"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": -145.30484646876602, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -145.30484646876602
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34.65, 27.45, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_c_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.c.1"
+                        string aeco:id = "fb5f5224-5673-5f64-9feb-3f7c08a46f45"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.c.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 18.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Electrical_Room_B"
+                {
+                    def Xform "AVA_Electrical_Room_B" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Electrical Room B"
+                        string aeco:id = "d0594483-f00a-59df-901a-1c8f07281c4e"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.elec.b"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (66, 10.5, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Data_Hall_B"
+                {
+                    def Xform "AVA_Data_Hall_B" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Data Hall B"
+                        string aeco:id = "f7915aa7-ee81-59f8-8f51-c9958fe3a5a9"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.hall.b"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (53, 27, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Meeting_Room"
+                {
+                }
+
+                over "Corridor_West"
+                {
+                    def Xform "sec_cam_door_hall_a_w" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.door.hall.a.w"
+                        string aeco:id = "34321c5e-dd53-5220-a18c-e0a186cbc38a"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.door.hall.a.w"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "door"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 3.0, "aeco:cctvSensor:pan": 34.695153531233935, "aeco:cctvSensor:range": 12.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 60.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 34.695153531233935
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -1.0471975511965976
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.003
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.35, 26.55, 3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_w_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.w.1"
+                        string aeco:id = "bccc0760-fb91-586b-868b-fa614e1f1598"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.w.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 90.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 90
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2, 18.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_corr_w_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.corr.w.2"
+                        string aeco:id = "c7644a8f-7903-56f3-9251-401b0e9231d8"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.corr.w.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 270.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 270
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2, 35.5, 3.5, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "Iris_Scanner_door_hall_a_w" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/Iris_Scanner>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSensor.IDENTIFIERSENSOR"
+                        string aeco:class:ifc:name = "Iris Scanner door.hall.a.w"
+                        string aeco:id = "d4cd7132-d2e9-5cd9-9be2-461959bf46f5"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Door = "door.hall.a.w"
+                        custom string aeco:props:DC_Identity:Id = "sec.iris.hall.a.w"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom double aeco:props:DC_Security:DoorEdgeOffset = 0.35
+                        custom double aeco:props:DC_Security:MountingHeight = 1.2
+                        custom string aeco:props:DC_Security:Side = "pull"
+                        custom string aeco:props:Pset_SensorTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.86, 28.25, 1.1199999999999999, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Loading_Storage"
+                {
+                    def Xform "AVA_Loading_Storage" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Loading & Storage"
+                        string aeco:id = "1dfbb4ff-6bc0-56be-925d-f5b472c44856"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.loading"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (57, 7.5, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Entrance_Lobby"
+                {
+                    def Xform "sec_cam_lobby" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/ptz_4k>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.lobby"
+                        string aeco:id = "00a0fb25-9034-5fef-8654-da86aa317856"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.lobby"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "corner", "aeco:cctv:scenario": "lobby"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 6.64, "aeco:cctvSensor:pan": -57.9946167919165, "aeco:cctvSensor:range": 20.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 19.819126090246726}, "name": "Sensor_0", "presets": {"Home": {"dwell": 4.0, "focalLength": 6.64, "home": true, "pan": -57.9946167919165, "tilt": 19.819126090246726}, "LobbyCorridor": {"dwell": 4.0, "focalLength": 6.64, "home": false, "pan": 7.125016348901798, "tilt": 22.8660331751519}, "MainDoor": {"dwell": 4.0, "focalLength": 6.64, "home": false, "pan": -73.61045966596522, "tilt": 10.86151286096632}}, "tour": ["Home", "MainDoor", "LobbyCorridor"]}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 0.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "ptz_4k"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 1
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -57.9946167919165
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.3459090051427162
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 2160
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 3840
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.00664
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12.5, -3.5, 3.3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_lobby_fixed_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.lobby.fixed.1"
+                        string aeco:id = "0d5ca8c9-b0d2-5ea9-8d94-c6026ad954c3"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.lobby.fixed.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "corner", "aeco:cctv:scenario": "lobby"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 57.264773727892404, "aeco:cctvSensor:range": 14.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 25.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 57.264773727892404
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.4363323129985824
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12.3, -11.7, 3.3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_lobby_fixed_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.lobby.fixed.2"
+                        string aeco:id = "2a2dd6c7-7c7d-5251-8b04-b30b2da64e9f"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.lobby.fixed.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "corner", "aeco:cctv:scenario": "lobby"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": -122.7352262721076, "aeco:cctvSensor:range": 14.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 25.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = -122.7352262721076
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.4363323129985824
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17.7, -3.3000000000000007, 3.3, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "AVA_Entrance_Lobby" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Entrance Lobby"
+                        string aeco:id = "b8489f5b-b911-5be7-82b8-b9d6118c759a"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.lobby"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15, -7.5, 3.45, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Fire_Suppression"
+                {
+                    def Xform "AVA_Fire_Suppression" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Fire Suppression"
+                        string aeco:id = "c0e510f4-89a6-58be-973a-83504b700b41"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.fire"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (21, 3, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Meet_Me_Room_1"
+                {
+                    def Xform "AVA_Meet_Me_Room_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Meet-Me Room 1"
+                        string aeco:id = "43afef2c-86c1-53b9-b879-98a680d2a1ad"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.mmr.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (21, 10.5, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Meet_Me_Room_2"
+                {
+                    def Xform "AVA_Meet_Me_Room_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Meet-Me Room 2"
+                        string aeco:id = "8c9daeb9-1f4b-524b-a05f-b1835e35535d"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.mmr.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (51, 10.5, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Data_Hall_A"
+                {
+                    def Xform "AVA_Data_Hall_A" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Data Hall A"
+                        string aeco:id = "322adb85-5df0-5a0c-b329-df4e374ee782"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.hall.a"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (19, 27, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Cooling_Plant_Room"
+                {
+                    def Xform "AVA_Cooling_Plant_Room" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Cooling Plant Room"
+                        string aeco:id = "da60c1e8-0695-570d-a6f3-03134a0700c5"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.plant"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 7.5, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Network_Operations_Centre"
+                {
+                }
+
+                over "Stair_L00"
+                {
+                }
+
+                over "Battery_Room_B"
+                {
+                    def Xform "AVA_Battery_Room_B" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/AVA_Sounder_Beacon>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAlarm.AVA"
+                        string aeco:class:ifc:name = "AVA Battery Room B"
+                        string aeco:id = "f926817e-640b-58cd-b59f-595ace3bcf50"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.ava.batt.b"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AlarmTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (66, 3, 5.7, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+            }
+
+            over "L02_Office"
+            {
+                over "WC"
+                {
+                }
+
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    def Xform "sec_cam_corr_ocorr_1_2_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.1.2.1"
+                        string aeco:id = "9450e28b-3295-58d3-9227-46ce3ced05f6"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.1.2.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15.5, -1.5, 9.9, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "sec_cam_corr_ocorr_1_2_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.1.2.2"
+                        string aeco:id = "cf0e90a2-9077-5579-84fb-c34662f92afe"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.1.2.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (29.5, -1.5, 9.9, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Open_Office"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+            }
+        }
+    }
+
+    class "_TypeCatalog"
+    {
+        class "bullet_4mp_outdoor" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+            custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+            custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalRange": [3.7, 7.5], "aeco:cctvSensor:hfovRange": [100.0, 52.0], "aeco:cctvSensor:motorised": false, "aeco:cctvSensor:offset": [0, 0, 0], "aeco:cctvSensor:panRange": [0, 0], "aeco:cctvSensor:pixels": [2688, 1512], "aeco:cctvSensor:projection": "rectilinear", "aeco:cctvSensor:sensorSize": [0.0, 0.0], "aeco:cctvSensor:spectrum": "visible", "aeco:cctvSensor:tiltRange": [0, 0], "aeco:cctvSensor:vfovRange": [55.0, 30.0]}, "name": "Sensor_0"}]'
+            custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+            string aeco:type:model = "bullet_4mp_outdoor"
+        }
+
+        class "dome_5mp" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+            custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+            custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalRange": [3.0, 8.5], "aeco:cctvSensor:hfovRange": [104.0, 34.0], "aeco:cctvSensor:motorised": false, "aeco:cctvSensor:offset": [0.0, 0.0, -0.08], "aeco:cctvSensor:panRange": [0, 0], "aeco:cctvSensor:pixels": [2592, 1944], "aeco:cctvSensor:projection": "rectilinear", "aeco:cctvSensor:sensorSize": [0.0, 0.0], "aeco:cctvSensor:spectrum": "visible", "aeco:cctvSensor:tiltRange": [0, 0], "aeco:cctvSensor:vfovRange": [76.0, 26.0]}, "name": "Sensor_0"}]'
+            custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+            string aeco:type:model = "dome_5mp"
+        }
+
+        class "ptz_4k" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+            custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+            custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalRange": [6.64, 225.5], "aeco:cctvSensor:hfovRange": [60.8, 2.0], "aeco:cctvSensor:motorised": true, "aeco:cctvSensor:offset": [0, 0, 0], "aeco:cctvSensor:panRange": [-180.0, 180.0], "aeco:cctvSensor:pixels": [3840, 2160], "aeco:cctvSensor:projection": "rectilinear", "aeco:cctvSensor:sensorSize": [0.0, 0.0], "aeco:cctvSensor:spectrum": "visible", "aeco:cctvSensor:tiltRange": [0.0, 90.0], "aeco:cctvSensor:vfovRange": [36.5, 1.1]}, "name": "Sensor_0"}]'
+            custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 0.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "ptz_4k"}'
+            string aeco:type:model = "ptz_4k"
+        }
+
+        class "AVA_Sounder_Beacon" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAlarmType.AVA"
+            string aeco:type:model = "AVA Sounder Beacon"
+        }
+
+        class "Iris_Scanner" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSensorType.IDENTIFIERSENSOR"
+            string aeco:type:model = "Iris Scanner"
+        }
+    }
+
+    def Scope "Systems"
+    {
+        def AecoSystem "Physical_Security" (
+            prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+            displayName = "Physical Security"
+        )
+        {
+            string aeco:class:ifc:code = "IfcDistributionSystem.SECURITY"
+            string aeco:class:ifc:name = "Physical Security"
+            string aeco:id = "81114b88-867b-5e68-9c0d-6ed26ff93d7d"
+            prepend rel aeco:serves = </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01>
+            prepend rel collection:members:includes = [
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Hall_A/AVA_Data_Hall_A>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Data_Hall_B/AVA_Data_Hall_B>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Electrical_Room_A/AVA_Electrical_Room_A>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Electrical_Room_B/AVA_Electrical_Room_B>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Battery_Room_A/AVA_Battery_Room_A>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Battery_Room_B/AVA_Battery_Room_B>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meet_Me_Room_1/AVA_Meet_Me_Room_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Meet_Me_Room_2/AVA_Meet_Me_Room_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Cooling_Plant_Room/AVA_Cooling_Plant_Room>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Fire_Suppression/AVA_Fire_Suppression>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Loading_Storage/AVA_Loading_Storage>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/AVA_Entrance_Lobby>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Iris_Scanner_door_hall_a_s>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/Iris_Scanner_door_hall_a_w>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/Iris_Scanner_door_hall_a_e>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Iris_Scanner_door_hall_b_s>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/Iris_Scanner_door_hall_b_w>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/Iris_Scanner_door_hall_b_e>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/Iris_Scanner_door_mmr_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Iris_Scanner_door_mmr_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Iris_Scanner_door_elec_a>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/Iris_Scanner_door_elec_b>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/Iris_Scanner_door_office_link>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_main>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_dock>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_ext_gen_a>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_ext_gen_b>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_ext_plant_ext>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_a_s>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_door_hall_a_w>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_a_e>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_hall_b_s>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_door_hall_b_w>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_door_hall_b_e>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_a>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_mmr_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_mmr_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_door_elec_b>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_door_office_link>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_West/sec_cam_corr_corr_w_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Centre/sec_cam_corr_corr_c_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_East/sec_cam_corr_corr_e_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_3>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_4>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_5>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_Spine/sec_cam_corr_corr_spine_6>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Corridor_South/sec_cam_corr_corr_s_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Office_Corridor_L00/sec_cam_corr_ocorr_0_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Office_Corridor_L01/sec_cam_corr_ocorr_1_2_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_gen_a_fixed_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_gen_b_fixed_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Heat_Rejection_Yard/sec_cam_yard_hr_fixed_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_1>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby_fixed_2>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_A/sec_cam_yard_a>,
+                </demo_datacentre_01/demo_datacentre_01_Site/Generator_Yard_B/sec_cam_yard_b>,
+                </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L00_Ground/Entrance_Lobby/sec_cam_lobby>,
+            ]
+        }
+    }
+}
+

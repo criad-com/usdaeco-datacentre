@@ -42,7 +42,7 @@
             cp -R ${self} source
             chmod -R u+w source
             cd source
-            env -u PYTHONPATH PYTHONPATH=${validation_core}:$PWD ${python}/bin/python check.py
+            env -u PYTHONPATH ${python}/bin/python check.py
             mkdir -p "$out"
             cp out/check.json "$out/"
           '');

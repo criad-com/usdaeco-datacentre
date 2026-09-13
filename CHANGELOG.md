@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.5.0 — 2026-09-13
+
+- Add the ordered `full` union: three storeys, all fitout, clash and reader fixtures.
+- Publish nine normalized IFC4X3 deliveries with readable semantic twins, binary
+  geometry, a USD-only root, a connected IFC root and a complete file inventory.
+- Preserve cross-package handoff ports using IFC document references; restore
+  their USD targets and retain types with a frozen-converter spatial post-pass.
+- Gate monolithic parity, shared-only spatial definitions, eight package mute
+  drills, plugin-free compliance, render freshness and the full-only 40 MB cap.
+- Verify 244 checks, 0 failed; 229 tests; 29 structure rules; 12 fresh publications and
+  six fresh S28 renders. Full occupies 22,038,135 / 40,000,000 bytes.
+- Retain all five historical publication directories byte-for-byte. Fresh render
+  receipts update renderer-code provenance while preserving reviewed pixels.
+- Connected composition remains not proven pending the IFC file-format plugin
+  and external-port-reference support. Nix evaluation is not proven: its resolved
+  dependency set marks the selected IfcOpenShell package broken.
+
 ## 0.4.9 — 2026-09-12
 
 - public re-pin: toolchain v0.3.10, validation core v0.9.4, Revit v0.1.4,

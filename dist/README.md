@@ -1,79 +1,87 @@
 # Published demo data centre stages
 
-Five standalone design options for `demo-datacentre-01` compose with stock USD.
-Keep each variant's three USD files together; no sibling checkout, family
-plugin or IFC converter is needed to view them. From the repository root:
+Six design options for `demo-datacentre-01` compose with stock USD. Keep each
+variant directory together; no sibling checkout, family plugin or converter
+is needed to view its `dc.usda` entry. From the repository root:
 
 ```sh
-env -u PYTHONPATH -u PXR_PLUGINPATH_NAME -u PXR_AR_DEFAULT_SEARCH_PATH usdview dist/base/dc.usda
+env -u PYTHONPATH -u PXR_PLUGINPATH_NAME -u PXR_AR_DEFAULT_SEARCH_PATH usdview dist/full/dc.usda
 ```
 
-Replace `base` with `floors`, `pod`, `clash` or `iris`. The root declares its
-default prim, metres, Z up and stock fallback prim types. Its two relative
-sublayers carry semantics and derived tessellated geometry. Space extents use
-`purpose = guide`; leave guides off for the building view. The separate camera
-layers in `manifests/cameras/` record the framed publication views.
+Replace `full` with `base`, `floors`, `pod`, `clash` or `iris`. Every root
+declares its default prim, metres, Z up and eight stock fallback prim types.
+Space extents use `purpose = guide`; leave guides off for the building view.
+Separate camera layers in `manifests/cameras/` frame the publication views.
 
-![Base variant, rendered with stock USD](base/vanilla.png)
+![Full variant, rendered with stock USD](full/vanilla.png)
 
 `base` is the original facility; `floors` adds a repeated office floor and two
-deliberate changes; `pod` adds fit-out and planning fixtures; `clash` adds three
-coordination cases; `iris` varies reader mounting heights. Exterior renders
-show the building; internal differences require a closer view in usdview.
-See [variant contracts](../docs/variants.md) for those fixtures.
+deliberate changes; `pod` adds fitout and planning fixtures; `clash` adds three
+coordination cases; `iris` varies reader heights. `full` combines all fixtures.
+Exterior renders show the building; inspect internal differences in usdview.
+See [variant contracts](../docs/variants.md) for the geometry and merge rules.
 
-Counts below come directly from each `dc.manifest.json`. Spaces
-include rooms, voids and yards; meshes include extent guides. The two
-`unclassified` entries are explicitly classified IFC proxies for utility
-intakes.
+Counts come from each `dc.manifest.json`. Spaces include rooms, voids and
+yards; meshes include extent guides. The two unclassified/proxy entries are
+explicitly classified IFC proxies for utility intakes.
 
-| Variant | Levels | Spaces | Elements | Ports | Meshes | Unparented | Unclassified/proxy |
+| Variant | Levels | Spaces | Elements | Ports | Meshes | Unparented | Proxies |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `base` | 2 | 33 | 2954 | 6212 | 2987 | 0 | 2 |
-| `floors` | 3 | 39 | 2983 | 6212 | 3022 | 0 | 2 |
-| `pod` | 2 | 35 | 2977 | 6238 | 3012 | 0 | 2 |
-| `clash` | 2 | 35 | 2980 | 6244 | 3015 | 0 | 2 |
-| `iris` | 2 | 33 | 2954 | 6212 | 2987 | 0 | 2 |
+| base | 2 | 33 | 2954 | 6212 | 2987 | 0 | 2 |
+| floors | 3 | 39 | 2983 | 6212 | 3022 | 0 | 2 |
+| pod | 2 | 35 | 2977 | 6238 | 3012 | 0 | 2 |
+| clash | 2 | 35 | 2980 | 6244 | 3015 | 0 | 2 |
+| iris | 2 | 33 | 2954 | 6212 | 2987 | 0 | 2 |
+| full | 3 | 41 | 3009 | 6244 | 3050 | 0 | 2 |
 
-All file sizes are bytes. Each variant remains below the 10,000,000-byte cap.
+The historical variants each have three USD files and a 10,000,000-byte cap.
+All 30 files in their five directories retain their v0.4.9 bytes.
 
-| Variant | dc.usda | Semantics USDC | Geometry USDC | Manifest | Overview PNG | Vanilla PNG | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| `base` | 517 | 1,471,556 | 332,637 | 990 | 144,133 | 144,319 | 2,094,152 |
-| `floors` | 517 | 1,479,303 | 338,756 | 992 | 145,848 | 145,912 | 2,111,328 |
-| `pod` | 517 | 1,483,117 | 344,521 | 989 | 144,082 | 144,340 | 2,117,566 |
-| `clash` | 517 | 1,485,167 | 359,760 | 6,161 | 144,199 | 144,689 | 2,140,493 |
-| `iris` | 517 | 1,471,930 | 332,637 | 990 | 144,529 | 144,242 | 2,094,845 |
+`full` has nine delivered IFC4X3 files and their USD twins. Delivery order is
+site, arch, structure, cooling, electrical, it, fitout, security, shared.
+Shared owns all spatial definitions; each discipline overlays that spine.
+Every `<package>.usda` sublayers its readable `.semantics.usda` before its
+binary `.geometry.usdc`. Layer provenance names the producer, source IFC and
+SHA-256. The [full manifest](full/dc.manifest.json) inventories every delivered
+file except itself and records counts and every cross-package target.
 
-Each `vanilla.png` is 1280×800, non-uniform and below 400,000 bytes. It comes
-from the toolchain v0.3.2 S28 path: `usdrecord --disableGpu --renderer Embree
---purposes proxy,render`, running in a fresh process without family plugins or
-`PYTHONPATH`. Before rendering, the composed publication is flattened in a
-plugin-free process, then the crate and camera are relocated into an empty
-directory. All facility bounds fit the camera frustum with a 15% margin.
-Source/code/pin hashes, normalized flattened-stage hashes, camera hashes and
-image inventories are recorded in [vanilla receipts](../manifests/vanilla.json).
-The guide-enabled `overview.png` is also refreshed for `clash` only.
+The full directory is capped at **40,000,000 bytes**. Its measured publication
+is **22,038,135 bytes**, including 12,376,817 bytes of IFC, 8,479,793 bytes of
+semantic USDA, 482,304 bytes of geometry crates, roots, manifest and images.
+Both images are 1280×800, non-uniform, and below 400,000 bytes each.
 
-To reproduce, prepare the pinned sources and Python environment described in
-the [root README](../README.md#build-and-check), and put `usdrecord` on PATH:
+`full/dc.connected.usda` is the connected entry and needs the **usdIfc plugin
+from usdaeco-ifc ≥ 0.3**. It references discipline IFCs with `spine=over`, then
+shared IFC. Connected composition is **not proven** here. The reader also
+needs to translate the delivered external-port document references; see the
+[federation contract](../docs/variants.md#federation-contract).
+
+To reproduce, prepare the pinned sources and Python environment in the
+[root README](../README.md#build-and-check), and put `usdrecord` and
+`usdchecker` on PATH:
 
 ```sh
 env -u PYTHONPATH "$PY" -m dcbuild publish --all
 env -u PYTHONPATH "$PY" run.py --all --publish
+env -u PYTHONPATH "$PY" check.py --report out/check.json
 ```
 
-Use `run.py --variant pod --publish` for one image, or omit `--publish` to
-write only ignored `out/vanilla/<variant>/` outputs. The publisher regenerates
-combined IFCs and converts them using the frozen converter/core inputs. The
-package is v0.4.4; only `clash` data provenance advances to v0.4.4. Its
-manifest includes the planted geometry and measured comparison cases.
-Four variant publications retain their v0.4.3 bytes. All five publications
-must match two independent fresh publishes. PNG pixels are not compared across Embree runs;
-source freshness, committed image hashes, non-uniform content and caps are.
+`run.py --variant full --publish` regenerates both full images. Ordinary runs
+write ignored `out/vanilla/<variant>/`. The full publisher normalizes IFC
+headers, then invokes the hash-verified frozen converter/core inputs. The
+five historical publication paths and data provenance stay unchanged.
 
-Size discipline: no tracked file exceeds 2,000,000 bytes. Combined/federated
-IFCs, resolved plans, temporary flattened crates and fresh verification renders
-are regenerable with the commands above and stay under ignored `out/`. The
-flattened crates are not duplicated in git. Measured tracked-tree totals before
-and after the preceding release are in [acceptance](../docs/acceptance-0.4.3.md).
+S28 flattens each composed publication in a plugin-free process, relocates
+the crate and camera to an empty directory, then runs stock
+`usdrecord --disableGpu --renderer Embree --purposes proxy,render`. A fresh
+render must be non-uniform and fit all facility bounds with a 15% margin.
+Historical reviewed pixels remain fixed; PNG hashes are not compared between
+Embree runs. Source/code/pin hashes, normalized stage hashes, camera hashes
+and image inventories are recorded in the [vanilla receipts](../manifests/vanilla.json).
+
+The gate compares two fresh publications byte-for-byte with committed data,
+checks full against an independent monolithic conversion, mutes each delivery,
+and runs all eight core validators. The publication sweep inspects IFC text
+and rejects archives even when they use another extension. Combined IFCs,
+plans, temporary flattened crates and fresh gate outputs stay in ignored
+`out/`; only the delivered federation is committed.

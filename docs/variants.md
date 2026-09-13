@@ -202,3 +202,117 @@ The inherited corridor camera rule adds two cameras on L02, making 47 in the
 floors variant. The historical recorder allowance and coverage evidence apply
 to base. The pod assembly bodies are bounding envelopes; they do not model the
 internal construction of a prefabricated bathroom.
+
+## full
+
+`full` merges `base` → `floors` → `pod` → `clash` → `iris`, using
+`extends: [floors, pod, clash, iris]`. Parents resolve first, mappings recurse,
+record lists merge by `id` in base order, and later scalar values win.
+`clash` also inherits `pod`; merging its identical ids retains each fixture once.
+The only interaction needing resolution is typical-room expansion: L02 copies
+L01's six occupied rooms and doors, excluding ceiling voids. The two voids and
+their programme enclosures remain on L01. Roof elevations and the partition
+edit come from `floors`; controlled pipe tessellation comes from `clash`; the
+1.65 m reader override comes from `iris`. There are no competing scalar values.
+
+The union resolves to 3 storeys, 36 occupied rooms, 2 voids, 3 yards, 111 walls,
+47 doors, 80 columns and 47 cameras. Fitout retains 2 ceilings, 2 pods and
+6 / 10 / 3 first / second / third-fix products, plus the 3 planted pipes.
+All 11 readers remain; ten are at 1.2 m and one at 1.65 m.
+
+## Federation contract
+
+`dcbuild publish --variant full` writes nine IFC4X3 deliveries and nine twins
+in `dist/full/`. The delivery order, strongest first, is `site`, `arch`,
+`structure`, `cooling`, `electrical`, `it`, `fitout`, `security`, then `shared`.
+`dc.usda` sublayers those readable package roots. Each package root sublayers
+`<package>.semantics.usda` before `<package>.geometry.usdc`. All nine roots
+carry the same default prim, metres, Z up and eight stock fallbacks as the
+historical variants. Keep the whole directory together when moving it.
+
+The shared IFC contains project, site, facility, storeys, spaces and the
+setting-out grid, with **zero elements**. The generator has no zones in this
+fixture. Shared semantics alone defines the project and 46 spatial prims;
+shared geometry carries 41 space extents with `purpose = guide`. Discipline
+semantics has empty spatial `over`s, its own elements, ports and systems, and
+its catalog **classes**, composed through `inherits` as required by core B5.
+Geometry defines only owned bodies, with `over` ancestors. Catalog types stay
+classes rather than changing the family type/occurrence contract.
+
+| Delivery | Elements | Types | Systems | Ports | Meshes |
+|---|---:|---:|---:|---:|---:|
+| site | 3 | 0 | 0 | 0 | 3 |
+| arch | 167 | 6 | 0 | 0 | 167 |
+| structure | 84 | 2 | 0 | 0 | 84 |
+| cooling | 737 | 22 | 3 | 1718 | 737 |
+| electrical | 1254 | 21 | 2 | 2860 | 1254 |
+| it | 671 | 8 | 3 | 1640 | 671 |
+| fitout | 23 | 0 | 0 | 26 | 23 |
+| security | 70 | 5 | 1 | 0 | 70 |
+| shared | 0 | 0 | 0 | 0 | 41 |
+| Total | 3009 | 64 | 9 | 6244 | 3050 |
+
+The fixture mapping is L02 architecture → `arch`, with its spatial spine in
+`shared`; pods, ceilings and 6/10/3 fix products → `fitout`; three clash pipes
+→ `cooling`; all readers, including the 1.65 m example → `security`.
+L02's architectural comparison has exactly the moved partition and extra door;
+the partition totals remain 43.0 m / 46.2 m. The L01-only fitout is excluded
+from that architectural comparison, and is separately counted in the union.
+
+The full builder partitions the complete coordination IFC graph because the
+legacy standalone builders omit intake ports that need an upstream discipline.
+It selects owned referents, trims relationship sets, retains their reachable
+geometry, properties and styling, and carries the same spatial skeleton in
+each IFC. Spatial placement remains owned solely by shared in USD.
+Header timestamps are fixed to `2000-01-01T00:00:00`; file names are basenames,
+author/organization are empty, and the originating generator string is fixed
+at `usdaeco-datacentre 0.5.0`. No comparison-time normalization is used for
+published bytes. Historical build and publication paths are unchanged.
+
+An IFC file cannot directly point to an entity in another IFC file. Each
+external port target is therefore delivered as an `IfcDocumentReference`:
+`Location` is the target package's IFC basename, `Identification` its port
+GlobalId, and `Name` is `aeco:connectedPorts`. `IfcRelAssociatesDocument`
+associates that reference with the local port. The publisher resolves these
+references to symmetric USD relationship targets without defining foreign
+ports. All 504 connection pairs survive (1,008 directional targets).
+The manifest also records nine `aeco:serves` targets into shared; there are
+zero cross-package member targets. Every crossing target appears once with
+source, relationship, target and both package names.
+
+The bundled converter exposes `overlay_spine`, but its frozen implementation
+suppresses catalog classes and its later `DefinePrim` calls promote spatial
+ancestors. The publisher uses its ordinary conversion, then clears spatial
+opinions, demotes ancestors, retains classes and removes discipline space
+extents. The frozen converter and frozen core bytes remain unchanged. The
+three clash bodies use the same controlled tessellation as `clash`; measured
+tolerance opinions are written in each body's owning geometry layer.
+
+Every twin layer records `aeco:layer:role`, `package`, `producer`, `source`,
+`sourceSha256` and `tag` in `customLayerData`. The producer is
+`usdaeco-datacentre generator 0.5.0`. The manifest records package counts,
+fixture mapping, source pins, relationship crossings and SHA-256/bytes for
+all delivered files and both images. Its sole inventory exclusion is itself:
+a file cannot include its own SHA-256; the vanilla receipt binds the manifest
+externally. Run `run.py --all --publish` after publishing to seal both full
+images and their inventory. Historical image bytes stay frozen while their
+receipts bind the current renderer code and a fresh render is checked.
+
+The full directory cap is **40,000,000 bytes**, including IFCs and images.
+The five historical directories retain their **10,000,000-byte** caps.
+The publication sweep treats `.ifc` as text and still rejects archives,
+including archives disguised with an IFC extension.
+
+## Connected root
+
+`dc.connected.usda` uses the same header and order as `dc.usda`, with
+`@<discipline>.ifc:SDF_FORMAT_ARGS:spine=over@` and finally `@shared.ifc@`.
+It needs the **usdIfc plugin from usdaeco-ifc ≥ 0.3**. This repository checks
+its header, exact asset tokens, arguments and ordering as text. It never
+opens that root through Sdf or claims connected composition: **not proven**.
+The reader must preserve catalog classes and translate the delivered external
+port document references to reproduce the complete twin graph. That reader
+integration remains to be verified when the plugin is available.
+
+`dist/<variant>/dc.usda` remains the consumer entry for all six variants.
+No consumer schema, hook, stage namespace or existing publication is changed.

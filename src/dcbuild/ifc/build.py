@@ -44,9 +44,18 @@ def build(plan, out_dir: Path, disciplines: list[str] | None = None) -> list[Pat
     # Combined coordination model
     b = Builder(plan, discipline="coordination")
     spatial.build(b, plan)
-    for _key, mod in _modules(names):
-        mod.build(b, plan)
+    full = plan.meta.get("variant") == "full"
+    if full:
+        from .federation import ownership
+        owners = ownership(b, _modules(names), plan)
+    else:
+        for _key, mod in _modules(names):
+            mod.build(b, plan)
     written.append(b.write(out_dir / "demo-datacentre-01.ifc"))
+
+    if full and not disciplines:
+        from .federation import write_packages
+        return written + write_packages(b, owners, out_dir)
 
     # Federated per-discipline files (same GUIDs, own spatial skeleton)
     if not disciplines:  # only on full builds

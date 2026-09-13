@@ -1,0 +1,252 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:layer:package" = "site"
+        string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
+        string "aeco:layer:role" = "package"
+        string "aeco:layer:source" = "site.ifc"
+        string "aeco:layer:sourceSha256" = "faac3f15e61301f78369ac83153853f508fc35ef5bed3d229b2728e0538d2b42"
+        string "aeco:layer:tag" = "v0.5.0"
+    }
+)
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "Generator_Yard_B"
+        {
+        }
+
+        over "Generator_Yard_A"
+        {
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+        }
+
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Open_Office"
+                {
+                    over "Office_ceiling_void"
+                    {
+                    }
+                }
+
+                over "WC"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "Corridor_ceiling_void"
+                    {
+                    }
+                }
+            }
+
+            over "L00_Ground"
+            {
+                over "Office_Corridor_L00"
+                {
+                }
+
+                over "Security_Office"
+                {
+                }
+
+                over "Corridor_East"
+                {
+                }
+
+                over "Electrical_Room_A"
+                {
+                }
+
+                over "Corridor_Spine"
+                {
+                }
+
+                over "Battery_Room_A"
+                {
+                }
+
+                over "Corridor_South"
+                {
+                }
+
+                over "Office_Comms_Room"
+                {
+                }
+
+                over "Water_Treatment"
+                {
+                }
+
+                over "Corridor_Centre"
+                {
+                }
+
+                over "Electrical_Room_B"
+                {
+                }
+
+                over "Data_Hall_B"
+                {
+                }
+
+                over "Meeting_Room"
+                {
+                }
+
+                over "Corridor_West"
+                {
+                }
+
+                over "Loading_Storage"
+                {
+                }
+
+                over "Entrance_Lobby"
+                {
+                }
+
+                over "Fire_Suppression"
+                {
+                }
+
+                over "Meet_Me_Room_1"
+                {
+                }
+
+                over "Meet_Me_Room_2"
+                {
+                }
+
+                over "Data_Hall_A"
+                {
+                }
+
+                over "Cooling_Plant_Room"
+                {
+                }
+
+                over "Network_Operations_Centre"
+                {
+                }
+
+                over "Stair_L00"
+                {
+                }
+
+                over "Battery_Room_B"
+                {
+                }
+            }
+
+            over "L02_Office"
+            {
+                over "WC"
+                {
+                }
+
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                }
+
+                over "Open_Office"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+            }
+        }
+
+        def Xform "pad_hr" (
+            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSlab.BASESLAB"
+            string aeco:class:ifc:name = "pad.hr"
+            string aeco:id = "6f138356-90a3-5ea2-8d8b-12477f758142"
+            uniform token aeco:phase = "proposed"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "pad.hr"
+            custom bool aeco:props:Pset_SlabCommon:IsExternal = 1
+            custom bool aeco:props:Pset_SlabCommon:LoadBearing = 1
+            custom string aeco:props:Pset_SlabCommon:Status = "NEW"
+            custom double aeco:props:Qto_SlabBaseQuantities:GrossArea = 144
+            custom double aeco:props:Qto_SlabBaseQuantities:GrossVolume = 36
+            custom double aeco:props:Qto_SlabBaseQuantities:Width = 0.25
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (40, -6.5, -0.25, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "pad_gen_b" (
+            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSlab.BASESLAB"
+            string aeco:class:ifc:name = "pad.gen.b"
+            string aeco:id = "748c099b-8fdf-5688-bf4d-207bea43b59b"
+            uniform token aeco:phase = "proposed"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "pad.gen.b"
+            custom bool aeco:props:Pset_SlabCommon:IsExternal = 1
+            custom bool aeco:props:Pset_SlabCommon:LoadBearing = 1
+            custom string aeco:props:Pset_SlabCommon:Status = "NEW"
+            custom double aeco:props:Qto_SlabBaseQuantities:GrossArea = 168
+            custom double aeco:props:Qto_SlabBaseQuantities:GrossVolume = 50.4
+            custom double aeco:props:Qto_SlabBaseQuantities:Width = 0.3
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (80, 9, -0.3, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "pad_gen_a" (
+            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSlab.BASESLAB"
+            string aeco:class:ifc:name = "pad.gen.a"
+            string aeco:id = "e25dbba7-45fe-546f-bd57-88a20cb9cb0e"
+            uniform token aeco:phase = "proposed"
+            custom string aeco:props:DC_Identity:Discipline = "coordination"
+            custom string aeco:props:DC_Identity:Id = "pad.gen.a"
+            custom bool aeco:props:Pset_SlabCommon:IsExternal = 1
+            custom bool aeco:props:Pset_SlabCommon:LoadBearing = 1
+            custom string aeco:props:Pset_SlabCommon:Status = "NEW"
+            custom double aeco:props:Qto_SlabBaseQuantities:GrossArea = 168
+            custom double aeco:props:Qto_SlabBaseQuantities:GrossVolume = 50.4
+            custom double aeco:props:Qto_SlabBaseQuantities:Width = 0.3
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-8, 9, -0.3, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+

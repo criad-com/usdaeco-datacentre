@@ -1,0 +1,1889 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:layer:package" = "structure"
+        string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
+        string "aeco:layer:role" = "package"
+        string "aeco:layer:source" = "structure.ifc"
+        string "aeco:layer:sourceSha256" = "12fa31daf70a154fb506970ecc9453fff9bc276b574a1dfa1957eed6d6bac4b3"
+        string "aeco:layer:tag" = "v0.5.0"
+    }
+)
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "Generator_Yard_B"
+        {
+        }
+
+        over "Generator_Yard_A"
+        {
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+        }
+
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Open_Office"
+                {
+                    over "Office_ceiling_void"
+                    {
+                    }
+                }
+
+                over "WC"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "Corridor_ceiling_void"
+                    {
+                    }
+                }
+            }
+
+            over "L00_Ground"
+            {
+                over "Office_Corridor_L00"
+                {
+                }
+
+                over "Security_Office"
+                {
+                }
+
+                over "Corridor_East"
+                {
+                }
+
+                over "Electrical_Room_A"
+                {
+                }
+
+                over "Corridor_Spine"
+                {
+                }
+
+                over "Battery_Room_A"
+                {
+                }
+
+                over "Corridor_South"
+                {
+                }
+
+                over "Office_Comms_Room"
+                {
+                }
+
+                over "Water_Treatment"
+                {
+                }
+
+                over "Corridor_Centre"
+                {
+                }
+
+                over "Electrical_Room_B"
+                {
+                }
+
+                over "Data_Hall_B"
+                {
+                }
+
+                over "Meeting_Room"
+                {
+                }
+
+                over "Corridor_West"
+                {
+                }
+
+                over "Loading_Storage"
+                {
+                }
+
+                over "Entrance_Lobby"
+                {
+                }
+
+                over "Fire_Suppression"
+                {
+                }
+
+                over "Meet_Me_Room_1"
+                {
+                }
+
+                over "Meet_Me_Room_2"
+                {
+                }
+
+                over "Data_Hall_A"
+                {
+                }
+
+                over "Cooling_Plant_Room"
+                {
+                }
+
+                over "Network_Operations_Centre"
+                {
+                }
+
+                over "Stair_L00"
+                {
+                }
+
+                over "Battery_Room_B"
+                {
+                }
+
+                def Xform "col_049" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.049"
+                    string aeco:id = "043b2429-4a5f-5db8-9150-309d975d42a4"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.049"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_021" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.021"
+                    string aeco:id = "06ba4a51-8704-5e4a-964d-d8232f882531"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.021"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (18, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "Ring_Beam_W" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Ring_Beam_400x600>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 36)
+                    double aeco:axis:length = 36
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcBeam.BEAM"
+                    string aeco:class:ifc:name = "Ring Beam W"
+                    string aeco:id = "07fc8e2c-e9d6-55aa-abce-549519b2c79a"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "str.beam.ring.w"
+                    custom string aeco:props:Pset_BeamCommon:Status = "NEW"
+                    custom double aeco:props:Qto_BeamBaseQuantities:Length = 36
+                    matrix4d xformOp:transform = ( (-1, 0, 0, 0), (0, 0, 1, 0), (0, 1, 0, 0), (0, 0, 6.7, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_039" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.039"
+                    string aeco:id = "0bd551de-9f9e-5ab3-8133-27c4962acea5"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.039"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 24, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_074" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.074"
+                    string aeco:id = "0f9948ab-0e43-564a-9074-714c8fab1025"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.074"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 6, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_029" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.029"
+                    string aeco:id = "0fe5ade3-d364-5d18-91a1-41a4b3de8469"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.029"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (30, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_064" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.064"
+                    string aeco:id = "13fac87c-04b7-5f3b-8f3f-1d450bedad40"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.064"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (54, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_077" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.077"
+                    string aeco:id = "18287aad-073e-5ce7-95a7-f5464fc8fd6f"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.077"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_063" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.063"
+                    string aeco:id = "1a2c2962-a6c1-5b95-868b-14df54fbb478"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.063"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (54, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_004" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.004"
+                    string aeco:id = "1c1151b0-0084-52c1-80ea-353fac39ba75"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.004"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_026" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.026"
+                    string aeco:id = "228631cc-29d5-56dc-a926-a6bd858156ce"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.026"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (24, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_051" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.051"
+                    string aeco:id = "22a343a3-325a-554f-ac2e-d3a6d31589d3"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.051"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 30, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_008" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.008"
+                    string aeco:id = "248a6f92-b19e-5069-9047-697610b22e74"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.008"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_013" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.013"
+                    string aeco:id = "26e19b97-3028-57cf-ac44-447a328420e5"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.013"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_011" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.011"
+                    string aeco:id = "2c4f39a7-1d31-5f7a-b1aa-dc99a63cf262"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.011"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_054" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.054"
+                    string aeco:id = "3321c6ed-e3b1-5c78-92ed-220348e4562b"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.054"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (42, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_038" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.038"
+                    string aeco:id = "3902c05f-9a90-5745-91aa-1d3637f150a6"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.038"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_079" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.079"
+                    string aeco:id = "3a37fa67-2fb8-5687-829a-41b49605c9c4"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.079"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 30, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_058" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.058"
+                    string aeco:id = "3dcd2beb-c80c-567f-818b-938a0b21374f"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.058"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (48, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_069" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.069"
+                    string aeco:id = "421a868c-06b6-543c-939d-6e4599ffba5d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.069"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (66, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_005" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.005"
+                    string aeco:id = "42906325-94da-596c-a0f3-5c8bc3561852"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.005"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_062" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.062"
+                    string aeco:id = "433d629b-c975-5809-b9dd-8016f8e3935d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.062"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (54, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_003" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.003"
+                    string aeco:id = "47579b89-ea96-5e66-8fec-fb3d8e4061d8"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.003"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_053" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.053"
+                    string aeco:id = "486add92-2eb3-5488-a1fd-c1d11b4b49d8"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.053"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (42, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_047" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.047"
+                    string aeco:id = "492dbd0f-487b-53b9-911f-7a835667fc07"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.047"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 6, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "Ring_Beam_E" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Ring_Beam_400x600>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 36)
+                    double aeco:axis:length = 36
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcBeam.BEAM"
+                    string aeco:class:ifc:name = "Ring Beam E"
+                    string aeco:id = "4a766db6-e45b-5bc0-951e-25296effc130"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "str.beam.ring.e"
+                    custom string aeco:props:Pset_BeamCommon:Status = "NEW"
+                    custom double aeco:props:Qto_BeamBaseQuantities:Length = 36
+                    matrix4d xformOp:transform = ( (-1, 0, 0, 0), (0, 0, 1, 0), (0, 1, 0, 0), (72, 0, 6.7, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_040" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.040"
+                    string aeco:id = "4ba918f9-86a2-53c0-9ca7-9362ff55e1c4"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.040"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 30, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_055" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.055"
+                    string aeco:id = "4feae7c0-d8ea-516d-9b50-add495176090"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.055"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (42, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_045" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.045"
+                    string aeco:id = "5b9d47fa-df7d-5498-9c42-3d11302c2f6c"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.045"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_016" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.016"
+                    string aeco:id = "5c4138db-ed77-5efc-885f-783c58608b08"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.016"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_017" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.017"
+                    string aeco:id = "62eff072-7b47-533e-be76-19fc486b5585"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.017"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_032" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.032"
+                    string aeco:id = "675b7936-43a5-5088-9117-f75e135ef157"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.032"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (30, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_014" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.014"
+                    string aeco:id = "6b3fbf4e-19b0-5bd8-a6d4-8261942b2b6c"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.014"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, -6, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_080" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.080"
+                    string aeco:id = "6ccb1969-4cc1-5218-8754-d5b01f81e5a1"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.080"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_060" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.060"
+                    string aeco:id = "6d934d15-6b4d-54fb-b3e5-71b7bdc9bcde"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.060"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (48, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_022" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.022"
+                    string aeco:id = "70248220-51b9-5a51-bfd5-545f25b99362"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.022"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (18, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_044" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.044"
+                    string aeco:id = "71e815a9-6a07-5c57-a6e0-01ee042b6c30"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.044"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_041" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.041"
+                    string aeco:id = "721ea4f8-f845-5c83-b6be-8a7ca7997d04"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.041"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_034" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.034"
+                    string aeco:id = "72f02ee4-652a-5b9a-b034-b3e8734f7687"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.034"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (30, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_075" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.075"
+                    string aeco:id = "73d43af3-acdf-518d-9471-1948f999bb39"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.075"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_028" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.028"
+                    string aeco:id = "749f263e-2090-57a9-a667-006e3b0a7a45"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.028"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (24, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_056" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.056"
+                    string aeco:id = "758701da-3c92-54e3-b07c-a876cf9fcc3a"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.056"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (42, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_065" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.065"
+                    string aeco:id = "7790b545-f0ba-58a2-ab01-89072f0e2594"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.065"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (60, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_001" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.001"
+                    string aeco:id = "7a7dd60e-7c98-5dec-a1ff-34ee8421bed4"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.001"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                }
+
+                def Xform "col_031" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.031"
+                    string aeco:id = "7c739925-8658-50a3-a554-b2233a20a86e"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.031"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (30, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_073" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.073"
+                    string aeco:id = "7dca2d89-0b6c-5333-bcaf-a4d672633284"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.073"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_009" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.009"
+                    string aeco:id = "7edb4391-cc4d-52e7-9f19-89851dd526a6"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.009"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_025" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.025"
+                    string aeco:id = "84e92fbd-0d44-5c1b-ad5c-101f4bf6d394"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.025"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (24, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_052" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.052"
+                    string aeco:id = "876e1b2c-dc6f-56e0-b5ae-1406fcfebc74"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.052"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_027" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.027"
+                    string aeco:id = "8de7acd8-747e-5128-9c7e-b6e2e090992d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.027"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (24, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_010" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.010"
+                    string aeco:id = "8ea2bc48-c8dd-5f13-8f4e-75657212c154"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.010"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_019" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.019"
+                    string aeco:id = "98a82905-caf0-582d-b125-5c4a21799159"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.019"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (18, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_072" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.072"
+                    string aeco:id = "a3efc83b-7677-5e64-8154-aadd1b515f42"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.072"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (66, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_007" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.007"
+                    string aeco:id = "aab962a4-fbef-5edd-9c5e-2dcdc21113a6"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.007"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 30, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_023" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.023"
+                    string aeco:id = "aacbf259-3b2b-5d55-a64a-4916e0844c20"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.023"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (18, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_070" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.070"
+                    string aeco:id = "ae33a25b-8422-57d0-9747-ba67e78791ee"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.070"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (66, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_036" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.036"
+                    string aeco:id = "b0de7ab7-2a2a-57b3-bc96-fb0d00fb5e44"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.036"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 6, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_067" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.067"
+                    string aeco:id = "b1ae47d6-9fbe-52d5-82c7-fa0eba2d012e"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.067"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (60, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "Ring_Beam_S" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Ring_Beam_400x600>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 72)
+                    double aeco:axis:length = 72
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcBeam.BEAM"
+                    string aeco:class:ifc:name = "Ring Beam S"
+                    string aeco:id = "b49cc864-e2d5-5db8-977b-8415d6a5150a"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "str.beam.ring.s"
+                    custom string aeco:props:Pset_BeamCommon:Status = "NEW"
+                    custom double aeco:props:Qto_BeamBaseQuantities:Length = 72
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (0, 0, 1, 0), (1, 0, 0, 0), (0, 0, 6.7, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_030" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.030"
+                    string aeco:id = "b7131b4e-8480-5232-bee7-0a4f78de7cb8"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.030"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (30, -6, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_020" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.020"
+                    string aeco:id = "bb13955f-6e43-58df-98aa-519862828c11"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.020"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (18, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_024" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.024"
+                    string aeco:id = "bd5b0c70-956a-5785-ab2f-786507315d62"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.024"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (24, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "Ring_Beam_N" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Ring_Beam_400x600>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 72)
+                    double aeco:axis:length = 72
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcBeam.BEAM"
+                    string aeco:class:ifc:name = "Ring Beam N"
+                    string aeco:id = "bf611c03-40b2-50cf-b949-4be3a7ffb68e"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "str.beam.ring.n"
+                    custom string aeco:props:Pset_BeamCommon:Status = "NEW"
+                    custom double aeco:props:Qto_BeamBaseQuantities:Length = 72
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (0, 0, 1, 0), (1, 0, 0, 0), (0, 36, 6.7, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_078" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.078"
+                    string aeco:id = "c100769a-6af0-55c9-922e-5d0a1a8c28a7"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.078"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 24, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_043" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.043"
+                    string aeco:id = "c2359ce5-6514-5c02-9809-88754632d679"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.043"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_012" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.012"
+                    string aeco:id = "c93edad9-3baf-594d-86e1-16b9d561c539"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.012"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_061" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.061"
+                    string aeco:id = "d16d403a-50d1-5483-959d-8eeb60ec6794"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.061"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (54, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_033" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.033"
+                    string aeco:id = "d7257247-d011-5696-bc7c-20871a7834a6"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.033"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (30, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_006" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.006"
+                    string aeco:id = "d83bc545-7ef3-5673-a577-50dcd795fc0c"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.006"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 24, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_035" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.035"
+                    string aeco:id = "dbb5fabf-dcec-5093-b772-3a42ef0a5865"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.035"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_046" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.046"
+                    string aeco:id = "dc97119b-1f90-527f-a46b-8b1c3c6b6614"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.046"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_002" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.002"
+                    string aeco:id = "dcf35fbe-afc9-582d-9cc8-9f0c7955abfc"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.002"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 6, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_057" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.057"
+                    string aeco:id = "df288734-34b4-5b5c-bddf-1f786f642cf7"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.057"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (48, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_018" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.018"
+                    string aeco:id = "e4ab670e-19e1-5312-b338-5642ce628888"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.018"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_068" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.068"
+                    string aeco:id = "e5f9a6c2-be4d-5bb1-9b51-28be92b84b10"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.068"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (60, 36, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_076" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.076"
+                    string aeco:id = "e8edf278-7d91-5f14-b74d-3c88475b94f4"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.076"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (72, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_059" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.059"
+                    string aeco:id = "eb0e1a00-3149-5a8e-b8a8-125874deb142"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.059"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (48, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_037" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.037"
+                    string aeco:id = "ed271118-990e-59ef-9406-50580fe8f078"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.037"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (34, 12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_050" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.050"
+                    string aeco:id = "ed85e0e2-8e60-57a0-99bb-90041360c462"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.050"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 24, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_071" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.071"
+                    string aeco:id = "f577ebba-f9b8-5094-a47d-a44e09f96944"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.071"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (66, 18, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_066" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.066"
+                    string aeco:id = "f9d3c32b-1a92-5a13-8c9b-5e776c4723af"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.066"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (60, 15, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_042" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.042"
+                    string aeco:id = "fd28a0bf-b7f6-56cd-a5b2-c63fb303d36d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.042"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (36, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_048" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 7)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.048"
+                    string aeco:id = "fd801ddd-40ac-5191-b848-ac0e776c5ddc"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.048"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 7
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (38, 12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Xform "col_015" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/RC_Column_400x400>
+                )
+                {
+                    double3 aeco:axis:end = (0, 0, 10)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcColumn.COLUMN"
+                    string aeco:class:ifc:name = "col.015"
+                    string aeco:id = "fde259a0-8b7d-5d50-b634-1b9dbeb947ec"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "col.015"
+                    custom string aeco:props:Pset_ColumnCommon:Status = "NEW"
+                    custom double aeco:props:Qto_ColumnBaseQuantities:Length = 10
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            over "L02_Office"
+            {
+                over "WC"
+                {
+                }
+
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                }
+
+                over "Open_Office"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+            }
+        }
+    }
+
+    class "_TypeCatalog"
+    {
+        class "RC_Column_400x400" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcColumnType.COLUMN"
+            string aeco:type:model = "RC Column 400x400"
+        }
+
+        class "RC_Ring_Beam_400x600" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcBeamType.BEAM"
+            string aeco:type:model = "RC Ring Beam 400x600"
+        }
+    }
+}
+

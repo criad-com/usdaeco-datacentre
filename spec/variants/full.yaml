@@ -1,0 +1,2 @@
+# Ordered union; clash reuses pod, whose record ids merge without duplication.
+extends: [floors, pod, clash, iris]

@@ -1,0 +1,790 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "aeco:layer:package" = "fitout"
+        string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
+        string "aeco:layer:role" = "package"
+        string "aeco:layer:source" = "fitout.ifc"
+        string "aeco:layer:sourceSha256" = "7e81cb41227077a92d2227ae88d1e00542818e55ba027cdeb5aacea145a96729"
+        string "aeco:layer:tag" = "v0.5.0"
+    }
+)
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "Generator_Yard_B"
+        {
+        }
+
+        over "Generator_Yard_A"
+        {
+        }
+
+        over "Heat_Rejection_Yard"
+        {
+        }
+
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Open_Office"
+                {
+                    over "Office_ceiling_void"
+                    {
+                        def Xform "fcu_office_1" (
+                            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        )
+                        {
+                            string aeco:class:ifc:code = "IfcUnitaryEquipment.AIRCONDITIONINGUNIT"
+                            string aeco:class:ifc:name = "fcu.office.1"
+                            string aeco:id = "2fe22371-268e-5c7b-8e4c-d6fe6fd52e15"
+                            uniform token aeco:phase = "proposed"
+                            custom string aeco:props:DC_Identity:Discipline = "coordination"
+                            custom string aeco:props:DC_Identity:Id = "fcu.office.1"
+                            custom string aeco:props:Pset_UnitaryEquipmentTypeCommon:Status = "NEW"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (19.5, -5.5, 6.7, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                            def AecoPort "Port"
+                            {
+                                prepend rel aeco:connectedPorts = </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Corridor_ceiling_void/pipe_chw_void_r/Port_bae489>
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "6789d08c-358b-55e7-90f0-fa66bb459472"
+                                uniform token aeco:medium = "pipe"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.1999999999999993, 0, 0.09999999999999964, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+
+                            def AecoPort "Port_c23220"
+                            {
+                                prepend rel aeco:connectedPorts = </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Corridor_ceiling_void/pipe_chw_void_f/Port>
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "c23220d2-696c-5a48-880d-0e9eacde8bad"
+                                uniform token aeco:medium = "pipe"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.09999999999999964, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+                        }
+
+                        def Xform "cnd_void_office_1" (
+                            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                        )
+                        {
+                            double3 aeco:axis:end = (13, -6.5, 14.8)
+                            double aeco:axis:length = 8
+                            double3 aeco:axis:start = (13, -6.5, 6.8)
+                            string aeco:class:ifc:code = "IfcCableCarrierSegment.CONDUITSEGMENT"
+                            string aeco:class:ifc:name = "cnd.void.office.1"
+                            string aeco:id = "6f112a2a-4c87-5137-8c68-d0e86d9ff833"
+                            uniform token aeco:phase = "proposed"
+                            custom string aeco:props:DC_Identity:Discipline = "coordination"
+                            custom string aeco:props:DC_Identity:Id = "cnd.void.office.1"
+                            custom double aeco:props:DC_Section:OutsideDiameter = 0.025
+                            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Status = "NEW"
+
+                            def AecoPort "Port"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "36426a9f-69cc-5a14-9ecc-bffbddf8917b"
+                                uniform token aeco:medium = "cableCarrier"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (13, -6.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+
+                            def AecoPort "Port_ea2686"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "ea26867d-6b8d-5180-8a26-300e0418271e"
+                                uniform token aeco:medium = "cableCarrier"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (21, -6.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+                        }
+
+                        def Xform "cnd_void_office_2" (
+                            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                        )
+                        {
+                            double3 aeco:axis:end = (13, -8.5, 14.8)
+                            double aeco:axis:length = 8
+                            double3 aeco:axis:start = (13, -8.5, 6.8)
+                            string aeco:class:ifc:code = "IfcCableCarrierSegment.CONDUITSEGMENT"
+                            string aeco:class:ifc:name = "cnd.void.office.2"
+                            string aeco:id = "81e9ca85-7c2f-5b47-8eac-b89408b7c6bc"
+                            uniform token aeco:phase = "proposed"
+                            custom string aeco:props:DC_Identity:Discipline = "coordination"
+                            custom string aeco:props:DC_Identity:Id = "cnd.void.office.2"
+                            custom double aeco:props:DC_Section:OutsideDiameter = 0.025
+                            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Status = "NEW"
+
+                            def AecoPort "Port"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "035831ce-f960-5ffc-9f0b-c5e93b050ed5"
+                                uniform token aeco:medium = "cableCarrier"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (21, -8.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+
+                            def AecoPort "Port_d7f5f2"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "d7f5f2d8-2565-50a7-ad45-a670555e6fc0"
+                                uniform token aeco:medium = "cableCarrier"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (13, -8.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+                        }
+                    }
+
+                    def Xform "grl_office_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAirTerminal.GRILLE"
+                        string aeco:class:ifc:name = "grl.office.1"
+                        string aeco:id = "200afa6b-627f-59ac-86ed-4125edf30004"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "grl.office.1"
+                        custom string aeco:props:Pset_AirTerminalTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (14, -6.5, 6.55, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "b83138ff-8b65-513e-86cd-8cadc99f354b"
+                            uniform token aeco:medium = "duct"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.040000000000000036, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "grl_office_4" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAirTerminal.GRILLE"
+                        string aeco:class:ifc:name = "grl.office.4"
+                        string aeco:id = "3592dab5-80a1-58a1-931a-10aa42d6c6fd"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "grl.office.4"
+                        custom string aeco:props:Pset_AirTerminalTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (20, -8.5, 6.55, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "2f273b38-3a57-5131-8be9-3c56a5f4e89f"
+                            uniform token aeco:medium = "duct"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.040000000000000036, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "grl_office_3" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAirTerminal.GRILLE"
+                        string aeco:class:ifc:name = "grl.office.3"
+                        string aeco:id = "375f15c5-74dd-5039-849e-3b71530db1d0"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "grl.office.3"
+                        custom string aeco:props:Pset_AirTerminalTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (14, -8.5, 6.55, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "d41390c1-8f70-5e64-84d0-20295b9b156b"
+                            uniform token aeco:medium = "duct"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.040000000000000036, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "lum_office_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcLightFixture.POINTSOURCE"
+                        string aeco:class:ifc:name = "lum.office.2"
+                        string aeco:id = "5db6b31c-420a-51d0-8087-e08cd3d96828"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "lum.office.2"
+                        custom string aeco:props:Pset_LightFixtureTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17, -5, 6.54, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "a7a901db-f258-5744-8849-e46210233896"
+                            uniform token aeco:medium = "cable"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.04999999999999982, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "lum_office_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcLightFixture.POINTSOURCE"
+                        string aeco:class:ifc:name = "lum.office.1"
+                        string aeco:id = "63ad1f8d-6555-5ff5-be23-79cd82b39dae"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "lum.office.1"
+                        custom string aeco:props:Pset_LightFixtureTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (14, -5, 6.54, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "5ae03602-7b2e-5eb3-b678-fe13390d7554"
+                            uniform token aeco:medium = "cable"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.04999999999999982, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "clg_office" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcCovering.CEILING"
+                        string aeco:class:ifc:name = "clg.office"
+                        string aeco:id = "6e39f114-9566-58cd-8ca5-d54269132687"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Construction:Description = "12.5 mm plasterboard on MF grid; top 2.6 m above L01"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "clg.office"
+                        custom string aeco:props:Pset_CoveringCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17, -7.5, 6.5875, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "grl_office_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAirTerminal.GRILLE"
+                        string aeco:class:ifc:name = "grl.office.2"
+                        string aeco:id = "8c2b777c-50db-5e0f-a278-85413b30c991"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "grl.office.2"
+                        custom string aeco:props:Pset_AirTerminalTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (20, -6.5, 6.55, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "fe3cc96b-b7a3-5051-83d3-e6d480631ae3"
+                            uniform token aeco:medium = "duct"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.040000000000000036, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "lum_office_3" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcLightFixture.POINTSOURCE"
+                        string aeco:class:ifc:name = "lum.office.3"
+                        string aeco:id = "9353edbf-0717-5a0b-8ef3-59bcb0ebe324"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "lum.office.3"
+                        custom string aeco:props:Pset_LightFixtureTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (20, -5, 6.54, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "21cbc425-ff8c-599a-ad4a-e90acf7c77a0"
+                            uniform token aeco:medium = "cable"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.04999999999999982, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "lum_office_6" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcLightFixture.POINTSOURCE"
+                        string aeco:class:ifc:name = "lum.office.6"
+                        string aeco:id = "b09c11f2-2de8-5904-9ae7-1802a2a783e2"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "lum.office.6"
+                        custom string aeco:props:Pset_LightFixtureTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (20, -10, 6.54, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "281b9b7a-e3b2-5879-aaba-17aaa6cbb404"
+                            uniform token aeco:medium = "cable"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.04999999999999982, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "lum_office_4" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcLightFixture.POINTSOURCE"
+                        string aeco:class:ifc:name = "lum.office.4"
+                        string aeco:id = "b56f1757-5239-5fb4-b0a3-b8eec425b08c"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "lum.office.4"
+                        custom string aeco:props:Pset_LightFixtureTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (14, -10, 6.54, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "f8c1a946-50a1-511a-8b14-754b9e6fa5d4"
+                            uniform token aeco:medium = "cable"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.04999999999999982, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "lum_office_5" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcLightFixture.POINTSOURCE"
+                        string aeco:class:ifc:name = "lum.office.5"
+                        string aeco:id = "d8fdb98a-f141-50d7-813c-543c49947890"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "lum.office.5"
+                        custom string aeco:props:Pset_LightFixtureTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17, -10, 6.54, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "898cd86d-e571-5891-930a-ade320b71b53"
+                            uniform token aeco:medium = "cable"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.04999999999999982, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+                }
+
+                over "WC"
+                {
+                    def Xform "san_pod_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSanitaryTerminal.TOILETPAN"
+                        string aeco:class:ifc:name = "san.pod.1"
+                        string aeco:id = "09a08952-f90d-5507-bdf2-99b440b02104"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "san.pod.1"
+                        custom string aeco:props:Pset_SanitaryTerminalTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.4, -10.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "ef97ecd1-b9fd-5311-80e5-3cc57aaeb07e"
+                            uniform token aeco:medium = "pipe"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.15000000000000036, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "pipe_drain_pod" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    )
+                    {
+                        double3 aeco:axis:end = (27.4, -10, 10.15)
+                        double aeco:axis:length = 6
+                        double3 aeco:axis:start = (27.4, -10, 4.15)
+                        string aeco:class:ifc:code = "IfcPipeSegment.RIGIDSEGMENT"
+                        string aeco:class:ifc:name = "pipe.drain.pod"
+                        string aeco:id = "48a8a942-99cd-5139-a9d6-41575476d93f"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "pipe.drain.pod"
+                        custom double aeco:props:DC_Section:NominalDiameter = 0.1
+                        custom double aeco:props:DC_Section:OutsideDiameter = 0.11
+                        custom string aeco:props:Pset_PipeSegmentTypeCommon:Status = "NEW"
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "59607b9d-8819-5c49-994d-fe2ecabad88c"
+                            uniform token aeco:medium = "pipe"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.4, -4, 1, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+
+                        def AecoPort "Port_839e88"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "839e8811-1a9f-5fdd-97c0-a0071c685cd6"
+                            uniform token aeco:medium = "pipe"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.4, -10, 4.15, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "san_pod_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcSanitaryTerminal.WASHHANDBASIN"
+                        string aeco:class:ifc:name = "san.pod.2"
+                        string aeco:id = "78ff9628-38c7-5c69-b583-632c816608bb"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "san.pod.2"
+                        custom string aeco:props:Pset_SanitaryTerminalTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.4, -9, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def AecoPort "Port"
+                        {
+                            uniform token aeco:flowDirection = "bidirectional"
+                            string aeco:id = "1116442e-9df6-5d74-8c9e-b447a4705624"
+                            uniform token aeco:medium = "pipe"
+                            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.15000000000000036, 1) )
+                            uniform token[] xformOpOrder = ["xformOp:transform"]
+                        }
+                    }
+
+                    def Xform "pod_wc" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcElementAssembly.Prefabricated bathroom pod"
+                        string aeco:class:ifc:name = "pod.wc"
+                        string aeco:id = "b5bde906-c097-5af5-bf4e-03cee37f130b"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Construction:Description = "Prefabricated bathroom pod, final position"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "pod.wc"
+                        custom string aeco:props:Pset_ElementAssemblyCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.4, -10, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "Corridor_ceiling_void"
+                    {
+                        def Xform "tray_void_ocorr_1" (
+                            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                        )
+                        {
+                            double3 aeco:axis:end = (16, -1.5, 19.8)
+                            double aeco:axis:length = 13
+                            double3 aeco:axis:start = (16, -1.5, 6.8)
+                            string aeco:class:ifc:code = "IfcCableCarrierSegment.CABLETRAYSEGMENT"
+                            string aeco:class:ifc:name = "tray.void.ocorr.1"
+                            string aeco:id = "2df12127-2bce-58a4-b767-5f0747057b63"
+                            uniform token aeco:phase = "proposed"
+                            custom string aeco:props:DC_Identity:Discipline = "coordination"
+                            custom string aeco:props:DC_Identity:Id = "tray.void.ocorr.1"
+                            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Status = "NEW"
+
+                            def AecoPort "Port"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "382816c1-e67e-5545-9f05-ede457391586"
+                                uniform token aeco:medium = "cableCarrier"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (16, -1.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+
+                            def AecoPort "Port_9db3fa"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "9db3fa17-fcaa-5859-a6ae-ea626fa463fc"
+                                uniform token aeco:medium = "cableCarrier"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (29, -1.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+                        }
+
+                        def Xform "pipe_chw_void_f" (
+                            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                        )
+                        {
+                            double3 aeco:axis:end = (28, -1.9, 6.8)
+                            double aeco:axis:length = 3.8
+                            double3 aeco:axis:start = (28, -1.9, 3)
+                            string aeco:class:ifc:code = "IfcPipeSegment.RIGIDSEGMENT"
+                            string aeco:class:ifc:name = "pipe.chw.void.f"
+                            string aeco:id = "e230a24f-4b3f-503b-a65d-4641640e8b5a"
+                            uniform token aeco:phase = "proposed"
+                            custom string aeco:props:DC_Identity:Discipline = "coordination"
+                            custom string aeco:props:DC_Identity:Id = "pipe.chw.void.f"
+                            custom double aeco:props:DC_Section:NominalDiameter = 0.05
+                            custom double aeco:props:DC_Section:OutsideDiameter = 0.0603
+                            custom string aeco:props:Pset_PipeSegmentTypeCommon:Status = "NEW"
+
+                            def AecoPort "Port"
+                            {
+                                prepend rel aeco:connectedPorts = </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Open_Office/Office_ceiling_void/fcu_office_1/Port_c23220>
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "2c768adc-c423-5bf0-8e41-edd49eb2f31c"
+                                uniform token aeco:medium = "pipe"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (19.5, -5.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+
+                            def AecoPort "Port_334aaa"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "334aaa38-65a1-5ecc-bd4c-930a0d97b398"
+                                uniform token aeco:medium = "pipe"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (28, -1.9, 3, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+                        }
+
+                        def Xform "pipe_chw_void_r" (
+                            prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                        )
+                        {
+                            double3 aeco:axis:end = (28, -2.15, 6.8)
+                            double aeco:axis:length = 3.8
+                            double3 aeco:axis:start = (28, -2.15, 3)
+                            string aeco:class:ifc:code = "IfcPipeSegment.RIGIDSEGMENT"
+                            string aeco:class:ifc:name = "pipe.chw.void.r"
+                            string aeco:id = "f197c006-1d48-5d32-9aab-55f6e27f7a11"
+                            uniform token aeco:phase = "proposed"
+                            custom string aeco:props:DC_Identity:Discipline = "coordination"
+                            custom string aeco:props:DC_Identity:Id = "pipe.chw.void.r"
+                            custom double aeco:props:DC_Section:NominalDiameter = 0.05
+                            custom double aeco:props:DC_Section:OutsideDiameter = 0.0603
+                            custom string aeco:props:Pset_PipeSegmentTypeCommon:Status = "NEW"
+
+                            def AecoPort "Port"
+                            {
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "838d7213-a7a9-5920-aaa2-8b4c278080f6"
+                                uniform token aeco:medium = "pipe"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (28, -2.15, 3, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+
+                            def AecoPort "Port_bae489"
+                            {
+                                prepend rel aeco:connectedPorts = </demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Open_Office/Office_ceiling_void/fcu_office_1/Port>
+                                uniform token aeco:flowDirection = "bidirectional"
+                                string aeco:id = "bae4893a-77b0-57d9-88a7-684876a42423"
+                                uniform token aeco:medium = "pipe"
+                                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (19.7, -5.5, 6.8, 1) )
+                                uniform token[] xformOpOrder = ["xformOp:transform"]
+                            }
+                        }
+                    }
+
+                    def Xform "pod_wc_temp" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcElementAssembly.Prefabricated bathroom pod"
+                        string aeco:class:ifc:name = "pod.wc.temp"
+                        string aeco:id = "5c25d9bf-d000-5d3b-b4ed-f199bda623a7"
+                        uniform token aeco:phase = "temporary"
+                        custom string aeco:props:DC_Construction:Description = "Prefabricated bathroom pod, temporary delivery position"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "pod.wc.temp"
+                        custom string aeco:props:Pset_ElementAssemblyCommon:Status = "TEMPORARY"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (21.2, -1.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+
+                    def Xform "clg_ocorr_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcCovering.CEILING"
+                        string aeco:class:ifc:name = "clg.ocorr.1"
+                        string aeco:id = "e3359946-0dce-571b-9dd2-a86326da37f8"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Construction:Description = "12.5 mm plasterboard on MF grid; top 2.6 m above L01"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "clg.ocorr.1"
+                        custom string aeco:props:Pset_CoveringCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (22.5, -1.5, 6.5875, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+            }
+
+            over "L00_Ground"
+            {
+                over "Office_Corridor_L00"
+                {
+                }
+
+                over "Security_Office"
+                {
+                }
+
+                over "Corridor_East"
+                {
+                }
+
+                over "Electrical_Room_A"
+                {
+                }
+
+                over "Corridor_Spine"
+                {
+                }
+
+                over "Battery_Room_A"
+                {
+                }
+
+                over "Corridor_South"
+                {
+                }
+
+                over "Office_Comms_Room"
+                {
+                }
+
+                over "Water_Treatment"
+                {
+                }
+
+                over "Corridor_Centre"
+                {
+                }
+
+                over "Electrical_Room_B"
+                {
+                }
+
+                over "Data_Hall_B"
+                {
+                }
+
+                over "Meeting_Room"
+                {
+                }
+
+                over "Corridor_West"
+                {
+                }
+
+                over "Loading_Storage"
+                {
+                }
+
+                over "Entrance_Lobby"
+                {
+                }
+
+                over "Fire_Suppression"
+                {
+                }
+
+                over "Meet_Me_Room_1"
+                {
+                }
+
+                over "Meet_Me_Room_2"
+                {
+                }
+
+                over "Data_Hall_A"
+                {
+                }
+
+                over "Cooling_Plant_Room"
+                {
+                }
+
+                over "Network_Operations_Centre"
+                {
+                }
+
+                over "Stair_L00"
+                {
+                }
+
+                over "Battery_Room_B"
+                {
+                }
+            }
+
+            over "L02_Office"
+            {
+                over "WC"
+                {
+                }
+
+                over "Kitchen_Break"
+                {
+                }
+
+                over "Stair_L01"
+                {
+                }
+
+                over "Office_Corridor_L01"
+                {
+                }
+
+                over "Open_Office"
+                {
+                }
+
+                over "Meeting_Room_L01"
+                {
+                }
+            }
+        }
+    }
+}
+

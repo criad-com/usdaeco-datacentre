@@ -72,8 +72,14 @@ def load(directory: Path | None = None, variant: str = "base") -> Spec:
         data = yaml.safe_load(path.read_text())
         if not isinstance(data, dict):
             raise ValueError(f"variant {name} must be a mapping")
-        parent = data.pop("extends", "base")
-        return merge(overlay(parent, (*stack, name)), data)
+        parents = data.pop("extends", "base")
+        parents = [parents] if isinstance(parents, str) else parents
+        if not isinstance(parents, list) or not parents or not all(isinstance(p, str) for p in parents):
+            raise ValueError("extends must be a name or a nonempty list of names")
+        inherited = {}
+        for parent in parents:
+            inherited = merge(inherited, overlay(parent, (*stack, name)))
+        return merge(inherited, data)
 
     parts = merge(parts, overlay(variant))
     # Repeated rooms and doors come from the prototype, so its unedited
@@ -83,7 +89,8 @@ def load(directory: Path | None = None, variant: str = "base") -> Spec:
         if not prototype:
             continue
         suffix = "." + storey["id"].rsplit("l", 1)[-1]
-        rooms = [s for s in parts["spaces"]["spaces"] if s["storey"] == prototype]
+        rooms = [s for s in parts["spaces"]["spaces"]
+                 if s["storey"] == prototype and s.get("type") != "void"]
         if not rooms:
             raise ValueError("typical prototype must precede its instance")
         mapping = {s["id"]: s["id"] + suffix for s in rooms}
