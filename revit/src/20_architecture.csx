@@ -5,7 +5,7 @@
 var plan20 = Dc.LoadPlan();
 Dc.RequireDoc();
 
-int nWalls20 = 0, nDoors20 = 0, nOpen20 = 0, nFloors20 = 0, nSkip20 = 0;
+int nWalls20 = 0, nDoors20 = 0, nOpen20 = 0, nFloors20 = 0, nStairs20 = 0, nSkip20 = 0;
 
 Dc.Tx("DC architecture", d =>
 {
@@ -30,12 +30,18 @@ Dc.Tx("DC architecture", d =>
             }
             var line = Line.CreateBound(Dc.P(w.P1[0], w.P1[1], 0.0), Dc.P(w.P2[0], w.P2[1], 0.0));
             var wall = Wall.Create(d, line, wt.Id, lvl.Id, Dc.M(w.Height), 0.0, false, false);
+            if (Dc.Full)
+            {
+                WallUtils.DisallowWallJoinAtEnd(wall, 0);
+                WallUtils.DisallowWallJoinAtEnd(wall, 1);
+            }
             Dc.SetMark(wall, w.Id);
+            Dc.ExportClass(wall,"IfcWall",w.Kind == "internal" ? "PARTITIONING" : "SOLIDWALL");
             Dc.WallsById[w.Id] = wall;
             Dc.IdMap[w.Id] = wall.Id;
             nWalls20++;
         }
-        catch (Exception ex) { Dc.Note("wall-fail " + w.Id + ": " + ex.Message); nSkip20++; }
+        catch (Exception ex) { if (Dc.Full) throw; Dc.Note("wall-fail " + w.Id + ": " + ex.Message); nSkip20++; }
     }
     d.Regenerate();
 
@@ -98,6 +104,7 @@ Dc.Tx("DC architecture", d =>
                     Dc.Note("door-size-sub " + door.Id + ": " + fi.Symbol.FamilyName + "/" + fi.Symbol.Name
                              + " " + Dc.Mm(actual).ToString("0") + "mm vs plan " + (door.Width * 1000).ToString("0") + "mm");
                 Dc.SetMark(fi, door.Id);
+                Dc.ExportClass(fi,"IfcDoor","DOOR");
                 Dc.IdMap[door.Id] = fi.Id;
                 nDoors20++;
                 placed = true;
@@ -118,6 +125,7 @@ Dc.Tx("DC architecture", d =>
                 var op = d.Create.NewOpening(host, pA, pB);
                 double rotation=Math.Atan2(uy,ux)*180/Math.PI;
                 var leaf=Dc.DsBox(BuiltInCategory.OST_Doors,door.Id,door.Pos[0],door.Pos[1],zBase,door.Width,0.06,door.Height,rotation);
+                Dc.ExportClass(leaf,"IfcDoor",door.Kind == "roller" ? "GATE" : "DOOR");
                 var exportAs=leaf.LookupParameter("Export to IFC As");
                 if(exportAs!=null&&!exportAs.IsReadOnly) exportAs.Set("IfcDoor");
                 nDoors20++;
@@ -155,23 +163,70 @@ Dc.Tx("DC architecture", d =>
             try
             {
                 if(Dc.IdMap.ContainsKey(s.Id)) { nFloors20++; continue; }
-                var loops = new List<CurveLoop> { rect(s.X, s.Y, s.W, s.D, s.TopElevation) };
-                foreach (var v in s.Voids) loops.Add(rect(v[0], v[1], v[2], v[3], s.TopElevation));
+                var outer = rect(s.X, s.Y, s.W, s.D, s.TopElevation);
+                if (s.Outline != null)
+                {
+                    outer = new CurveLoop();
+                    for (int i=0; i<s.Outline.Count; i++)
+                    {
+                        var a=s.Outline[i]; var b=s.Outline[(i+1)%s.Outline.Count];
+                        outer.Append(Line.CreateBound(Dc.P(a[0],a[1],s.TopElevation),Dc.P(b[0],b[1],s.TopElevation)));
+                    }
+                }
+                var loops = new List<CurveLoop> { outer };
+                foreach (var v in s.InnerLoops ?? s.Voids) loops.Add(rect(v[0], v[1], v[2], v[3], s.TopElevation));
+                var typeId = floorTypeId;
+                if (Dc.Full)
+                {
+                    string typeName = "DC slab " + (s.Thickness*1000).ToString("0") + " mm";
+                    var floorType = new FilteredElementCollector(d).OfClass(typeof(FloorType)).Cast<FloorType>()
+                        .FirstOrDefault(t => t.Name == typeName);
+                    if (floorType == null)
+                    {
+                        floorType = (FloorType)((FloorType)d.GetElement(floorTypeId)).Duplicate(typeName);
+                        var compound = CompoundStructure.CreateSimpleCompoundStructure(new List<CompoundStructureLayer> {
+                            new CompoundStructureLayer(Dc.M(s.Thickness), MaterialFunctionAssignment.Structure, ElementId.InvalidElementId) });
+                        compound.EndCap = EndCapCondition.NoEndCap;
+                        floorType.SetCompoundStructure(compound);
+                    }
+                    typeId = floorType.Id;
+                }
                 var lvl = Dc.LevelFor(s.TopElevation);
-                var fl = Floor.Create(d, loops, floorTypeId, lvl.Id);
+                var fl = Floor.Create(d, loops, typeId, lvl.Id);
                 var off = fl.get_Parameter(BuiltInParameter.FLOOR_HEIGHTABOVELEVEL_PARAM);
                 if (off != null && !off.IsReadOnly) off.Set(Dc.M(s.TopElevation) - lvl.Elevation);
                 Dc.SetMark(fl, s.Id);
+                Dc.ExportClass(fl,"IfcSlab",s.Kind == "roof" ? "ROOF" : s.Kind == "ground" ? "BASESLAB" : "FLOOR");
                 Dc.IdMap[s.Id] = fl.Id;
                 if (s.Kind == "roof") Dc.Note("roof-as-floor " + s.Id);
                 if (s.Kind == "pad") Dc.NoteOnce("pad-as-floor", "pads authored as Floor elements");
-                Dc.NoteOnce("floor-type-default",
+                if (!Dc.Full) Dc.NoteOnce("floor-type-default",
                     "floors use the template default floor type; plan thicknesses not matched");
                 nFloors20++;
             }
-            catch (Exception ex) { Dc.Note("slab-fail " + s.Id + ": " + ex.Message); nSkip20++; }
+            catch (Exception ex) { if (Dc.Full) throw; Dc.Note("slab-fail " + s.Id + ": " + ex.Message); nSkip20++; }
         }
     }
+    foreach (var stair in plan20.Stairs)
+    {
+        var loop = new CurveLoop();
+        for (int i=0; i<stair.Profile.Count; i++)
+        {
+            var a=stair.Profile[i]; var b=stair.Profile[(i+1)%stair.Profile.Count];
+            loop.Append(Line.CreateBound(Dc.P(stair.X,stair.Y+a[0],stair.Z+a[1]),
+                                        Dc.P(stair.X,stair.Y+b[0],stair.Z+b[1])));
+        }
+        var body = GeometryCreationUtilities.CreateExtrusionGeometry(new List<CurveLoop>{loop},XYZ.BasisX,Dc.M(stair.Width));
+        var native = DirectShape.CreateElement(d,new ElementId(BuiltInCategory.OST_Stairs));
+        native.SetShape(new List<GeometryObject>{body});
+        native.Name = "Office Stair";
+        Dc.SetMark(native,stair.Id);
+        Dc.ExportClass(native,"IfcStair","STRAIGHT_RUN_STAIR");
+        Dc.IdMap[stair.Id] = native.Id;
+        nStairs20++;
+    }
+    if (Dc.Full && (nSkip20 != 0 || plan20.ArchIds.Any(id => !Dc.IdMap.ContainsKey(id))))
+        throw new Exception("Full architecture is incomplete; no partial package may be delivered");
 });
 
-$"20_architecture ok: {nWalls20} walls, {nDoors20} doors, {nOpen20} openings, {nFloors20} floors, {nSkip20} skipped, log: {Dc.LogTail(12)}"
+$"20_architecture ok: {nWalls20} walls, {nDoors20} doors, {nOpen20} openings, {nFloors20} floors, {nStairs20} stairs, {nSkip20} skipped, log: {Dc.LogTail(12)}"

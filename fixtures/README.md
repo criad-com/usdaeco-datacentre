@@ -10,3 +10,9 @@ recorded `runtime_sha256` before use. These copies require no flake inputs.
 The tags and revisions identify the historical generation sources; they are
 provenance records, not public download requirements. The two `*_recorded`
 fixtures remain provenance-only entries and are not vendored.
+
+`revit-builder-0.4.2/` preserves the three local builder source files bound by
+the [historical native receipt](../artifacts/revit-0.4.2.json), copied verbatim
+from this repository's `v0.4.2` tag. The gate checks their original SHA-256
+values. These snapshots are evidence, not runnable dependencies, and do not
+certify the current builder after its architecture changes.

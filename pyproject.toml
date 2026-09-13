@@ -1,6 +1,6 @@
 [project]
 name = "dcbuild"
-version = "0.5.1"
+version = "0.6.0"
 description = "demo-datacentre-01 — a full data centre authored programmatically, twice: ifcopenshell and Revit, from one parametric spec"
 readme = "README.md"
 license = "MIT"

@@ -1,0 +1,667 @@
+{
+  "version": "0.6.0",
+  "facility": "demo-datacentre-01",
+  "variant": "full",
+  "status": "PASS",
+  "date": "2026-09-13",
+  "revit": {
+    "versionName": "Autodesk Revit 2027",
+    "versionNumber": "2027",
+    "versionBuild": "27.2.0.39"
+  },
+  "transport": {
+    "repo": "usdaeco-revit",
+    "ref": "v0.1.4",
+    "revision": "6840bbe8d1a42ffa4c456038e7ba42b8bc22acce",
+    "runtime_sha256": "5c53c93f6fac281893daacb723c3a983b631890a888d19fb2ea72831ebee229c"
+  },
+  "source_sha256": {
+    "revit/driver.py": "36f718262342c9898c545fbf722bc4e8887848fa06a8059527dca4ef17bc8e5c",
+    "revit/src/manifest.json": "0de4862b9280b1d1a8d9940db14a98da27619a1c586cb3c5745045eb5c43a7cb",
+    "src/dcbuild/revit_payload.py": "278f2f1c0653496a9c53bd5e8295455d033b7a88d77448aed012c3ef81a76e16"
+  },
+  "script_sha256": {
+    "00_lib.csx": "c8c660094b5e70b3818059363806cf176c290762198bc5053c5898339b6d153a",
+    "10_setup.csx": "4d142026f01fb65e703e0ddc1f7fdcf40e6f98d0e37fb5c9490054405568c54f",
+    "15_parameters.csx": "515d6bf42aad07ee11eba1679bc482c845e4ce2d40d8017efea14fcbb21a27f3",
+    "20_architecture.csx": "7148c6d287a89b5bebfe7c7dd788abe5ea0e1bd5d40810a553adada8a273d604",
+    "25_rooms.csx": "c62b7729cb3e88ef9dc748109e85a0a3512518bc0540a3600f843b7c3ae5a881",
+    "30_structure.csx": "30e317ce8f2d8c2f1ddf406136eb1c6bf62f40c27d8b498bccb165f4d0b12ca4",
+    "40_equipment.csx": "be69a65a117d8683654e0c0f5c0c5d67887f8a422c24121235375758f84eba29",
+    "45_cameras.csx": "1aff42f334fda7122324fd4e9d9d7695a1ba7c591dd7746391c2dc11a5534fe5",
+    "50_containment.csx": "572355dcb1dd49f2f678fbeca5b5e7e57cfcd5a68934d922bfc3cf51d56f315a",
+    "60_piping.csx": "f3e3597efd43f12574fa4722424f1d5f20687d8af9e332086e85edafa3f7cd1f",
+    "90_finish.csx": "f62039efa5930d43a5ee5129f7a33d6c6c1092bc2bbee696787e33fb6f3bb362"
+  },
+  "partition_source_sha256": {
+    "src/dcbuild/revit_delivery.py": "a2fd016494ada9db93b8e56c5f8e04567e2b83855d3dcef6d2f6aab77b51c1e5",
+    "src/dcbuild/qa/parity.py": "dcff13bc5e2f02e5500982d3fe94825dfdac3a9591d8f1f5232b60e49d6cec5c"
+  },
+  "spike": {
+    "status": "PASS",
+    "wall_created": 1,
+    "door_created": 1,
+    "identity_joins": 2,
+    "identity_required": 2,
+    "export_bytes": 29960,
+    "export_sha256": "706e987fa8de7354e15a1c234e495796284a4803b48ab94723b22c7ecc4677bd",
+    "property_sets": 65,
+    "quantity_sets": 0,
+    "status_probes": 30,
+    "eval_requests": 30,
+    "slab_probe": {
+      "created": 1,
+      "nativeClass": "Floor",
+      "thicknessM": 0.25,
+      "endCap": "NoEndCap",
+      "background": true
+    }
+  },
+  "full": {
+    "status": "PASS",
+    "status_probes": [
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.016,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.016,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.007,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.007,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.007,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.007,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.018,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.007,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.028,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.017,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.008,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.006,
+        "foreground_modified": false
+      },
+      {
+        "busy": false,
+        "revit": {
+          "versionName": "Autodesk Revit 2027",
+          "versionNumber": "2027",
+          "versionBuild": "27.2.0.39"
+        },
+        "seconds": 0.005,
+        "foreground_modified": false
+      }
+    ],
+    "uploads": [
+      {
+        "filename": "build_plan-full.json",
+        "bytes": 135857,
+        "sha256": "899c8251677a27593fd35e4a34abcf77ac5711cc073cc3bc09412e22b9c17f27"
+      },
+      {
+        "filename": "shared-parameters.txt",
+        "bytes": 879,
+        "sha256": "c572fce345631273c7ac8352a330426a150ff76daf30341e60096e9360823654"
+      }
+    ],
+    "batches": [
+      {
+        "phase": "00_lib.csx",
+        "seconds": 0.342,
+        "status": "PASS"
+      },
+      {
+        "phase": "10_setup.csx",
+        "seconds": 2.51,
+        "status": "PASS"
+      },
+      {
+        "phase": "15_parameters.csx",
+        "seconds": 0.215,
+        "status": "PASS"
+      },
+      {
+        "phase": "20_architecture.csx",
+        "seconds": 1.337,
+        "status": "PASS"
+      },
+      {
+        "phase": "25_rooms.csx",
+        "seconds": 1.077,
+        "status": "PASS"
+      },
+      {
+        "phase": "90_finish.csx",
+        "seconds": 3.876,
+        "status": "PASS"
+      }
+    ],
+    "setup": {
+      "storeys": 3,
+      "roof_datums": 2,
+      "grids": 22,
+      "parameters_bound": true
+    },
+    "architecture": {
+      "created": 167,
+      "updated": 0,
+      "walls": 111,
+      "doors": 47,
+      "slabs": 6,
+      "stairs": 3,
+      "skipped": 0
+    },
+    "rooms": {
+      "created": 38,
+      "updated": 0,
+      "occupied": 36,
+      "voids": 2,
+      "ifc_global_ids_joined": 38,
+      "void_datum_m": 6.6
+    },
+    "audit": {
+      "background": true,
+      "architecture": 167,
+      "matchingGuids": 167,
+      "nativeClasses": {
+        "Wall": 111,
+        "FamilyInstance": 46,
+        "DirectShape": 4,
+        "Floor": 6
+      },
+      "rooms": 38,
+      "roomsWithPositiveArea": 38,
+      "occupiedRooms": 36,
+      "voidRooms": 2,
+      "warningMessages": 266,
+      "diagnosticNotes": 279,
+      "modelSaved": true
+    },
+    "export": {
+      "schema": "IFC4X3_ADD2",
+      "bytes": 1138440,
+      "sha256": "6873f80ae89cddfe4c6711fda92583e3fc4c46f285ca912a8b85acede6bdc92a",
+      "transfer_sha256_agreement": true,
+      "property_sets": 2202,
+      "quantity_sets": 410,
+      "spaces": 38,
+      "openings": 2
+    },
+    "parity": {
+      "package": "arch",
+      "required": 167,
+      "joined": 167,
+      "coverage": 1.0,
+      "tolerances_m": {
+        "placement": 0.05,
+        "geometry_centre": 0.15
+      },
+      "max_geometry_centre_m": 0.04956309110620069,
+      "failures": []
+    },
+    "placement_within_50mm": 115,
+    "geometry_centre_fallback_count": 52,
+    "warnings": {
+      "count": 266,
+      "messages": {
+        "native Warning: Highlighted walls overlap. One of them may be ignored when Revit finds room boundaries. Use Cut Geometry to embed one wall within the other.": 5,
+        "native Warning: Highlighted room separation lines overlap. One of them may be ignored when Revit finds room boundaries. Delete one of the lines.": 67,
+        "native Warning: A wall and a room separation line overlap. One of them may be ignored when Revit finds room boundaries. Shorten or delete the room separation line to remove the overlap.": 194
+      }
+    },
+    "recovery": {
+      "floor_end_cap": "NoEndCap",
+      "disposable_slab_verified": true,
+      "inspected_architecture_before_resume": 0,
+      "stale_bindings_cleared": 158,
+      "model_not_activated": true,
+      "no_document_closed": true,
+      "no_application_restart": true
+    }
+  },
+  "delivery": {
+    "producer": "Autodesk Revit 2027 IFC4X3 export of the native model built from the generator plan; partitioned to the architecture delivery",
+    "bytes": 864497,
+    "sha256": "a23ecdfe02b3ed94b47d62136b7b6d0c453672f9e90355c45217ef9266506593",
+    "generator_sha256": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0",
+    "property_sets": 1981,
+    "quantity_sets": 375,
+    "spatial": 46,
+    "elements": 167,
+    "types": 15,
+    "ports": 0,
+    "meshes": 167,
+    "schema_validation_errors": 0,
+    "partition_repeat": "byte-identical",
+    "twin": {
+      "arch.geometry.usdc": {
+        "bytes": 40743,
+        "sha256": "bc7e47d654685ae714f3a9aa8cdceb7544d1b5adfdae9b69c3e70d4b7a4c84b7"
+      },
+      "arch.semantics.usda": {
+        "bytes": 995055,
+        "sha256": "dc708a8f31ef3d738e41b4fea2e951d43bbd16bb89ba87cd4428929df7dc6a03"
+      },
+      "arch.usda": {
+        "bytes": 1009,
+        "sha256": "a1a147e1f91481f198e16ce020beaee0fff8315959bc8cb5ee65e2465ad31e12"
+      }
+    }
+  },
+  "publication": {
+    "full_bytes": 22940413,
+    "cap_bytes": 40000000,
+    "unchanged_full_files": 36,
+    "unchanged_historical_files": 30,
+    "changed_files": [
+      "arch.geometry.usdc",
+      "arch.ifc",
+      "arch.semantics.usda",
+      "arch.usda",
+      "dc.manifest.json"
+    ],
+    "counts": {
+      "elements": 3009,
+      "levels": 3,
+      "meshes": 3050,
+      "ports": 6244,
+      "spaces": 41,
+      "unclassified": 2,
+      "unparented": 0
+    },
+    "monolithic_source": "union of the delivered native architecture and eight generator packages",
+    "union_identities": 9308,
+    "union_prims": 12434,
+    "mute_packages": 8,
+    "moved_remaining_prims": 0,
+    "generator_baseline": {
+      "base/dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "base/dc.manifest.json": "2e9970f0def8657bb88a9a8b769de7266d1543e5132eacf0d56141c73faf158c",
+      "base/dc.semantics.usdc": "1d9e6753da91b62fa95f553102f435c56a5ff93d63c2cec4f01d512dd8f1d3cd",
+      "base/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "base/overview.png": "217af328515856ca820598f42b3f17e5e8c4522b2a445de6d8c9ee04b041d779",
+      "base/vanilla.png": "1ce1ae9861dacad56bfe45d49aa36ade4de1835db280b583833d972be76a619a",
+      "clash/dc.geometry.usdc": "24c22644aa0b9470ceddfb8433a828284fea2df964d77840bea53b1328d8675e",
+      "clash/dc.manifest.json": "a760940a286c42471a6b6db86c8b696a7077242c45275dce5b29898d6d87776d",
+      "clash/dc.semantics.usdc": "5a9af9ff8ec3366d80408e73a0768f4698db71b329f9edb21e4d6fbc7ad91f15",
+      "clash/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "clash/overview.png": "1a6b89ba2278762af715ff5624b00034bdd3b2b8390d2d53d412f657a551ec30",
+      "clash/vanilla.png": "4ec3ed434cc02fee3c10a06412cbccb0bb6c147840e6aa8c8db5e657362dda55",
+      "floors/dc.geometry.usdc": "feaced9b153a36baea8399d681ffe820e9b3b543075cdd15f8249a1ca0c2bf1f",
+      "floors/dc.manifest.json": "625385384e2103aeb489532b3d270e9df4e9f2d2bcc32a5b578e3f56230ac179",
+      "floors/dc.semantics.usdc": "7417b00cf602a4f48e4a4071d3f709e0be7ffb95216506ec2300da908f754004",
+      "floors/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "floors/overview.png": "f64b370b2b1369034f116a37d5fd9b2f043ff7c7754b8b48746e747f0346f2d9",
+      "floors/vanilla.png": "b1d23e113205fc117d9f180a3a3f50d495948431266da797dee73476cc16a15a",
+      "full/arch.geometry.usdc": "0d25279850f14b2140ee015eef97f9e7da668c919a14a48841515a3df04f2ad4",
+      "full/arch.ifc": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0",
+      "full/arch.semantics.usda": "a35f208bfc720f03a71e4c5df200cd2d4cef2a08b6698bccb5f7a62fee5342e0",
+      "full/arch.usda": "c53afd159a9c3f9d0432fd4c2ad2ebe1e7f8dc179faa532874b9c30e8a6f72a1",
+      "full/cooling.geometry.usdc": "e3493a2fa60c1cdd30a120bb902c09dd78d4c83d53ad72ac47c192c41b7a82d9",
+      "full/cooling.ifc": "28d85b64eed1bd405429b893badb57f9a0fb0e8180e172b5b82029625774ed58",
+      "full/cooling.semantics.usda": "96c15e64175ec382fcc8e2bf426c26be2bc21d426a589c9215ca9eee24ccb9ed",
+      "full/cooling.usda": "535bc812d276bba4eeed4f27debc47cfdcc4369ae2146c31fab6ce582f238e2c",
+      "full/dc.connected.usda": "ac419c1ece029fc122c481648320508078039479261c1f34b4799961e39ed0c2",
+      "full/dc.manifest.json": "02352c43b882f272ef546704655583e8c6265d6cb8f39d25239985dd4689eecb",
+      "full/dc.usda": "85df064b63d065fd743286fee3d6386662f61aca3cb4e154bca422d8cce52b2b",
+      "full/electrical.geometry.usdc": "ed47a13a82a6d9f4a00638855f627540089ee070a13ee263bdabf3159c513ee3",
+      "full/electrical.ifc": "56589b1ed3422b3469b67e2889af2b8461c2a3d4e3efda480e3362a7826a85db",
+      "full/electrical.semantics.usda": "4c875e75dfe3d6ea8d6fa3fb13f8e37bc301e8151d046bcd3806adf9863a83f0",
+      "full/electrical.usda": "68964b7b6b2b022d7d1e6525ea2bcd9984c66aa5c954375521ff05b673af6799",
+      "full/fitout.geometry.usdc": "13bce5f20608d593b3f81f544004795b7bdc18389c89405ca3ac88bb06af0c8a",
+      "full/fitout.ifc": "7e81cb41227077a92d2227ae88d1e00542818e55ba027cdeb5aacea145a96729",
+      "full/fitout.semantics.usda": "124f58ea216f912ccd8ba3a6897fcc9470d80d17e7f20a43a391686f42bef43b",
+      "full/fitout.usda": "8209c560da1542450301c76425e3bfa86c5ede2b013ac2c9c8511be9984a9808",
+      "full/it.geometry.usdc": "ddb07c3e6b47143b4a2f4ff552a5df0868830fb2af31e7a750a5d06e2d119371",
+      "full/it.ifc": "485bddbc54c145ee39f6dffbbe830221faf19b3a188610f3f48f639feb7308b6",
+      "full/it.semantics.usda": "3a9dedc91a61bbbfbbede8f8588ef94a2a3e8aaae9062b387346dc724899dbb4",
+      "full/it.usda": "6cfcfc24b3b2b6ae4b8b60ff51e9d9f71e7dfbe2fa2cc23c347b59668bb64d50",
+      "full/overview.png": "ba4da62b68296ea6b7c074d9f7d73bdf00a2eee2aeb78e02cfd4c0224145a73a",
+      "full/security.geometry.usdc": "8b96bd0b3aa3f805a92b5662abed80e0332ea6ac3cc860928e09b40ce06ce434",
+      "full/security.ifc": "0a3d070a7dd95723a62577172d541cbae4f743cd6e2e0dc8d426927a7b093d5a",
+      "full/security.semantics.usda": "18a65d2397543dced117187a84c900e290c4a160b5d12ef200a4aa38daf890a3",
+      "full/security.usda": "971627c8ee921800bcc553c05dfeb1f1495143c32b3441136247afc5227bcfab",
+      "full/shared.geometry.usdc": "24f00146694979409c02f7d3a0e3a81b3ee3db3adf815af8dc93d6475b0906f5",
+      "full/shared.ifc": "1fd81e6f52ae614cfda8829ba5520f2cc5342d6aa98940fe49db2f5a21f57173",
+      "full/shared.semantics.usda": "ff5d920377ecbb49218238c121a6e4bcc984bfe010575ffe3941117356941fe1",
+      "full/shared.usda": "8881a373220511925a1ab157d51b17c45632bad6c851b6b5cc6f8200e72590b6",
+      "full/site.geometry.usdc": "2515c4c7d6ff3b5554cbe3682d5f921e3f8bcbad5e423eabc56010fafae7e541",
+      "full/site.ifc": "faac3f15e61301f78369ac83153853f508fc35ef5bed3d229b2728e0538d2b42",
+      "full/site.semantics.usda": "b38c7c80705014557ae2f9587ad6d28f5ce8c21cd23959b3a4c20650fdf2342d",
+      "full/site.usda": "1c06becc10a45290a311faee31f5e4fc08bdbf3795d3c6837757e2816c3af0f9",
+      "full/structure.geometry.usdc": "66181620c18a69b140e2ef4e19a0b63dbf6959f1bdff5c3863daf23b3e810747",
+      "full/structure.ifc": "12fa31daf70a154fb506970ecc9453fff9bc276b574a1dfa1957eed6d6bac4b3",
+      "full/structure.semantics.usda": "43b7d000d2364aff0a96f378bc6ad9cd9d16d8e714a02921a61c6f169d3a10d0",
+      "full/structure.usda": "45194c14c5850cbf008af37ef7feaae7fc288c580edad48c02a5b1aab2b3f65b",
+      "full/vanilla.png": "3904a214e35267d8c25e533baed12d10561366b28f9a7cd1f49d45ccca22db3e",
+      "iris/dc.geometry.usdc": "d73387613389fda72868152abc29f0ccfcae3f092f274e99bc3fb7b88998ec5c",
+      "iris/dc.manifest.json": "5e16cacc9fd6b4151262d1c8a910ebbaa28d4d813ab7723465975022efeac0c8",
+      "iris/dc.semantics.usdc": "b857167e8555ee82f050c788b5664eab0628f4aa41921766eb0defb8c3699af7",
+      "iris/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "iris/overview.png": "5a964272d7e12a3a6e5bd222f9700e2a047442e1af9b9229263155dfe8c48097",
+      "iris/vanilla.png": "27107bc04a0a84e113b4572233347510881a784e0b02678f7e46842e726e1d13",
+      "pod/dc.geometry.usdc": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9",
+      "pod/dc.manifest.json": "6ac73e7cfe8220f9c09fa95f2442f653b3ea25a6d73420979307ec4dae0c8d77",
+      "pod/dc.semantics.usdc": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c",
+      "pod/dc.usda": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9",
+      "pod/overview.png": "f9df6db7c657673dd1674be8f7af566965876e35ec68f81e7ef76ad3449ebbca",
+      "pod/vanilla.png": "905398308ea5405068850594222c0dc77c42da83fbc773bb81a26084bcadf9bf"
+    }
+  },
+  "deviations": [
+    "Roof slabs use native Floors with IfcSlab.ROOF classification; three stairs and one roller door use native DirectShape solids generated from plan drivers.",
+    "The frozen converter overlay mode needs the existing spatial-over/catalog post-pass; generation dependencies remain unchanged.",
+    "Native repeated-floor type and tessellation differences are reported; the moved wall axes, 3.2 m partition delta and extra door remain verified.",
+    "Both published images retain generator 0.5.2 pixels and original provenance; the current native stage is rendered independently for S28.",
+    "266 native overlap warnings remain; all 38 rooms have positive area and all 167 architecture GlobalIds join.",
+    "Nix not attempted; packaging and connected composition are not proven by this receipt."
+  ],
+  "raw_evidence_sha256": {
+    "native-receipt.json": "1f33b5bcc3d84d31fc20b07cd784cf7a3182d3be06872d3fdf122fbe828c094f",
+    "resume-receipt.json": "7b9cd8799d5876c447d21ad05d28c631969d249877d5e5f467c03fb8f34fda27",
+    "native.ifc": "6873f80ae89cddfe4c6711fda92583e3fc4c46f285ca912a8b85acede6bdc92a",
+    "native-diagnostics.json": "952bb6a85101b276365f02e671e9fbfc9e092d72b94c24732188ab96e147a6d2",
+    "final-audit.json": "538d728837e4058c8fee38cf1a0b7b7482a42a7634ba4239d4861b292a5dc1db",
+    "slab-spike.json": "ef7d4f783979e72302e101cc489c793346fc97d63ad0739e4a3de608199110bb",
+    "arch.parity.json": "6ab488a3564815e856f978a50339903676c3ad5a43db5eef646f3f0f745badd6"
+  }
+}

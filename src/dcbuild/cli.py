@@ -77,6 +77,8 @@ def cmd_build_programme(args) -> int:
 def cmd_parity(args) -> int:
     from .qa import parity
     _, plan = _resolve(getattr(args, "variant", "base"))
+    if args.package == "arch":
+        return parity.architecture(plan, Path(args.revit_ifc), Path(args.reference), args.report)
     return parity.main(plan, Path(args.revit_ifc), Path(args.dir))
 
 
@@ -84,6 +86,13 @@ def cmd_publish(args) -> int:
     from .publish import publish
     for variant in spec_mod.variants() if args.all else [args.variant or "base"]:
         publish(variant, Path(args.out))
+    return 0
+
+
+def cmd_partition_revit(args) -> int:
+    import json
+    from .revit_delivery import partition
+    print(json.dumps(partition(args.source, args.reference, args.spine, args.out), sort_keys=True))
     return 0
 
 
@@ -97,6 +106,13 @@ def cmd_render(args) -> int:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="dcbuild")
     sub = ap.add_subparsers(dest="cmd", required=True)
+
+    p = sub.add_parser("partition-revit", help="partition native architecture over the issued shared spine")
+    p.add_argument("source")
+    p.add_argument("--reference", required=True, help="independent generator architecture IFC")
+    p.add_argument("--spine", default="dist/full/shared.ifc")
+    p.add_argument("--out", default="out/full/revit/arch.ifc")
+    p.set_defaults(fn=cmd_partition_revit)
 
     p = sub.add_parser("publish", help="build combined IFC and publish portable USD layers")
     selection = p.add_mutually_exclusive_group()
@@ -136,6 +152,10 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("parity", help="Revit IFC vs our IFC (G2)")
     p.add_argument("revit_ifc")
     p.add_argument("--dir", default="out/ifc")
+    p.add_argument("--variant", default="base")
+    p.add_argument("--package", choices=["arch"])
+    p.add_argument("--reference", default="dist/full/arch.ifc")
+    p.add_argument("--report", help="architecture parity JSON output (default: beside the native input)")
     p.set_defaults(fn=cmd_parity)
 
     for name in ("plan", "check", "build-ifc", "validate-ifc"):

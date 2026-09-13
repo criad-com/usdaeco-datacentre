@@ -40,28 +40,35 @@ All 30 files in their five directories retain their v0.4.9 bytes.
 `full` has nine delivered IFC4X3 files and their USD twins. Delivery order is
 site, arch, structure, cooling, electrical, it, fitout, security, shared.
 Shared owns all spatial definitions; each discipline overlays that spine.
+Architecture is delivered by Revit 2027 in 0.6.0; the other eight packages remain
+generator-produced. Only `arch.ifc`, its three twin layers and `dc.manifest.json`
+change inside `full/`. See [the native acceptance](../docs/acceptance-revit-0.6.0.md).
+The two reviewed images retain generator 0.5.2 pixels and their original
+provenance; a fresh S28 render independently checks the current native stage.
 Every `<package>.usda` sublayers its readable `.semantics.usda` before its
 binary `.geometry.usdc`. Layer provenance names the producer, source IFC and
 SHA-256 of the adjacent delivered IFC bytes, including its final descriptions.
-All 27 source stamps across nine twins use this rule in 0.5.2.
+All 27 source stamps across nine twins use this rule. The three architecture
+layers name the native producer and v0.6.0; the other 24 retain v0.5.2.
 The 0.5.1 delivery adds exact USD
 target paths to all 1,008 external port document-reference descriptions:
 cooling 184, electrical 344, IT 480, all other deliveries zero. The nine serves
 targets remain native `IfcRelServicesBuildings` relationships (cooling 3,
 electrical 2, IT 3, security 1). A single-file reader can resolve both forms.
-The twins retain every 0.5.1 opinion except source hash and release tag lines;
-all nine delivered IFCs and both images retain their 0.5.1 bytes.
+The generator twins retain their prior opinions. The native architecture
+replaces its whole delivery, retains 167 referents and adds nine catalog types
+relative to the generator. Both images retain their prior bytes.
 The [full manifest](full/dc.manifest.json) inventories every delivered
 file except itself and records counts and every cross-package target.
 Its `files` hashes bind the enriched IFCs and match the twins' source stamps
 directly; the redundant `twinSourceFiles` field is removed. The publisher
 resolves reference paths, enriches IFC descriptions, then converts and stamps
-the final delivered bytes. The gate compares every other twin opinion with
-0.5.1, including geometry, and checks unchanged IFC and image bytes.
+the final delivered bytes. The gate checks unchanged generator IFC/twin and
+image bytes, and binds the four native architecture files to their own baseline.
 
 The full directory is capped at **40,000,000 bytes**. Its measured publication
-is **22,148,597 bytes**, including 12,486,505 bytes of IFC, 8,479,793 bytes of
-semantic USDA, 482,313 bytes of geometry crates, roots, manifest and images.
+is **22,940,413 bytes**, including all delivered IFCs, twin layers, roots,
+manifest and retained images.
 Both images are 1280×800, non-uniform, and below 400,000 bytes each.
 
 `full/dc.connected.usda` is the connected entry and needs the **usdIfc plugin

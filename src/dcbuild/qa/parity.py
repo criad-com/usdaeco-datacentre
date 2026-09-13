@@ -286,3 +286,54 @@ def main(plan, revit_ifc: Path, our_dir: Path) -> int:
     print(f"G2 OK — {core_both}/{core_planned} required products joined, "
           f"camera positions <= 0.001 m; other products use declared geometry tolerances")
     return 0
+
+
+def architecture(plan, revit_ifc, reference, output=None):
+    """G2 for one complete architecture delivery; joins use GlobalId only."""
+    import dataclasses
+    from ..revit_payload import prepare_architecture
+    from ..revit_delivery import physical
+    required = prepare_architecture(dataclasses.asdict(plan))["revit_arch_ids"]
+    expected_ids = {ids.guid(key): key for key in required}
+    ours, native = ifcopenshell.open(str(reference)), ifcopenshell.open(str(revit_ifc))
+    by_ours = {e.GlobalId: e for e in physical(ours)}
+    by_native = defaultdict(list)
+    for e in physical(native):
+        by_native[e.GlobalId].append(e)
+    failures, rows = [], []
+    if set(by_ours) != set(expected_ids):
+        failures.append("Generator architecture referents differ from the plan")
+    if set(by_native) != set(expected_ids):
+        failures.append("Native architecture referents differ from the plan")
+    scale_ours = ifcopenshell.util.unit.calculate_unit_scale(ours)
+    scale_native = ifcopenshell.util.unit.calculate_unit_scale(native)
+    joined = 0
+    for guid, key in sorted(expected_ids.items()):
+        o = by_ours.get(guid)
+        candidates = by_native.get(guid, [])
+        if o is None or len(candidates) != 1:
+            failures.append(key + ": missing or duplicate GlobalId")
+            continue
+        n = candidates[0]
+        joined += 1
+        if not n.is_a(o.is_a()):
+            failures.append(key + ": native element kind differs")
+        if element.get_predefined_type(n) != element.get_predefined_type(o):
+            failures.append(key + ": native predefined kind differs")
+        a, b = _origin(o, scale_ours), _origin(n, scale_native)
+        ca, cb = _bbox_centre(o), _bbox_centre(n)
+        dp = float(np.linalg.norm(a-b)) if a is not None and b is not None else None
+        dg = float(np.linalg.norm(ca-cb)) if ca is not None and cb is not None else None
+        passed = (dg is not None and math.isfinite(dg) and
+                  (dp is not None and math.isfinite(dp) and dp <= TOL or dg <= TOL_GEOM))
+        if not passed:
+            failures.append(key + ": missing geometry or placement/geometry centre exceeds tolerance")
+        rows.append(dict(id=key, global_id=guid, entity=n.is_a(), placement_m=dp,
+                         geometry_centre_m=dg, passed=passed))
+    result = dict(package="arch", required=len(required), joined=joined,
+                  coverage=joined/len(required), tolerances_m={"placement": TOL, "geometry_centre": TOL_GEOM},
+                  max_geometry_centre_m=max((r["geometry_centre_m"] for r in rows if r["geometry_centre_m"] is not None), default=None),
+                  rows=rows, failures=failures)
+    Path(output or Path(revit_ifc).with_suffix(".parity.json")).write_text(json.dumps(result, indent=2)+"\n")
+    print(f"G2 {'FAIL' if failures else 'OK'} — architecture {joined}/{len(required)} GlobalIds; {len(failures)} failures")
+    return 1 if failures else 0

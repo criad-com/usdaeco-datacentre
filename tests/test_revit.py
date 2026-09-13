@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import pytest
 from dcbuild import layout, spec
-from dcbuild.revit_payload import prepare
+from dcbuild.revit_payload import prepare, prepare_architecture
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -256,3 +256,46 @@ def test_script_manifest_refuses_changed_missing_and_extra_sources(tmp_path, mon
     (tmp_path/'src/99_extra.csx').write_text('"extra"')
     with pytest.raises(ValueError, match='manifest'):
         driver.verify_pack()
+
+
+def test_full_architecture_drivers_keep_plan_identity_and_notched_area():
+    from dcbuild import ids
+    plan = dataclasses.asdict(layout.resolve(spec.load(variant='full')))
+    original = copy.deepcopy(plan)
+    payload = prepare_architecture(plan)
+    assert plan == original
+    assert len(payload['revit_arch_ids']) == len(set(payload['revit_arch_ids'])) == 167
+    assert len(payload['walls']) == 111 and len(payload['doors']) == 47
+    assert len(payload['slabs']) == 6 and len(payload['revit_stairs']) == 3
+    assert all(not payload[k] for k in ('columns', 'equipment', 'racks', 'runs', 'routes', 'cameras'))
+    assert all(payload['revit_identities'][key] == ids.guid(key) for key in payload['revit_arch_ids'])
+    assert {s['elevation'] for s in payload['storeys']} == {0, 4, 7}
+    assert {d['elevation'] for d in payload['revit_datums']} == {7, 10}
+    for slab in payload['slabs']:
+        if slab['kind'] != 'upper':
+            continue
+        outline = slab['outline']
+        area = abs(sum(a[0]*b[1]-b[0]*a[1] for a,b in zip(outline,outline[1:]+outline[:1])))/2
+        assert area == 207
+        assert not slab['inner_loops']
+    assert sum(s['z_offset'] == 2.6 for s in payload['spaces']) == 2
+
+
+def test_full_driver_scope_isolated_without_camera_assets(tmp_path, monkeypatch):
+    from functools import partial
+    from revit import driver
+    fake = FakeEndpoint()
+    monkeypatch.setattr(driver, 'Client', partial(transport().Client, request=fake, lock_directory=tmp_path/'locks'))
+    plan = dataclasses.asdict(layout.resolve(spec.load(variant='full')))
+    path = tmp_path/'plan.json'; path.write_text(json.dumps(plan))
+    args = ['--plan', str(path), '--endpoint', 'http://repl.example', '--workdir', 'remote-work']
+    driver.main([*args, '--phases', 'setup', 'parameters', 'architecture', 'rooms', 'export'])
+    assert len(fake.phases) == 6
+    assert set(fake.uploads) == {'build_plan-full.json', 'shared-parameters.txt'}
+    assert json.loads(fake.uploads['build_plan-full.json'])['revit_scope'] == 'architecture'
+    calls = len(fake.calls)
+    with pytest.raises(SystemExit):
+        driver.main([*args, '--phases', 'cameras'])
+    with pytest.raises(SystemExit):
+        driver.main([*args, '--update'])
+    assert len(fake.calls) == calls

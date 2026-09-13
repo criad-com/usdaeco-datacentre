@@ -24,9 +24,15 @@ def publication_baseline(folder):
     """Require v0.5.1 twin content, delivered IFCs/images and historical bytes."""
     from ..publish import digest
     released = json.loads((ROOT / "manifests/publication-v0.5.1.json").read_text())
+    native_files = json.loads((ROOT / "manifests/publication-revit-0.6.0.json").read_text())
+    native_names = {"arch" + suffix for suffix in (".ifc", ".usda", ".semantics.usda", ".geometry.usdc")}
+    if set(native_files) != native_names:
+        raise ValueError("Native architecture baseline inventory differs")
     if set(released["twins"]) != set(LAYERS):
         raise ValueError("Released twin baseline inventory differs")
     for name, expected in released["twins"].items():
+        if name in native_names:
+            continue
         if twin_content_digest(folder / name) != expected:
             raise ValueError("Twin content differs from v0.5.1: " + name)
     baseline = json.loads((ROOT / "manifests/publication-v0.5.0.json").read_text())
@@ -34,9 +40,15 @@ def publication_baseline(folder):
               (folder.parent, baseline["historical"]))
     for parent, files in groups:
         for name, expected in files.items():
+            if parent == folder and name in native_names:
+                continue
             path = parent / name
             if {"bytes": path.stat().st_size, "sha256": digest(path)} != expected:
                 raise ValueError("Released publication bytes differ: " + name)
+    for name, expected in native_files.items():
+        path = folder / name
+        if {"bytes": path.stat().st_size, "sha256": digest(path)} != expected:
+            raise ValueError("Twin content differs from the native publication: " + name)
     for variant in ("base", "floors", "pod", "clash", "iris"):
         if {p.name for p in (folder.parent / variant).iterdir()} != {
                 Path(n).name for n in baseline["historical"] if n.startswith(variant + "/")}:
@@ -108,7 +120,7 @@ def twin_source_stamps(folder):
             stamp = layer.customLayerData
             if (stamp.get("aeco:layer:source") != name
                     or stamp.get("aeco:layer:sourceSha256") != sources[name]["sha256"]
-                    or stamp.get("aeco:layer:tag") != "v0.5.2"):
+                    or stamp.get("aeco:layer:tag") != ("v0.6.0" if package == "arch" else "v0.5.2")):
                 raise ValueError("Twin source stamp differs from delivered IFC or release: " + package + suffix)
     return sources
 
@@ -149,6 +161,7 @@ def spatial_ownership(folder):
 
 
 def verify_publication(folder):
+    from ..revit_delivery import PRODUCER
     from pxr import Sdf, Usd
     from ..publish import plugin_free_census
     data = json.loads((folder / "dc.manifest.json").read_text())
@@ -174,7 +187,7 @@ def verify_publication(folder):
             stamp = layer.customLayerData
             if (stamp.get("aeco:layer:role") != ("spine" if package == "shared" else "package")
                     or stamp.get("aeco:layer:package") != package
-                    or stamp.get("aeco:layer:producer") != "usdaeco-datacentre generator 0.5.0"
+                    or stamp.get("aeco:layer:producer") != (PRODUCER if package == "arch" else "usdaeco-datacentre generator 0.5.0")
                     or stamp.get("aeco:layer:source") != package + ".ifc"):
                 raise ValueError("Twin provenance differs from its verified conversion input")
             if suffix == ".usda" and layer.subLayerPaths != [package + ".semantics.usda", package + ".geometry.usdc"]:
@@ -223,10 +236,13 @@ def snapshot(stage):
     return dict(identities=identities, prims=prims, classes=classes, relationships=relationships)
 
 
-def compare_monolithic(folder, source, output):
+def compare_monolithic(folder, output):
     from pxr import Usd
     from ..federation import run_conversion
     output.mkdir(parents=True, exist_ok=True)
+    from ..revit_delivery import union_deliveries
+    source = output / "delivered-union.ifc"
+    union_deliveries(folder, source)
     target = output / "dc.usda"
     run_conversion(source, target, monolithic=True)
     mono = snapshot(Usd.Stage.Open(str(target)))
@@ -239,7 +255,8 @@ def compare_monolithic(folder, source, output):
             raise ValueError(f"Monolithic {key} differs: {len(missing)} missing, {len(added)} added, "
                              f"{len(changed)} changed; examples: {list(missing)[:2]}, {list(added)[:2]}, {changed[:2]}")
     return {"identities": len(mono["identities"]), "prims": len(mono["prims"]),
-            "relationshipProperties": len(mono["relationships"]), "classificationCodes": len(mono["classes"])}
+            "relationshipProperties": len(mono["relationships"]), "classificationCodes": len(mono["classes"]),
+            "source": "union of the delivered native architecture and eight generator packages"}
 
 
 def mute_drill(folder, validation):

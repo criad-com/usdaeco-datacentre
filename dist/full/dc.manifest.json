@@ -7456,20 +7456,20 @@
   "facility": "demo-datacentre-01",
   "files": {
     "arch.geometry.usdc": {
-      "bytes": 50204,
-      "sha256": "0d25279850f14b2140ee015eef97f9e7da668c919a14a48841515a3df04f2ad4"
+      "bytes": 40743,
+      "sha256": "bc7e47d654685ae714f3a9aa8cdceb7544d1b5adfdae9b69c3e70d4b7a4c84b7"
     },
     "arch.ifc": {
-      "bytes": 781674,
-      "sha256": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0"
+      "bytes": 864497,
+      "sha256": "a23ecdfe02b3ed94b47d62136b7b6d0c453672f9e90355c45217ef9266506593"
     },
     "arch.semantics.usda": {
-      "bytes": 278068,
-      "sha256": "a35f208bfc720f03a71e4c5df200cd2d4cef2a08b6698bccb5f7a62fee5342e0"
+      "bytes": 995055,
+      "sha256": "dc708a8f31ef3d738e41b4fea2e951d43bbd16bb89ba87cd4428929df7dc6a03"
     },
     "arch.usda": {
-      "bytes": 918,
-      "sha256": "c53afd159a9c3f9d0432fd4c2ad2ebe1e7f8dc179faa532874b9c30e8a6f72a1"
+      "bytes": 1009,
+      "sha256": "a1a147e1f91481f198e16ce020beaee0fff8315959bc8cb5ee65e2465ad31e12"
     },
     "cooling.geometry.usdc": {
       "bytes": 146193,
@@ -7645,16 +7645,16 @@
   },
   "layers": {
     "arch.geometry.usdc": {
-      "bytes": 50204,
-      "sha256": "0d25279850f14b2140ee015eef97f9e7da668c919a14a48841515a3df04f2ad4"
+      "bytes": 40743,
+      "sha256": "bc7e47d654685ae714f3a9aa8cdceb7544d1b5adfdae9b69c3e70d4b7a4c84b7"
     },
     "arch.semantics.usda": {
-      "bytes": 278068,
-      "sha256": "a35f208bfc720f03a71e4c5df200cd2d4cef2a08b6698bccb5f7a62fee5342e0"
+      "bytes": 995055,
+      "sha256": "dc708a8f31ef3d738e41b4fea2e951d43bbd16bb89ba87cd4428929df7dc6a03"
     },
     "arch.usda": {
-      "bytes": 918,
-      "sha256": "c53afd159a9c3f9d0432fd4c2ad2ebe1e7f8dc179faa532874b9c30e8a6f72a1"
+      "bytes": 1009,
+      "sha256": "a1a147e1f91481f198e16ce020beaee0fff8315959bc8cb5ee65e2465ad31e12"
     },
     "cooling.geometry.usdc": {
       "bytes": 146193,
@@ -7768,7 +7768,7 @@
       "ports": 0,
       "spatial": 0,
       "systems": 0,
-      "types": 6,
+      "types": 15,
       "zones": 0
     },
     "cooling": {
@@ -7844,6 +7844,25 @@
       "zones": 0
     }
   },
+  "producers": {
+    "arch": {
+      "generatorSourceSha256": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0",
+      "parity": {
+        "coverage": 1.0,
+        "failures": [],
+        "joined": 167,
+        "max_geometry_centre_m": 0.04956309110620069,
+        "package": "arch",
+        "required": 167,
+        "tolerances_m": {
+          "geometry_centre": 0.15,
+          "placement": 0.05
+        }
+      },
+      "producer": "Autodesk Revit 2027 IFC4X3 export of the native model built from the generator plan; partitioned to the architecture delivery",
+      "sourceSha256": "a23ecdfe02b3ed94b47d62136b7b6d0c453672f9e90355c45217ef9266506593"
+    }
+  },
   "sizeCapBytes": 40000000,
   "tessellationControlled": [
     {
@@ -7862,16 +7881,34 @@
   "typical": {
     "changes": [
       {
+        "classification": "IfcSlab.FLOOR",
+        "instance": "slab.l2.office",
+        "kind": "changed",
+        "prototype": "slab.l1.office"
+      },
+      {
         "classification": "IfcWall.PARTITIONING",
         "instance": "wall.l2.v.016",
         "kind": "changed",
         "prototype": "wall.l1.v.016"
       },
       {
+        "classification": "IfcStair.STRAIGHT_RUN_STAIR",
+        "instance": "arch.stair.3",
+        "kind": "extra",
+        "prototype": null
+      },
+      {
         "classification": "IfcDoor.DOOR",
         "instance": "door.office.2b",
         "kind": "extra",
         "prototype": null
+      },
+      {
+        "classification": "IfcStair.STRAIGHT_RUN_STAIR",
+        "instance": null,
+        "kind": "missing",
+        "prototype": "arch.stair.2"
       }
     ],
     "expected": {
@@ -7932,8 +7969,9 @@
       "prototype": "lvl.l1",
       "walls_moved": 1
     },
-    "matched_elements": 26,
+    "matched_elements": 25,
     "matching": "classification + inherited type + placement; body comparison",
+    "native_representation_note": "Comparison retains native type and tessellation differences; planted wall axes, 3.2 m partition-length delta and extra door are verified. Whole-package G2 is separate.",
     "net_partition_length_delta_m": 3.2,
     "partition_length_m": {
       "lvl.l1": 43.0,

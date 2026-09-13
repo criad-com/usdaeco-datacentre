@@ -15,5 +15,9 @@ A failed or ambiguous builder phase is never replayed automatically.
 It requires the existing base model in `AECO_REVIT_WORKDIR`, reuses its exact
 background path and refuses a foreground match. Existing rooms and doors
 remain in place. Fresh service phases can duplicate segments when repeated.
-The non-base variants require further native families and are refused.
+The `full` architecture scope selects setup, parameters, architecture, rooms
+and export, prepending helpers. It uses a separate new model path and no
+camera assets. Its 0.6.0 native run exported all 167 architecture referents
+and 38 rooms. Floor compound structures use `NoEndCap`. Standalone floors,
+pod, clash and iris plans are still refused.
 See [the builder guide](../README.md) for configuration and measured limits.

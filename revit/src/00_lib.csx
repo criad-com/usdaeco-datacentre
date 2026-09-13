@@ -78,6 +78,8 @@ public class ColumnP
 
 public class SlabP
 {
+    public List<double[]> Outline { get; set; }
+    [JsonPropertyName("inner_loops")] public List<double[]> InnerLoops { get; set; }
     public string Id { get; set; }
     public string Kind { get; set; }          // ground | upper | roof | pad
     public double X { get; set; }
@@ -177,6 +179,7 @@ public class CameraP
 
 public class SpaceP
 {
+    [JsonPropertyName("z_offset")] public double ZOffset {get;set;}
     public string Id {get;set;}
     public string Name {get;set;}
     public string Storey {get;set;}
@@ -185,8 +188,18 @@ public class SpaceP
     public double Height {get;set;}
     public bool External {get;set;}
 }
+public class StairP
+{
+    public string Id {get;set;} public string Storey {get;set;} public string Space {get;set;}
+    public double X {get;set;} public double Y {get;set;} public double Z {get;set;}
+    public double Width {get;set;} public List<double[]> Profile {get;set;}
+}
 public class PlanData
 {
+    [JsonPropertyName("revit_scope")] public string Scope {get;set;}
+    [JsonPropertyName("revit_datums")] public List<StoreyP> Datums {get;set;} = new List<StoreyP>();
+    [JsonPropertyName("revit_stairs")] public List<StairP> Stairs {get;set;} = new List<StairP>();
+    [JsonPropertyName("revit_arch_ids")] public List<string> ArchIds {get;set;} = new List<string>();
     [JsonPropertyName("revit_status")] public JsonElement Status {get;set;}
     [JsonPropertyName("revit_identities")] public Dictionary<string,string> Identities {get;set;}
 
@@ -228,7 +241,10 @@ public static class Dc
 {
     public static string OutDir = Environment.GetEnvironmentVariable("AECO_REVIT_WORKDIR") ?? "demo-output";
     public static string FamilyDir = Environment.GetEnvironmentVariable("AECO_REVIT_FAMILY_DIR") ?? "<camera-family-directory>";
-    public static string PlanPath = Path.Combine(OutDir, "build_plan.json");
+    public static bool Full = Environment.GetEnvironmentVariable("AECO_REVIT_VARIANT") == "full";
+    public static string ModelName = Full ? "demo-datacentre-01-full.rvt" : "demo-datacentre-01.rvt";
+    public static string ExportName = Full ? "demo-datacentre-01-full-revit.ifc" : "demo-datacentre-01-revit.ifc";
+    public static string PlanPath = Path.Combine(OutDir, Full ? "build_plan-full.json" : "build_plan.json");
     public static string FamiliesPath = Path.Combine(OutDir, "families.yaml");
 
     public static int CameraStart=0, CameraCount=5;
@@ -276,7 +292,7 @@ public static class Dc
         if (Doc == null || !Doc.IsValidObject) throw new Exception("Dc.Doc not set -- run 10_setup first");
         if (String.Equals(Ui?.ActiveUIDocument?.Document?.PathName, Doc.PathName, StringComparison.OrdinalIgnoreCase))
             throw new Exception("Refusing the foreground document");
-        var expected = Path.GetFullPath(Path.Combine(OutDir, "demo-datacentre-01.rvt"));
+        var expected = Path.GetFullPath(Path.Combine(OutDir, ModelName));
         if (!String.Equals(Path.GetFullPath(Doc.PathName), expected, StringComparison.OrdinalIgnoreCase))
             throw new Exception("Refusing a document outside the configured model path");
     }
@@ -343,6 +359,16 @@ public static class Dc
             if (p == null || p.IsReadOnly) throw new Exception("IFC_GUID unavailable: " + specId);
             p.Set(guid);
         }
+    }
+
+    public static void ExportClass(Element e, string entity, string predefined)
+    {
+        if (!Full) return;
+        var cls=e.get_Parameter(BuiltInParameter.IFC_EXPORT_ELEMENT_AS);
+        var pre=e.get_Parameter(BuiltInParameter.IFC_EXPORT_PREDEFINEDTYPE);
+        if (cls == null || cls.IsReadOnly || pre == null || pre.IsReadOnly)
+            throw new Exception("Writable IFC export classification is missing");
+        cls.Set(entity); pre.Set(predefined);
     }
 
     // -- levels -------------------------------------------------------------

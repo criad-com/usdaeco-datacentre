@@ -6,12 +6,14 @@ Dc.Ui=uiapp;
 var plan10 = Dc.LoadPlan();
 
 // Reattach only the exact background path. Never close or activate a document.
-var modelPath10 = Path.GetFullPath(Path.Combine(Dc.OutDir, "demo-datacentre-01.rvt"));
+var modelPath10 = Path.GetFullPath(Path.Combine(Dc.OutDir, Dc.ModelName));
 bool update10 = Environment.GetEnvironmentVariable("AECO_REVIT_UPDATE") == "1";
 if (update10 && !File.Exists(modelPath10))
     throw new Exception("Update requires the existing model file; no project created");
 var resident10 = app.Documents.Cast<Document>().FirstOrDefault(d => !String.IsNullOrEmpty(d.PathName)
     && String.Equals(Path.GetFullPath(d.PathName), modelPath10, StringComparison.OrdinalIgnoreCase));
+if (Dc.Full && (resident10 != null || File.Exists(modelPath10)))
+    throw new Exception("Full architecture requires a new model; existing documents are refused");
 if (resident10 != null && String.Equals(uiapp.ActiveUIDocument?.Document?.PathName,resident10.PathName,StringComparison.OrdinalIgnoreCase))
     throw new Exception("Refusing the foreground document");
 Dc.ResetDocState();
@@ -59,8 +61,21 @@ Dc.Tx("DC levels + grids", d =>
         Dc.SetMark(Dc.Levels[s.Id], s.Id);
         nLevels10++;
     }
-    Dc.Levels["lvl.roof"] = Dc.FindOrCreateLevel("Roof", plan10.Roof.Elevation);
-    nLevels10++;
+    if (Dc.Full)
+    {
+        foreach (var datum in plan10.Datums)
+        {
+            var level = Level.Create(d, Dc.M(datum.Elevation));
+            level.Name = datum.Name;
+            Dc.Levels[datum.Id] = level;
+            nLevels10++;
+        }
+    }
+    else
+    {
+        Dc.Levels["lvl.roof"] = Dc.FindOrCreateLevel("Roof", plan10.Roof.Elevation);
+        nLevels10++;
+    }
 
     foreach (var g in plan10.GridLines)
     {
@@ -93,4 +108,4 @@ foreach (var e in new FilteredElementCollector(ndoc).WhereElementIsNotElementTyp
     if(e is Wall wall) Dc.WallsById[mark]=wall;
 }
 
-$"10_setup ok: template={(tpl10 == null ? "builtin-metric" : Path.GetFileName(tpl10))}, {nLevels10} levels, {nGrids10} grids, saved {Path.Combine(Dc.OutDir, "demo-datacentre-01.rvt")}"
+$"10_setup ok: template={(tpl10 == null ? "builtin-metric" : Path.GetFileName(tpl10))}, {nLevels10} levels, {nGrids10} grids, saved {Dc.ModelName}"

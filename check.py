@@ -172,7 +172,8 @@ def recorded_revit(report):
     sources_match = data["transport"] == {k: pin[k] for k in ("repo", "ref", "revision", "runtime_sha256")}
     sources_match &= set(data["source_sha256"]) == {
         "revit/driver.py", "revit/src/manifest.json", "src/dcbuild/revit_payload.py"}
-    sources_match &= all(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected
+    historical = ROOT / "fixtures/revit-builder-0.4.2"
+    sources_match &= all(hashlib.sha256((historical / name).read_bytes()).hexdigest() == expected
                          for name, expected in data["source_sha256"].items())
     expected = {
         "update": {"created": 0, "updated": 45, "batches": 9},
@@ -187,16 +188,101 @@ def recorded_revit(report):
             report.check("recorded Revit base " + name,
                          sources_match and row["status"] == "PASS"
                          and all(row[k] == v for k, v in numbers.items()),
-                         json.dumps(row, sort_keys=True) + "; recorded evidence, no live execution")
+                         json.dumps(row, sort_keys=True) + "; frozen 0.4.2 builder evidence, no current native proof")
     for variant in ("floors", "pod", "clash", "iris"):
         report.not_run("native Revit " + variant,
                        "Base only; further native family work required, including pods and ceilings")
+    current = json.loads((ROOT / "artifacts/revit-0.6.0.json").read_text())
+    report.check("Revit full execution source receipt",
+                 all(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == sha
+                     for name, sha in current["source_sha256"].items()),
+                 "Executed native builder source binding")
+    report.check("recorded Revit full architecture delivery",
+                 current["status"] == "PASS" and current["full"]["architecture"]["created"] == 167
+                 and current["full"]["audit"]["matchingGuids"] == 167
+                 and current["full"]["audit"]["roomsWithPositiveArea"] == 38
+                 and current["full"]["parity"]["joined"] == 167
+                 and not current["full"]["parity"]["failures"]
+                 and current["delivery"]["sha256"] == hashlib.sha256((ROOT/"dist/full/arch.ifc").read_bytes()).hexdigest(),
+                 "167/167 architecture GlobalIds; 38 rooms; delivered bytes bound to recorded live export")
+
+
+def publication_checks(report, args, command, validation, variants):
+    """Run the same publication proofs for a full gate or a bounded recheck."""
+    from dcbuild.publish import publication_files, size_cap, verify_publication
+    from dcbuild.render import verify_render
+    from dcbuild.vanilla import check_example
+    from pxr import Usd, UsdValidation
+    for variant in variants:
+        first_dir, second_dir = args.out/"publish-a", args.out/"publish-b"
+        for target in (first_dir, second_dir):
+            command(f"publish {variant} {target.name}", "-m", "dcbuild", "publish", "--variant", variant,
+                    "--out", str(target))
+        published = ROOT/"dist"/variant
+        names = publication_files(variant)
+        # Full inventories include separately rendered images. Copy those
+        # committed bytes into scratch publications before inventory sealing.
+        if variant == "full":
+            import shutil
+            from dcbuild.federation import refresh_inventory
+            for target in (first_dir/variant, second_dir/variant):
+                for name in ("overview.png", "vanilla.png"):
+                    shutil.copyfile(published/name, target/name)
+                refresh_inventory(target)
+        report.check(f"publish {variant} byte identity", all(
+            (first_dir/variant/name).read_bytes() == (second_dir/variant/name).read_bytes()
+            == (published/name).read_bytes() for name in names),
+            f"two independent publishes and committed data; {len(names)} files; no comparison normalization")
+        probe = verify_publication(published)
+        report.check(f"publish {variant} plugin-free", True,
+                     json.dumps(probe, sort_keys=True))
+        total = sum(p.stat().st_size for p in published.iterdir() if p.is_file())
+        cap = size_cap(variant)
+        report.check(f"publish {variant} size", total <= cap, f"{total}/{cap} bytes including both images")
+        image = verify_render(variant)
+        report.check(f"render {variant}", True, json.dumps(image, sort_keys=True))
+        print(f"== stage: vanilla freshness {variant}", flush=True)
+        image = check_example(variant)
+        report.check(f"vanilla {variant} fresh and non-uniform", True, json.dumps(image, sort_keys=True))
+        findings = validation.Validate(Usd.Stage.Open(str(published / "dc.usda")))
+        errors = [e for e in findings if e.GetType() == UsdValidation.ValidationErrorType.Error]
+        counts = Counter(e.GetName() for e in findings)
+        report.check(f"core validation {variant}", not errors,
+                     f"{len(errors)} errors; findings: {json.dumps(counts, sort_keys=True)}")
+        if variant == "full":
+            from dcbuild.qa.federation import (compare_monolithic, connected_text, ifc_ownership,
+                                               mute_drill, spatial_ownership, crossing_references,
+                                               publication_baseline, twin_source_stamps)
+            print("== stage: full federation proofs", flush=True)
+            for package, counts in crossing_references(published).items():
+                report.check("full crossing references " + package, True, json.dumps(counts, sort_keys=True))
+            for name, result in (
+                ("released twin content and publication bytes", publication_baseline(published)),
+                ("twin source stamps match delivered IFC", {"deliveries": len(twin_source_stamps(published)),
+                                                          "layerStamps": 27}),
+                ("IFC and twin ownership", ifc_ownership(published)),
+                ("shared spatial definitions", spatial_ownership(published)),
+                ("connected root text", connected_text(published)),
+                ("delivered union census and world transforms", compare_monolithic(published, args.out/"monolithic-full")),
+            ):
+                report.check("full " + name, True, json.dumps(result, sort_keys=True))
+            for row in mute_drill(published, validation):
+                report.check("full E11 mute " + row["package"], True, json.dumps(row, sort_keys=True))
+            command("G2 delivered native architecture", "-m", "dcbuild", "parity", str(published/"arch.ifc"),
+                    "--package", "arch", "--variant", "full", "--reference",
+                    str(args.out/"variants/full/a/ifc/arch.ifc"), "--report", str(args.out/"arch-parity.json"))
+            report.not_run("full connected composition", "not proven; usdIfc from usdaeco-ifc >= 0.3 required")
+            from dcbuild.qa.federation import usdchecker
+            result = usdchecker(published/"dc.usda")
+            report.check("full plugin-free usdchecker", True, json.dumps(result, sort_keys=True))
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--report", type=Path, default=Path("out/check.json"))
     parser.add_argument("--out", type=Path, default=Path("out/check"))
+    parser.add_argument("--publication-only", choices=spec.variants(),
+                        help="rebuild one publication twice and repeat its publication proofs")
     args = parser.parse_args()
     os.chdir(ROOT)
     report = Report()
@@ -225,6 +311,16 @@ def main():
         print("== stage: core validator registry", flush=True)
         validation, validator_count = core_validation_context()
         report.check("core validators loaded", validator_count == 8, f"{validator_count}/8 through UsdValidation")
+        if args.publication_only:
+            if args.publication_only == "full":
+                command("full independent G2 reference", "-m", "dcbuild", "build-ifc", "--variant", "full",
+                        "--out", str(args.out/"variants/full/a/ifc"))
+            publication_checks(report, args, command, validation, [args.publication_only])
+            structure = check_structure(ROOT)
+            report.check("family structure lint", all(structure), f"{len(structure)} rules")
+            hits = term_sweep()
+            report.check("repository sanitization", not hits, ", ".join(hits) if hits else "0 hits")
+            return report.finish(args.report)
         a, b = args.out/"a", args.out/"b"
         ok, _ = command("resolve CLI", "-m", "dcbuild", "plan", "--out", str(a/"build_plan.json"), "--manifest-dir", str(a/"manifests"))
         command("G0 CLI", "-m", "dcbuild", "check")
@@ -378,66 +474,7 @@ def main():
         report.check("clash manifest matches source and published bodies", len(measured) == 3)
         for row in measured:
             report.check("clash published case " + row["id"], True, json.dumps(row, sort_keys=True))
-        for variant in spec.variants():
-            first_dir, second_dir = args.out/"publish-a", args.out/"publish-b"
-            for target in (first_dir, second_dir):
-                command(f"publish {variant} {target.name}", "-m", "dcbuild", "publish", "--variant", variant,
-                        "--out", str(target))
-            published = ROOT/"dist"/variant
-            names = publication_files(variant)
-            # Full inventories include separately rendered images. Copy those
-            # committed bytes into scratch publications before inventory sealing.
-            if variant == "full":
-                import shutil
-                from dcbuild.federation import refresh_inventory
-                for target in (first_dir/variant, second_dir/variant):
-                    for name in ("overview.png", "vanilla.png"):
-                        shutil.copyfile(published/name, target/name)
-                    refresh_inventory(target)
-            report.check(f"publish {variant} byte identity", all(
-                (first_dir/variant/name).read_bytes() == (second_dir/variant/name).read_bytes()
-                == (published/name).read_bytes() for name in names),
-                f"two independent publishes and committed data; {len(names)} files; no comparison normalization")
-            probe = verify_publication(published)
-            report.check(f"publish {variant} plugin-free", True,
-                         json.dumps(probe, sort_keys=True))
-            total = sum(p.stat().st_size for p in published.iterdir() if p.is_file())
-            cap = size_cap(variant)
-            report.check(f"publish {variant} size", total <= cap, f"{total}/{cap} bytes including both images")
-            image = verify_render(variant)
-            report.check(f"render {variant}", True, json.dumps(image, sort_keys=True))
-            print(f"== stage: vanilla freshness {variant}", flush=True)
-            image = check_example(variant)
-            report.check(f"vanilla {variant} fresh and non-uniform", True, json.dumps(image, sort_keys=True))
-            findings = validation.Validate(Usd.Stage.Open(str(published / "dc.usda")))
-            errors = [e for e in findings if e.GetType() == UsdValidation.ValidationErrorType.Error]
-            counts = Counter(e.GetName() for e in findings)
-            report.check(f"core validation {variant}", not errors,
-                         f"{len(errors)} errors; findings: {json.dumps(counts, sort_keys=True)}")
-            if variant == "full":
-                from dcbuild.qa.federation import (compare_monolithic, connected_text, ifc_ownership,
-                                                   mute_drill, spatial_ownership, crossing_references,
-                                                   publication_baseline, twin_source_stamps)
-                print("== stage: full federation proofs", flush=True)
-                for package, counts in crossing_references(published).items():
-                    report.check("full crossing references " + package, True, json.dumps(counts, sort_keys=True))
-                for name, result in (
-                    ("released twin content and publication bytes", publication_baseline(published)),
-                    ("twin source stamps match delivered IFC", {"deliveries": len(twin_source_stamps(published)),
-                                                              "layerStamps": 27}),
-                    ("IFC and twin ownership", ifc_ownership(published)),
-                    ("shared spatial definitions", spatial_ownership(published)),
-                    ("connected root text", connected_text(published)),
-                    ("monolithic census and world transforms", compare_monolithic(published,
-                     args.out/"variants/full/a/ifc/demo-datacentre-01.ifc", args.out/"monolithic-full")),
-                ):
-                    report.check("full " + name, True, json.dumps(result, sort_keys=True))
-                for row in mute_drill(published, validation):
-                    report.check("full E11 mute " + row["package"], True, json.dumps(row, sort_keys=True))
-                report.not_run("full connected composition", "not proven; usdIfc from usdaeco-ifc >= 0.3 required")
-                from dcbuild.qa.federation import usdchecker
-                result = usdchecker(published/"dc.usda")
-                report.check("full plugin-free usdchecker", True, json.dumps(result, sort_keys=True))
+        publication_checks(report, args, command, validation, spec.variants())
         payload = prepare(dataclasses.asdict(plan))
         report.check("Revit camera payload contract", len(payload["cameras"]) == 45,
                      "45 valid GUIDs, native levels, finite drivers and complete JSON payloads")

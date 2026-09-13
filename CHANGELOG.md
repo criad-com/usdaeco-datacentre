@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.6.0 — 2026-09-13
+
+- Deliver full architecture from the native Revit 2027 model: 111 walls,
+  47 doors, six slabs/roofs, three stairs and 38 rooms. The verified raw IFC4X3
+  export is 1,138,440 bytes and includes 410 quantity sets.
+- Partition all 167 physical referents over the unchanged shared spine;
+  GlobalId coverage is 167/167, with zero kind/tolerance failures and maximum
+  geometry-centre difference 49.563 mm. Regenerate only the architecture twin
+  and bind producer/source hashes plus the generator baseline in the manifest.
+- Preserve 36 other full files and all 30 historical files. Full occupies
+  22,940,413 / 40,000,000 bytes. Retain both reviewed generator images with
+  explicit original provenance and independently render the current stage.
+- Compare the federation against the union of the actual delivered packages,
+  including native architecture; 9,308 identities and 12,434 prims agree.
+  All eight package mute drills preserve remaining transforms.
+- Reuse the complete gate's publication checks in `--publication-only` mode
+  for bounded corrective runs; retain the initial failure receipt separately
+  from the corrected publication result: 44 checks, 0 failed, 29 structure
+  rules and zero sanitization findings. The source suite passes 251 tests.
+- Record native overlap warnings, DirectShape stairs/roller door, roof slabs
+  represented by native floors, and native repeated-floor representation
+  differences in [the acceptance](docs/acceptance-revit-0.6.0.md). Nix and
+  connected composition remain not proven here.
+
 ## 0.5.2 — 2026-09-13
 
 - Enrich external-reference descriptions before converting delivered IFCs.

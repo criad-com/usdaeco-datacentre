@@ -205,6 +205,30 @@ internal construction of a prefabricated bathroom.
 
 ## full
 
+Producers in the 0.6.0 delivered publication:
+
+| Package | Delivered producer |
+|---|---|
+| shared | Generator |
+| site | Generator |
+| arch | Revit 2027 IFC4X3 export, partitioned over the shared spine |
+| structure | Generator |
+| cooling | Generator |
+| electrical | Generator |
+| it | Generator |
+| fitout | Generator |
+| security | Generator |
+
+The [native acceptance](acceptance-revit-0.6.0.md) records 167/167 GlobalId joins,
+38 native rooms and a maximum geometry-centre difference of 49.563 mm.
+Architecture contains only native physical referents. Its names and containment
+are anchored to the unchanged generator spine; units are converted to metres.
+The monolithic comparison uses the union of the actual nine deliveries,
+including Revit architecture, and restores the external IFC port connections.
+Native stair types and slab tessellation produce additional repeated-floor
+representation differences, recorded in `typical`; the moved wall axes, 3.2 m
+partition delta and extra door are independently verified.
+
 `full` merges `base` → `floors` → `pod` → `clash` → `iris`, using
 `extends: [floors, pod, clash, iris]`. Parents resolve first, mappings recurse,
 record lists merge by `id` in base order, and later scalar values win.
@@ -321,17 +345,20 @@ converter's ordinary tessellation.
 
 Every twin layer records `aeco:layer:role`, `package`, `producer`, `source`,
 `sourceSha256` and `tag` in `customLayerData`. The producer is
-`usdaeco-datacentre generator 0.5.0`, identifying the unchanged IFC generator.
-The release tag is `v0.5.2`. A twin's source stamp is the delivered file:
+`usdaeco-datacentre generator 0.5.0` for the eight generator packages, tagged
+`v0.5.2`. Architecture names the Revit 2027 export and partitioner, tagged
+`v0.6.0`. Manifest `producers.arch` retains the generator architecture SHA-256
+and complete package parity summary. A twin's source stamp is the delivered file:
 `sourceSha256` equals SHA-256 of the adjacent `<package>.ifc` bytes, after
 Description enrichment, on its root, semantics and geometry layers. The gate
 checks all 27 stamps against the nine delivered IFCs directly. Manifest `files`
 records those same delivered hashes and sizes; no `twinSourceFiles` indirection
 is needed. The 0.5.1 baseline compares every twin opinion, excluding only the
 source hash and release tag lines (geometry crates are exported as USDA for
-comparison). Delivered IFCs, both images and historical variants retain their
-released bytes. Census, identities, relationships, transforms and meshes stay
-unchanged.
+comparison), except the four native architecture files, which have a separate
+0.6.0 baseline. Generator packages, both images and historical variants retain
+their released bytes. Native architecture keeps the 167 element identities and
+167 meshes; its 15 catalog types replace the generator's six.
 The manifest records package counts,
 fixture mapping, source pins, relationship crossings and SHA-256/bytes for
 all delivered files and both images. Its sole inventory exclusion is itself:

@@ -1,0 +1,278 @@
+{
+  "checks": [
+    {
+      "name": "publication sweep",
+      "status": "PASS",
+      "ok": true,
+      "detail": "333 files, 36186073 bytes, 0 findings"
+    },
+    {
+      "name": "toolchain pristine archive runtime digest",
+      "status": "PASS",
+      "ok": true,
+      "detail": "v0.3.10: d68110556117bd6dfde73a564e7d231d0ace38d8a4fe5289a76bee6496913cbb"
+    },
+    {
+      "name": "core validators loaded",
+      "status": "PASS",
+      "ok": true,
+      "detail": "8/8 through UsdValidation"
+    },
+    {
+      "name": "full independent G2 reference",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "full independent G2 reference elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 26.440543917007744,
+      "detail": "26.441 s (measurement only)"
+    },
+    {
+      "name": "publish full publish-a",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish full publish-a elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 55.52807195810601,
+      "detail": "55.528 s (measurement only)"
+    },
+    {
+      "name": "publish full publish-b",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "publish full publish-b elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 64.91688075009733,
+      "detail": "64.917 s (measurement only)"
+    },
+    {
+      "name": "publish full byte identity",
+      "status": "PASS",
+      "ok": true,
+      "detail": "two independent publishes and committed data; 39 files; no comparison normalization"
+    },
+    {
+      "name": "publish full plugin-free",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"counts\": {\"elements\": 3009, \"levels\": 3, \"meshes\": 3050, \"ports\": 6244, \"spaces\": 41, \"unclassified\": 2, \"unparented\": 0}, \"fallback_types\": [\"AecoFacility\", \"AecoLevel\", \"AecoPort\", \"AecoSite\", \"AecoSpace\", \"AecoSystem\"]}"
+    },
+    {
+      "name": "publish full size",
+      "status": "PASS",
+      "ok": true,
+      "detail": "22940413/40000000 bytes including both images"
+    },
+    {
+      "name": "render full",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"bytes\": 145472, \"height\": 800, \"sha256\": \"ba4da62b68296ea6b7c074d9f7d73bdf00a2eee2aeb78e02cfd4c0224145a73a\", \"width\": 1280}"
+    },
+    {
+      "name": "vanilla full fresh and non-uniform",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"all_corners_inside\": true, \"committed\": {\"bytes\": 145789, \"height\": 800, \"sha256\": \"3904a214e35267d8c25e533baed12d10561366b28f9a7cd1f49d45ccca22db3e\", \"width\": 1280}, \"fresh\": {\"bytes\": 149967, \"height\": 800, \"sha256\": \"fb305ca2dcdec9418ef24b531ab2a9850382c29cab51d86aa3c9f77ebb94aed2\", \"width\": 1280}, \"purposes\": \"proxy,render\", \"source_fresh\": true}"
+    },
+    {
+      "name": "core validation full",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 errors; findings: {\"proxyClassified\": 2}"
+    },
+    {
+      "name": "full crossing references site",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 0, \"documentReferences\": 0, \"nativeServes\": 0, \"serves\": 0}"
+    },
+    {
+      "name": "full crossing references arch",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 0, \"documentReferences\": 0, \"nativeServes\": 0, \"serves\": 0}"
+    },
+    {
+      "name": "full crossing references structure",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 0, \"documentReferences\": 0, \"nativeServes\": 0, \"serves\": 0}"
+    },
+    {
+      "name": "full crossing references cooling",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 184, \"documentReferences\": 184, \"nativeServes\": 3, \"serves\": 3}"
+    },
+    {
+      "name": "full crossing references electrical",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 344, \"documentReferences\": 344, \"nativeServes\": 2, \"serves\": 2}"
+    },
+    {
+      "name": "full crossing references it",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 480, \"documentReferences\": 480, \"nativeServes\": 3, \"serves\": 3}"
+    },
+    {
+      "name": "full crossing references fitout",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 0, \"documentReferences\": 0, \"nativeServes\": 0, \"serves\": 0}"
+    },
+    {
+      "name": "full crossing references security",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 0, \"documentReferences\": 0, \"nativeServes\": 1, \"serves\": 1}"
+    },
+    {
+      "name": "full crossing references shared",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"connectedPorts\": 0, \"documentReferences\": 0, \"nativeServes\": 0, \"serves\": 0}"
+    },
+    {
+      "name": "full released twin content and publication bytes",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"deliveries\": 9, \"historicalFiles\": 30, \"images\": 2, \"twins\": 29}"
+    },
+    {
+      "name": "full twin source stamps match delivered IFC",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"deliveries\": 9, \"layerStamps\": 27}"
+    },
+    {
+      "name": "full IFC and twin ownership",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"arch\": {\"elements\": 167, \"grids\": 1, \"ports\": 0}, \"cooling\": {\"elements\": 737, \"grids\": 1, \"ports\": 1718}, \"electrical\": {\"elements\": 1254, \"grids\": 1, \"ports\": 2860}, \"fitout\": {\"elements\": 23, \"grids\": 1, \"ports\": 26}, \"it\": {\"elements\": 671, \"grids\": 1, \"ports\": 1640}, \"security\": {\"elements\": 70, \"grids\": 1, \"ports\": 0}, \"shared\": {\"elements\": 0, \"grids\": 1, \"ports\": 0}, \"site\": {\"elements\": 3, \"grids\": 1, \"ports\": 0}, \"structure\": {\"elements\": 84, \"grids\": 1, \"ports\": 0}}"
+    },
+    {
+      "name": "full shared spatial definitions",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"projectDefs\": 1, \"spatialDefs\": 46, \"spatialOvers\": 799}"
+    },
+    {
+      "name": "full connected root text",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"assets\": 9, \"composition\": \"not proven\"}"
+    },
+    {
+      "name": "full delivered union census and world transforms",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"classificationCodes\": 101, \"identities\": 9308, \"prims\": 12434, \"relationshipProperties\": 6070, \"source\": \"union of the delivered native architecture and eight generator packages\"}"
+    },
+    {
+      "name": "full E11 mute site",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 0, \"moved\": 0, \"package\": \"site\", \"remainingPrims\": 12428, \"validatorErrors\": 0}"
+    },
+    {
+      "name": "full E11 mute arch",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 0, \"moved\": 0, \"package\": \"arch\", \"remainingPrims\": 12085, \"validatorErrors\": 0}"
+    },
+    {
+      "name": "full E11 mute structure",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 0, \"moved\": 0, \"package\": \"structure\", \"remainingPrims\": 12264, \"validatorErrors\": 0}"
+    },
+    {
+      "name": "full E11 mute cooling",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 184, \"moved\": 0, \"package\": \"cooling\", \"remainingPrims\": 9217, \"validatorErrors\": 184}"
+    },
+    {
+      "name": "full E11 mute electrical",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 344, \"moved\": 0, \"package\": \"electrical\", \"remainingPrims\": 7043, \"validatorErrors\": 344}"
+    },
+    {
+      "name": "full E11 mute it",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 480, \"moved\": 0, \"package\": \"it\", \"remainingPrims\": 9441, \"validatorErrors\": 480}"
+    },
+    {
+      "name": "full E11 mute fitout",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 0, \"moved\": 0, \"package\": \"fitout\", \"remainingPrims\": 12362, \"validatorErrors\": 0}"
+    },
+    {
+      "name": "full E11 mute security",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"danglingLinks\": 0, \"moved\": 0, \"package\": \"security\", \"remainingPrims\": 12288, \"validatorErrors\": 0}"
+    },
+    {
+      "name": "G2 delivered native architecture",
+      "status": "PASS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "G2 delivered native architecture elapsed",
+      "status": "INFO",
+      "ok": null,
+      "seconds": 1.7834081668406725,
+      "detail": "1.783 s (measurement only)"
+    },
+    {
+      "name": "full connected composition",
+      "status": "NOT RUN",
+      "ok": null,
+      "detail": "not proven; usdIfc from usdaeco-ifc >= 0.3 required"
+    },
+    {
+      "name": "full plugin-free usdchecker",
+      "status": "PASS",
+      "ok": true,
+      "detail": "{\"exitCode\": 0, \"pluginPathsRemoved\": true, \"strict\": true}"
+    },
+    {
+      "name": "family structure lint",
+      "status": "PASS",
+      "ok": true,
+      "detail": "29 rules"
+    },
+    {
+      "name": "repository sanitization",
+      "status": "PASS",
+      "ok": true,
+      "detail": "0 hits"
+    }
+  ],
+  "failed": 0,
+  "passed": 39,
+  "informational": 4,
+  "not_run": 1,
+  "total": 44,
+  "scope": "Corrective full publication gate; two new builds, fresh G2 reference, S28, federation proofs and sanitization"
+}

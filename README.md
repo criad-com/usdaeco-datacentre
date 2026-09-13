@@ -38,6 +38,12 @@ This is a **data** repository and introduces no schemas.
 Connected composition and resolution of the delivered external port references
 are **not proven** here. See the [federation contract](docs/variants.md#federation-contract).
 
+In 0.6.0, `full/arch.ifc` is delivered by **Revit 2027**, with its twin regenerated
+from that file. All 167 architecture GlobalIds join the generator plan; the
+largest geometry-centre difference is 49.563 mm. The other eight packages and
+all historical variants retain their previous bytes. See
+[the measured acceptance](docs/acceptance-revit-0.6.0.md).
+
 All variants retain 80 columns and 11 iris readers. Full manifests include MEP
 elements by concrete IFC class and activities per programme. Programme A and B
 have ten activities each. Requirement values are **illustrative unless a cited
@@ -89,6 +95,10 @@ env -u PYTHONPATH "$PY" run.py --all --publish
 env -u PYTHONPATH "$PY" check.py --report out/check.json
 env -u PYTHONPATH "$PY" -m pytest -q
 ```
+
+For a bounded publication recheck, `check.py --publication-only full` rebuilds
+that delivery twice and runs the same publication, render and federation checks
+as the complete gate. It does not repeat the unrelated source-design checks.
 
 `dependencies.json` pins converter 0.1.0, core 0.8.4 and toolchain 0.3.10 by
 release and commit, with fingerprints of their runtime files. The builder uses
@@ -172,8 +182,9 @@ For local mirrors or offline source checkouts, use
 `--override-input validation_core path:../usdaeco-core`; the toolchain documents the mapping
 of its own nested inputs in
 [repository conventions](https://github.com/criad-com/usdaeco-toolchain/blob/v0.3.10/docs/repo-conventions.md).
-Packaging is not proven until the single recorded Nix attempt resolves its
-inputs; source execution is checked independently.
+Packaging remains not proven because the recorded Nix attempt did
+not resolve its inputs. Version 0.6.0 makes no further Nix attempt; source
+execution is checked independently.
 
 ## Family
 
@@ -206,13 +217,23 @@ manifests, counts, acceptance receipts and overview images.
 
 ## Status
 
+Version **0.6.0** delivers the `full` architecture package from **Revit 2027**:
+**167/167** physical identities join the generator plan, all **38** native rooms
+have positive area, and the maximum geometry-centre difference is **49.563 mm**.
+The other **36 full files** and all **30 historical variant files** retain their
+bytes. See [current acceptance](docs/acceptance-revit-0.6.0.md) for the native
+receipt, publication proof, warnings and limits.
+The source suite passes **251 tests**. The corrective publication gate passes
+**44 checks, 0 failed**; the acceptance retains the original complete-gate
+receipt and explains its resolved byte mismatch.
+
 Version **0.5.0** adds the federated `full` publication: **3,009 elements**,
 **6,244 ports**, **3,050 meshes**, **64 catalog types** and **9 systems**.
 Its **46 spatial prims** and project are defined only in shared semantics.
 The [manifest](dist/full/dc.manifest.json) records **1,017 cross-package targets**
 (1,008 directional port links and 9 served-spine targets).
 The full gate passes **244 checks, 0 failed**, including **29 structure rules**; the final pytest suite passes **229 tests**.
-See [current acceptance](docs/acceptance-0.5.0.md) for tests, receipts and deviations.
+See [0.5.0 acceptance](docs/acceptance-0.5.0.md) for its tests, receipts and deviations.
 
 
 Version **0.4.9** pins toolchain **v0.3.10**, validation core **v0.9.4**,
@@ -240,14 +261,14 @@ The base update created **0** cameras and updated **45**; IFC4X3 export succeede
 See [Revit 0.4.2 acceptance](docs/acceptance-revit-0.4.2.md) for measured
 export/parity/importer results and the offline gate totals.
 
-All five published variants remain available, with three layers per variant.
+All five historical variants remain available, with three layers per variant.
 The four other variant directories, source manifests and cameras retain their
 v0.4.4 bytes (32 files). Their current vanilla receipts change only the
 verified toolchain provenance; image bytes remain identical. The gate includes
 that comparison and a fresh archive reproduction of the toolchain pin.
 Native floors/pod/clash/iris remain **NOT RUN** and require further family work.
-Nix packaging remains **not proven**; the current acceptance records its one
-offline attempt. Requirement values remain illustrative.
+Nix packaging remains **not proven**; the [0.5.0 acceptance](docs/acceptance-0.5.0.md)
+records the earlier offline attempt. Requirement values remain illustrative.
 
 For an authorized native rerun, set the endpoint, remote work directory and
 camera family directory as described in the [builder guide](revit/README.md):

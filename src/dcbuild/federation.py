@@ -27,13 +27,15 @@ def layer_specs(layer):
 
 
 def stamp(layer, package, source):
+    from .revit_delivery import ORIGINATING_SYSTEM, PRODUCER
+    native = package == "arch" and ORIGINATING_SYSTEM in source.read_text()
     layer.customLayerData = {
         "aeco:layer:role": "spine" if package == "shared" else "package",
         "aeco:layer:package": package,
-        "aeco:layer:producer": "usdaeco-datacentre generator 0.5.0",
+        "aeco:layer:producer": PRODUCER if native else "usdaeco-datacentre generator 0.5.0",
         "aeco:layer:source": source.name,
         "aeco:layer:sourceSha256": digest(source),
-        "aeco:layer:tag": "v0.5.2",
+        "aeco:layer:tag": "v0.6.0" if native else "v0.5.2",
     }
 
 
@@ -213,12 +215,14 @@ def refresh_inventory(folder):
 
 def typical_architecture(stage, expected):
     """Compare the architectural prototype, excluding the L01-only fitout fixtures."""
-    from .qa.typical import verify
+    from .qa.typical import verify, verify_native
+    from .revit_delivery import PRODUCER
+    native = any(layer.customLayerData.get("aeco:layer:producer") == PRODUCER for layer in stage.GetLayerStack())
     muted = [str(Path(stage.GetRootLayer().realPath).parent / (p + ".usda"))
              for p in DELIVERY_ORDER if p != "arch"]
     try:
         stage.MuteAndUnmuteLayers(muted, [])
-        return {**verify(stage, expected), "scope": "arch over shared"}
+        return {**(verify_native if native else verify)(stage, expected), "scope": "arch over shared"}
     finally:
         stage.MuteAndUnmuteLayers([], muted)
 
@@ -231,6 +235,9 @@ def publish(output):
     scratch = ROOT / "out"
     scratch.mkdir(exist_ok=True)
     destination = Path(output) / "full"
+    issued = ROOT / "dist/full"
+    issued_manifest = json.loads((issued / "dc.manifest.json").read_text())
+    producers = issued_manifest.get("producers", {})
     with tempfile.TemporaryDirectory(prefix="federation-", dir=scratch) as tmp:
         work = Path(tmp)
         build(plan, work)
@@ -240,6 +247,13 @@ def publish(output):
             run_conversion(work / "demo-datacentre-01.ifc", target, paths_only=True)
             from pxr import Usd
             enrich_external_links(work, identity_paths(Usd.Stage.Open(str(target))))
+        if "arch" in producers:
+            evidence = producers["arch"]
+            if digest(work / "arch.ifc") != evidence["generatorSourceSha256"]:
+                raise ValueError("Generator architecture baseline changed under the native delivery")
+            if digest(issued / "arch.ifc") != evidence["sourceSha256"]:
+                raise ValueError("Issued native architecture source hash differs")
+            shutil.copyfile(issued / "arch.ifc", work / "arch.ifc")
         for package in PACKAGES:
             print(f"== stage: convert delivery {package}", flush=True)
             run_conversion(work / (package + ".ifc"), work / (package + ".usda"))
@@ -286,6 +300,8 @@ def publish(output):
                         converterPostPass="spatial overs, retained catalog classes, shared-only extents, external port references",
                         inventoryExcludes={"dc.manifest.json": "A manifest cannot hash its own bytes; render receipts bind it externally."},
                         sizeCapBytes=FULL_CAP)
+        if producers:
+            metadata["producers"] = producers
         for name in ("ifc", "core"):
             pin = dependency_source(name)[1]
             metadata["converter" if name == "ifc" else name] = {k: pin[k] for k in ("repo", "version", "ref", "revision")}

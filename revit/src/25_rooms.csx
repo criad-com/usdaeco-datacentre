@@ -6,17 +6,25 @@ Dc.Tx("DC rooms",d=>
     var planType=new FilteredElementCollector(d).OfClass(typeof(ViewFamilyType)).Cast<ViewFamilyType>().First(v=>v.ViewFamily==ViewFamily.FloorPlan);
     foreach(var levelPlan in Dc.Plan.Storeys)
     {
+      foreach(var offset in Dc.Plan.Spaces.Where(s=>!s.External && s.Storey==levelPlan.Id).Select(s=>s.ZOffset).Distinct())
+      {
+        double elevation=levelPlan.Elevation+offset;
         var level=Dc.Levels[levelPlan.Id];
+        if (offset != 0)
+        {
+            level=Level.Create(d,Dc.M(elevation));
+            level.Name=levelPlan.Name + " void " + offset.ToString("0.0");
+        }
         var view=new FilteredElementCollector(d).OfClass(typeof(ViewPlan)).Cast<ViewPlan>().FirstOrDefault(v=>!v.IsTemplate && v.GenLevel?.Id==level.Id)
             ?? ViewPlan.Create(d,planType.Id,level.Id);
         var sketch=SketchPlane.Create(d,Plane.CreateByNormalAndOrigin(XYZ.BasisZ,new XYZ(0,0,level.Elevation)));
-        foreach(var space in Dc.Plan.Spaces.Where(s=>!s.External && s.Storey==levelPlan.Id))
+        foreach(var space in Dc.Plan.Spaces.Where(s=>!s.External && s.Storey==levelPlan.Id && s.ZOffset==offset))
         {
             var room=new FilteredElementCollector(d).OfCategory(BuiltInCategory.OST_Rooms).WhereElementIsNotElementType().Cast<Room>().FirstOrDefault(r=>r.Number==space.Id);
             if(room==null)
             {
-                var corners=new[]{Dc.P(space.X,space.Y,levelPlan.Elevation),Dc.P(space.X+space.W,space.Y,levelPlan.Elevation),
-                    Dc.P(space.X+space.W,space.Y+space.D,levelPlan.Elevation),Dc.P(space.X,space.Y+space.D,levelPlan.Elevation)};
+                var corners=new[]{Dc.P(space.X,space.Y,elevation),Dc.P(space.X+space.W,space.Y,elevation),
+                    Dc.P(space.X+space.W,space.Y+space.D,elevation),Dc.P(space.X,space.Y+space.D,elevation)};
                 var curves=new CurveArray();
                 for(int i=0;i<4;i++) curves.Append(Line.CreateBound(corners[i],corners[(i+1)%4]));
                 d.Create.NewRoomBoundaryLines(sketch,curves,view);
@@ -29,6 +37,7 @@ Dc.Tx("DC rooms",d=>
             Dc.SetMark(room,space.Id); Dc.IdMap[space.Id]=room.Id;
             rooms25++;
         }
+      }
     }
     d.Regenerate();
     foreach(Room room in new FilteredElementCollector(d).OfCategory(BuiltInCategory.OST_Rooms).WhereElementIsNotElementType())

@@ -10,4 +10,4 @@ with world coordinates and deterministic ids). The Plan feeds BOTH builders:
 so the two models stay comparable element-for-element (joined on the DC id).
 """
 
-__version__ = "0.5.1"
+__version__ = "0.6.0"

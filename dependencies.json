@@ -75,13 +75,14 @@
       "exit_code": 1
     },
     "nativeRevit": {
-      "release": "0.4.2",
-      "variant": "base",
-      "evidence": "artifacts/revit-0.4.2.json",
-      "update": "0 created / 45 updated",
-      "parity": "527/527",
-      "importer": "45 cameras / 45 sensors",
-      "followup": "read-only receipt fetch failed; stop latch retained"
+      "release": "0.6.0",
+      "variant": "full",
+      "evidence": "artifacts/revit-0.6.0.json",
+      "architecture": "167 created / 0 updated",
+      "parity": "167/167",
+      "rooms": "38/38 positive-area rooms; 38 exported GlobalIds joined",
+      "warnings": 266,
+      "followup": "Native audit passed; model saved in the background; architecture delivery published"
     },
     "nixPrevious": {
       "release": "0.4.9",
@@ -102,6 +103,15 @@
       },
       "generationFixtureAvailability": "vendored-runtime-hashes-verified",
       "onlineResolution": "not-run"
+    },
+    "nativeRevitPrevious": {
+      "release": "0.4.2",
+      "variant": "base",
+      "evidence": "artifacts/revit-0.4.2.json",
+      "update": "0 created / 45 updated",
+      "parity": "527/527",
+      "importer": "45 cameras / 45 sensors",
+      "followup": "read-only receipt fetch failed; stop latch retained"
     }
   },
   "fixtures": {

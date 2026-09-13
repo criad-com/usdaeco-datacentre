@@ -188,13 +188,17 @@ def test_fixture_delivery_map_matches_authored_owners(published):
     from pxr import Usd
     from dcbuild import layout, spec
     from dcbuild.federation import ownership
+    from dcbuild import ids
+    import ifcopenshell.guid
+    import uuid
     plan = layout.resolve(spec.load(variant="full"))
     stage = Usd.Stage.Open(str(published / "dc.usda"))
     owners = ownership(stage)
-    indexed = {p.GetAttribute("aeco:props:DC_Identity:Id").Get(): p for p in stage.Traverse()
-               if p.GetAttribute("aeco:props:DC_Identity:Id").Get()}
+    indexed = {p.GetAttribute("aeco:id").Get(): p for p in stage.Traverse()
+               if p.GetAttribute("aeco:id").Get()}
     def owner(identity):
-        return owners[str(indexed[identity].GetPath())]
+        key = str(uuid.UUID(hex=ifcopenshell.guid.expand(ids.guid(identity))))
+        return owners[str(indexed[key].GetPath())]
     assert owner("lvl.l2") == "shared"
     assert all(owner(s.id) == "shared" for s in plan.spaces if s.storey == "lvl.l2")
     assert all(owner(e.id) == "arch" for e in [*plan.walls, *plan.doors] if e.storey == "lvl.l2")

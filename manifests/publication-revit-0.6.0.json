@@ -1,0 +1,18 @@
+{
+  "arch.geometry.usdc": {
+    "bytes": 40743,
+    "sha256": "bc7e47d654685ae714f3a9aa8cdceb7544d1b5adfdae9b69c3e70d4b7a4c84b7"
+  },
+  "arch.ifc": {
+    "bytes": 864497,
+    "sha256": "a23ecdfe02b3ed94b47d62136b7b6d0c453672f9e90355c45217ef9266506593"
+  },
+  "arch.semantics.usda": {
+    "bytes": 995055,
+    "sha256": "dc708a8f31ef3d738e41b4fea2e951d43bbd16bb89ba87cd4428929df7dc6a03"
+  },
+  "arch.usda": {
+    "bytes": 1009,
+    "sha256": "a1a147e1f91481f198e16ce020beaee0fff8315959bc8cb5ee65e2465ad31e12"
+  }
+}

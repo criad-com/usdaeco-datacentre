@@ -233,9 +233,72 @@
       ]
     },
     "height": 800,
-    "normalized_sha256": "0fada56c4a035fbd4688e7669b5fc4a45ec6076088ab6a83fb73746d81549840",
+    "normalized_sha256": "031dcf67cd38ddb7a58c570c0838c265117e94a9e680ef9223c898d3d6f481e0",
     "path": "dist/full/vanilla.png",
     "renderer": "usdrecord/Embree",
+    "retainedImage": {
+      "publication": "generator 0.5.2",
+      "reason": "Reviewed image bytes retained for the architecture-only package replacement; the current native stage is rendered independently in the gate.",
+      "sources": {
+        "code": {
+          "src/dcbuild/render.py": "e16a048286780d1925e6df5b4e3a82f50fd7a224b9e838d009c8a04d68542823",
+          "src/dcbuild/vanilla.py": "361f2e51f58581fb65306b611ea3d5312e1a70b4ddb958e40ef9588fa7d399aa"
+        },
+        "publication": {
+          "arch.geometry.usdc": "0d25279850f14b2140ee015eef97f9e7da668c919a14a48841515a3df04f2ad4",
+          "arch.ifc": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0",
+          "arch.semantics.usda": "a35f208bfc720f03a71e4c5df200cd2d4cef2a08b6698bccb5f7a62fee5342e0",
+          "arch.usda": "c53afd159a9c3f9d0432fd4c2ad2ebe1e7f8dc179faa532874b9c30e8a6f72a1",
+          "cooling.geometry.usdc": "e3493a2fa60c1cdd30a120bb902c09dd78d4c83d53ad72ac47c192c41b7a82d9",
+          "cooling.ifc": "28d85b64eed1bd405429b893badb57f9a0fb0e8180e172b5b82029625774ed58",
+          "cooling.semantics.usda": "96c15e64175ec382fcc8e2bf426c26be2bc21d426a589c9215ca9eee24ccb9ed",
+          "cooling.usda": "535bc812d276bba4eeed4f27debc47cfdcc4369ae2146c31fab6ce582f238e2c",
+          "dc.connected.usda": "ac419c1ece029fc122c481648320508078039479261c1f34b4799961e39ed0c2",
+          "dc.manifest.json": "02352c43b882f272ef546704655583e8c6265d6cb8f39d25239985dd4689eecb",
+          "dc.usda": "85df064b63d065fd743286fee3d6386662f61aca3cb4e154bca422d8cce52b2b",
+          "electrical.geometry.usdc": "ed47a13a82a6d9f4a00638855f627540089ee070a13ee263bdabf3159c513ee3",
+          "electrical.ifc": "56589b1ed3422b3469b67e2889af2b8461c2a3d4e3efda480e3362a7826a85db",
+          "electrical.semantics.usda": "4c875e75dfe3d6ea8d6fa3fb13f8e37bc301e8151d046bcd3806adf9863a83f0",
+          "electrical.usda": "68964b7b6b2b022d7d1e6525ea2bcd9984c66aa5c954375521ff05b673af6799",
+          "fitout.geometry.usdc": "13bce5f20608d593b3f81f544004795b7bdc18389c89405ca3ac88bb06af0c8a",
+          "fitout.ifc": "7e81cb41227077a92d2227ae88d1e00542818e55ba027cdeb5aacea145a96729",
+          "fitout.semantics.usda": "124f58ea216f912ccd8ba3a6897fcc9470d80d17e7f20a43a391686f42bef43b",
+          "fitout.usda": "8209c560da1542450301c76425e3bfa86c5ede2b013ac2c9c8511be9984a9808",
+          "it.geometry.usdc": "ddb07c3e6b47143b4a2f4ff552a5df0868830fb2af31e7a750a5d06e2d119371",
+          "it.ifc": "485bddbc54c145ee39f6dffbbe830221faf19b3a188610f3f48f639feb7308b6",
+          "it.semantics.usda": "3a9dedc91a61bbbfbbede8f8588ef94a2a3e8aaae9062b387346dc724899dbb4",
+          "it.usda": "6cfcfc24b3b2b6ae4b8b60ff51e9d9f71e7dfbe2fa2cc23c347b59668bb64d50",
+          "security.geometry.usdc": "8b96bd0b3aa3f805a92b5662abed80e0332ea6ac3cc860928e09b40ce06ce434",
+          "security.ifc": "0a3d070a7dd95723a62577172d541cbae4f743cd6e2e0dc8d426927a7b093d5a",
+          "security.semantics.usda": "18a65d2397543dced117187a84c900e290c4a160b5d12ef200a4aa38daf890a3",
+          "security.usda": "971627c8ee921800bcc553c05dfeb1f1495143c32b3441136247afc5227bcfab",
+          "shared.geometry.usdc": "24f00146694979409c02f7d3a0e3a81b3ee3db3adf815af8dc93d6475b0906f5",
+          "shared.ifc": "1fd81e6f52ae614cfda8829ba5520f2cc5342d6aa98940fe49db2f5a21f57173",
+          "shared.semantics.usda": "ff5d920377ecbb49218238c121a6e4bcc984bfe010575ffe3941117356941fe1",
+          "shared.usda": "8881a373220511925a1ab157d51b17c45632bad6c851b6b5cc6f8200e72590b6",
+          "site.geometry.usdc": "2515c4c7d6ff3b5554cbe3682d5f921e3f8bcbad5e423eabc56010fafae7e541",
+          "site.ifc": "faac3f15e61301f78369ac83153853f508fc35ef5bed3d229b2728e0538d2b42",
+          "site.semantics.usda": "b38c7c80705014557ae2f9587ad6d28f5ce8c21cd23959b3a4c20650fdf2342d",
+          "site.usda": "1c06becc10a45290a311faee31f5e4fc08bdbf3795d3c6837757e2816c3af0f9",
+          "structure.geometry.usdc": "66181620c18a69b140e2ef4e19a0b63dbf6959f1bdff5c3863daf23b3e810747",
+          "structure.ifc": "12fa31daf70a154fb506970ecc9453fff9bc276b574a1dfa1957eed6d6bac4b3",
+          "structure.semantics.usda": "43b7d000d2364aff0a96f378bc6ad9cd9d16d8e714a02921a61c6f169d3a10d0",
+          "structure.usda": "45194c14c5850cbf008af37ef7feaae7fc288c580edad48c02a5b1aab2b3f65b"
+        },
+        "toolchain": {
+          "library": "usdaeco-toolchain",
+          "ref": "v0.3.10",
+          "repo": "usdaeco-toolchain",
+          "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73",
+          "runtime_paths": [
+            "tools",
+            "library.json"
+          ],
+          "runtime_sha256": "d68110556117bd6dfde73a564e7d231d0ace38d8a4fe5289a76bee6496913cbb",
+          "version": "0.3.10"
+        }
+      }
+    },
     "sha256": "3904a214e35267d8c25e533baed12d10561366b28f9a7cd1f49d45ccca22db3e",
     "sources": {
       "code": {
@@ -243,16 +306,16 @@
         "src/dcbuild/vanilla.py": "361f2e51f58581fb65306b611ea3d5312e1a70b4ddb958e40ef9588fa7d399aa"
       },
       "publication": {
-        "arch.geometry.usdc": "0d25279850f14b2140ee015eef97f9e7da668c919a14a48841515a3df04f2ad4",
-        "arch.ifc": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0",
-        "arch.semantics.usda": "a35f208bfc720f03a71e4c5df200cd2d4cef2a08b6698bccb5f7a62fee5342e0",
-        "arch.usda": "c53afd159a9c3f9d0432fd4c2ad2ebe1e7f8dc179faa532874b9c30e8a6f72a1",
+        "arch.geometry.usdc": "bc7e47d654685ae714f3a9aa8cdceb7544d1b5adfdae9b69c3e70d4b7a4c84b7",
+        "arch.ifc": "a23ecdfe02b3ed94b47d62136b7b6d0c453672f9e90355c45217ef9266506593",
+        "arch.semantics.usda": "dc708a8f31ef3d738e41b4fea2e951d43bbd16bb89ba87cd4428929df7dc6a03",
+        "arch.usda": "a1a147e1f91481f198e16ce020beaee0fff8315959bc8cb5ee65e2465ad31e12",
         "cooling.geometry.usdc": "e3493a2fa60c1cdd30a120bb902c09dd78d4c83d53ad72ac47c192c41b7a82d9",
         "cooling.ifc": "28d85b64eed1bd405429b893badb57f9a0fb0e8180e172b5b82029625774ed58",
         "cooling.semantics.usda": "96c15e64175ec382fcc8e2bf426c26be2bc21d426a589c9215ca9eee24ccb9ed",
         "cooling.usda": "535bc812d276bba4eeed4f27debc47cfdcc4369ae2146c31fab6ce582f238e2c",
         "dc.connected.usda": "ac419c1ece029fc122c481648320508078039479261c1f34b4799961e39ed0c2",
-        "dc.manifest.json": "02352c43b882f272ef546704655583e8c6265d6cb8f39d25239985dd4689eecb",
+        "dc.manifest.json": "e01f76bdc6fad9316e7196429caa99b68467e208ab42826f37da65cd8297d443",
         "dc.usda": "85df064b63d065fd743286fee3d6386662f61aca3cb4e154bca422d8cce52b2b",
         "electrical.geometry.usdc": "ed47a13a82a6d9f4a00638855f627540089ee070a13ee263bdabf3159c513ee3",
         "electrical.ifc": "56589b1ed3422b3469b67e2889af2b8461c2a3d4e3efda480e3362a7826a85db",

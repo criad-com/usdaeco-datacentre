@@ -16,7 +16,7 @@ def value(prim, name, default=None):
 
 
 def source_id(prim):
-    return value(prim, "aeco:props:DC_Identity:Id", "")
+    return value(prim, "aeco:props:DC_Identity:Id", value(prim, "aeco:props:Identity_Data:Mark", ""))
 
 
 def elements(container):
@@ -150,4 +150,31 @@ def verify(stage, expected):
     lateral = [b - a for a, b in zip(moved["axis_from"][1], moved["axis_to"][1])] + [0]
     if not close(lateral, moved["offset_m"]):
         raise ValueError("Planted wall offset differs from its axes")
+    return actual
+
+
+def verify_native(stage, expected):
+    """Record native representation differences and prove the planted drivers.
+
+    Revit creates occurrence-specific stair types and triangulates identical
+    slabs differently. Preserve those observations instead of asserting the
+    generator's exact representation comparison for a different producer.
+    """
+    actual = measure(stage, expected)
+    indexed = {source_id(p): p for p in stage.Traverse() if source_id(p)}
+    moved = next(d for d in expected["deviations"] if d["kind"] == "wallMoved")
+    extra = next(d for d in expected["deviations"] if d["kind"] == "doorExtra")
+    for key, axis in (("prototype", "axis_from"), ("id", "axis_to")):
+        prim = indexed[moved[key]]
+        transform = UsdGeom.XformCache().GetLocalToWorldTransform(prim)
+        length = value(prim, "aeco:props:Qto_WallBaseQuantities:Length")
+        ends = [list(transform.Transform(Gf.Vec3d(x, 0, 0)))[:2] for x in (0, length)]
+        if not close(ends, moved[axis]):
+            raise ValueError("Native moved wall axis differs from the plan")
+    if (value(indexed[extra["id"]], "aeco:class:ifc:code") != "IfcDoor.DOOR"
+            or not close(actual["net_partition_length_delta_m"], expected["expected_net_partition_length_delta_m"])):
+        raise ValueError("Native repeated-floor fixture differs from the plan")
+    actual["native_representation_note"] = (
+        "Comparison retains native type and tessellation differences; planted wall axes, "
+        "3.2 m partition-length delta and extra door are verified. Whole-package G2 is separate.")
     return actual

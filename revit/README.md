@@ -1,5 +1,75 @@
 # Revit builder
 
+## Full architecture delivery — 0.6.0
+
+The native `full` build has 111 walls, 47 doors, six slabs/roofs, three stairs
+and 38 rooms. Its architecture IFC joins all 167 planned GlobalIds. See
+[the measured receipt and acceptance](../docs/acceptance-revit-0.6.0.md).
+The scope excludes equipment, services and cameras; no camera assets are needed.
+
+Prepare the plan and inspect the phases offline:
+
+```sh
+env -u PYTHONPATH "$PY" -m dcbuild plan --variant full
+env -u PYTHONPATH "$PY" revit/driver.py --plan out/full/build_plan.json \
+  --phases setup parameters architecture rooms export --dry-run
+```
+
+Set `AECO_REVIT_ENDPOINT` and `AECO_REVIT_WORKDIR` separately for the authorized
+native environment, with the pinned source overrides described below. A fresh
+build uses:
+
+```sh
+env -u PYTHONPATH "$PY" revit/driver.py --session dc-full-architecture \
+  --plan out/full/build_plan.json --phases setup parameters architecture rooms export \
+  --receipt out/full/revit/native-receipt.json
+```
+
+Helpers are prepended automatically. The payload is `build_plan-full.json`;
+the new background document is `demo-datacentre-01-full.rvt` under the configured
+work directory. Existing files/resident documents at that path are refused.
+The successful measured model remains open in the background. It is never
+activated; `--update` remains base-only. A stopped phase is not automatically
+replayed: inspect the native outcome and discard stale rolled-back bindings
+before considering a continuation.
+
+Floors use exact plan thickness and notched outlines; their compound structures
+require `EndCapCondition.NoEndCap`. Roof slabs are native floors exported as
+`IfcSlab.ROOF`. Three stair side profiles and the roller door are native
+DirectShape solids made from plan drivers. The two void rooms use a 6.6 m datum.
+The [acceptance](../docs/acceptance-revit-0.6.0.md) records representation limits
+and all 266 overlap warnings; every native room has positive area.
+
+Export writes `demo-datacentre-01-full-revit.ifc`, with property sets, explicit
+base quantities and a returned byte count/SHA-256. Retrieve it to ignored
+`out/full/revit/native.ifc` and compare the transferred hash with the export
+receipt. Raw diagnostics stay in ignored output because they may contain
+local environment paths. Partition and compare against an independent generator:
+
+```sh
+env -u PYTHONPATH "$PY" -m dcbuild build-ifc --variant full --out out/full/generator
+env -u PYTHONPATH "$PY" -m dcbuild partition-revit out/full/revit/native.ifc \
+  --reference out/full/generator/arch.ifc --out out/full/revit/arch.ifc
+env -u PYTHONPATH "$PY" -m dcbuild parity out/full/revit/arch.ifc \
+  --variant full --package arch --reference out/full/generator/arch.ifc
+```
+
+Partitioning keeps native identities, geometry, types, Psets and quantities.
+It normalizes units and private contact metadata, carries the issued shared
+spine, and anchors product names/containment from the generator. Native
+placement chains remain intact. Missing identities or element kinds refuse
+the whole package. G2 uses 50 mm placement or 150 mm geometry-centre fallback;
+the delivered package measures at most 49.563 mm at the geometry centre.
+
+The committed `dist/full/arch.ifc` is the issued native source. Ordinary
+`dcbuild publish --variant full` regenerates its twin from that file while
+rebuilding the other packages from the generator, verifying both source hashes.
+It does not invoke a host or silently replace the native source with generated
+architecture. The frozen converter uses the existing spatial-over/catalog
+post-pass documented in the federation contract.
+
+## Base model and historical camera workflow
+
 The Revit 2027 builder consumes the generated plan and owns one background
 project. The driver imports the pinned `usdaeco_revit.transport.Client`; set
 `AECO_REVIT_ROOT` to the released integration checkout (default
@@ -28,7 +98,7 @@ There is no automatic mutation retry. The model stays open in the background.
 No document is activated or closed. An existing exact model path is reused;
 a foreground match is refused.
 
-## Two-camera spike — measured before the full build
+## Two-camera spike — measured before the base build
 
 Measured with Revit 2027.2 and IFC4X3 on 2026-09-10. A disposable background
 project held one P3277-LV dome and one Q6088-E PTZ. Both were created with
@@ -126,8 +196,8 @@ env -u PYTHONPATH "$PY" revit/driver.py --session dc-design --update
 ```
 
 This selects 00 helpers, 10 setup, 15 parameters, nine camera batches and 90
-IFC4X3 export. It expects zero cameras created and 45 updated. Non-base plans
-are refused: floors, pod, clash and iris need further native family work,
+IFC4X3 export. It expects zero cameras created and 45 updated. The standalone
+floors, pod, clash and iris plans are refused and need further native family work,
 including pods and ceilings. Their published IFC/USD variants remain available.
 The creation-oriented service phases remain for fresh builds only.
 

@@ -16,7 +16,7 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from dcbuild.revit_payload import prepare, prepare_architecture
+from dcbuild.revit_payload import prepare
 from dcbuild.revit_runtime import setup
 
 setup()
@@ -27,7 +27,6 @@ REPO = os.path.dirname(ROOT)
 SRC = os.path.join(ROOT, "src")
 MAX_CSX = 900 * 1024                                          # each file is one /eval body
 UPDATE_PHASES = ["00_lib", "10_setup", "15_parameters", "45_cameras", "90_finish"]
-ARCH_PHASES = ["00_lib", "10_setup", "15_parameters", "20_architecture", "25_rooms", "90_finish"]
 
 
 def verify_pack():
@@ -45,7 +44,6 @@ def find_phases(names: list[str] | None) -> list[str]:
         return sorted(glob.glob(os.path.join(SRC, "*.csx")))
     out = []
     for n in names:
-        n = {"export": "90_finish", "helpers": "00_lib"}.get(n, n)
         if os.path.isfile(n):
             out.append(os.path.abspath(n))
             continue
@@ -88,25 +86,13 @@ def main(argv=None) -> None:
     ap.add_argument("--dry-run", action="store_true",
                     help="validate csx files + plan locally, print phase plan, exit")
     ap.add_argument("--skip-upload", action="store_true")
-    ap.add_argument("--receipt", type=Path, help="local raw execution receipt (keep in ignored out/)")
     args = ap.parse_args(argv)
     if args.update and args.phases is not None:
         ap.error("--update selects its own phases")
 
     hashes = verify_pack()
+    phases = find_phases(UPDATE_PHASES if args.update else args.phases)
     plan = os.path.abspath(args.plan)
-    with open(plan, encoding="utf-8") as fh:
-        original = json.load(fh)
-    variant = original.get("meta", {}).get("variant", "base")
-    architecture = variant == "full"
-    if variant not in {"base", "full"} or architecture and args.update:
-        print("Native builds support base, or a new full architecture model")
-        sys.exit(1)
-    phases = find_phases(UPDATE_PHASES if args.update else args.phases or (ARCH_PHASES if architecture else None))
-    if architecture and any(Path(p).stem not in ARCH_PHASES for p in phases):
-        ap.error("Full builds allow setup parameters architecture rooms export only")
-    if architecture and not args.skip_upload and not any(Path(p).stem == "00_lib" for p in phases):
-        phases.insert(0, str(Path(SRC) / "00_lib.csx"))
     ok = True
 
     print(f"demo-datacentre-01 Revit driver -- {len(phases)} phases, session={args.session}")
@@ -124,7 +110,9 @@ def main(argv=None) -> None:
     else:
         try:
             with open(plan, encoding="utf-8") as fh:
-                pj = (prepare_architecture if architecture else prepare)(json.load(fh))
+                pj = prepare(json.load(fh))
+            if pj.get("meta", {}).get("variant", "base") != "base":
+                raise ValueError("Native builds currently support the base variant only")
             print(f"  plan ok: {plan} ({os.path.getsize(plan)} B, "
                   f"{len(pj.get('walls', []))} walls, {len(pj.get('equipment', []))} equipment, "
                   f"{len(pj.get('racks', []))} racks, {len(pj.get('runs', []))} runs, "
@@ -139,35 +127,10 @@ def main(argv=None) -> None:
     if not ok:
         sys.exit("driver: validation failed")
 
-    required = (args.endpoint, args.workdir) if architecture else (args.endpoint, args.workdir, args.family_dir)
-    if any("<" in v for v in required):
+    if any("<" in v for v in (args.endpoint, args.workdir, args.family_dir)):
         sys.exit("driver: set AECO_REVIT_ENDPOINT, AECO_REVIT_WORKDIR and AECO_REVIT_FAMILY_DIR")
     base = args.endpoint.rstrip("/")
     client = Client(base, args.session, workdir=args.workdir)
-    client.eval_timeout = 300
-    receipt = {"variant": variant, "scope": "architecture" if architecture else "base",
-               "script_sha256": hashes, "status_probes": [], "batches": [], "uploads": []}
-    def save_receipt():
-        if args.receipt:
-            args.receipt.parent.mkdir(parents=True, exist_ok=True)
-            args.receipt.write_text(json.dumps(receipt, indent=2) + "\n")
-    original_request = client.request
-    def recorded_request(method, url, payload, timeout):
-        started = time.monotonic()
-        try:
-            response = original_request(method, url, payload, timeout)
-        except Exception as exc:
-            receipt["failure"] = type(exc).__name__
-            save_receipt()
-            raise
-        if method == "GET":
-            from usdaeco_revit.transport import busy
-            receipt["status_probes"].append({"busy": busy(response), "revit": response.get("revit"),
-                "seconds": round(time.monotonic()-started, 3),
-                "foreground_modified": response.get("activeDocument", {}).get("isModified")})
-        save_receipt()
-        return response
-    client.request = recorded_request
 
     def evaluate(code):
         return client.evaluate(code + '\nreturn "configured";')
@@ -176,19 +139,12 @@ def main(argv=None) -> None:
     evaluate('System.Environment.SetEnvironmentVariable("AECO_REVIT_WORKDIR", ' + remote + ');')
     evaluate('System.Environment.SetEnvironmentVariable("AECO_REVIT_FAMILY_DIR", ' + json.dumps(args.family_dir) + ');')
     evaluate('System.Environment.SetEnvironmentVariable("AECO_REVIT_UPDATE", ' + json.dumps("1" if args.update else "0") + ');')
-    evaluate('System.Environment.SetEnvironmentVariable("AECO_REVIT_VARIANT", ' + json.dumps(variant) + ');')
     if not args.skip_upload:
-        uploads = [(plan, "build_plan-full.json" if architecture else "build_plan.json"),
-                   (os.path.join(ROOT, "shared-parameters.txt"), "shared-parameters.txt")]
-        if not architecture:
-            uploads += [(os.path.join(ROOT, "families.yaml"), "families.yaml"), (os.path.join(ROOT, "camera-psets.txt"), "camera-psets.txt")]
-        for local, filename in uploads:
+        for local, filename in ((plan, "build_plan.json"), (os.path.join(ROOT, "families.yaml"), "families.yaml"), (os.path.join(ROOT, "camera-psets.txt"), "camera-psets.txt"), (os.path.join(ROOT, "shared-parameters.txt"), "shared-parameters.txt")):
             with open(local, "rb") as stream:
-                data = json.dumps(pj, allow_nan=False).encode() if local == plan else stream.read()
-            uploaded = client.upload(data, filename)
-            receipt["uploads"].append(uploaded)
-            save_receipt()
-            print(f"== stage: upload {filename}: {uploaded['bytes']} bytes SHA-256 verified", flush=True)
+                data = json.dumps(pj, allow_nan=False).encode() if filename == "build_plan.json" else stream.read()
+            receipt = client.upload(data, filename)
+            print(f"== stage: upload {filename}: {receipt['bytes']} bytes SHA-256 verified", flush=True)
 
     for p in phases:
         name = os.path.basename(p)
@@ -209,8 +165,6 @@ def main(argv=None) -> None:
             else:
                 resp = {"result": client.phase(code)}
         except Exception as e:
-            receipt["failure"] = str(e)
-            save_receipt()
             sys.exit(f"[{name}] transport error after {time.time() - t0:.0f}s: {e}")
         dt = time.time() - t0
         if isinstance(resp, dict) and resp.get("error"):
@@ -221,8 +175,6 @@ def main(argv=None) -> None:
             sys.exit(1)
         result = resp.get("result") if isinstance(resp, dict) else resp
         text = str(result)
-        receipt["batches"].append({"phase": name, "seconds": round(dt, 3), "result": text})
-        save_receipt()
         print(f"[{name}] {dt:.1f}s -> {text[:2500]}{' ...' if len(text) > 2500 else ''}")
 
     print("all phases complete; export is in AECO_REVIT_WORKDIR")

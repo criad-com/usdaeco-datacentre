@@ -12,6 +12,7 @@ try
         cameraCats.Insert(d.Settings.Categories.get_Item(BuiltInCategory.OST_SecurityDevices));
         foreach(Definition definition in file15.Groups.First().Definitions)
         {
+            if (Dc.Full && definition.Name != "Status") continue;
             if(definition.Name=="Status")
             {
                 var statusCats=app.Create.NewCategorySet();
