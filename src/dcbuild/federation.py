@@ -33,7 +33,7 @@ def stamp(layer, package, source):
         "aeco:layer:producer": "usdaeco-datacentre generator 0.5.0",
         "aeco:layer:source": source.name,
         "aeco:layer:sourceSha256": digest(source),
-        "aeco:layer:tag": "v0.5.0",
+        "aeco:layer:tag": "v0.5.2",
     }
 
 
@@ -82,7 +82,7 @@ def convert_package(source, target):
     return stats
 
 
-def run_conversion(source, target, *, monolithic=False):
+def run_conversion(source, target, *, monolithic=False, paths_only=False):
     converter, _ = dependency_source("ifc")
     core, _ = dependency_source("core")
     env = clean_environment()
@@ -90,6 +90,10 @@ def run_conversion(source, target, *, monolithic=False):
     env["PXR_PLUGINPATH_NAME"] = str(core / "plugins/usdAeco/resources")
     call = ("from dcbuild.publish import convert_worker; convert_worker(a,b,'full')" if monolithic else
             "from dcbuild.federation import convert_package; convert_package(a,b)")
+    if paths_only:
+        # Use the frozen author's naming rules without tessellating any bodies.
+        call = ("import ifcopenshell; from usdaeco_ifc.convert.author import author; "
+                "author(ifcopenshell.open(a),{},str(b))")
     code = ("import sys; sys.path[:0]=sys.argv[1:4]; del sys.argv[1:4]; "
             "from pathlib import Path; a,b=map(Path,sys.argv[1:3]); " + call)
     subprocess.run([sys.executable, "-c", code, str(converter / "tools"), str(core / "tools"),
@@ -114,8 +118,22 @@ def identity_paths(stage):
             if p.GetAttribute("aeco:id").Get()}
 
 
+def enrich_external_links(folder, paths):
+    """Finish delivered IFC bytes before they become twin conversion inputs."""
+    import ifcopenshell
+    import ifcopenshell.guid
+    for package in PACKAGES:
+        path = folder / (package + ".ifc")
+        model = ifcopenshell.open(path)
+        for doc in model.by_type("IfcDocumentReference"):
+            if doc.Name == "aeco:connectedPorts":
+                target_id = str(uuid.UUID(hex=ifcopenshell.guid.expand(doc.Identification)))
+                doc.Description = paths[target_id]
+        model.write(str(path))
+
+
 def restore_external_links(folder):
-    """Resolve port targets and annotate deliveries after stamping the frozen twins."""
+    """Read final IFC descriptions into the twins; the frozen converter omits them."""
     import ifcopenshell
     import ifcopenshell.guid
     from pxr import Sdf, Usd
@@ -129,13 +147,10 @@ def restore_external_links(folder):
                 doc = rel.RelatingDocument
                 if not doc.is_a("IfcDocumentReference") or doc.Name != "aeco:connectedPorts":
                     continue
-                target_id = str(uuid.UUID(hex=ifcopenshell.guid.expand(doc.Identification)))
-                doc.Description = paths[target_id]
                 for source in rel.RelatedObjects:
                     source_id = str(uuid.UUID(hex=ifcopenshell.guid.expand(source.GlobalId)))
-                    stage.GetPrimAtPath(paths[source_id]).CreateRelationship(doc.Name).AddTarget(paths[target_id])
+                    stage.GetPrimAtPath(paths[source_id]).CreateRelationship(doc.Name).AddTarget(doc.Description)
         layer.Save()
-        model.write(str(folder / (package + ".ifc")))
 
 
 def ownership(stage):
@@ -219,12 +234,16 @@ def publish(output):
     with tempfile.TemporaryDirectory(prefix="federation-", dir=scratch) as tmp:
         work = Path(tmp)
         build(plan, work)
+        print("== stage: resolve delivery reference paths and enrich IFC", flush=True)
+        with tempfile.TemporaryDirectory(prefix="reference-paths-", dir=work) as reference_tmp:
+            target = Path(reference_tmp) / "dc.usda"
+            run_conversion(work / "demo-datacentre-01.ifc", target, paths_only=True)
+            from pxr import Usd
+            enrich_external_links(work, identity_paths(Usd.Stage.Open(str(target))))
         for package in PACKAGES:
             print(f"== stage: convert delivery {package}", flush=True)
             run_conversion(work / (package + ".ifc"), work / (package + ".usda"))
         roots(work)
-        twin_sources = {p + ".ifc": {"bytes": (work / (p + ".ifc")).stat().st_size,
-                                    "sha256": digest(work / (p + ".ifc"))} for p in PACKAGES}
         restore_external_links(work)
         from pxr import Plug, Sdf, Usd
         core, _ = dependency_source("core")
@@ -254,8 +273,7 @@ def publish(output):
             Sdf.Layer.FindOrOpen(str(work / (package + ".geometry.usdc"))).Save()
         census = plugin_free_census(work / "dc.usda")
         from .qa.variants import manifest
-        metadata = dict(variant="full", facility="demo-datacentre-01", generator={"version": "0.5.1"},
-                        twinSourceFiles=twin_sources,
+        metadata = dict(variant="full", facility="demo-datacentre-01", generator={"version": "0.5.2"},
                         tessellationControlled=controlled,
                         counts=census["counts"], deliveryOrder=list(PACKAGES),
                         packages={p: package_counts(work, p) for p in PACKAGES},

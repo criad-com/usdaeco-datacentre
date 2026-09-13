@@ -417,13 +417,14 @@ def main():
             if variant == "full":
                 from dcbuild.qa.federation import (compare_monolithic, connected_text, ifc_ownership,
                                                    mute_drill, spatial_ownership, crossing_references,
-                                                   publication_baseline, twin_source_files)
+                                                   publication_baseline, twin_source_stamps)
                 print("== stage: full federation proofs", flush=True)
                 for package, counts in crossing_references(published).items():
                     report.check("full crossing references " + package, True, json.dumps(counts, sort_keys=True))
                 for name, result in (
-                    ("twins and historical bytes vs v0.5.0", publication_baseline(published)),
-                    ("IFC description-only changes", {"deliveries": len(twin_source_files(published))}),
+                    ("released twin content and publication bytes", publication_baseline(published)),
+                    ("twin source stamps match delivered IFC", {"deliveries": len(twin_source_stamps(published)),
+                                                              "layerStamps": 27}),
                     ("IFC and twin ownership", ifc_ownership(published)),
                     ("shared spatial definitions", spatial_ownership(published)),
                     ("connected root text", connected_text(published)),

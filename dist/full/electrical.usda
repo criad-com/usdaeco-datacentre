@@ -5,8 +5,8 @@
         string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
         string "aeco:layer:role" = "package"
         string "aeco:layer:source" = "electrical.ifc"
-        string "aeco:layer:sourceSha256" = "df9f983ecb268d770aeb567fe2ad5fd48489ca06b4f9b9f3ec0bfa301d89d65c"
-        string "aeco:layer:tag" = "v0.5.0"
+        string "aeco:layer:sourceSha256" = "56589b1ed3422b3469b67e2889af2b8461c2a3d4e3efda480e3362a7826a85db"
+        string "aeco:layer:tag" = "v0.5.2"
     }
     defaultPrim = "demo_datacentre_01"
     fallbackPrimTypes = {

@@ -8,7 +8,7 @@ import pytest
 from dcbuild.dependencies import ROOT
 from dcbuild.federation import PACKAGES, cross_package_links
 from dcbuild.qa.federation import (connected_text, crossing_references, ifc_ownership,
-                                   publication_baseline, spatial_ownership, twin_source_files,
+                                   publication_baseline, spatial_ownership, twin_source_stamps,
                                    verify_publication)
 
 
@@ -74,9 +74,16 @@ def test_all_crossing_references_match_resolved_twin_targets(published):
     assert sum(c["nativeServes"] for c in counts.values()) == 9
 
 
-def test_twins_and_historical_publications_retain_released_bytes(published):
-    assert publication_baseline(published) == {"twins": 29, "historicalFiles": 30}
-    assert len(twin_source_files(published)) == 9
+def test_twins_retain_content_and_other_publications_retain_released_bytes(published):
+    assert publication_baseline(published) == {"twins": 29, "deliveries": 9, "images": 2, "historicalFiles": 30}
+
+
+def test_all_twin_source_stamps_match_delivered_ifc_bytes(published):
+    manifest = json.loads((published / "dc.manifest.json").read_text())
+    sources = twin_source_stamps(published)
+    assert len(sources) == 9
+    assert sources == {name: manifest["files"][name] for name in sources}
+    assert "twinSourceFiles" not in manifest
 
 
 @pytest.mark.parametrize("mutation", ["missing_description", "wrong_path", "wrong_package",
@@ -108,15 +115,43 @@ def test_incomplete_or_incorrect_crossing_is_rejected(published, tmp_path, mutat
         crossing_references(folder)
 
 
-def test_non_description_ifc_change_cannot_hide_behind_source_provenance(published, tmp_path):
+def test_ifc_description_change_invalidates_twin_source_stamp(published, tmp_path):
     import ifcopenshell
     shutil.copytree(published, tmp_path / "full")
     path = tmp_path / "full/cooling.ifc"
     model = ifcopenshell.open(path)
-    model.by_type("IfcDistributionPort")[0].Name = "Altered port"
+    model.by_type("IfcDocumentReference")[0].Description = "/changed/port"
     model.write(str(path))
-    with pytest.raises(ValueError, match="changed beyond crossing reference descriptions"):
-        twin_source_files(tmp_path / "full")
+    with pytest.raises(ValueError, match="Twin source stamp differs from delivered IFC"):
+        twin_source_stamps(tmp_path / "full")
+
+
+@pytest.mark.parametrize("suffix", [".usda", ".semantics.usda", ".geometry.usdc"])
+def test_stale_twin_stamp_is_rejected_even_with_fresh_inventory(published, tmp_path, suffix):
+    from pxr import Sdf
+    from dcbuild.federation import refresh_inventory
+    folder = tmp_path / "full"
+    shutil.copytree(published, folder)
+    layer = Sdf.Layer.FindOrOpen(str(folder / ("cooling" + suffix)))
+    stamp = layer.customLayerData
+    stamp["aeco:layer:sourceSha256"] = "0" * 64
+    layer.customLayerData = stamp
+    layer.Save()
+    refresh_inventory(folder)
+    with pytest.raises(ValueError, match="Twin source stamp differs from delivered IFC"):
+        twin_source_stamps(folder)
+
+
+@pytest.mark.parametrize("suffix", [".semantics.usda", ".geometry.usdc"])
+def test_twin_content_change_cannot_hide_behind_updated_stamp(published, tmp_path, suffix):
+    from pxr import Sdf
+    folder = tmp_path / "full"
+    shutil.copytree(published, folder)
+    layer = Sdf.Layer.FindOrOpen(str(folder / ("site" + suffix)))
+    layer.rootPrims[0].customData = {"altered": True}
+    layer.Save()
+    with pytest.raises(ValueError, match="Twin content differs from v0.5.1"):
+        publication_baseline(folder)
 
 
 def test_text_ifc_is_swept_and_disguised_archive_rejected(tmp_path, monkeypatch):

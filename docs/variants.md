@@ -278,8 +278,10 @@ port's absolute USD prim path exactly as authored in the twins.
 A single-file reader authors the USD relationship target from `Description`
 without defining the foreign prim or opening its delivery. Location,
 Identification and Name retain their 0.5.0 values. The publisher resolves the
-targets by identity and fills Description after conversion; all 504 connection
-pairs survive (1,008 directional targets).
+targets by identity in a preliminary authoring pass without geometry, using
+the pinned converter's naming rules. It fills Description before converting
+the delivered packages; all 504 connection pairs survive (1,008 directional
+targets). The twin relationship post-pass reads those final descriptions.
 
 The nine `aeco:serves` targets into shared use native
 `IfcRelServicesBuildings`, not document references. Each delivery includes the
@@ -319,19 +321,24 @@ converter's ordinary tessellation.
 
 Every twin layer records `aeco:layer:role`, `package`, `producer`, `source`,
 `sourceSha256` and `tag` in `customLayerData`. The producer is
-`usdaeco-datacentre generator 0.5.0`. All 29 USD layers retain their 0.5.0
-bytes, including provenance. Their `sourceSha256` identifies the conversion
-input before Description enrichment, recorded in manifest `twinSourceFiles`.
-The gate removes only crossing-reference descriptions and recovers the exact
-0.5.0 IFC hashes and sizes; it also compares all twins to the released baseline.
-Manifest `files` records the current delivered IFC hashes and sizes.
+`usdaeco-datacentre generator 0.5.0`, identifying the unchanged IFC generator.
+The release tag is `v0.5.2`. A twin's source stamp is the delivered file:
+`sourceSha256` equals SHA-256 of the adjacent `<package>.ifc` bytes, after
+Description enrichment, on its root, semantics and geometry layers. The gate
+checks all 27 stamps against the nine delivered IFCs directly. Manifest `files`
+records those same delivered hashes and sizes; no `twinSourceFiles` indirection
+is needed. The 0.5.1 baseline compares every twin opinion, excluding only the
+source hash and release tag lines (geometry crates are exported as USDA for
+comparison). Delivered IFCs, both images and historical variants retain their
+released bytes. Census, identities, relationships, transforms and meshes stay
+unchanged.
 The manifest records package counts,
 fixture mapping, source pins, relationship crossings and SHA-256/bytes for
 all delivered files and both images. Its sole inventory exclusion is itself:
 a file cannot include its own SHA-256; the vanilla receipt binds the manifest
 externally. Run `run.py --all --publish` after changing rendered content to seal
-both full images and their inventory. The 0.5.1 reference enrichment retains
-both full images and updates only the full vanilla receipt's publication hashes;
+both full images and their inventory. The 0.5.2 stamp correction retains
+both full images and updates the full render receipts' source hashes;
 the gate repeats the fresh render. Historical image bytes stay frozen while their
 receipts bind the current renderer code and a fresh render is checked.
 

@@ -10,22 +10,39 @@ from ..federation import (DATA_FILES, DELIVERY_ORDER, FULL_CAP, LAYERS, LINKS, P
 from ..dependencies import ROOT
 
 
+def twin_content_digest(path):
+    """Hash every twin opinion except the delivered source hash and release tag."""
+    from pxr import Sdf
+    text = (Sdf.Layer.OpenAsAnonymous(str(path)).ExportToString()
+            if path.suffix == ".usdc" else path.read_text())
+    text = re.sub(r'^        string "aeco:layer:(?:sourceSha256|tag)" = "[^"\n]*"\n',
+                  "", text, flags=re.M)
+    return hashlib.sha256(text.encode()).hexdigest()
+
+
 def publication_baseline(folder):
-    """Require the released twins and five historical directories byte-for-byte."""
+    """Require v0.5.1 twin content, delivered IFCs/images and historical bytes."""
     from ..publish import digest
+    released = json.loads((ROOT / "manifests/publication-v0.5.1.json").read_text())
+    if set(released["twins"]) != set(LAYERS):
+        raise ValueError("Released twin baseline inventory differs")
+    for name, expected in released["twins"].items():
+        if twin_content_digest(folder / name) != expected:
+            raise ValueError("Twin content differs from v0.5.1: " + name)
     baseline = json.loads((ROOT / "manifests/publication-v0.5.0.json").read_text())
-    groups = ((folder, {n: baseline["full"][n] for n in LAYERS}),
+    groups = ((folder, released["files"]),
               (folder.parent, baseline["historical"]))
     for parent, files in groups:
         for name, expected in files.items():
             path = parent / name
             if {"bytes": path.stat().st_size, "sha256": digest(path)} != expected:
-                raise ValueError("Publication bytes differ from v0.5.0: " + name)
+                raise ValueError("Released publication bytes differ: " + name)
     for variant in ("base", "floors", "pod", "clash", "iris"):
         if {p.name for p in (folder.parent / variant).iterdir()} != {
                 Path(n).name for n in baseline["historical"] if n.startswith(variant + "/")}:
             raise ValueError("Historical publication inventory changed: " + variant)
-    return {"twins": len(LAYERS), "historicalFiles": len(baseline["historical"])}
+    return {"twins": len(LAYERS), "deliveries": len(PACKAGES), "images": 2,
+            "historicalFiles": len(baseline["historical"])}
 
 
 def crossing_references(folder):
@@ -78,22 +95,21 @@ def crossing_references(folder):
     return result
 
 
-def twin_source_files(folder):
-    """Undo only reference descriptions and prove exact released conversion inputs."""
-    import ifcopenshell
-    baseline = json.loads((ROOT / "manifests/publication-v0.5.0.json").read_text())["full"]
+def twin_source_stamps(folder):
+    """Verify all three twin layers against the actual delivered IFC bytes."""
+    from pxr import Sdf
+    from ..publish import digest
     sources = {}
     for package in PACKAGES:
         name = package + ".ifc"
-        model = ifcopenshell.open(folder / name)
-        for doc in model.by_type("IfcDocumentReference"):
-            if doc.Name in {"aeco:connectedPorts", "aeco:serves"}:
-                doc.Description = None
-        original = model.to_string().encode()
-        record = {"bytes": len(original), "sha256": hashlib.sha256(original).hexdigest()}
-        if record != baseline[name]:
-            raise ValueError("IFC changed beyond crossing reference descriptions: " + name)
-        sources[name] = record
+        sources[name] = {"bytes": (folder / name).stat().st_size, "sha256": digest(folder / name)}
+        for suffix in (".usda", ".semantics.usda", ".geometry.usdc"):
+            layer = Sdf.Layer.OpenAsAnonymous(str(folder / (package + suffix)))
+            stamp = layer.customLayerData
+            if (stamp.get("aeco:layer:source") != name
+                    or stamp.get("aeco:layer:sourceSha256") != sources[name]["sha256"]
+                    or stamp.get("aeco:layer:tag") != "v0.5.2"):
+                raise ValueError("Twin source stamp differs from delivered IFC or release: " + package + suffix)
     return sources
 
 
@@ -143,9 +159,9 @@ def verify_publication(folder):
     if sum(p.stat().st_size for p in folder.iterdir()) > FULL_CAP:
         raise ValueError("Full publication exceeds the size cap")
     crossing_references(folder)
-    sources = twin_source_files(folder)
-    if data.get("twinSourceFiles") != sources:
-        raise ValueError("Twin conversion inputs differ from the manifest")
+    twin_source_stamps(folder)
+    if "twinSourceFiles" in data:
+        raise ValueError("Redundant twinSourceFiles must not replace delivered IFC provenance")
     root = Sdf.Layer.FindOrOpen(str(folder / "dc.usda"))
     for package in PACKAGES:
         if package_counts(folder, package) != data["packages"][package]:
@@ -159,8 +175,7 @@ def verify_publication(folder):
             if (stamp.get("aeco:layer:role") != ("spine" if package == "shared" else "package")
                     or stamp.get("aeco:layer:package") != package
                     or stamp.get("aeco:layer:producer") != "usdaeco-datacentre generator 0.5.0"
-                    or stamp.get("aeco:layer:source") != package + ".ifc"
-                    or stamp.get("aeco:layer:sourceSha256") != sources[package + ".ifc"]["sha256"]):
+                    or stamp.get("aeco:layer:source") != package + ".ifc"):
                 raise ValueError("Twin provenance differs from its verified conversion input")
             if suffix == ".usda" and layer.subLayerPaths != [package + ".semantics.usda", package + ".geometry.usdc"]:
                 raise ValueError("Twin root must sublayer semantics then geometry")

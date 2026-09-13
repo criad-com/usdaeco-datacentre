@@ -42,21 +42,26 @@ site, arch, structure, cooling, electrical, it, fitout, security, shared.
 Shared owns all spatial definitions; each discipline overlays that spine.
 Every `<package>.usda` sublayers its readable `.semantics.usda` before its
 binary `.geometry.usdc`. Layer provenance names the producer, source IFC and
-SHA-256 of the original conversion input. The 0.5.1 delivery adds exact USD
+SHA-256 of the adjacent delivered IFC bytes, including its final descriptions.
+All 27 source stamps across nine twins use this rule in 0.5.2.
+The 0.5.1 delivery adds exact USD
 target paths to all 1,008 external port document-reference descriptions:
 cooling 184, electrical 344, IT 480, all other deliveries zero. The nine serves
 targets remain native `IfcRelServicesBuildings` relationships (cooling 3,
 electrical 2, IT 3, security 1). A single-file reader can resolve both forms.
-All 29 USD layers and both images retain their 0.5.0 bytes.
+The twins retain every 0.5.1 opinion except source hash and release tag lines;
+all nine delivered IFCs and both images retain their 0.5.1 bytes.
 The [full manifest](full/dc.manifest.json) inventories every delivered
 file except itself and records counts and every cross-package target.
-Its `files` hashes bind the enriched IFCs; `twinSourceFiles` records the original
-IFC inputs identified by the frozen twins' provenance. The gate proves that
-only document-reference descriptions differ from those inputs.
+Its `files` hashes bind the enriched IFCs and match the twins' source stamps
+directly; the redundant `twinSourceFiles` field is removed. The publisher
+resolves reference paths, enriches IFC descriptions, then converts and stamps
+the final delivered bytes. The gate compares every other twin opinion with
+0.5.1, including geometry, and checks unchanged IFC and image bytes.
 
 The full directory is capped at **40,000,000 bytes**. Its measured publication
-is **22,149,815 bytes**, including 12,486,505 bytes of IFC, 8,479,793 bytes of
-semantic USDA, 482,304 bytes of geometry crates, roots, manifest and images.
+is **22,148,597 bytes**, including 12,486,505 bytes of IFC, 8,479,793 bytes of
+semantic USDA, 482,313 bytes of geometry crates, roots, manifest and images.
 Both images are 1280×800, non-uniform, and below 400,000 bytes each.
 
 `full/dc.connected.usda` is the connected entry and needs the **usdIfc plugin

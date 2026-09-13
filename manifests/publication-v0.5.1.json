@@ -1,0 +1,81 @@
+{
+  "comparison": "Authored USDA text; USDC exported as USDA. Only aeco:layer:sourceSha256 and aeco:layer:tag lines excluded.",
+  "files": {
+    "arch.ifc": {
+      "bytes": 781674,
+      "sha256": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0"
+    },
+    "cooling.ifc": {
+      "bytes": 2999268,
+      "sha256": "28d85b64eed1bd405429b893badb57f9a0fb0e8180e172b5b82029625774ed58"
+    },
+    "electrical.ifc": {
+      "bytes": 4991183,
+      "sha256": "56589b1ed3422b3469b67e2889af2b8461c2a3d4e3efda480e3362a7826a85db"
+    },
+    "fitout.ifc": {
+      "bytes": 146176,
+      "sha256": "7e81cb41227077a92d2227ae88d1e00542818e55ba027cdeb5aacea145a96729"
+    },
+    "it.ifc": {
+      "bytes": 2906978,
+      "sha256": "485bddbc54c145ee39f6dffbbe830221faf19b3a188610f3f48f639feb7308b6"
+    },
+    "overview.png": {
+      "bytes": 145472,
+      "sha256": "ba4da62b68296ea6b7c074d9f7d73bdf00a2eee2aeb78e02cfd4c0224145a73a"
+    },
+    "security.ifc": {
+      "bytes": 268826,
+      "sha256": "0a3d070a7dd95723a62577172d541cbae4f743cd6e2e0dc8d426927a7b093d5a"
+    },
+    "shared.ifc": {
+      "bytes": 84589,
+      "sha256": "1fd81e6f52ae614cfda8829ba5520f2cc5342d6aa98940fe49db2f5a21f57173"
+    },
+    "site.ifc": {
+      "bytes": 90391,
+      "sha256": "faac3f15e61301f78369ac83153853f508fc35ef5bed3d229b2728e0538d2b42"
+    },
+    "structure.ifc": {
+      "bytes": 217420,
+      "sha256": "12fa31daf70a154fb506970ecc9453fff9bc276b574a1dfa1957eed6d6bac4b3"
+    },
+    "vanilla.png": {
+      "bytes": 145789,
+      "sha256": "3904a214e35267d8c25e533baed12d10561366b28f9a7cd1f49d45ccca22db3e"
+    }
+  },
+  "release": "v0.5.1",
+  "twins": {
+    "arch.geometry.usdc": "cb55d930b3393e1ff0c6efbf06587c7efe29711cc4d50c942deb568b1459d151",
+    "arch.semantics.usda": "5149d371bff597591b4ca1e5b4aeec6ca74f40cd5cc9b41782329fc9a4127639",
+    "arch.usda": "d115a17c51056e49878bef3859d368870cec363c0b364d720c845e7f8aaaccd8",
+    "cooling.geometry.usdc": "7e2df14eca743a408d3ec6324a15bc6369dab1e3de6f00b2fef5c44935368259",
+    "cooling.semantics.usda": "b4a4f86a09b82d05f87560991acfd6032f3e8c889ab397130fa64102094ce9f0",
+    "cooling.usda": "5b58a029c53471c52bf1ebb21fb14e4dcefbdeea3b3561c07f955d06f547f1ab",
+    "dc.connected.usda": "ac419c1ece029fc122c481648320508078039479261c1f34b4799961e39ed0c2",
+    "dc.usda": "85df064b63d065fd743286fee3d6386662f61aca3cb4e154bca422d8cce52b2b",
+    "electrical.geometry.usdc": "69dfb0e3a073ec1b469d0059bcc1604e21f4449adce08e79c0366af7d1290405",
+    "electrical.semantics.usda": "4700d02abb336e06d8f1af22c616c7007270ca3802ebaf3ccd20ced8c5b935f9",
+    "electrical.usda": "bceb5a76fed4b5f66ebcc3f369f90ff6222b2897f8c0770750bff8648e14bbed",
+    "fitout.geometry.usdc": "f7ce07ca6e198575d73c5bb80cc6a276243b2d69d62e8d2e209d4df7dce79e74",
+    "fitout.semantics.usda": "235299b6be3bb6c7237422d3afcc80c848ab830ca777f0d53a57acf4af2b6874",
+    "fitout.usda": "e13ae12672de1de9a5a8f1f676be99f3894018e5c9254d58c74fcc2aec1000f6",
+    "it.geometry.usdc": "a4a60edb4a6d2be35c574176047f9348678a24827e22f5f6c18cd67a98f6d159",
+    "it.semantics.usda": "bbec6f5c54129bdf67ee74552453f53146c67c86dfea7398a51816273db03e62",
+    "it.usda": "c0f39093ecea2b60f94640fde12ad6414c14f4706b527f87ed828dbe7279f3e3",
+    "security.geometry.usdc": "5be59ac17fa12f64ef742e1b05bbf0f20f42ca07684b6dda94afb5a4b256813e",
+    "security.semantics.usda": "2de8497f0d9562778767ccb4e8a633895631c17a3d108bebe1f0af538d35d1c8",
+    "security.usda": "d5f330007d3fede8be4d4f96bc252f83614abd8bf8da14e948fd8b49c3a58226",
+    "shared.geometry.usdc": "9ec536546ddac27e666f19d6795d825b51805ea52e1521e36b025c941872a91b",
+    "shared.semantics.usda": "9c40a33217bddf7a27374c32a44cf6bbcc71630a12e9624829288fd9e0b56b72",
+    "shared.usda": "47063206c7532bd1fe3ad41329f8615a7cfff8671c569750bb3fbd78bf6c3f97",
+    "site.geometry.usdc": "dd7421d159f3e6aafd17af33e1ad19bd1cdce6cf5f144b74888ba8c343157a1a",
+    "site.semantics.usda": "dc993adbc4b385fbeccbc6a89563e30c52c07e794f420e42cae7a166584b97d5",
+    "site.usda": "ed661aa4488d3987b1b68e003f051c0ca7182d0bded3eb8d226b24eb043b6300",
+    "structure.geometry.usdc": "9ec6445e38929ba6beb692529332ee3114201e0865a57f9ffc1788d0e52bd301",
+    "structure.semantics.usda": "5371a2d2c11797f3959955e0fe4d22143c9b5cf78148f3c8fc21b1624d843c20",
+    "structure.usda": "9ddd5b82b1c9acd47201453849d65d8d75cd649deef107757a5b119c43304a74"
+  }
+}

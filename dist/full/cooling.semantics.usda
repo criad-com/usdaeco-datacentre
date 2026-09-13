@@ -5,8 +5,8 @@
         string "aeco:layer:producer" = "usdaeco-datacentre generator 0.5.0"
         string "aeco:layer:role" = "package"
         string "aeco:layer:source" = "cooling.ifc"
-        string "aeco:layer:sourceSha256" = "f304d454d2530d111c058b28d5380c82b813a6e620d3db7637998d9d969dfcb1"
-        string "aeco:layer:tag" = "v0.5.0"
+        string "aeco:layer:sourceSha256" = "28d85b64eed1bd405429b893badb57f9a0fb0e8180e172b5b82029625774ed58"
+        string "aeco:layer:tag" = "v0.5.2"
     }
 )
 

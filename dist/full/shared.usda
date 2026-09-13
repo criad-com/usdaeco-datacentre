@@ -6,7 +6,7 @@
         string "aeco:layer:role" = "spine"
         string "aeco:layer:source" = "shared.ifc"
         string "aeco:layer:sourceSha256" = "1fd81e6f52ae614cfda8829ba5520f2cc5342d6aa98940fe49db2f5a21f57173"
-        string "aeco:layer:tag" = "v0.5.0"
+        string "aeco:layer:tag" = "v0.5.2"
     }
     defaultPrim = "demo_datacentre_01"
     fallbackPrimTypes = {

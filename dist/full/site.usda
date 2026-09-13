@@ -6,7 +6,7 @@
         string "aeco:layer:role" = "package"
         string "aeco:layer:source" = "site.ifc"
         string "aeco:layer:sourceSha256" = "faac3f15e61301f78369ac83153853f508fc35ef5bed3d229b2728e0538d2b42"
-        string "aeco:layer:tag" = "v0.5.0"
+        string "aeco:layer:tag" = "v0.5.2"
     }
     defaultPrim = "demo_datacentre_01"
     fallbackPrimTypes = {

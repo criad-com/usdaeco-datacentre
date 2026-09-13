@@ -6,7 +6,7 @@
         string "aeco:layer:role" = "package"
         string "aeco:layer:source" = "fitout.ifc"
         string "aeco:layer:sourceSha256" = "7e81cb41227077a92d2227ae88d1e00542818e55ba027cdeb5aacea145a96729"
-        string "aeco:layer:tag" = "v0.5.0"
+        string "aeco:layer:tag" = "v0.5.2"
     }
 )
 

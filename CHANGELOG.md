@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.5.2 — 2026-09-13
+
+- Enrich external-reference descriptions before converting delivered IFCs.
+  All 27 layer source stamps now equal the nine adjacent delivered IFC hashes;
+  remove the redundant manifest `twinSourceFiles` indirection.
+- Republish full twins with release tag v0.5.2. Compare all 29 USD layers with
+  0.5.1, allowing only source hash and release tag lines to differ. The composed
+  12,425 prims, 9,308 identities, 18,430 relationship properties, world transforms
+  and 3,050 meshes are unchanged, as are the nine IFCs and both images.
+- Preserve all 30 files across the five historical variant directories and
+  all size caps. Full occupies 22,148,597 / 40,000,000 bytes. Rebind source hashes
+  in the full render receipts; flattened content, cameras and images are unchanged.
+- Verify 255 checks, 0 failed; 244 pytest tests; 29 structure rules; 12 fresh
+  publications and six fresh vanilla renders. All eight delivery mute checks
+  preserve remaining transforms, and the sanitization sweep has zero findings.
+- Nix packaging remains not proven: one offline check with local input overrides
+  fails because the selected Python 3.14 IfcOpenShell 0.8.0 package is marked
+  broken. No lockfile is written. Connected composition remains not proven here.
+
 ## 0.5.1 — 2026-09-13
 
 - Add the exact USD target path to all 1,008 external port document-reference
