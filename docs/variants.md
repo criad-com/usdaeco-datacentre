@@ -272,13 +272,36 @@ published bytes. Historical build and publication paths are unchanged.
 An IFC file cannot directly point to an entity in another IFC file. Each
 external port target is therefore delivered as an `IfcDocumentReference`:
 `Location` is the target package's IFC basename, `Identification` its port
-GlobalId, and `Name` is `aeco:connectedPorts`. `IfcRelAssociatesDocument`
-associates that reference with the local port. The publisher resolves these
-references to symmetric USD relationship targets without defining foreign
-ports. All 504 connection pairs survive (1,008 directional targets).
-The manifest also records nine `aeco:serves` targets into shared; there are
-zero cross-package member targets. Every crossing target appears once with
+GlobalId, and `Name` is `aeco:connectedPorts`. `Description` carries the target
+port's absolute USD prim path exactly as authored in the twins.
+`IfcRelAssociatesDocument` associates that reference with the local port.
+A single-file reader authors the USD relationship target from `Description`
+without defining the foreign prim or opening its delivery. Location,
+Identification and Name retain their 0.5.0 values. The publisher resolves the
+targets by identity and fills Description after conversion; all 504 connection
+pairs survive (1,008 directional targets).
+
+The nine `aeco:serves` targets into shared use native
+`IfcRelServicesBuildings`, not document references. Each delivery includes the
+target building and its spatial ancestry, so a single-file reader resolves
+`RelatedBuildings` locally and authors `aeco:serves` on `RelatingSystem`.
+In USD the discipline's spatial ancestors are `over`s; only shared defines
+them. No foreign prim definition is needed. There are zero cross-package
+member targets. Every crossing target appears once in the manifest with
 source, relationship, target and both package names.
+
+| Delivery | Port document references | Native serves targets | Total crossings |
+|---|---:|---:|---:|
+| site | 0 | 0 | 0 |
+| arch | 0 | 0 | 0 |
+| structure | 0 | 0 | 0 |
+| cooling | 184 | 3 | 187 |
+| electrical | 344 | 2 | 346 |
+| it | 480 | 3 | 483 |
+| fitout | 0 | 0 | 0 |
+| security | 0 | 1 | 1 |
+| shared | 0 | 0 | 0 |
+| Total | 1,008 | 9 | 1,017 |
 
 The bundled converter exposes `overlay_spine`, but its frozen implementation
 suppresses catalog classes and its later `DefinePrim` calls promote spatial
@@ -287,15 +310,29 @@ opinions, demotes ancestors, retains classes and removes discipline space
 extents. The frozen converter and frozen core bytes remain unchanged. The
 three clash bodies use the same controlled tessellation as `clash`; measured
 tolerance opinions are written in each body's owning geometry layer.
+The IFC carries the swept solid while the near and tangent twins carry the
+publisher's controlled facets. An independent IFC reader may tessellate those
+same solids differently. Manifest `tessellationControlled` lists both mesh
+paths, their `cooling` delivery, twin point counts (10 near, 24 tangent), and
+the reason. This disclosure changes no geometry; the hard pipe retains the
+converter's ordinary tessellation.
 
 Every twin layer records `aeco:layer:role`, `package`, `producer`, `source`,
 `sourceSha256` and `tag` in `customLayerData`. The producer is
-`usdaeco-datacentre generator 0.5.0`. The manifest records package counts,
+`usdaeco-datacentre generator 0.5.0`. All 29 USD layers retain their 0.5.0
+bytes, including provenance. Their `sourceSha256` identifies the conversion
+input before Description enrichment, recorded in manifest `twinSourceFiles`.
+The gate removes only crossing-reference descriptions and recovers the exact
+0.5.0 IFC hashes and sizes; it also compares all twins to the released baseline.
+Manifest `files` records the current delivered IFC hashes and sizes.
+The manifest records package counts,
 fixture mapping, source pins, relationship crossings and SHA-256/bytes for
 all delivered files and both images. Its sole inventory exclusion is itself:
 a file cannot include its own SHA-256; the vanilla receipt binds the manifest
-externally. Run `run.py --all --publish` after publishing to seal both full
-images and their inventory. Historical image bytes stay frozen while their
+externally. Run `run.py --all --publish` after changing rendered content to seal
+both full images and their inventory. The 0.5.1 reference enrichment retains
+both full images and updates only the full vanilla receipt's publication hashes;
+the gate repeats the fresh render. Historical image bytes stay frozen while their
 receipts bind the current renderer code and a fresh render is checked.
 
 The full directory cap is **40,000,000 bytes**, including IFCs and images.

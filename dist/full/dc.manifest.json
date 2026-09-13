@@ -7476,8 +7476,8 @@
       "sha256": "6137e70931554f6e5e7b5e1710e5cde05f0741596afee5ee2440574d109bb83f"
     },
     "cooling.ifc": {
-      "bytes": 2978257,
-      "sha256": "f304d454d2530d111c058b28d5380c82b813a6e620d3db7637998d9d969dfcb1"
+      "bytes": 2999268,
+      "sha256": "28d85b64eed1bd405429b893badb57f9a0fb0e8180e172b5b82029625774ed58"
     },
     "cooling.semantics.usda": {
       "bytes": 2150879,
@@ -7500,8 +7500,8 @@
       "sha256": "432efc87e7e5dabb874b54f3b28f6f3487c8f22ad81cc7173869475e0fd6bc8b"
     },
     "electrical.ifc": {
-      "bytes": 4952460,
-      "sha256": "df9f983ecb268d770aeb567fe2ad5fd48489ca06b4f9b9f3ec0bfa301d89d65c"
+      "bytes": 4991183,
+      "sha256": "56589b1ed3422b3469b67e2889af2b8461c2a3d4e3efda480e3362a7826a85db"
     },
     "electrical.semantics.usda": {
       "bytes": 3605578,
@@ -7532,8 +7532,8 @@
       "sha256": "0268f503703b8188ed4e542e92cc330a2e7175aa6be1fb56d8340c18ff1f770a"
     },
     "it.ifc": {
-      "bytes": 2857024,
-      "sha256": "904f21dd9a9547a040e002d5f421c4470a0fa29862ffc24860c53c86ef2ba16b"
+      "bytes": 2906978,
+      "sha256": "485bddbc54c145ee39f6dffbbe830221faf19b3a188610f3f48f639feb7308b6"
     },
     "it.semantics.usda": {
       "bytes": 2068772,
@@ -7638,7 +7638,7 @@
     ]
   },
   "generator": {
-    "version": "0.5.0"
+    "version": "0.5.1"
   },
   "inventoryExcludes": {
     "dc.manifest.json": "A manifest cannot hash its own bytes; render receipts bind it externally."
@@ -7845,6 +7845,58 @@
     }
   },
   "sizeCapBytes": 40000000,
+  "tessellationControlled": [
+    {
+      "delivery": "cooling",
+      "path": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Corridor_ceiling_void/pipe_clash_near/Geom",
+      "reason": "IFC retains the swept solid; the twin uses controlled facets. Independent IFC readers may produce different tessellation.",
+      "twinPointCount": 10
+    },
+    {
+      "delivery": "cooling",
+      "path": "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L01_Office/Office_Corridor_L01/Corridor_ceiling_void/pipe_clash_tangent/Geom",
+      "reason": "IFC retains the swept solid; the twin uses controlled facets. Independent IFC readers may produce different tessellation.",
+      "twinPointCount": 24
+    }
+  ],
+  "twinSourceFiles": {
+    "arch.ifc": {
+      "bytes": 781674,
+      "sha256": "8f301d7c8b6ee3045c6f7255e6929704ea70f9e9f5ddfeebb1f42e57a3305cc0"
+    },
+    "cooling.ifc": {
+      "bytes": 2978257,
+      "sha256": "f304d454d2530d111c058b28d5380c82b813a6e620d3db7637998d9d969dfcb1"
+    },
+    "electrical.ifc": {
+      "bytes": 4952460,
+      "sha256": "df9f983ecb268d770aeb567fe2ad5fd48489ca06b4f9b9f3ec0bfa301d89d65c"
+    },
+    "fitout.ifc": {
+      "bytes": 146176,
+      "sha256": "7e81cb41227077a92d2227ae88d1e00542818e55ba027cdeb5aacea145a96729"
+    },
+    "it.ifc": {
+      "bytes": 2857024,
+      "sha256": "904f21dd9a9547a040e002d5f421c4470a0fa29862ffc24860c53c86ef2ba16b"
+    },
+    "security.ifc": {
+      "bytes": 268826,
+      "sha256": "0a3d070a7dd95723a62577172d541cbae4f743cd6e2e0dc8d426927a7b093d5a"
+    },
+    "shared.ifc": {
+      "bytes": 84589,
+      "sha256": "1fd81e6f52ae614cfda8829ba5520f2cc5342d6aa98940fe49db2f5a21f57173"
+    },
+    "site.ifc": {
+      "bytes": 90391,
+      "sha256": "faac3f15e61301f78369ac83153853f508fc35ef5bed3d229b2728e0538d2b42"
+    },
+    "structure.ifc": {
+      "bytes": 217420,
+      "sha256": "12fa31daf70a154fb506970ecc9453fff9bc276b574a1dfa1957eed6d6bac4b3"
+    }
+  },
   "typical": {
     "changes": [
       {

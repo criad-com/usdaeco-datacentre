@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.5.1 — 2026-09-13
+
+- Add the exact USD target path to all 1,008 external port document-reference
+  descriptions, enabling relationship authoring from a single IFC delivery.
+- Document nine native serves targets through `IfcRelServicesBuildings`.
+- Disclose the near and tangent pipes' controlled twin tessellation in the full
+  manifest: 10 and 24 points in cooling; IFC swept solids and all geometry stay unchanged.
+- Republish three enriched IFC files and their manifest hashes; preserve all
+  29 USD layers, both full images and the five historical variant directories.
+- Record the original conversion inputs separately from enriched delivery
+  hashes; gate exact Description-only IFC changes, all 1,017 crossing targets,
+  released byte baselines and the unchanged 40,000,000-byte full cap.
+- Verify 255 checks, 0 failed; 238 pytest tests; 12 fresh publications and six
+  fresh vanilla renders. Full occupies 22,149,815 / 40,000,000 bytes.
+- After the tessellation disclosure, verify 13 focused checks, 0 failed and
+  20 federation tests, including two full publications and a fresh vanilla render.
+- Nix packaging remains not proven: one offline check with local input overrides
+  fails because the selected Python 3.14 IfcOpenShell 0.8.0 package is marked
+  broken. No lockfile is written. Connected composition remains not proven here.
+
 ## 0.5.0 — 2026-09-13
 
 - Add the ordered `full` union: three storeys, all fitout, clash and reader fixtures.

@@ -42,11 +42,20 @@ site, arch, structure, cooling, electrical, it, fitout, security, shared.
 Shared owns all spatial definitions; each discipline overlays that spine.
 Every `<package>.usda` sublayers its readable `.semantics.usda` before its
 binary `.geometry.usdc`. Layer provenance names the producer, source IFC and
-SHA-256. The [full manifest](full/dc.manifest.json) inventories every delivered
+SHA-256 of the original conversion input. The 0.5.1 delivery adds exact USD
+target paths to all 1,008 external port document-reference descriptions:
+cooling 184, electrical 344, IT 480, all other deliveries zero. The nine serves
+targets remain native `IfcRelServicesBuildings` relationships (cooling 3,
+electrical 2, IT 3, security 1). A single-file reader can resolve both forms.
+All 29 USD layers and both images retain their 0.5.0 bytes.
+The [full manifest](full/dc.manifest.json) inventories every delivered
 file except itself and records counts and every cross-package target.
+Its `files` hashes bind the enriched IFCs; `twinSourceFiles` records the original
+IFC inputs identified by the frozen twins' provenance. The gate proves that
+only document-reference descriptions differ from those inputs.
 
 The full directory is capped at **40,000,000 bytes**. Its measured publication
-is **22,038,135 bytes**, including 12,376,817 bytes of IFC, 8,479,793 bytes of
+is **22,149,815 bytes**, including 12,486,505 bytes of IFC, 8,479,793 bytes of
 semantic USDA, 482,304 bytes of geometry crates, roots, manifest and images.
 Both images are 1280×800, non-uniform, and below 400,000 bytes each.
 
@@ -61,12 +70,14 @@ To reproduce, prepare the pinned sources and Python environment in the
 `usdchecker` on PATH:
 
 ```sh
-env -u PYTHONPATH "$PY" -m dcbuild publish --all
-env -u PYTHONPATH "$PY" run.py --all --publish
+env -u PYTHONPATH "$PY" -m dcbuild publish --variant full
 env -u PYTHONPATH "$PY" check.py --report out/check.json
 ```
 
-`run.py --variant full --publish` regenerates both full images. Ordinary runs
+Republishing the unchanged facility preserves its images and reproduces the
+committed full inventory and vanilla receipt inputs. Use
+`run.py --variant full --publish` to regenerate both full images when rendered
+content changes. Ordinary runs
 write ignored `out/vanilla/<variant>/`. The full publisher normalizes IFC
 headers, then invokes the hash-verified frozen converter/core inputs. The
 five historical publication paths and data provenance stay unchanged.

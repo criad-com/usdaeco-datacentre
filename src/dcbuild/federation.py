@@ -115,7 +115,7 @@ def identity_paths(stage):
 
 
 def restore_external_links(folder):
-    """Resolve delivered IFC document references to ordinary USD port targets."""
+    """Resolve port targets and annotate deliveries after stamping the frozen twins."""
     import ifcopenshell
     import ifcopenshell.guid
     from pxr import Sdf, Usd
@@ -130,10 +130,12 @@ def restore_external_links(folder):
                 if not doc.is_a("IfcDocumentReference") or doc.Name != "aeco:connectedPorts":
                     continue
                 target_id = str(uuid.UUID(hex=ifcopenshell.guid.expand(doc.Identification)))
+                doc.Description = paths[target_id]
                 for source in rel.RelatedObjects:
                     source_id = str(uuid.UUID(hex=ifcopenshell.guid.expand(source.GlobalId)))
                     stage.GetPrimAtPath(paths[source_id]).CreateRelationship(doc.Name).AddTarget(paths[target_id])
         layer.Save()
+        model.write(str(folder / (package + ".ifc")))
 
 
 def ownership(stage):
@@ -221,6 +223,8 @@ def publish(output):
             print(f"== stage: convert delivery {package}", flush=True)
             run_conversion(work / (package + ".ifc"), work / (package + ".usda"))
         roots(work)
+        twin_sources = {p + ".ifc": {"bytes": (work / (p + ".ifc")).stat().st_size,
+                                    "sha256": digest(work / (p + ".ifc"))} for p in PACKAGES}
         restore_external_links(work)
         from pxr import Plug, Sdf, Usd
         core, _ = dependency_source("core")
@@ -234,17 +238,25 @@ def publish(output):
             return next(s.layer for s in prim.GetPrimStack() if s.typeName == "Mesh")
         cases = measure_cases(stage, config.expected["clash"], config.publication["tessellation"],
                              stamp=True, stamp_layer=body_layer)
+        controlled = []
         for row in cases:
             if row["id"] in config.publication["tessellation"]:
                 mesh, _, _ = body(stage, row["id"])
                 mesh.GetPrim().GetAttribute("aeco:derived:stamp").Set(
                     "dcbuild circular-sweep tessellation " + json.dumps(row["tessellation"], sort_keys=True))
                 mesh.CreateSubdivisionSchemeAttr().Set("none")
+                controlled.append(dict(path=str(mesh.GetPrim().GetPath()),
+                                       delivery=body_layer(mesh.GetPrim()).customLayerData["aeco:layer:package"],
+                                       twinPointCount=len(mesh.GetPointsAttr().Get()),
+                                       reason="IFC retains the swept solid; the twin uses controlled facets. "
+                                              "Independent IFC readers may produce different tessellation."))
         for package in PACKAGES:
             Sdf.Layer.FindOrOpen(str(work / (package + ".geometry.usdc"))).Save()
         census = plugin_free_census(work / "dc.usda")
         from .qa.variants import manifest
-        metadata = dict(variant="full", facility="demo-datacentre-01", generator={"version": "0.5.0"},
+        metadata = dict(variant="full", facility="demo-datacentre-01", generator={"version": "0.5.1"},
+                        twinSourceFiles=twin_sources,
+                        tessellationControlled=controlled,
                         counts=census["counts"], deliveryOrder=list(PACKAGES),
                         packages={p: package_counts(work, p) for p in PACKAGES},
                         fixturePackages={"L02": ["arch", "shared"], "pods": ["fitout"], "ceilings": ["fitout"],

@@ -1,11 +1,100 @@
 """Federation proofs: inventory, IFC ownership, transforms and delivery muting."""
 from collections import Counter
+import hashlib
 import json
 from pathlib import Path
 import re
 
 from ..federation import (DATA_FILES, DELIVERY_ORDER, FULL_CAP, LAYERS, LINKS, PACKAGES,
-                          SPATIAL, cross_package_links, inventory, layer_specs, package_counts)
+                          SPATIAL, cross_package_links, identity_paths, inventory, layer_specs, package_counts)
+from ..dependencies import ROOT
+
+
+def publication_baseline(folder):
+    """Require the released twins and five historical directories byte-for-byte."""
+    from ..publish import digest
+    baseline = json.loads((ROOT / "manifests/publication-v0.5.0.json").read_text())
+    groups = ((folder, {n: baseline["full"][n] for n in LAYERS}),
+              (folder.parent, baseline["historical"]))
+    for parent, files in groups:
+        for name, expected in files.items():
+            path = parent / name
+            if {"bytes": path.stat().st_size, "sha256": digest(path)} != expected:
+                raise ValueError("Publication bytes differ from v0.5.0: " + name)
+    for variant in ("base", "floors", "pod", "clash", "iris"):
+        if {p.name for p in (folder.parent / variant).iterdir()} != {
+                Path(n).name for n in baseline["historical"] if n.startswith(variant + "/")}:
+            raise ValueError("Historical publication inventory changed: " + variant)
+    return {"twins": len(LAYERS), "historicalFiles": len(baseline["historical"])}
+
+
+def crossing_references(folder):
+    """Join every IFC crossing to the actual twin relationship, with multiplicity."""
+    import ifcopenshell
+    import ifcopenshell.guid
+    import uuid
+    from pxr import Sdf, Usd
+    stage = Usd.Stage.Open(str(folder / "dc.usda"))
+    paths = identity_paths(stage)
+    expected = cross_package_links(stage)
+    key = lambda r: (r["package"], r["source"], r["relationship"], r["targetPackage"], r["target"])
+    path_for = lambda guid: paths[str(uuid.UUID(hex=ifcopenshell.guid.expand(guid)))]
+    actual, result = [], {}
+    for package in PACKAGES:
+        model = ifcopenshell.open(folder / (package + ".ifc"))
+        counts = dict(documentReferences=0, connectedPorts=0, serves=0, nativeServes=0)
+        documents = {d.id() for d in model.by_type("IfcDocumentReference")
+                     if d.Name in {"aeco:connectedPorts", "aeco:serves"}}
+        associated = set()
+        for rel in model.by_type("IfcRelAssociatesDocument"):
+            doc = rel.RelatingDocument
+            if doc.id() not in documents:
+                continue
+            target = path_for(doc.Identification)
+            if doc.Description != target or not Sdf.Path(target).IsAbsoluteRootOrPrimPath():
+                raise ValueError("Crossing reference Description differs from its resolved twin target")
+            if doc.Location not in {p + ".ifc" for p in PACKAGES if p != package}:
+                raise ValueError("Crossing reference Location must name the foreign IFC basename")
+            associated.add(doc.id())
+            counts["documentReferences"] += 1
+            for source in rel.RelatedObjects:
+                actual.append((package, path_for(source.GlobalId), doc.Name, doc.Location[:-4], target))
+                counts["connectedPorts" if doc.Name == "aeco:connectedPorts" else "serves"] += 1
+        if associated != documents:
+            raise ValueError("Crossing reference has no local document association")
+        # The native IFC relationship includes the building in each local spine;
+        # conversion resolves its path locally, then demotes that spine to overs.
+        for rel in model.by_type("IfcRelServicesBuildings"):
+            for target in rel.RelatedBuildings:
+                actual.append((package, path_for(rel.RelatingSystem.GlobalId), "aeco:serves",
+                               "shared", path_for(target.GlobalId)))
+                counts["serves"] += 1
+                counts["nativeServes"] += 1
+        result[package] = counts
+    if Counter(actual) != Counter(key(r) for r in expected):
+        raise ValueError("IFC crossing references differ from resolved twin relationships")
+    if Counter(r[2] for r in actual) != {"aeco:connectedPorts": 1008, "aeco:serves": 9}:
+        raise ValueError("Expected 1,008 external port targets and nine serves targets")
+    return result
+
+
+def twin_source_files(folder):
+    """Undo only reference descriptions and prove exact released conversion inputs."""
+    import ifcopenshell
+    baseline = json.loads((ROOT / "manifests/publication-v0.5.0.json").read_text())["full"]
+    sources = {}
+    for package in PACKAGES:
+        name = package + ".ifc"
+        model = ifcopenshell.open(folder / name)
+        for doc in model.by_type("IfcDocumentReference"):
+            if doc.Name in {"aeco:connectedPorts", "aeco:serves"}:
+                doc.Description = None
+        original = model.to_string().encode()
+        record = {"bytes": len(original), "sha256": hashlib.sha256(original).hexdigest()}
+        if record != baseline[name]:
+            raise ValueError("IFC changed beyond crossing reference descriptions: " + name)
+        sources[name] = record
+    return sources
 
 
 def connected_text(folder):
@@ -45,7 +134,7 @@ def spatial_ownership(folder):
 
 def verify_publication(folder):
     from pxr import Sdf, Usd
-    from ..publish import plugin_free_census, digest
+    from ..publish import plugin_free_census
     data = json.loads((folder / "dc.manifest.json").read_text())
     if not set(DATA_FILES) <= data["files"].keys() or data["files"] != inventory(folder):
         raise ValueError("Full files differ from its manifest")
@@ -53,6 +142,10 @@ def verify_publication(folder):
         raise ValueError("Full layers differ from its manifest")
     if sum(p.stat().st_size for p in folder.iterdir()) > FULL_CAP:
         raise ValueError("Full publication exceeds the size cap")
+    crossing_references(folder)
+    sources = twin_source_files(folder)
+    if data.get("twinSourceFiles") != sources:
+        raise ValueError("Twin conversion inputs differ from the manifest")
     root = Sdf.Layer.FindOrOpen(str(folder / "dc.usda"))
     for package in PACKAGES:
         if package_counts(folder, package) != data["packages"][package]:
@@ -67,8 +160,8 @@ def verify_publication(folder):
                     or stamp.get("aeco:layer:package") != package
                     or stamp.get("aeco:layer:producer") != "usdaeco-datacentre generator 0.5.0"
                     or stamp.get("aeco:layer:source") != package + ".ifc"
-                    or stamp.get("aeco:layer:sourceSha256") != digest(folder / (package + ".ifc"))):
-                raise ValueError("Twin provenance differs from its delivered IFC")
+                    or stamp.get("aeco:layer:sourceSha256") != sources[package + ".ifc"]["sha256"]):
+                raise ValueError("Twin provenance differs from its verified conversion input")
             if suffix == ".usda" and layer.subLayerPaths != [package + ".semantics.usda", package + ".geometry.usdc"]:
                 raise ValueError("Twin root must sublayer semantics then geometry")
             if suffix == ".usda" and any(layer.pseudoRoot.GetInfo(key) != root.pseudoRoot.GetInfo(key)

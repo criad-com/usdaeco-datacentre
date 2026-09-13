@@ -7,7 +7,9 @@ import pytest
 
 from dcbuild.dependencies import ROOT
 from dcbuild.federation import PACKAGES, cross_package_links
-from dcbuild.qa.federation import connected_text, ifc_ownership, spatial_ownership, verify_publication
+from dcbuild.qa.federation import (connected_text, crossing_references, ifc_ownership,
+                                   publication_baseline, spatial_ownership, twin_source_files,
+                                   verify_publication)
 
 
 @pytest.fixture
@@ -61,6 +63,60 @@ def test_manifest_lists_serves_and_external_ports(published):
     assert links == manifest["crossPackageLinks"]
     assert {r["relationship"] for r in links} >= {"aeco:connectedPorts", "aeco:serves"}
     assert set(manifest["packages"]) == set(PACKAGES)
+
+
+def test_all_crossing_references_match_resolved_twin_targets(published):
+    counts = crossing_references(published)
+    assert {p: c["documentReferences"] for p, c in counts.items()} == {
+        "site": 0, "arch": 0, "structure": 0, "cooling": 184, "electrical": 344,
+        "it": 480, "fitout": 0, "security": 0, "shared": 0}
+    assert sum(c["connectedPorts"] for c in counts.values()) == 1008
+    assert sum(c["nativeServes"] for c in counts.values()) == 9
+
+
+def test_twins_and_historical_publications_retain_released_bytes(published):
+    assert publication_baseline(published) == {"twins": 29, "historicalFiles": 30}
+    assert len(twin_source_files(published)) == 9
+
+
+@pytest.mark.parametrize("mutation", ["missing_description", "wrong_path", "wrong_package",
+                                      "missing_association", "duplicate_association", "missing_serves"])
+def test_incomplete_or_incorrect_crossing_is_rejected(published, tmp_path, mutation):
+    import ifcopenshell
+    import ifcopenshell.guid
+    folder = tmp_path / "full"
+    shutil.copytree(published, folder)
+    path = folder / "cooling.ifc"
+    model = ifcopenshell.open(path)
+    rel = model.by_type("IfcRelAssociatesDocument")[0]
+    doc = rel.RelatingDocument
+    if mutation == "missing_description":
+        doc.Description = None
+    elif mutation == "wrong_path":
+        doc.Description = "/missing/port"
+    elif mutation == "wrong_package":
+        doc.Location = "shared.ifc"
+    elif mutation == "missing_association":
+        model.remove(rel)
+    elif mutation == "duplicate_association":
+        model.create_entity("IfcRelAssociatesDocument", GlobalId=ifcopenshell.guid.new(),
+                            RelatedObjects=rel.RelatedObjects, RelatingDocument=doc)
+    else:
+        model.remove(model.by_type("IfcRelServicesBuildings")[0])
+    model.write(str(path))
+    with pytest.raises(ValueError, match="[Cc]rossing reference"):
+        crossing_references(folder)
+
+
+def test_non_description_ifc_change_cannot_hide_behind_source_provenance(published, tmp_path):
+    import ifcopenshell
+    shutil.copytree(published, tmp_path / "full")
+    path = tmp_path / "full/cooling.ifc"
+    model = ifcopenshell.open(path)
+    model.by_type("IfcDistributionPort")[0].Name = "Altered port"
+    model.write(str(path))
+    with pytest.raises(ValueError, match="changed beyond crossing reference descriptions"):
+        twin_source_files(tmp_path / "full")
 
 
 def test_text_ifc_is_swept_and_disguised_archive_rejected(tmp_path, monkeypatch):
